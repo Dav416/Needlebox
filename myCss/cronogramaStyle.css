@@ -1,0 +1,327 @@
+body{
+    width: 100%;
+    margin: auto;
+    background-color: #ffffff;
+}
+
+.animation__shake{
+    height: 50vh;
+}
+
+
+.wrapper{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    background-color: whitesmoke ;
+    box-sizing: content-box;
+    width: 100%;
+    margin: inherit;
+   
+
+}
+
+.cont-bar{
+    background-color: #ffe4c469;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    margin: auto;
+    border-bottom: 2px solid rgb(199, 199, 199);
+
+}
+
+
+.logo-nom{
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    
+    
+}
+
+
+.logito{
+    width: 90px;
+    margin-top: -22px;
+}
+
+
+.Needlebox{
+    color: #a52a2a;
+    font-weight: bold;
+    margin-top: -25px;
+    padding-left: 2px; 
+       
+}
+
+
+.navbar{
+    margin: auto;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    
+
+}
+
+.navbar-ul{
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    list-style: none;
+    box-sizing: content-box;
+    width: fit-content;
+    padding: 0%;    
+}
+
+
+.navbar-item{
+    text-align: center;
+    padding: 0%;
+    margin: auto;
+    text-decoration: none;
+}
+
+
+.nav-link{
+    text-decoration:none ;
+    color: black;
+    box-sizing: content-box;
+    height: fit-content;
+    margin: auto; 
+}
+
+
+.nav-link:hover{
+    background-color: rgb(250, 222, 191);
+    text-decoration: none ;
+    font-weight: 600;
+    color: black;
+}
+
+
+.nav-bar-esp{
+    width: 100%;
+    border-top: 2px solid rgb(199, 199, 199);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: max-content;
+    box-sizing: content-box;
+    justify-content: space-around;
+
+}
+
+
+
+.mod-op{
+    display: flex;
+    justify-content: center;
+    height: max-content;
+    width: 18%;
+    border-top: solid;
+    border-radius: 5px;
+    border-top-color: rgba(55, 55, 255, 0.855);
+    margin: 4px auto;
+}
+
+
+
+.mod-name{    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2%;
+    width: 100%;
+    font-size: 135%;
+    background-color: rgba(245, 245, 245, 0.432);
+    color: #000000;
+    border-radius: 2px;
+   
+
+}
+
+
+.mod-op:hover{
+    box-shadow:  1px 0px 7px rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    text-shadow: 0px 2px 9px rgb(255, 255, 255);
+}
+
+
+.contenido{
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   box-sizing:initial;
+   padding: 1% 0%;  
+   width: fit-content;
+   margin: auto;
+}
+
+
+/*-------------------------------------------------código css par ecabezado del módulo actualo--------------------------------------------------------------------*/
+
+.mod-act{
+    margin-top: 1%;
+    width: 85%;
+    height: fit-content;
+    text-align: center;
+    border-top: 3px solid rgb(117, 12, 255); 
+    border-radius: 5px;
+    filter: blur(6%);
+    
+}
+
+.cover{
+    background-color: rgba(245, 245, 245, 0.432);
+    box-sizing: border-box;
+    height: fit-content;
+    margin: 3px;
+    border-radius: 5px;
+    
+}
+
+.mod-act-nom{
+    font-size: 250%;
+    font-style: normal;
+    color: #000000;
+    text-shadow: 0px 2px 9px rgb(255, 255, 255);
+}
+
+
+/* -----------------------------------CSS para modificar el puto copy-paste-----------------------------------------------------------------*/
+.copypaste{
+    margin: auto;
+}
+
+
+
+
+
+
+
+
+
+
+/*---------------------------------------------------------------------------------------------------------------------------------------- */
+
+
+.c-inicio{ 
+    background-image: url("https://i.imgur.com/DnNwrkZ.png"), url("../myImg/needlebox-logo.png");
+    background-size: cover;  
+    background-position-y:45%;
+    background-color: #d6c1a6f6;
+}
+
+
+.c-client{ 
+    background-image: url("https://legal.thomsonreuters.com/blog/wp-content/uploads/sites/19/2019/12/Client-Value-Hero-800x450.jpg"), url("../myImg/cliente-Img.jpg");
+    background-size: cover;  
+    background-position-y:30%;
+}
+
+
+
+
+.c-crono{ 
+    background-image: url("https://www.economiasimple.net/wp-content/uploads/2019/01/cuando-se-cobra-el-sed.jpg"), url("../myImg/crono-Img.jpg");
+    background-size: cover;   
+    background-position-y: 95%;
+    
+}
+
+
+.c-ped{ 
+    background-image: url("https://www.co24.com.co/u/fotografias/m/2021/1/21/f500x333-25747_49550_7.jpg"), url("../myImg/pedido-Img.jpg");
+    background-size: cover;  
+    background-position-y: 95%; 
+ 
+}
+
+
+.c-insu{ 
+    background-image: url("https://i.pinimg.com/736x/3a/8b/09/3a8b0953ed66a337675d8c588c2fe5d9.jpg"), url("../myImg/insumo-Img.jpg");
+    background-size: cover;   
+    background-position-y: 80%;
+    
+}
+
+
+
+
+footer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: inherit;
+    margin: auto;
+    background-color: #ffe4c469;
+    padding-bottom: 0.5%;
+    border-top: 2px solid rgb(199, 199, 199);
+}
+
+
+.copyaut{
+    margin: inherit;
+    box-sizing: content-box;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+.nomproy, .año, .disclaimer{
+    
+    width: fit-content;
+    padding: 0%;
+    margin: 0% auto ;    
+    text-align: center;
+}
+
+
+
+
+@media only screen and (min-width:1024px) {
+    /*Aquí van todos los estilos CSS*/
+    .logo-nom{
+        margin: auto 1.1% auto auto;
+      
+
+    }    
+        
+    .navbar-ul{
+        margin: auto auto auto -1%;
+      
+
+    }
+
+}
+
+
+@media only screen and (max-width:640px) {
+    /*Aquí van todos los estilos CSS*/
+      
+    .mod-op{
+        width: fit-content;
+        margin: 1.5% auto; 
+        padding: 1% 4%;
+        border-top: 3px solid rgb(117, 12, 255); 
+        border-radius: 5%;    
+        color: black;
+    }
+    
+    
+    
+}

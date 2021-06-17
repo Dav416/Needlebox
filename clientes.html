@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title> NEEDLEBOX - Clientes</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  
+  <!--iconos-->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+  <!-- Font Awesome (más iconos) -->
+  <link rel="stylesheet" href="lib/css/all.min.css">
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="lib/css/adminlte.min.css">
+
+  <!--mis putos estilos-->
+  <link rel="stylesheet" href="myCss\clientesStyle.css">
+
+  <!-- jQuery--> 
+  <script src="lib\js\jquery.min.js"></script>
+
+  <!--bootstrap-->
+  <script src="lib/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AdminLTE App  -->
+  <script src="lib\js\adminlte.js"></script>
+
+</head>
+
+
+<body>
+
+<div class="wrapper">
+
+
+  <!-- Preloader -->
+  <div class="preloader flex-column justify-content-center align-items-center">
+    <img class="animation__shake" src="myImg/needlebox-logo.png" alt="NeedleboxLogo">
+  </div>
+
+  <!-- header-->
+  <header class="cont-bar">
+     
+      <div name="logo_y_nombre" class="logo-nom">
+        <a href="index.html"><img src="myImg/needlebox-logo.png" alt="Neddlebox logo" class="logito"></a>
+        <span class="Needlebox">NEEDLEBOX</span>
+      </div>
+
+
+        <!-- Left navbar links -->
+
+        <ul class="navbar-ul">
+          
+                
+          <li class="navbar-item">
+            <a href="#" class="nav-link">PERFIL</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="nav-link">CONFIGURACIÓN</a>
+          </li>
+          
+          <li class="navbar-item">
+            <a href="#" class="nav-link">REPORTAR ERROR</a>
+          </li>
+          
+          <li class="navbar-item">
+            <a href="#" class="nav-link">AYUDA</a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="#" class="nav-link">CONTACTAR A LOS DESARROLLADORES</a>
+          </li>
+
+        </ul>  
+              
+                <!--barra de opciones de modulos-->
+        <div class="nav-bar-esp">
+          
+              <a class="mod-op  c-inicio" href="index.html">                      
+                <span class="mod-name">Inicio</span>
+              </a>   
+          
+              <!--Insumos-->
+              <a class="mod-op  c-insu" href="insumos.html">                      
+                <span class="mod-name">Insumos</span>
+              </a>
+
+                <!--CRONOGRAMA-->
+              <a class="mod-op  c-crono" href="cronograma.html" >
+                  <span class="mod-name">Cronograma</span>
+              </a>
+
+                <!--PEDIDOS-->
+              <a class="mod-op  c-ped" href="#">
+                <span class="mod-name">Pedidos</span>
+              </a>
+
+        </div>
+        <!--fin barra de modulos-->  
+      </header>
+  <!-- /.navbar -->
+
+  <!--Encabezado de sección-->
+  <div class="mod-act c-client"><div class="cover"><span class="mod-act-nom">Clientes</span></div></div>
+
+
+ 
+  <!--Aqui iria el contenido-->
+  <div class="contenido">
+
+ <!--Aqui va una barra inicial para seleccionar lo que desea hacer con un cliente-->
+  <div class="card-card-default" data-select2-id="32">
+    <div class="card-header">
+      <h3 class="card-title">Seleccione la acción deseada:</h3>
+
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-6" data-select2-id="60">
+          <div class="form-group" data-select2-id="59">
+            <select class="form-control select2 select2-hidden-accessible" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+              <option selected="selected" data-select2-id="3">Registrar cliente</option>
+              <option data-select2-id="62">Consultar clientes</option>
+              <option data-select2-id="63">Actualizar datos de cliente</option>
+              <option data-select2-id="64">Borrar cliente</option>
+            </select>
+            <span class="select2 select2-container select2-container--default select2-container--below" dir="ltr" data-select2-id="2" style="width: 100%;"></span>
+          </div>
+        </div>
+        <!-- /.col -->
+      </div>
+      <!-- /.row -->
+    </div>
+      <!-- /.row -->
+  </div>
+    
+<!--menu copypaste de adminte---------------------------------------------------------------------------------------------------->
+
+  <div class="card card-warning" id="31415">
+    <div class="card-header">
+      <h3 class="card-title">Generalidades del cliente (medidas, etc)</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+      <form>
+        <div class="row">
+          <div class="col-sm-6">
+            <!-- text input -->
+            <div class="form-group">
+              <label>Nombre del Cliente</label>
+              <input type="text" class="form-control" placeholder="Enter ...">
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <!-- textarea -->
+            <div class="form-group">
+              <label>Medidas (estándar y para pedidos específicos)</label>
+              <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- input states -->
+        <div class="form-group">
+          <label class="col-form-label" for="inputSuccess"><i class="fas fa-check"></i> Verificación realizada</label>
+          <input type="text" class="form-control is-valid" id="inputSuccess" placeholder="Enter ...">
+        </div>
+        <div class="form-group">
+          <label class="col-form-label" for="inputWarning"><i class="far fa-bell"></i> Revisar pronto</label>
+          <input type="text" class="form-control is-warning" id="inputWarning" placeholder="Enter ...">
+        </div>
+        <div class="form-group">
+          <label class="col-form-label" for="inputError"><i class="far fa-times-circle"></i> Revisar de inmediato</label>
+          <input type="text" class="form-control is-invalid" id="inputError" placeholder="Enter ...">
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <!-- checkbox -->
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox">
+                <label class="form-check-label">Vestido</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" checked="">
+                <label class="form-check-label">Pantalón</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <!-- radio -->
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="radio1">
+                <label class="form-check-label">Cliente local</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="radio1" checked="">
+                <label class="form-check-label">Cliente nacional</label>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <!-- select -->
+            <div class="form-group">
+              <label>Select</label>
+              <select class="form-control">
+                <option>option 1</option>
+                <option>option 2</option>
+                <option>option 3</option>
+                <option>option 4</option>
+                <option>option 5</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6">
+            <!-- Select multiple-->
+            <div class="form-group">
+              <label>Select Multiple</label>
+              <select multiple="" class="form-control">
+                <option>option 1</option>
+                <option>option 2</option>
+                <option>option 3</option>
+                <option>option 4</option>
+                <option>option 5</option>
+              </select>
+              
+            </div>
+           
+          </div>
+        </div>
+      </form>
+      <input type="submit" value="Guardar" class="btn btn-success float-right">
+    </div>
+    <!-- /.card-body -->
+  </div>
+
+<!------------------fin menu1------------------------------------------------------------------------------------------------------------------->
+ <!-- prototipo para ingresar los datos del cliente en el registro -->
+  <div class="card card-danger" id="3141592">
+    <div class="card-header">
+      <h3 class="card-title">Información personal del cliente</h3>
+    </div>
+    <div class="card-body">
+      <!-- Date name -->
+      <div class="form-group">
+        <label>Nombres:</label>
+
+        <div class="input-group">
+          
+          <input type="text">
+        </div>
+        <!-- /.input group -->
+      </div>
+      <!-- /.form group -->
+
+      <!-- Date mm/dd/yyyy -->
+      <div class="form-group">
+        <label>Apellidos:</label>
+        <div class="input-group">
+          
+          <input type="text">
+        </div>
+        <!-- /.input group -->
+      </div>
+      <!-- /.form group -->
+
+      <!-- phone mask -->
+      <div class="form-group">
+        <label>Teléfono fijo:</label>
+
+        <div class="input-group">
+          
+          <input type="text">
+        </div>
+        <!-- /.input group -->
+      </div>
+      <!-- /.form group -->
+
+      <!-- phone mask -->
+      <div class="form-group">
+        <label>Celular:</label>
+
+        <div class="input-group">
+          <input type="text" >
+        </div>
+        <!-- /.input group -->
+      </div>
+      <!-- /.form group -->
+
+      <!-- IP mask -->
+      <div class="form-group">
+        <label>Dirección:</label>
+
+        <div class="input-group">
+          <input type="text">
+        </div>
+        <input type="submit" value="Guardar" class="btn btn-success float-right">
+        <!-- /.input group -->
+      </div>
+      <!-- /.form group -->
+     
+    </div>
+
+    
+    <!-- /.card-body -->
+  </div>
+
+
+
+<!--tabla------------------------------------------------------------------------------------------------------------------------------------->
+
+  <div class="card-body">
+    <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"><div class="dt-buttons btn-group flex-wrap">               <button class="btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="example1" type="button"><span>Copy</span></button> <button class="btn btn-secondary buttons-csv buttons-html5" tabindex="0" aria-controls="example1" type="button"><span>CSV</span></button> <button class="btn btn-secondary buttons-excel buttons-html5" tabindex="0" aria-controls="example1" type="button"><span>Excel</span></button> <button class="btn btn-secondary buttons-pdf buttons-html5" tabindex="0" aria-controls="example1" type="button"><span>PDF</span></button> <button class="btn btn-secondary buttons-print" tabindex="0" aria-controls="example1" type="button"><span>Print</span></button> <div class="btn-group"><button class="btn btn-secondary buttons-collection dropdown-toggle buttons-colvis" tabindex="0" aria-controls="example1" type="button" aria-haspopup="true" aria-expanded="false"><span>Column visibility</span></button></div> </div></div><div class="col-sm-12 col-md-6"><div id="example1_filter" class="dataTables_filter"><label>Search:<input type="search" class="form-control form-control-sm" placeholder="" aria-controls="example1"></label></div></div></div><div class="row"><div class="col-sm-12"><table id="example1" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
+      <thead>
+      <tr role="row"><th class="sorting sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Número del cliente</th><th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Nombres</th><th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Apellidos</th><th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Teléfono</th><th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Editar/Eliminar</th></tr>
+      </thead>
+      <tbody>
+      
+      <tr class="odd">
+        <td class="dtr-control sorting_1" tabindex="0">001</td>
+        <td>A</td>
+        <td>K</td>
+        <td>1.7</td>
+        <td class="text-right py-0 align-middle">
+          <div class="btn-group btn-group-sm">
+            <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
+            <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+          </div>
+        </td>
+      </tr><tr class="even">
+        <td class="dtr-control sorting_1" tabindex="0">002</td>
+        <td>B</td>
+        <td>L</td>
+        <td>1.8</td>
+        <td class="text-right py-0 align-middle">
+          <div class="btn-group btn-group-sm">
+            <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
+            <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+          </div>
+        </td>
+      </tr><tr class="odd">
+        <td class="dtr-control sorting_1" tabindex="0">003</td>
+        <td>C</td>
+        <td>M</td>
+        <td>1.8</td>
+        <td class="text-right py-0 align-middle">
+          <div class="btn-group btn-group-sm">
+            <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
+            <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+          </div>
+        </td>
+      </tr><tr class="even">
+        <td class="dtr-control sorting_1" tabindex="0">004</td>
+        <td>D</td>
+        <td>N</td>
+        <td>1.9</td>
+        <td class="text-right py-0 align-middle">
+          <div class="btn-group btn-group-sm">
+            <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
+            <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+          </div>
+        </td>
+      </tr><tr class="odd">
+        <td class="sorting_1 dtr-control">005</td>
+        <td>E</td>
+        <td>O</td>
+        <td>1.8</td>
+        <td class="text-right py-0 align-middle">
+          <div class="btn-group btn-group-sm">
+            <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
+            <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+          </div>
+        </td>
+      </tr><tr class="even">
+        <td class="sorting_1 dtr-control">006</td>
+        <td>F</td>
+        <td>P</td>
+        <td>1.8</td>
+        <td class="text-right py-0 align-middle">
+          <div class="btn-group btn-group-sm">
+            <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
+            <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+          </div>
+        </td>
+      </tr><tr class="odd">
+        <td class="sorting_1 dtr-control">007</td>
+        <td>G</td>
+        <td>Q</td>
+        <td>1.7</td>
+        <td class="text-right py-0 align-middle">
+          <div class="btn-group btn-group-sm">
+            <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
+            <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+          </div>
+        </td>
+      </tr><tr class="even">
+        <td class="sorting_1 dtr-control">008</td>
+        <td>H</td>
+        <td>R</td>
+        <td>1.7</td>
+        <td class="text-right py-0 align-middle">
+          <div class="btn-group btn-group-sm">
+            <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
+            <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+          </div>
+        </td>
+      </tr><tr class="odd">
+        <td class="sorting_1 dtr-control">009</td>
+        <td>I</td>
+        <td>S</td>
+        <td>1.8</td>
+        <td class="text-right py-0 align-middle">
+          <div class="btn-group btn-group-sm">
+            <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
+            <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+          </div>
+        </td>
+      </tr><tr class="even">
+        <td class="sorting_1 dtr-control">010</td>
+        <td>J</td>
+        <td>T</td>
+        <td>1</td>
+        <td class="text-right py-0 align-middle">
+          <div class="btn-group btn-group-sm">
+            <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
+            <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+          </div>
+        </td>
+      </tr></tbody>
+      <tfoot>
+      <tr><th rowspan="1" colspan="1">Número del cliente</th><th rowspan="1" colspan="1">Nombres</th><th rowspan="1" colspan="1">Apellidos</th><th rowspan="1" colspan="1">Teléfono</th><th rowspan="1" colspan="1">Editar/Eliminar</th></tr>
+      </tfoot>
+    </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="example1_info" role="status" aria-live="polite">Showing 1 to 10 of 57 entries</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="example1_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="example1_previous"><a href="#" aria-controls="example1" data-dt-idx="0" tabindex="0" class="page-link">Previous</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="example1" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="example1_next"><a href="#" aria-controls="example1" data-dt-idx="7" tabindex="0" class="page-link">Next</a></li></ul></div></div></div></div>
+  </div>
+
+  <!------fin tabla--------------------------------------------------------------------------------------------------------------------------->
+
+
+
+
+  </div>
+
+  <!--fin del div para el contenido-->
+
+
+ <!-- Main Footer -->
+  
+<footer >
+  <div class="copyaut">
+    <span class="nomproy" href="#">Needlebox.</span> 
+    <br> 
+    <span class="año"><strong> &copy; 2021 </strong></span> 
+    <br> 
+    
+    <span class="disclaimer">Borrador para proyecto formativo del equipo Needlebox 
+      (Estefania Marín, Juan Payares y <a href="https://codepen.io/Juan_FM">Juan Mejía</a>) 
+        para la Técnica de Programación de Software - <a href="https://www.sena.edu.co">SENA</a></span>
+  </div>
+
+</footer>
+
+
+</div><!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
+</body>
+</html>
