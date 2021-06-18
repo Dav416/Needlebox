@@ -13,13 +13,13 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 
   <!-- Font Awesome (más iconos) -->
-  <link rel="stylesheet" href="lib/css/all.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
   <!-- Theme style -->
   <link rel="stylesheet" href="lib/css/adminlte.min.css">
 
   <!--mis putos estilos-->
-  <link rel="stylesheet" href="myCss\insumosStyle.css">
+  <link rel="stylesheet" href="myCss/pedidosStyle.css">
 
   <!-- jQuery--> 
   <script src="lib\js\jquery.min.js"></script>
@@ -115,13 +115,109 @@
   <div class="contenido">
   
       <div style="background-color: #f5f5f5;">
+        <!-- TABLA DE TODOS LOS PEDIDOS-->
+        <div class="card card1">
+          <div class="card-header border-transparent">
+            <h3 class="card-title">Ultimos Pedidos</h3>
+        
+            <!-- BARRA DE BUSCAR -->
+            <div class="card-tools">
+              <div class="input-group input-group-sm" style="width: 150px;">
+                <input type="text" name="table_search" class="form-control float-right" placeholder="Buscar">
+                <div class="input-group-append">
+                  <button type="submit" class="btn btn-default">
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- FIN DE BARRA -->
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum libero iusto vitae eos,
-           delectus excepturi fugit repudiandae suscipit magni enim dolores,
-           fugiat aspernatur, consequuntur aliquam id sit. Enim, esse ullam?</p>
-
-           <img src="myImg/needlebox-logo.png" alt="nuestro logito" style="margin: auto;">
-
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body p-0">
+            <div class="table-responsive">
+              <table class="table m-0">
+                <thead>
+                <tr>
+                  <th>Número de pedido</th>
+                  <th>Pedido</th>
+                  <th>Estado</th>
+                  <th>Fecha de entrega</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td><a href="#">OR9842</a></td>
+                  <td>Camiseta</td>
+                  <td><span class="badge badge-success">Terminado</span></td>
+                  <td>
+                    <div class="sparkbar" data-color="#00a65a" data-height="20">25/06/2021</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#">OR1848</a></td>
+                  <td>Oberol</td>
+                  <td><span class="badge badge-warning">Pendiente</span></td>
+                  <td>
+                    <div class="sparkbar" data-color="#f39c12" data-height="20">30/07/2021</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#">OR7429</a></td>
+                  <td>Blusa</td>
+                  <td><span class="badge badge-danger">Cancelado</span></td>
+                  <td>
+                    <div class="sparkbar" data-color="#f56954" data-height="20">01/07/2021-</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#">OR7429</a></td>
+                  <td>Pantalon</td>
+                  <td><span class="badge badge-info">En proceso</span></td>
+                  <td>
+                    <div class="sparkbar" data-color="#00c0ef" data-height="20">22/06/2021</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#">OR1848</a></td>
+                  <td>Bleiser</td>
+                  <td><span class="badge badge-warning">Pendiente</span></td>
+                  <td>
+                    <div class="sparkbar" data-color="#f39c12" data-height="20">05/08/2021</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#">OR7429</a></td>
+                  <td>Falda</td>
+                  <td><span class="badge badge-danger">Cancelado</span></td>
+                  <td>
+                    <div class="sparkbar" data-color="#f56954" data-height="20">02/06/2021</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td><a href="#">OR9842</a></td>
+                  <td>Buso</td>
+                  <td><span class="badge badge-success">Terminado</span></td>
+                  <td>
+                    <div class="sparkbar" data-color="#00a65a" data-height="20">23/06/2021</div>
+                    
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.table-responsive -->
+          </div>
+          <!-- /.card-body -->
+          <div class="card-footer clearfix">
+            <a href="#" class="btn btn-sm btn-info float-left">Agregar pedido</a>
+            <a href="mostrartodos.html" class="btn btn-sm btn-secondary float-right">Mostrar todos</a>
+          </div>
+          <!-- FIN TABLA -->
+        </div>
+        
+        
 
       </div>
   </div>

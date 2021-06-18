@@ -15,7 +15,7 @@ body{
     flex-direction: column;
     background-color: whitesmoke ;
     box-sizing: content-box;
-    width: 100%;
+    width: 100% !important ;
     margin: inherit;
    
 
@@ -201,18 +201,27 @@ body{
 
 /* -----------------------------------CSS para modificar el puto copy-paste-----------------------------------------------------------------*/
 .copypaste{
+    width: min-content;
+    margin: 1% auto;
+
+    
+}
+
+
+.tabla-crono{
+    width: 100%;
     margin: auto;
 }
 
 
+.btn-rp{
+    margin-top: 4%;
+}
 
 
-
-
-
-
-
-
+.th{
+    width: 100% !important;
+}
 /*---------------------------------------------------------------------------------------------------------------------------------------- */
 
 
