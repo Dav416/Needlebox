@@ -98,11 +98,11 @@ body{
 
 
 .nav-link:hover{
-    background-color: rgb(250, 222, 191);
     text-decoration: none ;
     font-weight: 600;
     color: black;
 }
+
 
 
 .nav-link-elect{
@@ -111,6 +111,7 @@ body{
     font-weight: 600;
     color: black;
 }
+
 
 .nav-bar-esp{
     width: 100%;
@@ -186,7 +187,7 @@ body{
     height: fit-content;
     text-align: center;
     border-top: 3px solid rgb(117, 12, 255); 
-    border-radius: 5px;
+    border-radius: 10px;
     filter: blur(6%);
     
 }
@@ -218,89 +219,43 @@ body{
 }
 
 
-.see-pass{
-    margin-top: 1%;
-}
-
-.profile{
+.about-us{
     width: 70%;
 }
 
-.group-btn{
+.sob-need-cont{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
 }
 
-
-.btn-2{
-    border-radius: 5px;
-    border-color: #000000;
-    color: #dd0000;
-    background-color: #ffffff;
-    font-weight: 600;
-    margin: 3px;
+.noso-titl, .sob-need-titl{
+    border-bottom-style:ridge;
+    border-bottom-color: #00000028;
+    padding-bottom: 1%;
+   
 }
 
-.btn-2:hover{
-    background-color: #c90000;
-    font-weight: 600;
-    color: #ffffff;
-    
-}
-
-
-
-
-.nav-item{
-    margin: 2px;
-}
-
-.modal-title{
-    font-weight: 600;
-}
-
-.del-message{
+.noso-body, .sob-need-parr{
     text-align: justify;
 }
 
-.btn-delet{
-    color: #ffffff;
-    background-color: #e00000;
+.sob-need-logo{
+    width: 20%;
+    margin: 0% auto;
+    padding-top: 0%;
 }
 
-.btn-delet:hover{
-    color: #ffffff;
-    background-color: #a00000;
-    font-weight: 600;
-}
 
-.btn-conser{
-    background-color: #007bff;
-}
-
-.btn-conser:hover{
-    color: #007bff;
-    background-color: #ffffff;
-    font-weight: 600;
-}
-
-.modal-footer{
-    justify-content: center;
-}
 
 /*---------------------------------------------------------------------------------------------------------------------------------------- */
 
 
-.c-perf{ 
-    background-image: url("https://pixnio.com/free-images/2017/07/11/2017-07-11-09-44-52-900x596.jpg"), url("../myImg/perfil-img.jpg") !important;
-    background-size:cover;  
-    background-position-y: 35%; 
+.c-nos{ 
+    background-image: url("https://c.pxhere.com/images/70/94/4f15c39fc6b3b9c0207468003d08-1452869.jpg!d"), url("../myImg/nosotros.jpg") !important;
+    background-size: 68%;  
+    background-position:center; 
 }
-
-
-
 
 
 
@@ -365,8 +320,48 @@ footer{
         border-top: 3px solid rgb(117, 12, 255); 
         border-radius: 5%;    
         color: black;
+    }   
+}
+
+
+
+@media screen and (max-width:728px) {
+   
+    .about-us{
+        width: 96%;
+    }
+}
+
+@media screen and (max-width:530px) {
+    .nav-pills{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: fit-content;
+        margin:auto;
+    }
+
+    
+}
+
+
+@media screen and (max-width:304px) {
+    .mod-act-nom{
+        font-size: 229%;
+    }
+
+   
+
+    .about-us{
+        width: 118%;
     }
     
-    
+}
+
+@media screen and (max-width:279px) {
+    .c-nos{ 
+        background-size: cover;  
+        background-position:center; 
+    }
     
 }
