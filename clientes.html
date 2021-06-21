@@ -155,7 +155,7 @@
             <!-- text input -->
             <div class="form-group">
               <label>Nombre del Cliente</label>
-              <input type="text" class="form-control" placeholder="Enter ...">
+              <input type="text" class="form-control" placeholder="Nombre ...">
             </div>
           </div>
         </div>
@@ -163,8 +163,8 @@
           <div class="col-sm-6">
             <!-- textarea -->
             <div class="form-group">
-              <label>Medidas (estándar y para pedidos específicos)</label>
-              <textarea class="form-control" rows="3" placeholder="Enter ..."></textarea>
+              <label>Medidas e información técnica importante</label>
+              <textarea class="form-control" rows="3" placeholder="Medidas ..."></textarea>
             </div>
           </div>
         </div>
@@ -172,19 +172,20 @@
         <!-- input states -->
         <div class="form-group">
           <label class="col-form-label" for="inputSuccess"><i class="fas fa-check"></i> Verificación realizada</label>
-          <input type="text" class="form-control is-valid" id="inputSuccess" placeholder="Enter ...">
+          <input type="text" class="form-control is-valid" id="inputSuccess" placeholder="Ingrese observación ...">
         </div>
         <div class="form-group">
           <label class="col-form-label" for="inputWarning"><i class="far fa-bell"></i> Revisar pronto</label>
-          <input type="text" class="form-control is-warning" id="inputWarning" placeholder="Enter ...">
+          <input type="text" class="form-control is-warning" id="inputWarning" placeholder="Ingrese observación ...">
         </div>
         <div class="form-group">
           <label class="col-form-label" for="inputError"><i class="far fa-times-circle"></i> Revisar de inmediato</label>
-          <input type="text" class="form-control is-invalid" id="inputError" placeholder="Enter ...">
+          <input type="text" class="form-control is-invalid" id="inputError" placeholder="Ingrese observación ...">
         </div>
 
         <div class="row">
           <div class="col-sm-6">
+            <label for="group2">Prendas más solicitadas por el cliente:</label>
             <!-- checkbox -->
             <div class="form-group">
               <div class="form-check">
@@ -192,8 +193,16 @@
                 <label class="form-check-label">Vestido</label>
               </div>
               <div class="form-check">
-                <input class="form-check-input" type="checkbox" checked="">
+                <input class="form-check-input" type="checkbox">
                 <label class="form-check-label">Pantalón</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" checked="">
+                <label class="form-check-label">Chaqueta</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox">
+                <label class="form-check-label">Blusa/Camisa</label>
               </div>
             </div>
           </div>
@@ -214,37 +223,38 @@
 
         <div class="row">
           <div class="col-sm-6">
-            <!-- select -->
-            <div class="form-group">
-              <label>Select</label>
-              <select class="form-control">
-                <option>option 1</option>
-                <option>option 2</option>
-                <option>option 3</option>
-                <option>option 4</option>
-                <option>option 5</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="col-sm-6">
             <!-- Select multiple-->
             <div class="form-group">
-              <label>Select Multiple</label>
+              <label>Estilo del cliente</label>
               <select multiple="" class="form-control">
-                <option>option 1</option>
-                <option>option 2</option>
-                <option>option 3</option>
-                <option>option 4</option>
-                <option>option 5</option>
+                <option>Clásico/Señorial</option>
+                <option>Deportivo</option>
+                <option>Moderno</option>
+                <option>Trajes de oficio</option>
+                <option>Otro</option>
               </select>
               
             </div>
            
           </div>
         </div>
+        
+        <div class="row">
+          <div class="col-sm-6">
+            <!-- select -->
+            <div class="form-group">
+              <label>Medio de pago habitual</label>
+              <select class="form-control">
+                <option>Efectivo</option>
+                <option>Tarjeta</option>
+                <option>Transferencia</option>
+                <option>Giro</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+       
       </form>
       <input type="submit" value="Guardar" class="btn btn-success float-right">
     </div>
@@ -253,7 +263,7 @@
 
 <!------------------fin menu1------------------------------------------------------------------------------------------------------------------->
  <!-- prototipo para ingresar los datos del cliente en el registro -->
-  <div class="card card-danger" id="3141592">
+  <div class="card card-danger col-md-6" id="3141592">
     <div class="card-header">
       <h3 class="card-title">Información personal del cliente</h3>
     </div>
@@ -311,6 +321,18 @@
         <div class="input-group">
           <input type="text">
         </div>
+        <div class="form-group">
+          <label for="group2"></label>
+          <div class="input-group" id="group2">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="addon2"><i class="far fa-file-image"></i></span>
+            </div>
+            <div class="custom-file">
+              <input  type="file" class="custom-file-input" id="file2" aria-describedby="addon2">
+              <label class="custom-file-label" for="file2">Añada una foto</label>
+            </div>
+          </div>
+        </div>
         <input type="submit" value="Guardar" class="btn btn-success float-right">
         <!-- /.input group -->
       </div>
@@ -326,180 +348,179 @@
 
 <!--tabla------------------------------------------------------------------------------------------------------------------------------------->
 
-  <div class="card-body">
-    <table>
-    <div id="example1_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"><div class="dt-buttons btn-group flex-wrap"> <button class="btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="example1" type="button"><span>Copiar</span></button> <button class="btn btn-secondary buttons-csv buttons-html5" tabindex="0" aria-controls="example1" type="button"><span>CSV</span></button> <button class="btn btn-secondary buttons-excel buttons-html5" tabindex="0" aria-controls="example1" type="button"><span>Excel</span></button> <button class="btn btn-secondary buttons-pdf buttons-html5" tabindex="0" aria-controls="example1" type="button"><span>PDF</span></button> <button class="btn btn-secondary buttons-print" tabindex="0" aria-controls="example1" type="button"><span>Imprimir</span></button> <div class="btn-group"><button class="btn btn-secondary buttons-collection dropdown-toggle buttons-colvis" tabindex="0" aria-controls="example1" type="button" aria-haspopup="true" aria-expanded="false"><span></span>Columna visible</span></button></div> </div></div><div class="col-sm-12 col-md-6"><div id="example1_filter" class="dataTables_filter text-right"><input type="search" class="form-control form-control-sm" placeholder="Búsqueda" aria-controls="example1"></div></div></div><div class="row"><div class="col-sm-12"><table id="example1" class="table table-bordered table-striped dataTable dtr-inline" role="grid" aria-describedby="example1_info">
-      <thead>
-      <tr role="row"><th class="sorting sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Número del cliente</th><th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Nombres</th><th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Apellidos</th><th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Teléfono</th><th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Visualizar/Editar</th><th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Eliminar</th></tr>
-      </thead>
-      <tbody>
-        
-      <tr class="odd">
-        <td class="dtr-control sorting_1" tabindex="0">001</td>
-        <td>A</td>
-        <td>K</td>
-        <td>1.7</td>
-        <td class="text-center py-0 align-middle">
+<div class="demo-html">
+  <div id="example_wrapper" class="dataTables_wrapper dt-bootstrap4"><div class="row"><div class="col-sm-12 col-md-6"><div class="dt-buttons btn-group flex-wrap">      <button class="btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="example" type="button"><span>Copiar</span></button> <button class="btn btn-secondary buttons-excel buttons-html5" tabindex="0" aria-controls="example" type="button"><span>Excel</span></button> <button class="btn btn-secondary buttons-pdf buttons-html5" tabindex="0" aria-controls="example" type="button"><span>PDF</span></button>  </div></div><div class="col-sm-12 col-md-6"><div id="example_filter" class="dataTables_filter text-right"><input type="search" class="form-control form-control-sm" placeholder="Ingrese una búsqueda" aria-controls="example"></div></div></div><div class="row"><div class="col-sm-12"><table id="example" class="table table-striped table-bordered dataTable" style="width: 100%;" role="grid" aria-describedby="example_info">
+    <thead>
+      <tr role="row"><th class="sorting sorting_asc text-center" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 180px;">Número del cliente</th><th class="sorting text-center" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 150px;">Nombres</th><th class="sorting text-center" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 150px;">Apellidos</th><th class="sorting text-center" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 110px;">Teléfono</th><th class="sorting text-center" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 40px;">Visualizar/Editar</th><th class="sorting text-center" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 40px;">Eliminar</th></tr>
+    </thead>
+    <tbody>
+      
+    <tr class="odd text-center">
+        <td class="sorting_1">001</td>
+        <td >Sandra</td>
+        <td>Gómez</td>
+        <td>33256462</td>
+        <td class="py-0 align-middle">
           <div class="btn-group btn-group-sm">
             <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
             <a class="btn btn-primary btn-sm" href="#"><i class="fas fa-edit"></i></i></a>
           </div>
         </td>
-        <td class="text-center py-0 align-middle">
+        <td class="py-0 align-middle">
           <div class="btn-group btn-group-sm">
             <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
           </div>
         </td>
-      </tr><tr class="even">
-        <td class="dtr-control sorting_1" tabindex="0">002</td>
-        <td>B</td>
-        <td>L</td>
-        <td>1.8</td>
-        <td class="text-center py-0 align-middle">
+      </tr><tr class="even text-center">
+        <td class="sorting_1">002</td>
+        <td>Carlos</td>
+        <td>Zapata</td>
+        <td>4741241</td>
+        <td class="py-0 align-middle">
           <div class="btn-group btn-group-sm">
             <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
             <a class="btn btn-primary btn-sm" href="#"><i class="fas fa-edit"></i></i></a>
           </div>
         </td>
-        <td class="text-center py-0 align-middle">
+        <td class="py-0 align-middle">
           <div class="btn-group btn-group-sm">
             <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
           </div>
         </td>
-      </tr><tr class="odd">
-        <td class="dtr-control sorting_1" tabindex="0">003</td>
-        <td>C</td>
-        <td>M</td>
-        <td>1.8</td>
-        <td class="text-center py-0 align-middle">
+      </tr><tr class="odd text-center">
+        <td class="sorting_1">003</td>
+        <td>Zulma</td>
+        <td>Echavarría</td>
+        <td>665645415</td>
+        <td class="py-0 align-middle">
           <div class="btn-group btn-group-sm">
             <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
             <a class="btn btn-primary btn-sm" href="#"><i class="fas fa-edit"></i></i></a>
           </div>
         </td>
-        <td class="text-center py-0 align-middle">
+        <td class="py-0 align-middle">
           <div class="btn-group btn-group-sm">
             <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
           </div>
         </td>
-      </tr><tr class="even">
-        <td class="dtr-control sorting_1" tabindex="0">004</td>
-        <td>D</td>
-        <td>N</td>
-        <td>1.9</td>
-        <td class="text-center py-0 align-middle">
+      </tr><tr class="even text-center">
+        <td class="sorting_1">004</td>
+        <td>Angélica</td>
+        <td>Ramos</td>
+        <td>4148561325</td>
+        <td class="py-0 align-middle">
           <div class="btn-group btn-group-sm">
             <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
             <a class="btn btn-primary btn-sm" href="#"><i class="fas fa-edit"></i></i></a>
           </div>
         </td>
-        <td class="text-center py-0 align-middle">
+        <td class="py-0 align-middle">
           <div class="btn-group btn-group-sm">
             <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
           </div>
         </td>
-      </tr><tr class="odd">
-        <td class="sorting_1 dtr-control">005</td>
-        <td>E</td>
-        <td>O</td>
-        <td>1.8</td>
-        <td class="text-center py-0 align-middle">
+      </tr><tr class="odd text-center">
+        <td class="sorting_1">005</td>
+        <td>María</td>
+        <td>Rodas Arteaga</td>
+        <td>256451545</td>
+        <td class="py-0 align-middle">
           <div class="btn-group btn-group-sm">
             <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
             <a class="btn btn-primary btn-sm" href="#"><i class="fas fa-edit"></i></i></a>
           </div>
         </td>
-        <td class="text-center py-0 align-middle">
+        <td class="py-0 align-middle">
           <div class="btn-group btn-group-sm">
             <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
           </div>
         </td>
-      </tr><tr class="even">
-        <td class="sorting_1 dtr-control">006</td>
-        <td>F</td>
-        <td>P</td>
-        <td>1.8</td>
-        <td class="text-center py-0 align-middle">
+      </tr><tr class="even text-center">
+        <td class="sorting_1">006</td>
+        <td>Rosa María</td>
+        <td>Sánchez Gutiérrez</td>
+        <td>6156456416</td>
+        <td class="py-0 align-middle">
           <div class="btn-group btn-group-sm">
             <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
             <a class="btn btn-primary btn-sm" href="#"><i class="fas fa-edit"></i></i></a>
           </div>
         </td>
-        <td class="text-center py-0 align-middle">
+        <td class="py-0 align-middle">
           <div class="btn-group btn-group-sm">
             <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
           </div>
         </td>
-      </tr><tr class="odd">
-        <td class="sorting_1 dtr-control">007</td>
-        <td>G</td>
-        <td>Q</td>
-        <td>1.7</td>
-        <td class="text-center py-0 align-middle">
+      </tr><tr class="odd text-center">
+        <td class="sorting_1">007</td>
+        <td>Jorge</td>
+        <td>Agudelo</td>
+        <td>38546414</td>
+        <td class="py-0 align-middle">
           <div class="btn-group btn-group-sm">
             <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
             <a class="btn btn-primary btn-sm" href="#"><i class="fas fa-edit"></i></i></a>
           </div>
         </td>
-        <td class="text-center py-0 align-middle">
+        <td class="py-0 align-middle">
           <div class="btn-group btn-group-sm">
             <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
           </div>
         </td>
-      </tr><tr class="even">
-        <td class="sorting_1 dtr-control">008</td>
-        <td>H</td>
-        <td>R</td>
-        <td>1.7</td>
-        <td class="text-center py-0 align-middle">
+      </tr><tr class="even text-center">
+        <td class="sorting_1">008</td>
+        <td>Juliana</td>
+        <td>García</td>
+        <td>21515641326</td>
+        <td class="py-0 align-middle">
           <div class="btn-group btn-group-sm">
             <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
             <a class="btn btn-primary btn-sm" href="#"><i class="fas fa-edit"></i></i></a>
           </div>
         </td>
-        <td class="text-center py-0 align-middle">
+        <td class="py-0 align-middle">
           <div class="btn-group btn-group-sm">
             <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
           </div>
         </td>
-      </tr><tr class="odd">
-        <td class="sorting_1 dtr-control">009</td>
-        <td>I</td>
-        <td>S</td>
-        <td>1.8</td>
-        <td class="text-center py-0 align-middle">
+      </tr><tr class="odd text-center">
+        <td class="sorting_1">009</td>
+        <td>Marta</td>
+        <td>Jiménez</td>
+        <td>4687412</td>
+        <td class="py-0 align-middle">
           <div class="btn-group btn-group-sm">
             <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
             <a class="btn btn-primary btn-sm" href="#"><i class="fas fa-edit"></i></i></a>
           </div>
         </td>
-        <td class="text-center py-0 align-middle">
+        <td class="py-0 align-middle">
           <div class="btn-group btn-group-sm">
             <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
           </div>
         </td>
-      </tr><tr class="even">
-        <td class="sorting_1 dtr-control">010</td>
-        <td>J</td>
-        <td>T</td>
-        <td>1</td>
-        <td class="text-center py-0 align-middle">
+      </tr><tr class="even text-center">
+        <td class="sorting_1">010</td>
+        <td>Camila</td>
+        <td>Vélez Rueda</td>
+        <td>22562651</td>
+        <td class="py-0 align-middle">
           <div class="btn-group btn-group-sm">
             <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
             <a class="btn btn-primary btn-sm" href="#"><i class="fas fa-edit"></i></i></a>
           </div>
         </td>
-        <td class="text-center py-0 align-middle">
+        <td class="py-0 align-middle">
           <div class="btn-group btn-group-sm">
             <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
           </div>
         </td>
       </tr></tbody>
-      <tfoot>
-      <tr><th rowspan="1" colspan="1">Número del cliente</th><th rowspan="1" colspan="1">Nombres</th><th rowspan="1" colspan="1">Apellidos</th><th rowspan="1" colspan="1">Teléfono</th><th rowspan="1" colspan="1">Visualizar/Editar</th><th rowspan="1" colspan="1">Eliminar</th></tr>
-      </tfoot>
-    </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="example1_info" role="status" aria-live="polite">Mostrando 1 al 10 de 50 entradas</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="example1_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="example1_previous"><a href="#" aria-controls="example1" data-dt-idx="0" tabindex="0" class="page-link">Anterior</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="example1" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example1" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="example1_next"><a href="#" aria-controls="example1" data-dt-idx="7" tabindex="0" class="page-link">Siguiente</a></li></ul></div></div></div></div>
-  </div>
+    <tfoot>
+      <tr><th rowspan="1" colspan="1" class="text-center">Número del cliente</th><th rowspan="1" colspan="1" class="text-center">Nombres</th><th rowspan="1" colspan="1" class="text-center">Apellidos</th><th rowspan="1" colspan="1" class="text-center">Teléfono</th><th rowspan="1" colspan="1" class="text-center">Visualizar/Editar</th><th rowspan="1" colspan="1" class="text-center">Eliminar</th></tr>
+    </tfoot>
+  </table></div></div><div class="row"><div class="col-sm-12 col-md-5"><div class="dataTables_info" id="example_info" role="status" aria-live="polite">Mostrando 1 a 10 de 60 entradas</div></div><div class="col-sm-12 col-md-7"><div class="dataTables_paginate paging_simple_numbers" id="example_paginate"><ul class="pagination"><li class="paginate_button page-item previous disabled" id="example_previous"><a href="#" aria-controls="example" data-dt-idx="0" tabindex="0" class="page-link">Anterior</a></li><li class="paginate_button page-item active"><a href="#" aria-controls="example" data-dt-idx="1" tabindex="0" class="page-link">1</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example" data-dt-idx="2" tabindex="0" class="page-link">2</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example" data-dt-idx="3" tabindex="0" class="page-link">3</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example" data-dt-idx="4" tabindex="0" class="page-link">4</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example" data-dt-idx="5" tabindex="0" class="page-link">5</a></li><li class="paginate_button page-item "><a href="#" aria-controls="example" data-dt-idx="6" tabindex="0" class="page-link">6</a></li><li class="paginate_button page-item next" id="example_next"><a href="#" aria-controls="example" data-dt-idx="7" tabindex="0" class="page-link">Siguiente</a></li></ul></div></div></div></div>
+</div>
 
   <!------fin tabla--------------------------------------------------------------------------------------------------------------------------->
 
