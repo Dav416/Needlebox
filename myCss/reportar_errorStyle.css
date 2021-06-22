@@ -182,19 +182,23 @@ body{
     border: 1px solid rgba(128, 128, 128, 0.329);
     background-color: #FFFFFF;
     width: 600px;
-    height: 510px;
+    max-height: 510px;
     border-radius: 5%;
 }
 .report input{
     display: block;
     margin: auto;
-    width: 500px;
+    /* width: 500px; */
+    width: 100%;
+    
 }
 
 select{
-    width: 502px;
+    /* width: 502px; */
     height: 30px;
-    margin-left: 2% !important;
+    margin-left: 0% !important;
+    width: 100%;
+    
 }
 
 
@@ -524,6 +528,29 @@ footer{
         color: black;
     }
     
+    .report{
+        max-width: 480px;
+        margin: auto;
+    }
     
+    footer{
+        margin-top: 10%;
+    }
+
+}
+
+@media only screen and (max-width: 530px){
+    .report{
+        max-width: 400px;
+        margin: auto;
+    }
+    
+}
+
+@media only screen and (max-width: 430px){
+    .report{
+        max-width: 300px;
+        margin: auto;
+    }
     
 }

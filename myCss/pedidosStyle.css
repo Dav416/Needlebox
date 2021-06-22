@@ -413,35 +413,3 @@ footer{
 }
 
 
-@media only screen and (min-width:1024px) {
-    /*Aquí van todos los estilos CSS*/
-    .logo-nom{
-        margin: auto 1.1% auto auto;
-      
-
-    }    
-        
-    .navbar-ul{
-        margin: auto auto auto -1%;
-      
-
-    }
-
-}
-
-
-@media only screen and (max-width:640px) {
-    /*Aquí van todos los estilos CSS*/
-      
-    .mod-op{
-        width: fit-content;
-        margin: 1.5% auto; 
-        padding: 1% 4%;
-        border-top: 3px solid rgb(117, 12, 255); 
-        border-radius: 5%;    
-        color: black;
-    }
-    
-    
-    
-}
