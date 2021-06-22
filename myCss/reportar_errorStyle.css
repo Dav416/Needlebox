@@ -179,8 +179,8 @@ body{
 .report{
     margin-bottom: 12%;
     padding: 40px;
-    border: 1px solid #A0471F;
-    background-color: #F9EEE1;
+    border: 1px solid rgba(128, 128, 128, 0.329);
+    background-color: #FFFFFF;
     width: 600px;
     height: 510px;
     border-radius: 5%;
@@ -218,17 +218,17 @@ textarea{
 }
 
 button{
-    background-color: #F9EEE1;
-    border: 1.5px solid #A0471F;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(128, 128, 128, 0.329);
     font-weight:600;
     border-radius: 50px;
-    color: #B82A2A;
+    color: #212529;
 }
 
 button:hover{
     box-shadow:  1px 0px 7px rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
-    color: #A52A2A;
+    color: #212529;
     text-shadow: 0px 2px 9px rgb(255, 255, 255);
 }
 
@@ -238,7 +238,7 @@ legend{
 }
 
 label, legend{
-    color: #A52A2A;
+    color: #212529;
     font-weight: bold;
 }
 
@@ -448,8 +448,8 @@ label{
 }
 
 .c-report span{
-    color: #B82A2A;
-    font-weight: bold;
+    color: #000000;
+    font-weight: 400px;
 }
 
 .c-insu{ 
