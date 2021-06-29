@@ -153,21 +153,13 @@ body{
 }
 
 
-.contenido{
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   box-sizing:initial;
-   width: fit-content;
-   margin: 1% auto;
-}
 
 
 
 
 
 
-/*-------------------------------------------------código css par ecabezado del módulo actualo--------------------------------------------------------------------*/
+/*-------------------------------------------------código css par encabezado del módulo actual--------------------------------------------------------------------*/
 
 .mod-act{
     margin: 1% auto 2%;
@@ -188,130 +180,52 @@ body{
 
 
 /* -----------------------------------CSS para modificar el puto copy-paste-----------------------------------------------------------------*/
-.copypaste{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: lawngreen;   
-    width: fit-content;
-}
 
 
-.Costo-Unidad{
-    display: flex;
-    flex-direction: row;
-    justify-content:flex-start;
-    width: 100%;
-
-}
-
-.cost-f {
-    margin: 0%;
-    width: 100%;
-}
-
-
-.cost-u{
-    margin: auto 1%;
-    width: 100%;
-}
-
-
-.button-submit-div{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-}
-
-.form-insu-header,.button-submit{
-    background: #F0B27A !important;
-    color: #ffffff !important; 
-}
-
-.form-prov-header, .button-submit-2{
-    background: #F0B27A !important;
-    color: #ffffff !important; 
-}
-
-h3 {
-    font-weight: 600 !important;
-}
-
-.tabla-prov, .tabla-insu{
+.tabla-pedido{
     margin: 1.5% auto;
-    width: 92%;
+    width: 88%;
 } 
 
 
 
-.card-h-insu{
+.card-h-pedido{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center !important;
     padding: 1% 1%;
-    background-color: #F0B27A ;
+    background: #F0B27A !important;
     border-radius: 10px 10px 0% 0%;
 }
 
-.card-h-prov{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center !important;
-    padding: 1% 1%;
-    background-color: #F0B27A;
-    border-radius: 10px 10px 0% 0%;
-}
 
 .table-t{
     color: #ffffff;
     font-size: 150%;
     margin: auto auto auto 0%;
+
 }
+
 
 
 .searcher{
     margin: auto 0% auto 1%;
+
 }
 
 
-.btns-tabla{
+
+
+.n-elect, .n-elect2{
+    margin: 1% auto;
     width: fit-content;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 5px;
 }
 
 
-.btn-edit-insu, .btn-borr-insu, .btn-edit-prov, .btn-borr-prov{
-    margin: 3px;
-    background-color: #ffffff;
-    color:#452B04; 
-    border-radius: 5px;
-    font-weight: 600;
+h3 {
+    font-weight: 600 !important;
 }
 
-.btn-edit-insu:hover{
-    color: #ffffff;
-    background-color:#452B04; 
-}
-
-.btn-borr-insu:hover{
-    color: #ffffff;
-    background-color: #452B04;
-}
-
-.btn-edit-prov:hover{
-    color: #ffffff;
-    background-color: #452B04;
-}
-
-.btn-borr-prov:hover{
-    color: #ffffff;
-    background-color: #452B04;
-}
 
 /*---------------------------------------------------------------------------------------------------------------------------------------- */
 
@@ -352,12 +266,11 @@ footer{
     color: white;
 }
 
-
 @media only screen and (min-width:1024px) {
     /*Aquí van todos los estilos CSS*/
     .logo-nom{
         margin: auto 1.1% auto auto;
-    
+
     }    
         
     .navbar-ul{
@@ -374,9 +287,60 @@ footer{
         width: fit-content;
         margin: 1.5% auto; 
         padding: 1% 4%;
+        border-top: 3px solid rgb(117, 12, 255); 
         border-radius: 5%;    
+        color: black;
     }
     
     
     
 }
+
+@media only screen and (max-width: 991px) {
+   
+    .nro-p, .f-ent{
+        text-align: center;
+    }
+
+    .pagination{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: auto;
+    }
+
+}
+
+@media only screen and (max-width:405px) {
+    .card-h-pedido{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    } 
+
+    .table-t{
+        margin: auto;
+    }
+
+    .nro-p{
+        text-align: center;
+    }
+
+
+}
+
+
+
+@media only screen and (max-width:284px) {
+   .card-h-pedido{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+    }          
+}
+
+
+

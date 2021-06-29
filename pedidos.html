@@ -4,7 +4,7 @@
   <meta charset="utf-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title> NEEDLEBOX - Pedidos</title>
+  <title> NEEDLEBOX - Mostrar Pedidos</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -19,7 +19,10 @@
   <link rel="stylesheet" href="lib/css/adminlte.min.css">
 
   <!--mis putos estilos-->
-  <link rel="stylesheet" href="myCss/pedidosStyle.css">
+  <link rel="stylesheet" href="myCss/pedidosMostrarStyle.css">
+
+  <!--Normalize-->
+  <link rel="stylesheet" href="myCss/normalize.css">
 
   <!-- jQuery--> 
   <script src="lib\js\jquery.min.js"></script>
@@ -42,8 +45,9 @@
   <div class="preloader flex-column justify-content-center align-items-center">
     <img class="animation__shake" src="myImg/needlebox-logo.png" alt="NeedleboxLogo">
   </div>
+  <!--/preloader-->
 
-  <!-- header-->
+  <!--header - navbar-->
   <header class="cont-bar">
      
       <div name="logo_y_nombre" class="logo-nom">
@@ -74,7 +78,7 @@
           </li>
 
           <li class="navbar-item">
-            <a href="#" class="nav-link">CONTACTAR A LOS DESARROLLADORES</a>
+            <a href="contacto.html" class="nav-link">CONTACTAR A LOS DESARROLLADORES</a>
           </li>
 
           <li class="navbar-item">
@@ -107,167 +111,269 @@
 
         </div>
         <!--fin barra de modulos-->  
-      </header>
+  </header>
   <!-- /.navbar -->
 
   <!--Encabezado de sección-->
   <div class="mod-act c-ped"><div class="cover"><span class="mod-act-nom">Pedidos</span></div></div>
 
-    
  
+  <!--Aqui iria el contenido-->
 
-        <!-- TABLA DE TODOS LOS PEDIDOS-->
+      <!-- INICIO TABLA -->
+ 
+          <div class="row tabla-pedido">
 
-        
-          <div class="col-sm-6"></div>
-            <div class="card card1">
-              <div class="card-header border-transparent">
-                <h3 class="card-title">Ultimos Pedidos</h3>
-          
-                <!-- BARRA DE BUSCAR -->
-                <div class="card-tools">
-                  <div class="input-group input-group-sm" style="width: 150px;">
-                    <input type="text" name="table_search" class="form-control float-right" placeholder="Buscar">
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default">
-                        <i class="fas fa-search"></i>
-                      </button>
+            <div class="col-12">
+            
+              <div class="card ">
+
+                <!--car-header-->
+                <div class="card-h-pedido card-t">
+                  <h3 class="table-t">Todos los pedidos</h3>
+                  <div class="card-tools">
+                    <div class="input-group input-group-sm" style="width: 150px;">
+                      <input type="text" name="table_search" class="form-control float-right searcher" placeholder="Buscar">
+                      <div class="input-group-append">
+                        <button type="submit" class="btn btn-default">
+                          <i class="fas fa-search"></i>
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <!-- FIN DE BARRA -->
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body p-0">
-                <div class="table-responsive">
-                  <table class="table m-0">
-                    <thead>
-                    <tr>
-                      <th>Número de pedido</th>
-                      <th>Pedido</th>
-                      <th>Estado</th>
-                      <th>Descripción</th>
-                      <th>Cliente</th>
-                      <th>Fecha de entrega</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                      <td><a href="#">OR9842</a></td>
-                      <td>Camiseta</td>
-                      <td><span class="badge badge-success">Terminado</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">Agregar estampado</div>
-                      </td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">Oscar Baez</div>
-                      </td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">25/06/2021</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><a href="#">OR1848</a></td>
-                      <td>Oberol</td>
-                      <td><span class="badge badge-warning">Pendiente</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">Agregar bordado</div>
-                      </td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">Natalia Osorio</div>
-                      </td>
-                      <td>
-                        <div class="sparkbar" data-color="#f39c12" data-height="20">30/07/2021</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><a href="#">OR7429</a></td>
-                      <td>Blusa</td>
-                      <td><span class="badge badge-danger">Cancelado</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">Tomarle costuras</div>
-                      </td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">Melissa Rodriguez</div>
-                      </td>
-                      <td>
-                        <div class="sparkbar" data-color="#f56954" data-height="20">01/06/2021</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><a href="#">OR7429</a></td>
-                      <td>Pantalon</td>
-                      <td><span class="badge badge-info">En proceso</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">Entubar</div>
-                      </td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">Daniel Quintero</div>
-                      </td>
-                      <td>
-                        <div class="sparkbar" data-color="#00c0ef" data-height="20">22/06/2021</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><a href="#">OR1848</a></td>
-                      <td>Bleiser</td>
-                      <td><span class="badge badge-warning">Pendiente</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">Encuerar</div>
-                      </td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">Manuel Cortes</div>
-                      </td>
-                      <td>
-                        <div class="sparkbar" data-color="#f39c12" data-height="20">05/08/2021</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><a href="#">OR7429</a></td>
-                      <td>Falda</td>
-                      <td><span class="badge badge-danger">Cancelado</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">Cocer</div>
-                      </td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">Alegria Gomez</div>
-                      </td>
-                      <td>
-                        <div class="sparkbar" data-color="#f56954" data-height="20">02/06/2021</div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td><a href="#">OR9842</a></td>
-                      <td>Buso</td>
-                      <td><span class="badge badge-success">Terminado</span></td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">Tinturar</div>
-                      </td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">Alendra Escobar</div>
-                      </td>
-                      <td>
-                        <div class="sparkbar" data-color="#00a65a" data-height="20">23/06/2021</div>
-          
-                      </td>
-                    </tr>
-                    </tbody>
-                  </table>
+                <!-- /.card-header -->
+
+
+
+
+                <!--card body-->
+                <div class="card-body p-0">
+                  <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                   
+                    <div class="row">
+                      <div class="col-sm-12 ">
+                        <div class="table-responsive">  
+                          <table id="example2" class="table table-bordered table-hover dataTable dtr-inline m-0" role="grid" aria-describedby="example2_info">
+                              <thead>
+                                <tr role="row">
+                                  <th class="sorting sorting_asc nro-p" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Número de pedido</th>
+                                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Pedido</th>
+                                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Estado</th>
+                                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Descripción</th>
+                                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Cliente</th>
+                                  <th class="sorting f-ent" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Fecha de entrega</th>
+                                </tr>
+                              </thead>
+                          
+                              <tbody>              
+                                <tr class="odd">
+                                  <td class="dtr-control sorting_1" tabindex="0">
+                                    <a href="#">OR0000</a>
+                                  </td>
+                                  <td>Camiseta</td>
+                                  <td>
+                                    <span class="badge badge-success">Terminado</span>
+                                  </td>
+                                  <td>Bordar, estampar y cocer</td>
+                                  <td>Miguel Ordoñez</td>
+                                  <td>17/07/2021</td>
+                                </tr>
+                              
+                            <!--  <tr class="even"> -->
+
+                                <tr class="odd">
+                                  <td class="dtr-control sorting_1" tabindex="0">
+                                    <a href="#">OR0001</a>
+                                  </td>
+                                  <td>Chaqueta</td>
+                                  <td>
+                                  <span class="badge badge-success">Terminado</span>
+                                  </td>
+                                  <td>Cocer</td>
+                                  <td>Alberto Diaz</td>
+                                  <td>17/06/2021</td>
+                                </tr>
+
+                                <tr class="odd">
+                                  <td class="dtr-control sorting_1" tabindex="0">
+                                    <a href="#">OR0002</a>
+                                  </td>
+                                  <td>Pantaloneta</td>
+                                  <td>
+                                    <span class="badge badge-success">Terminado</span>
+                                  </td>
+                                  <td>Organizar costuras</td>
+                                  <td>Humberto Aries</td>
+                                  <td>03/06/2021</td>
+                                </tr>
+                              
+                                <tr class="even">
+                                  <td class="dtr-control sorting_1" tabindex="0">
+                                    <a href="#">OR0003</a>
+                                  </td>
+                                  <td>Blusa</td>
+                                  <td>
+                                    <span class="badge badge-success">Terminado</span>
+                                  </td>
+                                  <td>Estampar</td>
+                                  <td>Guillermo Arias</td>
+                                  <td>21/05/2021</td>
+                                </tr>
+                              
+                                <tr class="odd">
+                                  <td class="dtr-control sorting_1" tabindex="0">
+                                    <a href="#">OR0004</a>
+                                  </td>
+                                  <td>Blusa</td>
+                                  <td>
+                                    <span class="badge badge-info">En proceso</span>
+                                  </td>
+                                  <td>Agregar perlas</td>
+                                  <td>Nataly Ramirez</td>
+                                  <td>27/07/2021</td>
+                                </tr>
+                              
+                                <tr class="even">
+                                  <td class="dtr-control sorting_1" tabindex="0">
+                                    <a href="#">OR0005</a>
+                                  </td>
+                                  <td>Chaqueta</td>
+                                  <td>
+                                    <span class="badge badge-info">En proceso</span>
+                                  </td>
+                                  <td>Cocer chompa</td>
+                                  <td>Carlos Botero</td>
+                                  <td>27/08/2021</td>
+                                </tr>
+                              
+                                <tr class="odd">
+                                  <td class="dtr-control sorting_1" tabindex="0">
+                                      <a href="#">OR0006</a>
+                                  </td>
+                                  <td>Pantalon</td>
+                                  <td>
+                                    <span class="badge badge-info">En proceso</span>
+                                  </td>
+                                  <td>Entubar</td>
+                                  <td>Emanuel Vasquez</td>
+                                  <td>19/10/2021</td>
+                                </tr>
+                              
+                                <tr class="even">
+                                  <td class="dtr-control sorting_1" tabindex="0">
+                                    <a href="#">OR0007</a>
+                                  </td>
+                                  <td>Camiseta</td>
+                                  <td>
+                                    <span class="badge badge-warning">Pendiente</span>
+                                  </td>
+                                  <td>Modificación de mangas</td>
+                                  <td>Emanuel Vasquez</td>
+                                  <td>30/07/2021</td>
+                                </tr>
+                              
+                                <tr class="odd">
+                                  <td class="dtr-control sorting_1" tabindex="0">
+                                    <a href="#">OR0008</a>
+                                  </td>
+                                  <td>Blusa</td>
+                                  <td>
+                                    <span class="badge badge-warning">Pendiente</span>
+                                  </td>
+                                  <td>Agregar lentejuelas</td>
+                                  <td>Alejandra Queveda</td>
+                                  <td>26/06/2021</td>
+                                </tr>
+
+                                <tr class="even">
+                                  <td class="dtr-control sorting_1" tabindex="0">
+                                    <a href="#">OR0009</a>
+                                  </td>
+                                  <td>Sombrero</td>
+                                  <td>
+                                    <span class="badge badge-danger">Cancelado</span>
+                                  </td>
+                                  <td>Bordar con lentejuelas</td>
+                                  <td>Luisa Estrada</td>
+                                  <td>05/05/2021</td>
+                                </tr>
+
+                                <tr class="even">
+                                  <td class="dtr-control sorting_1" tabindex="0">
+                                    <a href="#">OR6609</a>
+                                  </td>
+                                  <td>Chaqueta</td>
+                                  <td>
+                                    <span class="badge badge-danger">Terminado</span>
+                                  </td>
+                                  <td>Hacer en cuero</td>
+                                  <td>Joseph Joestar</td>
+                                  <td>27/07/2020</td>
+                                </tr>
+                              
+                              </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                      
+                    
+                     <!--card foooter-->
+                    <div class="row card-nav ">
+
+                      <div class="col-sm-12 col-md-7 n-elect">
+                          <div class="dataTables_paginate paging_simple_numbers n-elect2" id="example2_paginate">
+                            <ul class="pagination">
+                              <li class="paginate_button page-item previous disabled" id="example2_previous">
+                                <a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0" class="page-link">Anterior</a>
+                              </li>
+                              <li class="paginate_button page-item active">
+                                <a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0" class="page-link">1</a>
+                              </li>
+                              <li class="paginate_button page-item ">
+                                <a href="pedidos_pagina2.html" aria-controls="example2" data-dt-idx="2" tabindex="0" class="page-link">2</a>
+                              </li>
+                              <li class="paginate_button page-item ">
+                                <a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0" class="page-link">3</a>
+                              </li>
+                              <li class="paginate_button page-item ">
+                                <a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0" class="page-link">4</a>
+                              </li>
+                              <li class="paginate_button page-item ">
+                                <a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0" class="page-link">5</a>
+                              </li>
+                              <li class="paginate_button page-item ">
+                                <a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0" class="page-link">6</a>
+                              </li>
+                              <li class="paginate_button page-item next" id="example2_next">
+                                <a href="pedidos_pagina2.html" aria-controls="example2" data-dt-idx="7" tabindex="0" class="page-link">Siguiente</a>
+                              </li>
+                            </ul>
+                          </div>
+                      </div>
+
+                    </div>
+                    <!--/card footer-->
+
+                  </div>
                 </div>
-                <!-- /.table-responsive -->
+                <!-- /.card-body -->
+                
               </div>
-              <!-- /.card-body -->
-              <div class="card-footer clearfix">
-                <a href="cronograma.html" class="btn btn-sm btn-info float-left">Agregar pedido</a>
-                <a href="mostrartodos.html" class="btn btn-sm btn-secondary float-right">Mostrar todos</a>
-              </div>
-              <!-- FIN TABLA -->
+              <!-- /.card -->
+              
             </div>
+            <!-- /.col -->
           </div>
+          <!-- /.row -->
+  
+        <!-- /.container-fluid -->
+ 
+        <!-- FIN TABLA -->
+        
 
-
-
-      
+ 
 
 
 
@@ -282,13 +388,12 @@
   
 <footer >
   <div class="copyaut">
-    <span class="nomproy" href="#">Needlebox.</span> 
     <br> 
     <span class="año"><strong> &copy; 2021 </strong></span> 
     <br> 
     
     <span class="disclaimer">Borrador para proyecto formativo del equipo Needlebox 
-      (Estefania Marín, Juan Payares, David Zamora y <a href="https://codepen.io/Juan_FM">Juan Mejía</a>) 
+      (Estefania Marín, Juan Nolasco, David Zamora y <a href="https://codepen.io/Juan_FM">Juan Mejía</a>) 
         para la Técnica de Programación de Software - <a href="https://www.sena.edu.co">SENA</a></span>
   </div>
 

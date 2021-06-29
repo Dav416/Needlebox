@@ -13,7 +13,7 @@ body{
     align-items: center;
     display: flex;
     flex-direction: column;
-    background-color: whitesmoke ;
+    background-color: #f5f5f5 ;
     box-sizing: content-box;
     width: 100%;
     margin: inherit;
@@ -22,14 +22,14 @@ body{
 }
 
 .cont-bar{
-    background-color: #ffe4c469;
+    background-color: #F0B27A;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     width: 100%;
     margin: auto;
-    border-bottom: 2px solid rgb(199, 199, 199);
+    border-bottom: 2px solid #f5f5f5;
 
 }
 
@@ -52,7 +52,7 @@ body{
 
 
 .Needlebox{
-    color: #a52a2a;
+    color: #ffffff;
     font-weight: bold;
     margin-top: -25px;
     padding-left: 2px; 
@@ -92,7 +92,7 @@ body{
 
 .nav-link{
     text-decoration:none ;
-    color: black;
+    color: #ffffff;
     box-sizing: content-box;
     height: fit-content;
     margin: auto; 
@@ -102,14 +102,16 @@ body{
 .nav-link:hover{
     background-color: rgb(250, 222, 191);
     text-decoration: none ;
+    color: #8B5F2B;
     font-weight: 600;
-    color: black;
+    border-radius: 5px;
 }
 
 
 .nav-bar-esp{
     width: 100%;
-    border-top: 2px solid rgb(199, 199, 199);
+    background-color: #f5f5f5;
+    border-top: 2px solid #f5f5f5;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
@@ -117,7 +119,6 @@ body{
     height: max-content;
     box-sizing: content-box;
     justify-content: space-around;
-
 }
 
 
@@ -129,8 +130,10 @@ body{
     width: 18%;
     border-top: solid;
     border-radius: 5px;
-    border-top-color: rgba(55, 55, 255, 0.855);
+    border-top-color:transparent;
     margin: 4px auto;
+    background-color:  #764A09;
+    color: #ffffff !important;
 }
 
 
@@ -142,19 +145,14 @@ body{
     margin: 2%;
     width: 100%;
     font-size: 135%;
-    background-color: rgba(245, 245, 245, 0.432);
-    color: #000000;
     border-radius: 2px;
-   
-
 }
 
 
 .mod-op:hover{
     box-shadow:  1px 0px 7px rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
-    color: #000000;
-    text-shadow: 0px 2px 9px rgb(255, 255, 255);
+    color: #452B04 !important;
 }
 
 
@@ -176,26 +174,15 @@ body{
     width: 85%;
     height: fit-content;
     text-align: center;
-    border-top: 3px solid rgb(117, 12, 255); 
     border-radius: 5px;
     filter: blur(6%);
-    
-}
-
-.cover{
-    background-color: rgba(245, 245, 245, 0.432);
-    box-sizing: border-box;
-    height: fit-content;
-    margin: 3px;
-    border-radius: 5px;
-    
-}
-
-.mod-act-nom{
+    border-style: solid;
+    border-color: #764A09;
+    color: #452B04 !important;
+    border-width: 1px;
     font-size: 250%;
+    font-weight: 300;
     font-style: normal;
-    color: #000000;
-    text-shadow: 0px 2px 9px rgb(255, 255, 255);
 }
 
 
@@ -229,6 +216,7 @@ body{
     line-height: 24px;
     position: relative;
     z-index: auto;
+    padding-left: 0%;
 }
 
 #3141592{
@@ -238,51 +226,20 @@ body{
     line-height: 24px;
     position: relative;
     z-index: auto;
+
+}
+
+.card-t{
+    background-color: #F0B27A !important;
+    color: #ffffff !important;    
+    margin: -2% !important;
+}
+
+h3 {
+    font-weight: 600 !important;
 }
 
 /*---------------------------------------------------------------------------------------------------------------------------------------- */
-
-
-.c-inicio{ 
-    background-image: url("https://i.imgur.com/DnNwrkZ.png"), url("../myImg/needlebox-logo.png");
-    background-size: cover;  
-    background-position-y:45%;
-    background-color: #d6c1a6f6;
-}
-
-
-.c-client{ 
-    background-image: url("https://legal.thomsonreuters.com/blog/wp-content/uploads/sites/19/2019/12/Client-Value-Hero-800x450.jpg"), url("../myImg/cliente-Img.jpg");
-    background-size: cover;  
-    background-position-y:30%;
-}
-
-
-
-
-.c-crono{ 
-    background-image: url("https://www.economiasimple.net/wp-content/uploads/2019/01/cuando-se-cobra-el-sed.jpg"), url("../myImg/crono-Img.jpg");
-    background-size: cover;   
-    background-position-y: 95%;
-    
-}
-
-
-.c-ped{ 
-    background-image: url("https://www.co24.com.co/u/fotografias/m/2021/1/21/f500x333-25747_49550_7.jpg"), url("../myImg/pedido-Img.jpg");
-    background-size: cover;  
-    background-position-y: 95%; 
- 
-}
-
-
-.c-insu{ 
-    background-image: url("https://i.pinimg.com/736x/3a/8b/09/3a8b0953ed66a337675d8c588c2fe5d9.jpg"), url("../myImg/insumo-Img.jpg");
-    background-size: cover;   
-    background-position-y: 80%;
-    
-}
-
 
 
 
@@ -293,7 +250,8 @@ footer{
     align-items: center;
     width: inherit;
     margin: auto;
-    background-color: #ffe4c469;
+    background-color: #764A09;
+    color: #ffffff;
     padding-bottom: 0.5%;
     border-top: 2px solid rgb(199, 199, 199);
 }

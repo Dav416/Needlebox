@@ -4,7 +4,6 @@ body{
     background-color: #ffffff;
 }
 
-
 .animation__shake{
     height: 50vh;
 }
@@ -14,7 +13,7 @@ body{
     align-items: center;
     display: flex;
     flex-direction: column;
-    background-color: whitesmoke  ;
+    background-color: #f5f5f5  ;
     box-sizing: content-box;
     width: 100%;
     margin: inherit;
@@ -23,14 +22,14 @@ body{
 }
 
 .cont-bar{
-    background-color: #ffe4c469;
+    background-color: #F0B27A;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     width: 100%;
     margin: auto;
-    border-bottom: 2px solid rgb(199, 199, 199);
+    border-bottom: 2px solid #f5f5f5;
 }
 
 
@@ -39,9 +38,7 @@ body{
     flex-direction: column;
     width: fit-content;
     height: fit-content;
-    margin: auto;
-    
-    
+    margin: auto;   
 }
 
 
@@ -52,11 +49,10 @@ body{
 
 
 .Needlebox{
-    color: #a52a2a;
+    color: #ffffff;
     font-weight: bold;
     margin-top: -25px;
-    padding-left: 2px; 
-       
+    padding-left: 2px;    
 }
 
 
@@ -66,7 +62,6 @@ body{
     display: flex;
     flex-direction: row;
     width: fit-content;
-
 }
 
 .navbar-ul{
@@ -91,7 +86,7 @@ body{
 
 .nav-link{
     text-decoration:none ;
-    color: black;
+    color: #ffffff;
     box-sizing: content-box;
     height: fit-content;
     margin: auto; 
@@ -101,8 +96,9 @@ body{
 .nav-link:hover{
     background-color: rgb(250, 222, 191);
     text-decoration: none ;
-    color: black;
+    color: #8B5F2B;
     font-weight: 600;
+    border-radius: 5px;
 }
 
 
@@ -127,14 +123,19 @@ body{
 
 
 
+.card-primary.card-outline{
+    border-top: 3px solid #E5840D;
+    
+}
+
 
 .card-header{
-    background-color:rgba(255, 255, 255, 0.548);
+    background-color:#8b602b77;
     border-style: solid;
     border-color: rgba(255, 255, 255, 0) rgba(255, 255, 255, 0) rgba(255, 255, 255, 0.438);
     box-sizing: inherit;
     text-align: center;  
-    color: #000000;
+    color: white; 
 }
 
 
@@ -146,12 +147,12 @@ body{
     height: fit-content;
     font-weight: 500;
     font-size: 20px;
-    text-shadow: 0 0 3px rgb(255, 255, 255);
-    background-color:rgba(255, 255, 255, 0.548);
+    text-shadow: 0 0 20px rgb(255, 255, 255);
+    background-color:#8b602b8f;
     box-sizing: content-box;
     padding: auto;
-    color: #000000;
-
+    color: white;
+    
 }
 
 
@@ -163,7 +164,6 @@ body{
     background-image: url("https://legal.thomsonreuters.com/blog/wp-content/uploads/sites/19/2019/12/Client-Value-Hero-800x450.jpg"), url("../myImg/cliente-Img.jpg");
     background-position-y: 100%;
     background-size: cover;   
-    
     
 }
 
@@ -222,7 +222,8 @@ footer{
     align-items: center;
     width: inherit;
     margin: auto;
-    background-color: #ffe4c469;
+    background-color: #764A09;
+    color: #ffffff;
     padding-bottom: 0.5%;
     border-top: 2px solid rgb(199, 199, 199);
 }
@@ -235,6 +236,7 @@ footer{
     display: flex;
     flex-direction: column;
     text-align: center;
+    color: white;
 }
 
 
@@ -246,6 +248,10 @@ footer{
     text-align: center;
 }
 
+.disclaimer a{
+    text-decoration: none;
+    color: white;
+}
 
 
 
@@ -260,7 +266,6 @@ footer{
     .navbar-ul{
         margin: auto auto auto -1%;
       
-
     }
 
 }
