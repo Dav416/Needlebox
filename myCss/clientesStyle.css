@@ -275,7 +275,10 @@ footer{
     text-align: center;
 }
 
-
+.disclaimer a{
+    text-decoration: none;
+    color: white;
+}
 
 
 @media only screen and (min-width:1024px) {
