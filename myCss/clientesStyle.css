@@ -170,7 +170,7 @@ body{
 /*-------------------------------------------------código css par ecabezado del módulo actualo--------------------------------------------------------------------*/
 
 .mod-act{
-    margin-top: 1%;
+    margin: 1% auto 20px;
     width: 85%;
     height: fit-content;
     text-align: center;
@@ -229,15 +229,87 @@ body{
 
 }
 
+
 .card-t{
     background-color: #F0B27A !important;
     color: #ffffff !important;    
     margin: -2% !important;
 }
 
+
 h3 {
     font-weight: 600 !important;
 }
+
+
+.input-nuevclien{
+    border-width: 1px;
+    border-color: #8b602b8e;
+    border-style: solid;
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+.input-addimg{
+    border-color: #8b602b8e !important;
+    color: #8b602b ;
+}
+
+
+.btn-success, .btn-secondary, 
+.btn-info, .btn-primary, 
+.btn-danger{
+    background-color:#764A09 !important;
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+
+.btn-success:hover, .btn-success:focus, 
+.btn-secondary:hover, .btn-secondary:focus,
+.btn-info:hover, .btn-info:focus,
+.btn-primary:hover, .btn-primary:focus,
+.btn-danger:hover, .btn-danger:focus{
+    color: #452B04 !important;
+    background-color: #F0B27A !important;
+    border-color: #452B04;
+    text-decoration: none;
+}
+
+
+.page-link{
+    color: #452B04;
+    background-color: #F0B27A;
+    border-color: #ffffff;
+}
+
+
+.page-item.active .page-link, .page-link:hover, .page-link:focus, 
+ .page-item.active:hover, .page-item.active:focus{
+    color: #f1f1f1 !important;
+    background: #764A09 !important;
+    border-color: #ffffff !important;
+}
+
+.disabled .page-link{
+
+    color: #ffffff !important;
+    background-color: #F0B27A !important;
+    border-color: #ffffff !important;
+
+}
+
+.demo-html{
+    width: 65% ;
+}
+
+
+
+
+
+
+
 
 /*---------------------------------------------------------------------------------------------------------------------------------------- */
 
@@ -298,18 +370,86 @@ footer{
 }
 
 
+@media only screen and (max-width:945px) {
+
+    .demo-html{
+        width: 85% ;
+    }
+
+
+}
+
+@media only screen and (max-width:945px) {
+
+    .demo-html{
+        width: 85% ;
+    }
+
+
+}
+
+
+
+@media only screen and (max-width:768px) {
+    /*Aquí van todos los estilos CSS*/
+   
+    .dataTables_info{
+        text-align: center;
+    }
+
+
+
+   .pagination, .resp-tabla{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: auto;
+    }
+        
+   
+    
+}
+
+
+
 @media only screen and (max-width:640px) {
     /*Aquí van todos los estilos CSS*/
       
     .mod-op{
         width: fit-content;
-        margin: 1.5% auto; 
+        margin: 1.5% 3px; 
         padding: 1% 4%;
         border-top: 3px solid rgb(117, 12, 255); 
         border-radius: 5%;    
         color: black;
+        border-style:none;
     }
     
+}
+
+
+@media only screen and (max-width:526px) {
+    /*Aquí van todos los estilos CSS*/
+   
     
+    
+    .mod-op{
+        width: fit-content;
+        margin: 1.5% 3px; 
+        padding: 1% 4%;
+        border-top: 3px solid rgb(117, 12, 255); 
+        border-radius: 5%;    
+        color: black;
+        border-style:none;
+    }
+   
     
 }
+
+
+
+
+
+
+

@@ -189,11 +189,21 @@ body{
 }
 
 
+/*
 
-
-.btn-rp1, .btn-rp2{
+.btn-rep, .btn-acp{
     margin: 4% 21% auto auto;
+} */
+
+.btn-rep{
+       
+    margin-top: 4%;
+    
 }
+ 
+ .btn-acp{
+    margin: 4% 2%;
+ }
 
 
 
@@ -329,6 +339,9 @@ footer{
 }
 
 
+
+
+
 @media only screen and (max-width:640px) {
     /*Aquí van todos los estilos CSS*/
       
@@ -343,20 +356,37 @@ footer{
     
 }
 
-@media only screen and (max-width:640px) {
-    .btn-cont{
-        display: flex !important;
-        flex-direction: column !important;
-        background-color: #452B04 !important;
 
+@media only screen and (max-width:329px) {
+   
+    .btn-rep{
+        margin: 4%  0% auto 2% ;
     }
-
-
+    
+    .btn-acp{
+        margin: 4% auto ;
+    }
+    
 }
 
 
-@media only screen and (max-width:347px) {
+@media only screen and (max-width:323px) {
+   
+    .btn-rep{
+        margin: 4% 25% auto 0% ;
+    }
     
+    .btn-acp{
+        margin: 4% 24%;
+    }
+    
+}
+
+
+
+
+@media only screen and (max-width:347px) {
+    /*Querys para mdoficar el responsive del header en la tablad de registro*/
     .card-tph{
         display: flex;
         flex-direction: column;

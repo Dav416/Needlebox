@@ -169,7 +169,7 @@ body{
 }
 
 .sob-need-logo{
-    width: 20%;
+    width: 100px;
     margin: 0% auto;
     padding-top: 0%;
 }
@@ -292,9 +292,7 @@ footer{
 
 
 @media screen and (max-width:304px) {
-    .mod-act-nom{
-        font-size: 229%;
-    }
+  
 
     .about-us{
         width: 118%;

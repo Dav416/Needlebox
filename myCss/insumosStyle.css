@@ -285,7 +285,8 @@ h3 {
 }
 
 
-.btn-edit-insu, .btn-borr-insu, .btn-edit-prov, .btn-borr-prov{
+.btn-edit-insu, .btn-borr-insu, 
+.btn-edit-prov, .btn-borr-prov{
     margin: 3px;
     background-color: #ffffff;
     color:#452B04; 
@@ -293,25 +294,26 @@ h3 {
     font-weight: 600;
 }
 
-.btn-edit-insu:hover{
+.btn-edit-insu:hover, .btn-borr-insu:hover,
+.btn-edit-prov:hover, .btn-borr-prov:hover{
     color: #ffffff;
     background-color:#452B04; 
 }
 
-.btn-borr-insu:hover{
-    color: #ffffff;
-    background-color: #452B04;
+
+.obj-tab-insu:hover,
+.obj-tab-prov:hover{
+    background-color: #f0b17a42;
+    cursor: pointer;
 }
 
-.btn-edit-prov:hover{
-    color: #ffffff;
-    background-color: #452B04;
-}
 
-.btn-borr-prov:hover{
-    color: #ffffff;
-    background-color: #452B04;
-}
+.obj-tab-insu:active, .obj-tab-insu:focus,
+.obj-tab-prov:active, .obj-tab-prov:focus{
+    background-color: #f0b17a9c;    
+
+} 
+
 
 /*---------------------------------------------------------------------------------------------------------------------------------------- */
 
@@ -353,6 +355,11 @@ footer{
 }
 
 
+
+/*---------------------- Aqui empiezan los querys---------------------------------*/
+
+
+
 @media only screen and (min-width:1024px) {
     /*Aquí van todos los estilos CSS*/
     .logo-nom{
@@ -367,16 +374,64 @@ footer{
 }
 
 
+
 @media only screen and (max-width:640px) {
     /*Aquí van todos los estilos CSS*/
       
     .mod-op{
         width: fit-content;
-        margin: 1.5% auto; 
+        margin: 1.5% 3px; 
         padding: 1% 4%;
         border-radius: 5%;    
+    }  
+}
+
+@media only screen and (max-width:583px) {
+    .table-t{
+       margin: auto;
+
     }
-    
-    
-    
+}
+
+
+
+@media only screen and (max-width:330px){
+   
+    .prov-form .card-header{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }  
+
+}
+
+
+
+@media only screen and (max-width:298px) {
+    .table-t{
+       margin: auto;
+       text-align: center;
+    }
+
+
+    .btns-tabla, .btns-tabla-insu{
+        
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+    }
+
+
+    .btn-edit-insu, .btn-borr-insu,
+    .btn-edit-prov, .btn-borr-prov{
+        margin: 3px auto;
+    }
+
+
+    .insu-form .card-header{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
 }

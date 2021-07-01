@@ -147,17 +147,22 @@ body{
 
 
 .btn-primary{
-    background: #8B5F2B;
-    color: #ffffff;
-    border-color: #8B5F2B;
+    margin: 3px;
+    background-color:#F0B27A;
+    color:#452B04; 
+    border-radius: 5px;
+    font-weight: 600;
+    border-color: #452B04;
 }
 
-.btn-primary:hover{
+.btn-primary:hover, .btn-primary:focus{
     color: #ffffff;
-    background: #764A09;
-    border-color: #8B5F2B;
-    font-weight: bold;
+    background-color:#452B04 !important; 
+    border-color: #F0B27A !important;
 }
+
+
+
 
 /*---------------------------------------------------------------------------------------------------------------------------------------- */
 
@@ -258,7 +263,7 @@ footer{
     
    
     .need-logo{
-        width: 115%;
+        width: 90px;
     }
     
     .cont-info{
@@ -287,7 +292,9 @@ footer{
 
 @media screen and (max-width:330px) {
     .mod-act-nom{
-        font-size: 70%;
+        font-size: 77%;
+        word-wrap: normal;
+        display: flex;
 
     }
 
