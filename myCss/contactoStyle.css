@@ -1,7 +1,7 @@
 body{
     width: 100%;
     margin: auto;
-    background-color: #ffffff;
+    background-color: #ffffff;   
 }
 
 .animation__shake{
@@ -37,7 +37,7 @@ body{
     flex-direction: column;
     width: fit-content;
     height: fit-content;
-    margin: auto; 
+    margin: auto;
 }
 
 
@@ -92,73 +92,27 @@ body{
     border-radius: 5px;
 }
 
-
-.nav-bar-esp{
-    width: 100%;
-    background-color: #f5f5f5;
-    border-top: 2px solid #f5f5f5;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: max-content;
-    box-sizing: content-box;
-    justify-content: space-around;
-}
-
-
-
-.mod-op{
-    display: flex;
-    justify-content: center;
-    height: max-content;
-    width: 18%;
-    border-top: solid;
+.nav-link-elect {
+    background-color: rgb(250, 222, 191);
+    text-decoration: none;
+    font-weight: 600;
     border-radius: 5px;
-    border-top-color:transparent;
-    margin: 4px auto;
-    background-color:  #764A09;
-    color: #ffffff !important;
+    margin-left: 7px;
+}
+
+.n-e{
+    color: #8B5F2B;
 }
 
 
-
-.mod-name{    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2%;
-    width: 100%;
-    font-size: 135%;
-    border-radius: 2px;
-}
-
-
-
-.mod-op:hover{
-    box-shadow:  1px 0px 7px rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-    color: #452B04 !important;
-}
-
-
-
-.contenido{
-   display: flex;
-   flex-direction: column;
-   flex-wrap: wrap;
-   box-sizing:initial;
-   padding: 1% 0%;  
-   width: fit-content;
-   margin: auto;
+.navbar-item:hover{
+    margin: 4px 4px;
 }
 
 
 /*-------------------------------------------------código css par ecabezado del módulo actualo--------------------------------------------------------------------*/
-
-
 .mod-act{
-    margin-top: 1%;
+    margin: 1% auto 2%;
     width: 85%;
     height: fit-content;
     text-align: center;
@@ -174,37 +128,37 @@ body{
 }
 
 
-/* -----------------------------------CSS para modificar el puto copy-paste-----------------------------------------------------------------*/
-.copypaste{
-    width: min-content;
-    margin: 1% auto;   
+.card {
+    width: 84%;
+}
+
+.cont-infoylogo{
+    display: flex;
+    flex-direction: column ;
+    justify-content: center;
+        
+}
+
+.need-logo{
+    width: 35%;
+    margin: 0% auto 2% auto;
+    padding-top: 0%;
 }
 
 
-.tabla-crono{
-    width: 100%;
-    margin: auto;
+.btn-primary{
+    background: #8B5F2B;
+    color: #ffffff;
+    border-color: #8B5F2B;
 }
 
-
-.btn-rp{
-    margin-top: 4%;
+.btn-primary:hover{
+    color: #ffffff;
+    background: #764A09;
+    border-color: #8B5F2B;
+    font-weight: bold;
 }
 
-
-.th{
-    width: 100% !important;
-}
-
-
-.card-t{
-    background: #F0B27A !important;
-    color: #ffffff !important;  
-}
-
-h3 {
-    font-weight: 600 !important;
-}
 /*---------------------------------------------------------------------------------------------------------------------------------------- */
 
 footer{
@@ -232,33 +186,37 @@ footer{
 
 
 .nomproy, .año, .disclaimer{
+    
     width: fit-content;
     padding: 0%;
     margin: 0% auto ;    
     text-align: center;
 }
 
+
 .disclaimer a{
     text-decoration: none;
     color: white;
 }
 
-
-
-
 @media only screen and (min-width:1024px) {
     /*Aquí van todos los estilos CSS*/
     .logo-nom{
         margin: auto 1.1% auto auto;
-      
-
     }    
         
     .navbar-ul{
         margin: auto auto auto -1%;
-      
-
     }
+
+}
+
+
+@media only screen and (max-width:770px) {
+    .need-logo{
+        width: 90px;
+    }
+
 
 }
 
@@ -269,10 +227,73 @@ footer{
     .mod-op{
         width: fit-content;
         margin: 1.5% auto; 
-        padding: 1% 4%; 
+        padding: 1% 4%;
+        border-top: 3px solid rgb(117, 12, 255); 
         border-radius: 5%;    
+        color: black;
+    }   
+}
+
+
+
+@media screen and (max-width:377px){
+    .card{
+        width: 93%;
+    }
+
+
+    .card-body{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        margin: auto;
+    }
+
+    .cont-infoylogo{
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+    } 
+    
+   
+    .need-logo{
+        width: 115%;
     }
     
-    
-    
+    .cont-info{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        font-size: 110%;
+        width: 280%;
+    }
+
+    .cont-form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+    }
+
+    .form-group{
+        width: max-content;
+        text-align: center;
+    }
+
+
+}
+
+
+@media screen and (max-width:330px) {
+    .mod-act-nom{
+        font-size: 70%;
+
+    }
+
+    .c-cont{ 
+        background-size: cover;  
+    }
+
+
 }

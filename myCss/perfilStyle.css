@@ -1,8 +1,7 @@
 body{
     width: 100%;
     margin: auto;
-    background-color: #ffffff;
-    
+    background-color: #ffffff;   
 }
 
 .animation__shake{
@@ -14,23 +13,22 @@ body{
     align-items: center;
     display: flex;
     flex-direction: column;
-    background-color: whitesmoke ;
+    background-color: #f5f5f5 ;
     box-sizing: content-box;
     width: 100%;
     margin: inherit;
-    overflow: hidden;
-
 }
 
+
 .cont-bar{
-    background-color: #ffe4c469;
+    background-color: #F0B27A;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     width: 100%;
     margin: auto;
-    border-bottom: 2px solid rgb(199, 199, 199);
+    border-bottom: 2px solid #f5f5f5;
 }
 
 
@@ -50,23 +48,12 @@ body{
 
 
 .Needlebox{
-    color: #a52a2a;
+    color: #ffffff;
     font-weight: bold;
     margin-top: -25px;
-    padding-left: 2px; 
-       
+    padding-left: 2px;    
 }
 
-
-.navbar{
-    margin: auto;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    width: fit-content;
-    
-
-}
 
 .navbar-ul{
     margin: auto;
@@ -90,7 +77,7 @@ body{
 
 .nav-link{
     text-decoration:none ;
-    color: black;
+    color: #ffffff;
     box-sizing: content-box;
     height: fit-content;
     margin: auto; 
@@ -100,120 +87,51 @@ body{
 .nav-link:hover{
     background-color: rgb(250, 222, 191);
     text-decoration: none ;
+    color: #8B5F2B;
     font-weight: 600;
-    color: black;
+    border-radius: 5px;
 }
 
-
-.nav-link-elect{
+.nav-link-elect {
     background-color: rgb(250, 222, 191);
     text-decoration: none;
     font-weight: 600;
-    color: black;
-}
-
-.nav-bar-esp{
-    width: 100%;
-    border-top: 2px solid rgb(199, 199, 199);
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: max-content;
-    box-sizing: content-box;
-    justify-content: space-around;
-
-}
-
-
-
-.mod-op{
-    display: flex;
-    justify-content: center;
-    height: max-content;
-    width: 18%;
-    border-top: solid;
     border-radius: 5px;
-    border-top-color: rgba(55, 55, 255, 0.855);
-    margin: 4px auto;
+    margin-left: 7px;
+}
+
+.n-e{
+    color: #8B5F2B;
 }
 
 
-
-.mod-name{    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2%;
-    width: 100%;
-    font-size: 135%;
-    background-color: rgba(245, 245, 245, 0.432);
-    color: #000000;
-    border-radius: 2px;
-   
-
+.navbar-item:hover{
+    margin: 4px 4px;
 }
-
-
-.mod-op:hover{
-    box-shadow:  1px 0px 7px rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-    color: #000000;
-    text-shadow: 0px 2px 9px rgb(255, 255, 255);
-}
-
-
-.contenido{
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   background-color: indigo;
-   box-sizing:initial;
-   width: fit-content;
-   margin: 1% auto;
-}
-
-
-
-
 
 
 /*-------------------------------------------------código css par ecabezado del módulo actualo--------------------------------------------------------------------*/
-
 .mod-act{
     margin: 1% auto 2%;
     width: 85%;
     height: fit-content;
     text-align: center;
-    border-top: 3px solid rgb(117, 12, 255); 
     border-radius: 5px;
     filter: blur(6%);
-    
-}
-
-.cover{
-    background-color: rgba(245, 245, 245, 0.171);
-    box-sizing: border-box;
-    height: fit-content;
-    margin: 3px;
-    border-radius: 5px;
-    
-}
-
-.mod-act-nom{
+    border-style: solid;
+    border-color: #764A09;
+    color: #452B04 !important;
+    border-width: 1px;
     font-size: 250%;
+    font-weight: 300;
     font-style: normal;
-    color: #000000;
-    text-shadow: 0px 2px 9px rgb(255, 255, 255);
 }
-
 
 /* -----------------------------------CSS para modificar el puto copy-paste-----------------------------------------------------------------*/
 .copypaste{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: lawngreen;   
     width: fit-content;
 }
 
@@ -234,6 +152,7 @@ body{
 }
 
 
+/*boton de eliminar cuenta/modal no tocar*/
 .btn-2{
     border-radius: 5px;
     border-color: #000000;
@@ -247,10 +166,7 @@ body{
     background-color: #c90000;
     font-weight: 600;
     color: #ffffff;
-    
 }
-
-
 
 
 .nav-item{
@@ -267,12 +183,12 @@ body{
 
 .btn-delet{
     color: #ffffff;
-    background-color: #e00000;
+    background-color: #e00000 ;
 }
 
 .btn-delet:hover{
-    color: #ffffff;
-    background-color: #a00000;
+    color: #000000;
+    background-color:#e00000;
     font-weight: 600;
 }
 
@@ -290,21 +206,37 @@ body{
     justify-content: center;
 }
 
-/*---------------------------------------------------------------------------------------------------------------------------------------- */
+
+.card-t{
+    background: #F0B27A !important;
+}
 
 
-.c-perf{ 
-    background-image: url("https://pixnio.com/free-images/2017/07/11/2017-07-11-09-44-52-900x596.jpg"), url("../myImg/perfil-img.jpg") !important;
-    background-size:cover;  
-    background-position-y: 35%; 
+.nav-item:hover{
+    border-radius: 5px;
+    color: #452B04;
+}
+
+.nav-item .nav-link{
+    color: #ffffff;
+    font-weight: bold;
+    margin: auto 2px;
+}
+
+
+.nav-item .nav-link:hover{
+    color: #452B04 !important;
+    background-color: #fadebf;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    color: #764A09 !important;
+    background-color: #fadebf !important;
 }
 
 
 
-
-
-
-
+/*---------------------------------------------------------------------------------------------------------------------------------------- */
 
 footer{
     display: flex;
@@ -313,10 +245,12 @@ footer{
     align-items: center;
     width: inherit;
     margin: auto;
-    background-color: #ffe4c469;
+    background-color: #764A09;
+    color: #ffffff;
     padding-bottom: 0.5%;
     border-top: 2px solid rgb(199, 199, 199);
 }
+
 
 
 .copyaut{
@@ -335,6 +269,12 @@ footer{
     padding: 0%;
     margin: 0% auto ;    
     text-align: center;
+}
+
+
+.disclaimer a{
+    text-decoration: none;
+    color: white;
 }
 
 

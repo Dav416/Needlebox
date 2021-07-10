@@ -5,7 +5,7 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <title> Ingresar a la cuenta </title>
+  <title> Crear nueva cuenta </title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="lib/css/adminlte.min.css">
 
   <!--mis putos estilos-->
-  <link rel="stylesheet" href="myCss\clientesStyle.css">
+  <link rel="stylesheet" href="myCss/loginStyle.css">
 
   <!-- jQuery--> 
   <script src="lib\js\jquery.min.js"></script>
@@ -45,6 +45,8 @@
  
     <div class="register-box">
       <div class="register-logo">
+        <img class="logo" src="myImg/needlebox-logo1.2.png" alt="NeedleboxLogo">
+        <br>
         <a href="index.html"><b>NEEDLEBOX</b></a>
       </div>
     
@@ -90,32 +92,29 @@
                 <div class="icheck-primary">
                   <input type="checkbox" id="agreeTerms" name="terms" value="agree">
                   <label for="agreeTerms" style="font-size: small;">
-                   Acepto los <a href="#">términos y condiciones</a>
+                   Acepto los <a href="#" class="link-estilo">términos y condiciones</a>
                   </label>
                 </div>
               </div>
               <!-- /.col -->
               <div class="col-4">
-                <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+                <button type="submit" class="btn btn-primary btn-block btn-estilo">Enviar</button>
               </div>
               <!-- /.col -->
             </div>
           </form>
-          
-    
-          <div class="social-auth-links text-center">
+
+          <div class="social-auth-links text-center mb-3">
             <p>- O también -</p>
-            <a href="#" class="btn btn-block btn-primary">
-              <i class="fab fa-facebook mr-2"></i>
-              Ingrese usando Facebook
-            </a>
-            <a href="#" class="btn btn-block btn-danger">
-              <i class="fab fa-google-plus mr-2"></i>
-              Ingrese usando Google+
+            <a href="#" class="btn btn-block btn-primary btn-estilo">
+              <i class="fab fa-facebook mr-2 "></i> Ingrese usando Facebook
             </a>
           </div>
+          
     
-          <a href="loginprincipal.html" class="text-center">Ya estoy registrado</a>
+          
+    
+          <a href="loginprincipal.html" class="text-center link-estilo">Ya estoy registrado</a>
         </div>
         <!-- /.form-box -->
       </div><!-- /.card -->

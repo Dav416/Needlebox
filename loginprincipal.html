@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="lib/css/adminlte.min.css">
 
   <!--mis putos estilos-->
-  <link rel="stylesheet" href="myCss\clientesStyle.css">
+  <link rel="stylesheet" href="myCss\loginStyle.css">
 
   <!-- jQuery--> 
   <script src="lib\js\jquery.min.js"></script>
@@ -44,7 +44,9 @@
   
     <div class="login-box">
       <div class="login-logo">
-        <a href="index.html"><b>NEEDLEBOX</b></a>
+        <img class="logo" src="myImg/needlebox-logo1.2.png" alt="NeedleboxLogo">
+        <br>
+        <a href="index.html"><b>NEEDLEBOX</b></a>  
       </div>
       <!-- /.login-logo -->
       <div class="card">
@@ -52,15 +54,17 @@
           <p class="login-box-msg">Inicia sesión para continuar</p>
     
           <form action="../../index3.html" method="post">
+
             <div class="input-group mb-3">
               <input type="email" class="form-control" placeholder="Correo">
               <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-envelope"></span>
+                <div class="input-group-text ">
+                  <span class="fas fa-envelope "></span>
                 </div>
               </div>
             </div>
-            <div class="input-group mb-3">
+
+            <div class="input-group mb-3 ">
               <input type="password" class="form-control" placeholder="Contraseña">
               <div class="input-group-append">
                 <div class="input-group-text">
@@ -79,28 +83,26 @@
               </div>
               <!-- /.col -->
               <div class="col-4">
-                <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+                <button type="submit" class="btn btn-primary btn-block btn-estilo">Ingresar</button>
               </div>
               <!-- /.col -->
             </div>
           </form>
-    
+
           <div class="social-auth-links text-center mb-3">
             <p>- O también -</p>
-            <a href="#" class="btn btn-block btn-primary">
-              <i class="fab fa-facebook mr-2"></i> Ingresa usando Facebook
-            </a>
-            <a href="#" class="btn btn-block btn-danger">
-              <i class="fab fa-google-plus mr-2"></i> Ingresa usando Google+
+            <a href="#" class="btn btn-block btn-primary btn-estilo">
+              <i class="fab fa-facebook mr-2"></i> Ingrese usando Facebook
             </a>
           </div>
-          <!-- /.social-auth-links -->
+    
+
     
           <p class="mb-1">
-            <a href="loginrecpass.html">Olvidé mi contraseña</a>
+            <a href="loginrecpass.html" class="link-estilo">Olvidé mi contraseña</a>
           </p>
           <p class="mb-0">
-            <a href="loginregusu.html" class="text-center">Registrarse por primera vez</a>
+            <a href="loginregusu.html" class="text-center link-estilo">Registrarse por primera vez</a>
           </p>
         </div>
         <!-- /.login-card-body -->

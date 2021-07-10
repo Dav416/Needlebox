@@ -1,0 +1,45 @@
+*{
+    color: #452B04;
+}
+
+
+.logo{
+    width: 100px;
+}
+
+
+
+.btn-estilo{
+    background-color:#F0B27A;
+    border-color:  #452B04 ;
+    color:   #452B04;
+}
+
+
+.btn-estilo:focus, .btn-estilo:hover {
+    background-color:#764A09;
+    border-color:   #F0B27A ;
+    color:   #ffffff ;
+}
+
+
+
+
+i{
+    color: inherit;
+}
+
+
+
+.link-estilo{
+    color: #764A09 !important;
+} 
+
+.link-estilo:hover{
+    color: #452B04 !important;
+}
+
+.register-box{
+    width: 26.5%;
+
+}

@@ -14,23 +14,22 @@ body{
     align-items: center;
     display: flex;
     flex-direction: column;
-    background-color: whitesmoke ;
+    background-color: #f5f5f5 ;
     box-sizing: content-box;
     width: 100%;
     margin: inherit;
-    overflow: hidden;
-
 }
 
+
 .cont-bar{
-    background-color: #ffe4c469;
+    background-color: #F0B27A;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     width: 100%;
     margin: auto;
-    border-bottom: 2px solid rgb(199, 199, 199);
+    border-bottom: 2px solid #f5f5f5;
 }
 
 
@@ -50,23 +49,12 @@ body{
 
 
 .Needlebox{
-    color: #a52a2a;
+    color: #ffffff;
     font-weight: bold;
     margin-top: -25px;
-    padding-left: 2px; 
-       
+    padding-left: 2px;    
 }
 
-
-.navbar{
-    margin: auto;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    width: fit-content;
-    
-
-}
 
 .navbar-ul{
     margin: auto;
@@ -87,9 +75,10 @@ body{
     text-decoration: none;
 }
 
+
 .nav-link{
     text-decoration:none ;
-    color: black;
+    color: #ffffff;
     box-sizing: content-box;
     height: fit-content;
     margin: auto; 
@@ -99,66 +88,25 @@ body{
 .nav-link:hover{
     background-color: rgb(250, 222, 191);
     text-decoration: none ;
+    color: #8B5F2B;
     font-weight: 600;
-    color: black;
-}
-
-.link3{
-    background-color: rgb(250, 222, 191);
-    text-decoration: none ;
-    font-weight: 600;
-    color: black;
-}
-
-.nav-bar-esp{
-    width: 100%;
-    border-top: 2px solid rgb(199, 199, 199);
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    height: max-content;
-    box-sizing: content-box;
-    justify-content: space-around;
-
-}
-
-
-
-
-.mod-op{
-    display: flex;
-    justify-content: center;
-    height: max-content;
-    width: 18%;
-    border-top: solid;
     border-radius: 5px;
-    border-top-color: rgba(55, 55, 255, 0.855);
-    margin: 4px auto;
+}
+
+.nav-link-elect, .link3{
+    background-color: rgb(250, 222, 191);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.n-e{
+    color: #8B5F2B;
 }
 
 
-
-.mod-name{    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 2%;
-    width: 100%;
-    font-size: 135%;
-    background-color: rgba(245, 245, 245, 0.432);
-    color: #000000;
-    border-radius: 2px;
-   
-
-}
-
-
-.mod-op:hover{
-    box-shadow:  1px 0px 7px rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
-    color: #000000;
-    text-shadow: 0px 2px 9px rgb(255, 255, 255);
+.navbar-item:hover{
+    margin: 4px 4px;
 }
 
 
@@ -171,11 +119,15 @@ body{
    width: fit-content;
    margin: 1% auto;
 }
+
+
 .headertable{
     /* border: 2px solid black; */
     padding-bottom: 10px;
     /* padding: 10px; */
 }
+
+
 .report{
     margin-bottom: 12%;
     padding: 40px;
@@ -185,13 +137,14 @@ body{
     max-height: 510px;
     border-radius: 5%;
 }
+
 .report input{
     display: block;
     margin: auto;
     /* width: 500px; */
-    width: 100%;
-    
+    width: 100%;   
 }
+
 
 select{
     /* width: 502px; */
@@ -200,8 +153,6 @@ select{
     width: 100%;
     
 }
-
-
 
 .tabla_error{
     display: block;
@@ -214,12 +165,13 @@ select{
     padding-bottom: 5px;
 }
 
+
 textarea{
     resize: none;
     width: 100%;
-    margin-right: 10px;
-    
+    margin-right: 10px; 
 }
+
 
 button{
     background-color: #FFFFFF;
@@ -229,6 +181,7 @@ button{
     color: #212529;
 }
 
+
 button:hover{
     box-shadow:  1px 0px 7px rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
@@ -236,15 +189,18 @@ button:hover{
     text-shadow: 0px 2px 9px rgb(255, 255, 255);
 }
 
+
 legend{
     text-align: center;
     
 }
 
+
 label, legend{
     color: #212529;
     font-weight: bold;
 }
+
 
 label{
     margin-top: 5px;
@@ -257,213 +213,19 @@ label{
     width: 85%;
     height: fit-content;
     text-align: center;
-    /* border-top: 3px solid rgb(117, 12, 255);  */
     border-radius: 5px;
     filter: blur(6%);
-}
-
-.cover{
-    background-color: rgba(245, 245, 245, 0.432);
-    box-sizing: border-box;
-    height: fit-content;
-    margin: 3px;
-    border-radius: 5px;
-    
-}
-
-.mod-act-nom{
+    border-style: solid;
+    border-color: #764A09;
+    color: #452B04 !important;
+    border-width: 1px;
     font-size: 250%;
+    font-weight: 300;
     font-style: normal;
-    color: #000000;
-    text-shadow: 0px 2px 9px rgb(255, 255, 255);
 }
 
 
 /* -----------------------------------CSS para modificar el puto copy-paste-----------------------------------------------------------------*/
-
-.copypaste{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: lawngreen;   
-    width: fit-content;
-}
-
-
-.Costo-Unidad{
-    display: flex;
-    flex-direction: row;
-    justify-content:flex-start;
-    width: 100%;
-
-}
-
-.cost-f {
-    margin: 0%;
-    width: 100%;
-}
-
-
-.cost-u{
-    margin: auto 1%;
-    width: 100%;
-}
-
-
-.button-submit-div{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-}
-
-.form-insu-header,.button-submit{
-    background-color: rgb(194, 0, 0) !important;
-}
-
-.form-prov-header, .button-submit-2{
-    background-color: rgb(65, 115, 209) !important;
-}
-
-
-
-.tabla-prov, .tabla-insu{
-    margin: 1.5% auto;
-    width: 92%;
-} 
-
-
-
-.card-h-insu{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 1% 1%;
-    background-color:  rgb(194, 0, 0);
-    border-radius: 10px 10px 0% 0%;
-}
-
-
-.table-t{
-    color: #ffffff;
-    font-size: 150%;
-    margin: auto auto auto 0%;
-
-}
-
-
-
-.searcher{
-    margin: auto 0% auto 1%;
-
-}
-
-
-.btns-tabla{
-    width: fit-content;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin: 5px;
-}
-
-
-.btn-edit-insu, .btn-borr-insu{
-    margin: 3px;
-    background-color: #ffffff;
-    color: rgb(194, 0, 0);
-    border-radius: 5px;
-    font-weight: 600;
-}
-
-.btn-edit-insu:hover{
-    color: #ffffff;
-    background-color: rgb(194, 0, 0);
-}
-
-.btn-borr-insu:hover{
-    color: #ffffff;
-    background-color: rgb(194, 0, 0);
-}
-
-
-.card-h-prov{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    padding: 1% 1%;
-    background-color:  rgb(65, 115, 209);
-    border-radius: 10px 10px 0% 0%;
-}
-
-.btn-edit-prov, .btn-borr-prov{
-    margin: 3px;
-    background-color: #ffffff;
-    color: rgb(65, 115, 209);
-    border-radius: 5px;
-    font-weight: 600;
-}
-
-.btn-edit-prov:hover{
-    color: #ffffff;
-    background-color: rgb(65, 115, 209);
-}
-
-.btn-borr-prov:hover{
-    color: #ffffff;
-    background-color: rgb(65, 115, 209);
-}
-
-/*---------------------------------------------------------------------------------------------------------------------------------------- */
-
-
-.c-inicio{ 
-    background-image: url("https://i.imgur.com/DnNwrkZ.png"), url("../myImg/needlebox-logo.png");
-    background-size: cover;  
-    background-position-y:45%;
-    background-color: #d6c1a6f6;
-}
-
-
-.c-client{ 
-    background-image: url("https://legal.thomsonreuters.com/blog/wp-content/uploads/sites/19/2019/12/Client-Value-Hero-800x450.jpg"), url("../myImg/cliente-Img.jpg");
-    background-size: cover;  
-    background-position-y:30%;
-}
-
-
-
-
-.c-crono{ 
-    background-image: url("https://www.economiasimple.net/wp-content/uploads/2019/01/cuando-se-cobra-el-sed.jpg"), url("../myImg/crono-Img.jpg");
-    background-size: cover;   
-    background-position-y: 95%;
-    
-}
-
-
-.c-report{ 
-    background-image: url(/myImg/frigg.jpg);
-    background-size: cover;   
-    background-position-y: 20%;
-    background-color: #a52a2a;
-    border:  1px solid black;
-    background-color: #F5F5F5;
-    
-}
-
-.c-report span{
-    color: #000000;
-    font-weight: 400px;
-}
-
-.c-insu{ 
-    background-image: url("https://i.pinimg.com/736x/3a/8b/09/3a8b0953ed66a337675d8c588c2fe5d9.jpg"), url("../myImg/insumo-Img.jpg");
-    background-size: cover;   
-    background-position-y: 80%;
-    
-}
-
-
 
 
 footer{
@@ -473,7 +235,8 @@ footer{
     align-items: center;
     width: inherit;
     margin: auto;
-    background-color: #ffe4c469;
+    background-color: #764A09;
+    color: #ffffff;
     padding-bottom: 0.5%;
     border-top: 2px solid rgb(199, 199, 199);
 }
@@ -497,6 +260,10 @@ footer{
     text-align: center;
 }
 
+.disclaimer a{
+    text-decoration: none;
+    color: white;
+}
 
 @media only screen and (min-width:1024px) {
     /*Aquí van todos los estilos CSS*/
