@@ -15,10 +15,26 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import myfirstview
+from core.views import needle_index, needle_insu, needle_cliente, needle_nuevocliente, needle_nuevocliente2, \
+    needle_editcliente, needle_crono, needle_pedidos, needle_perfil, needle_nosotros, needle_reperror, needle_ayuda, \
+    needle_cont, needle_login, needle_regis, needle_recpass
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('prueba/', myfirstview),
-
+    path('index/', needle_index),
+    path('clientes/', needle_cliente),
+    path('nclient/', needle_nuevocliente),
+    path('nclient2/', needle_nuevocliente2),
+    path('editclient/', needle_editcliente),
+    path('cronograma/', needle_crono),
+    path('pedidos/', needle_pedidos),
+    path('insumos/', needle_insu),
+    path('perfil/', needle_perfil),
+    path('nosotros/', needle_nosotros),
+    path('error/', needle_reperror),
+    path('ayuda/', needle_ayuda),
+    path('contactenos/', needle_cont),
+    path('login/', needle_login),
+    path('registro/', needle_regis),
+    path('recuperar/', needle_recpass),
 ]

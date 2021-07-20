@@ -1,0 +1,108 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <title> NEEDLEBOX - Clientes</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  
+ <!--  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"> -->
+
+  <!-- Font Awesome (más iconos) -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'lib/css/adminlte.min.css' %}">
+
+  <!--mis estilos-->
+  <link rel="stylesheet" href="{% static 'myCss/clientesStyle.css' %}">
+
+  <!--Normalize-->
+  <link rel="stylesheet" href="{% static 'myCss/normalize.css' %}">
+
+  <!-- jQuery--> 
+  <script src="{% static 'lib/js/jquery.min.js' %}"></script>
+
+  <!--bootstrap-->
+  <script src="{% static 'lib/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- AdminLTE App  -->
+  <script src="{% static 'lib\js\adminlte.js' %}"></script>
+
+</head>
+
+
+<body>
+
+<div class="wrapper">
+
+  <!-- Preloader -->
+    {% include 'preloaderNeedlebox.html' %}
+  <!--fin preloader-->
+
+  <!-- header-->
+    {% include 'secondHeaderNeedlebox.html' %}
+  <!-- fin header-->
+
+  <!--Encabezado de sección-->
+  <div class="mod-act c-client"><div class="cover"><span class="mod-act-nom">Clientes</span></div></div>
+  <br>
+
+
+ 
+  <!--Aqui iria el contenido-->
+  <div class="card-body" data-select2-id="30">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="form-group" data-select2-id="29">
+          <label>Elija la acción que desea</label>
+          <select class="form-control select2 select2-hidden-accessible col-md-auto" style="width: 100%;" data-select2-id="1" tabindex="-1" aria-hidden="true">
+            <option selected="selected" data-select2-id="3">Registrar nuevo cliente</option>
+            <option data-select2-id="37">Consultar y modificar cliente ya registrado</option>
+          </select>
+        </div>
+        
+      </div>
+
+    </div>
+<br>
+<br>
+<br>
+
+    <div class="row">
+      <div class="col-12">
+        <a href="/nclient"><input type="submit" value="Aceptar" class="btn btn-success float-right"></a>
+      </div>
+    </div>
+    
+    <!-- /.row -->
+
+    
+    <!-- /.row -->
+  </div>
+
+  <br>
+  <br> <br> <br>
+
+  <!--fin del div para el contenido-->
+
+
+ <!-- Main Footer -->
+  
+ <!-- Main Footer -->
+{% include 'footerNeedlebox.html' %}
+<!-- fin footer -->
+
+
+</div><!-- ./wrapper -->
+
+
+
+</body>
+</html>

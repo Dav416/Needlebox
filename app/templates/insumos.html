@@ -1,0 +1,432 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title> NEEDLEBOX - Insumos</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+
+  <!-- Font Awesome (más iconos) -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'lib/css/adminlte.min.css' %}">
+
+  <!--Mis estilos-->
+  <link rel="stylesheet" href="{% static 'myCss/insumosStyle.css' %}">
+
+  <!--Normalize-->
+  <link rel="stylesheet" href="{% static 'myCss/normalize.css' %}">
+
+   <!-- jQuery-->
+  <script src="{% static 'lib/js/jquery.min.js' %}"></script>
+
+  <!--bootstrap-->
+  <script src="{% static 'lib/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- AdminLTE App  -->
+  <script src="{% static 'lib/js/adminlte.js' %}"></script>
+
+</head>
+
+
+<body>
+
+<div class="wrapper">
+
+
+  <!-- Preloader -->
+  {% include 'preloaderNeedlebox.html' %}
+  <!--fin preloader-->
+
+  <!-- header-->
+    {% include 'secondHeaderNeedlebox.html' %}
+  <!-- fin header-->
+
+
+  <!--Encabezado de sección-->
+  <div class="mod-act c-insu"><div class="cover"><span class="mod-act-nom">Insumos</span></div></div>
+
+
+ 
+  <!--Aqui iria el contenido-->
+  
+    <!---------------------------------------------------Inicio form insumos ----------------------------------------------------------------->
+
+    <div class="card card-danger insu-form">
+        <div class="card-header form-insu-header">
+          <h3 class="card-title">Registrar información insumos</h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+              <i class="fas fa-minus"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-body">
+
+          <div class="form-group insu-selec">
+            <label for="forminsumos" class="insu-selec-nom">Insumo</label>
+            <select id="forminsumos" class="form-control custom-select insu-selec-opt">
+                <option selected="" disabled="">Seleccione un tipo de insumo</option>
+                <option value="Telas" >Telas</option> <!--Telas y tejidos de diverso tipo-->
+                <option value="Hilos y lanas">Hilos y lanas</option> <!--Hilos y cordones de toda la vida-->
+                <option value="Adornos y bisuteria">Adornos y bisuteria</option> <!--Lentejuelas, perlas, etc-->
+                <option value="Accesorios, cintas, complementos">Accesorios, cintas y complementos</option> <!--Como botones, cierres, cintas etc-->
+                <option value="Herramientas e instrumentos">Herramientas e instrumentos</option> <!--Tijeras, tizas, cinta, cortador...-->
+                <option value="Otro">Otros</option>
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <label class="insu-tipo-nom" for="insudescr">Tipo, marca y otras especificaciones</label>
+
+            <textarea id="insudescr" class="form-control insu-tipo-desc" rows="6" placeholder="Rojo, con flores, antirayones, pequeño, etc."></textarea>
+
+          </div>
+
+
+
+          <div class="form-group">
+            <label for="Insuinvent">Cantidad o estado en inventario</label>
+            <input type="text" id="Insuinvent" class="form-control" placeholder="Agotado, 4 metros, etc.">
+
+          </div>
+
+
+          <!-- Date dd/mm/yyyy -->
+          <div class="cos-uni form-group">
+            <label class="cos-uni-tit">Costo por unidad de medida</label>
+
+            <div class=" Costo-Unidad"> 
+
+              <div class="cost-f form-group">
+                <label for="insucost">Costo</label>
+                <input id="insucost" type="number" class="form-control" placeholder="$">
+              </div>
+
+              <div class="cost-u form-group">
+                <label for="insu-unid" >Unidad</label>
+                <input id="insu-unid" type="text" class="form-control" placeholder="cm, kg, undidades,tc.">
+              </div>
+
+            </div> 
+          </div>
+          <!-- /.form group -->
+
+          <div class="button-submit-div">
+          <input type="submit" value="Añadir" class="btn btn-success button-submit">
+          
+          </div>
+
+        </div>
+        <!-- /.card-body -->
+    </div>
+        <!--/.insu-form-->
+
+    <!---------------------------------------------------Final form insumos ----------------------------------------------------------------->
+    
+
+
+
+    <!---------------------------------------------------tabla sobre insumos-------------------------------------------------->
+    <div class="row tabla-insu table-responsive">
+      <div class="col-12 ">
+          <div class="card">
+              <div class="card-h-insu">
+                <h3 class="table-t">Insumos registrados</h3>
+      
+                
+                <div class="btns-tabla-insu">
+                  <button type="button" class="btn-edit-insu">Editar insumo</button>
+                  <button type="button" class="btn-borr-insu">Borrar insumo</button>
+                </div>
+
+                <div class="card-tools searcher">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                    <label for="Insusearchtool"></label>
+                    <input id="Insusearchtool" type="text" name="table_search" class="form-control float-right" placeholder="Search">
+      
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0" style="height: 300px;">
+                <table class="table table-head-fixed text-nowrap ">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Insumo</th>
+                      <th>Cantidad en inventario</th>
+                      <th>Costo por unidad</th>
+                      <th>Tipo, marca y otras especificaciones</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <tr class="obj-tab-insu">
+                      <td>01</td> 
+                      <td>Hilo</td>
+                      <td>1 cono</td>
+                      <td>4000 <strong>x</strong> Cono</td>
+                      <td>Cono pequeño, rojo y de paracord.</td>                    
+                    </tr>
+
+                    
+                    <tr class="obj-tab-insu">
+                      <td>219</td>
+                      <td>Alexander Pierce</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-warning">Pending</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr class="obj-tab-insu">
+                      <td>657</td>
+                      <td>Bob Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-primary">Approved</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr class="obj-tab-insu">
+                      <td>175</td>
+                      <td>Mike Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-danger">Denied</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr class="obj-tab-insu">
+                      <td>134</td>
+                      <td>Jim Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-success">Approved</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr class="obj-tab-insu">
+                      <td>494</td>
+                      <td>Victoria Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-warning">Pending</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr class="obj-tab-insu">
+                      <td>832</td>
+                      <td>Michael Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-primary">Approved</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                    <tr class="obj-tab-insu">
+                      <td>982</td>
+                      <td>Rocky Doe</td>
+                      <td>11-7-2014</td>
+                      <td><span class="tag tag-danger">Denied</span></td>
+                      <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+              
+          </div>
+        <!-- /.card -->
+      </div>
+        <!--/.col-12-->
+    </div>
+        <!--/.tabla-insu-->
+          
+    <!--------------------------------------------------fin tabla insumos-------------------------------------------------->
+
+
+    <!---------------------------------------------------Inicio form proveedores------------------------------------------->
+
+    <div class="card card-danger prov-form">
+        <div class="card-header form-prov-header">
+          <h3 class="card-title">Registrar información proveedores</h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+              <i class="fas fa-minus"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-body">
+
+          <div class="form-group">
+            <label for="ProvName">Nombre establecimiento / persona</label>
+            <input type="text" id="ProvName" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="ProvMerca">Insumos que vende</label>
+             <textarea id="ProvMerca" class="form-control insu-tipo-desc" rows="6" placeholder="Adornos, telas, hilos..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="ProvTel">Número de teléfono</label>
+            <input type="tel" id="ProvTel" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="ProvEmail">Correo eléctronico</label>
+            <input type="email" id="ProvEmail" class="form-control">
+          </div>
+
+          <div class="form-group">
+                <label for="ProvDir">Dirección</label>
+                <input type="text" id="ProvDir" class="form-control">
+          </div>
+
+          <div class="button-submit-div">
+          <input type="submit" value="Añadir" class="btn btn-success button-submit-2"> 
+          </div>
+
+        </div>
+        <!-- /.card-body -->
+    </div>
+    
+
+    <!---------------------------------------------------Final form proveedores ----------------------------------------------------------------->
+
+
+    <!------Inicio Tabla proveedores----------------------------------------------------------------------------------------------------------------------->
+    <div class="row tabla-prov table-responsive">
+        <div class="col-12 ">
+          <div class="card ">
+            <div class="card-h-prov">
+              <h3 class="table-t">Proveedores registrados</h3>
+    
+              
+              <div class="btns-tabla">
+                <button type="button" class="btn-edit-prov">Editar insumo</button>
+                <button type="button" class="btn-borr-prov">Borrar insumo</button>
+              </div>
+
+              <div class="card-tools searcher">
+                <div  class="input-group input-group-sm" style="width: 150px;">
+
+                     <label for="Provsearchtool"></label>
+                     <input id="Provsearchtool" type="text" name="table_search" class="form-control float-right" placeholder="Search">
+
+
+                    <div class="input-group-append">
+                        <button type="submit" class="btn btn-default">
+                        <i class="fas fa-search"></i>
+                        </button>
+                      </div>
+
+                </div>
+              </div>
+            </div>
+            <!-- /.card-h-prov-->
+
+            <div class="card-body table-responsive p-0" style="height: 300px;">
+              <table class="table table-head-fixed text-nowrap">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Nombre / establecimiento</th>
+                    <th>Número de teléfono</th>
+                    <th>Correo electrónico</th>
+                    <th>Dirección</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="obj-tab-insu">
+                    <td>666</td>
+                    <td>Hilon Maiden</td>
+                    <td>3091984</td>
+                    <td>eddie.heavy@metal.com</td>
+                    <td>22 Acacia Avenue</td>
+                  </tr>
+                  <tr class="obj-tab-insu">
+                    <td>219</td>
+                    <td>Alexander Pierce</td>
+                    <td>11-7-2014</td>
+                    <td><span class="tag tag-warning">Pending</span></td>
+                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  </tr>
+                  <tr class="obj-tab-insu">
+                    <td>657</td>
+                    <td>Bob Doe</td>
+                    <td>11-7-2014</td>
+                    <td><span class="tag tag-primary">Approved</span></td>
+                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  </tr>
+                  <tr class="obj-tab-insu">
+                    <td>175</td>
+                    <td>Mike Doe</td>
+                    <td>11-7-2014</td>
+                    <td><span class="tag tag-danger">Denied</span></td>
+                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  </tr>
+                  <tr class="obj-tab-insu">
+                    <td>134</td>
+                    <td>Jim Doe</td>
+                    <td>11-7-2014</td>
+                    <td><span class="tag tag-success">Approved</span></td>
+                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  </tr>
+                  <tr class="obj-tab-insu">
+                    <td>494</td>
+                    <td>Victoria Doe</td>
+                    <td>11-7-2014</td>
+                    <td><span class="tag tag-warning">Pending</span></td>
+                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  </tr>
+                  <tr class="obj-tab-insu">
+                    <td>832</td>
+                    <td>Michael Doe</td>
+                    <td>11-7-2014</td>
+                    <td><span class="tag tag-primary">Approved</span></td>
+                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  </tr>
+                  <tr class="obj-tab-insu">
+                    <td>982</td>
+                    <td>Rocky Doe</td>
+                    <td>11-7-2014</td>
+                    <td><span class="tag tag-danger">Denied</span></td>
+                    <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- /.card-body -->
+          </div>
+          <!-- /.card -->
+        </div>
+        <!--/.col-12-->
+    </div>
+  
+
+
+<!------Fin de tabla proveedores----------------------------------------------------------------------------------------------------------------------->
+
+  <!--fin del puto copypaste de adminlte-->
+
+
+
+
+
+
+ <!-- Main Footer -->
+{% include 'footerNeedlebox.html' %}
+<!-- fin footer -->
+
+</div>
+<!--/wrapper-->
+</body>
+</html>

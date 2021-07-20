@@ -1,0 +1,330 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title> NEEDLEBOX - Mostrar Pedidos</title>
+
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+
+  <!-- Font Awesome (más iconos) -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+    <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'lib/css/adminlte.min.css' %}">
+
+  <!--Mis estilos-->
+  <link rel="stylesheet" href="{% static 'myCss/pedidosMostrarStyle.css' %}">
+
+  <!--Normalize-->
+  <link rel="stylesheet" href="{% static 'myCss/normalize.css' %}">
+
+   <!-- jQuery-->
+  <script src="{% static 'lib/js/jquery.min.js' %}"></script>
+
+  <!--bootstrap-->
+  <script src="{% static 'lib/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- AdminLTE App  -->
+  <script src="{% static 'lib/js/adminlte.js' %}"></script>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+
+  <!-- Preloader -->
+    {% include 'preloaderNeedlebox.html' %}
+  <!--fin preloader-->
+
+  <!-- header / navbar-->
+    {% include 'secondHeaderNeedlebox.html' %}
+  <!-- fin header / navbar-->
+
+  <!--Encabezado de sección-->
+  <div class="mod-act c-ped"><div class="cover"><span class="mod-act-nom">Pedidos</span></div></div>
+
+ 
+  <!--Aqui iria el contenido-->
+
+      <!-- INICIO TABLA -->
+ 
+          <div class="row tabla-pedido">
+
+            <div class="col-12">
+            
+              <div class="card ">
+
+                <!--car-header-->
+                <div class="card-h-pedido card-t">
+                  <h3 class="table-t">Todos los pedidos</h3>
+                  <div class="card-tools">
+                    <div class="input-group input-group-sm" style="width: 150px;">
+                      <input type="text" name="table_search" class="form-control float-right searcher" placeholder="Buscar">
+                      <div class="input-group-append">
+                        <button type="submit" class="btn btn-default">
+                          <i class="fas fa-search"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.card-header -->
+
+
+
+
+                <!--card body-->
+                <div class="card-body p-0">
+                  <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
+                   
+                    <div class="row">
+                      <div class="col-sm-12 ">
+                        <div class="table-responsive">  
+                          <table id="example2" class="table table-bordered table-hover dataTable dtr-inline m-0" role="grid" aria-describedby="example2_info">
+                              <thead>
+                                <tr role="row">
+                                  <th class="sorting sorting_asc nro-p" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Número de pedido</th>
+                                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Pedido</th>
+                                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Estado</th>
+                                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Descripción</th>
+                                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Cliente</th>
+                                  <th class="sorting f-ent" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Fecha de entrega</th>
+                                </tr>
+                              </thead>
+                          
+                              <tbody>              
+                                <tr class="odd">
+                                  <td class="dtr-control sorting_1" tabindex="0">
+                                    <a href="#">OR0000</a>
+                                  </td>
+                                  <td>Camiseta</td>
+                                  <td>
+                                    <span class="badge badge-success">Terminado</span>
+                                  </td>
+                                  <td>Bordar, estampar y cocer</td>
+                                  <td>Miguel Ordoñez</td>
+                                  <td>17/07/2021</td>
+                                </tr>
+                              
+                            <!--  <tr class="even"> -->
+
+                                <tr class="odd">
+                                  <td class="dtr-control sorting_1" tabindex="0">
+                                    <a href="#">OR0001</a>
+                                  </td>
+                                  <td>Chaqueta</td>
+                                  <td>
+                                  <span class="badge badge-success">Terminado</span>
+                                  </td>
+                                  <td>Cocer</td>
+                                  <td>Alberto Diaz</td>
+                                  <td>17/06/2021</td>
+                                </tr>
+
+                                <tr class="odd">
+                                  <td class="dtr-control sorting_1" tabindex="0">
+                                    <a href="#">OR0002</a>
+                                  </td>
+                                  <td>Pantaloneta</td>
+                                  <td>
+                                    <span class="badge badge-success">Terminado</span>
+                                  </td>
+                                  <td>Organizar costuras</td>
+                                  <td>Humberto Aries</td>
+                                  <td>03/06/2021</td>
+                                </tr>
+                              
+                                <tr class="even">
+                                  <td class="dtr-control sorting_1" tabindex="0">
+                                    <a href="#">OR0003</a>
+                                  </td>
+                                  <td>Blusa</td>
+                                  <td>
+                                    <span class="badge badge-success">Terminado</span>
+                                  </td>
+                                  <td>Estampar</td>
+                                  <td>Guillermo Arias</td>
+                                  <td>21/05/2021</td>
+                                </tr>
+                              
+                                <tr class="odd">
+                                  <td class="dtr-control sorting_1" tabindex="0">
+                                    <a href="#">OR0004</a>
+                                  </td>
+                                  <td>Blusa</td>
+                                  <td>
+                                    <span class="badge badge-info">En proceso</span>
+                                  </td>
+                                  <td>Agregar perlas</td>
+                                  <td>Nataly Ramirez</td>
+                                  <td>27/07/2021</td>
+                                </tr>
+                              
+                                <tr class="even">
+                                  <td class="dtr-control sorting_1" tabindex="0">
+                                    <a href="#">OR0005</a>
+                                  </td>
+                                  <td>Chaqueta</td>
+                                  <td>
+                                    <span class="badge badge-info">En proceso</span>
+                                  </td>
+                                  <td>Cocer chompa</td>
+                                  <td>Carlos Botero</td>
+                                  <td>27/08/2021</td>
+                                </tr>
+                              
+                                <tr class="odd">
+                                  <td class="dtr-control sorting_1" tabindex="0">
+                                      <a href="#">OR0006</a>
+                                  </td>
+                                  <td>Pantalon</td>
+                                  <td>
+                                    <span class="badge badge-info">En proceso</span>
+                                  </td>
+                                  <td>Entubar</td>
+                                  <td>Emanuel Vasquez</td>
+                                  <td>19/10/2021</td>
+                                </tr>
+                              
+                                <tr class="even">
+                                  <td class="dtr-control sorting_1" tabindex="0">
+                                    <a href="#">OR0007</a>
+                                  </td>
+                                  <td>Camiseta</td>
+                                  <td>
+                                    <span class="badge badge-warning">Pendiente</span>
+                                  </td>
+                                  <td>Modificación de mangas</td>
+                                  <td>Emanuel Vasquez</td>
+                                  <td>30/07/2021</td>
+                                </tr>
+                              
+                                <tr class="odd">
+                                  <td class="dtr-control sorting_1" tabindex="0">
+                                    <a href="#">OR0008</a>
+                                  </td>
+                                  <td>Blusa</td>
+                                  <td>
+                                    <span class="badge badge-warning">Pendiente</span>
+                                  </td>
+                                  <td>Agregar lentejuelas</td>
+                                  <td>Alejandra Queveda</td>
+                                  <td>26/06/2021</td>
+                                </tr>
+
+                                <tr class="even">
+                                  <td class="dtr-control sorting_1" tabindex="0">
+                                    <a href="#">OR0009</a>
+                                  </td>
+                                  <td>Sombrero</td>
+                                  <td>
+                                    <span class="badge badge-danger">Cancelado</span>
+                                  </td>
+                                  <td>Bordar con lentejuelas</td>
+                                  <td>Luisa Estrada</td>
+                                  <td>05/05/2021</td>
+                                </tr>
+
+                                <tr class="even">
+                                  <td class="dtr-control sorting_1" tabindex="0">
+                                    <a href="#">OR6609</a>
+                                  </td>
+                                  <td>Chaqueta</td>
+                                  <td>
+                                    <span class="badge badge-danger">Terminado</span>
+                                  </td>
+                                  <td>Hacer en cuero</td>
+                                  <td>Joseph Joestar</td>
+                                  <td>27/07/2020</td>
+                                </tr>
+                              
+                              </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                      
+                    
+                     <!--card foooter-->
+                    <div class="row card-nav ">
+
+                      <div class="col-sm-12 col-md-7 n-elect">
+                          <div class="dataTables_paginate paging_simple_numbers n-elect2" id="example2_paginate">
+                            <ul class="pagination">
+                              <li class="paginate_button page-item previous disabled" id="example2_previous">
+                                <a href="#" aria-controls="example2" data-dt-idx="0" tabindex="0" class="page-link">Anterior</a>
+                              </li>
+                              <li class="paginate_button page-item active">
+                                <a href="#" aria-controls="example2" data-dt-idx="1" tabindex="0" class="page-link">1</a>
+                              </li>
+                              <li class="paginate_button page-item ">
+                                <a href="#" aria-controls="example2" data-dt-idx="2" tabindex="0" class="page-link">2</a>
+                              </li>
+                              <li class="paginate_button page-item ">
+                                <a href="#" aria-controls="example2" data-dt-idx="3" tabindex="0" class="page-link">3</a>
+                              </li>
+                              <li class="paginate_button page-item ">
+                                <a href="#" aria-controls="example2" data-dt-idx="4" tabindex="0" class="page-link">4</a>
+                              </li>
+                              <li class="paginate_button page-item ">
+                                <a href="#" aria-controls="example2" data-dt-idx="5" tabindex="0" class="page-link">5</a>
+                              </li>
+                              <li class="paginate_button page-item ">
+                                <a href="#" aria-controls="example2" data-dt-idx="6" tabindex="0" class="page-link">6</a>
+                              </li>
+                              <li class="paginate_button page-item next" id="example2_next">
+                                <a href="#" aria-controls="example2" data-dt-idx="7" tabindex="0" class="page-link">Siguiente</a>
+                              </li>
+                            </ul>
+                          </div>
+                      </div>
+
+                    </div>
+                    <!--/card footer-->
+
+                  </div>
+                </div>
+                <!-- /.card-body -->
+                
+              </div>
+              <!-- /.card -->
+              
+            </div>
+            <!-- /.col -->
+          </div>
+          <!-- /.row -->
+  
+        <!-- /.container-fluid -->
+ 
+        <!-- FIN TABLA -->
+        
+
+ 
+
+
+
+  <!--fin del p*** copypaste de adminlte-->
+
+
+
+
+
+
+<!-- Main Footer -->
+    {% include 'footerNeedlebox.html' %}
+<!-- fin footer -->
+
+
+</div><!-- ./wrapper -->
+
+<!-- REQUIRED SCRIPTS -->
+
+</body>
+</html>

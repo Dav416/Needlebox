@@ -1,7 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b6ee1bb-6754-4768-a05d-a50ca3dde496" name="Default Changelist" comment="" />
+    <list default="true" id="4b6ee1bb-6754-4768-a05d-a50ca3dde496" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/core/migrations/0002_auto_20210720_1340.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/img/icon_finder.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap-grid.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap-grid.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap-grid.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap-grid.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap-grid.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap-grid.rtl.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap-grid.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap-grid.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap-reboot.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap-reboot.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap-reboot.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap-reboot.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap-reboot.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap-reboot.rtl.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap-reboot.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap-reboot.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap-utilities.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap-utilities.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap-utilities.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap-utilities.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap-utilities.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap-utilities.rtl.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap-utilities.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap-utilities.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap.rtl.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap.rtl.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap.rtl.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/css/bootstrap.rtl.min.css.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/js/bootstrap.bundle.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/js/bootstrap.bundle.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/js/bootstrap.esm.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/js/bootstrap.esm.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/js/bootstrap.esm.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/js/bootstrap.esm.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/js/bootstrap.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/js/bootstrap.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/js/bootstrap.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/js/bootstrap.min.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/lib/bootstrap-5.0.2-dist/js/popper.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ayuda.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clientes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clientesedit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clientesnuevousu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../clientesnuevousu2.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../contacto.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../cronograma.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../insumos.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/cronograma.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/css/adminlte.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/css/all.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/css/all.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/css/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/img/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/js/adminlte.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/js/bootstrap.bundle.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/js/demo.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/js/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lib/js/jquery.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../loginprincipal.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../loginrecpass.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../loginregusu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myCss/clientesStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myCss/contactoStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myCss/cronogramaStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myCss/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myCss/indexStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myCss/insumosStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myCss/loginprincipalStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myCss/loginrecpassStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myCss/loginregusuStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myCss/normalize.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myCss/nosotrosStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myCss/pedidosMostrarStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myCss/perfilStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myCss/reportar_errorStyle.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myImg/cliente-Img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myImg/crono-Img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myImg/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myImg/frigg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myImg/insumo-Img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myImg/needlebox-logo - 2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myImg/needlebox-logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myImg/needlebox-logo1.2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myImg/nosotros.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myImg/pedido-Img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myImg/perfil-img.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../myJs/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../nosotros.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../pedidos.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../perfil.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../reportar_error.html" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,7 +140,7 @@
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager">
     <configuration name="server" type="Python.DjangoServer" factoryName="Django server">
@@ -66,6 +178,7 @@
       <updated>1625008105958</updated>
       <workItem from="1625008113875" duration="3879000" />
       <workItem from="1625019512378" duration="3399000" />
+      <workItem from="1626798692413" duration="7725000" />
     </task>
     <servers />
   </component>

@@ -1,87 +1,280 @@
 from django.db import models
-from datetime import datetime
 
-"""
-class Employee(models.Model):
-    names = models.CharField(max_length = 150,verbose_name='Nombres')
-    cc = models.CharField(max_length = 10,verbose_name='Cedula')
-    date_joined = models.DateField(default= datetime.now, verbose_name='Fecha de registro')
-    date_creation = models.DateTimeField(auto_now=True)
-    date_uptdate = models.DateTimeField(auto_now_add=True)
-    age = models.PositiveIntegerField(default=0)
-    salary = models.DecimalField(default=0.00,max_digits=9,decimal_places=2)
-    state = models.BooleanField(default=True)
-    avatar = models.ImageField(upload_to='avatar/%y/%m/%d', null=True, blank=True)
-    curriculum = models.FileField(upload_to='avatar/%y/%m/%d',null=True, blank=True)
 
-        def __str__(self):
-            return self.names
-
-    class Meta:
-        verbose_name = 'Empleado'
-        verbose_name_plural = 'Empleados'
-        ordering = ['id']
-        db_table = 'empleado'
-    """
-
-class informacion_personal(models.Model):
-    user_name = models.TextField(verbose_name='Nombre de usuario')
-    user_email = models.TextField(verbose_name='Correo electronico')
-    register_joined = models.DateField(auto_now=True,verbose_name='Fecha de registro')
+# Modelo/tabla para llevar conteo de registro, podría permitir que un usuario recupere su cuenta
+class RegUsu(models.Model):
+    nomComUsu = models.CharField(max_length=100, unique=True, verbose_name='Nombre')
+    e_mailUsu = models.EmailField(unique=True, verbose_name='E-mail')
+    passwordUsu = models.CharField(max_length=10, verbose_name='Contraseña')
+    conf_passwordUsu = models.CharField(max_length=10, verbose_name='Confirmar Contraseña')
+    accept_terms = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.names
-    
+        return self.e_mailUsu
+
     class Meta:
-        verbose_name = 'informacion personal'
-        db_table = 'Informacion Personal'
+        verbose_name = 'Registrar usuario'
+        verbose_name_plural = 'Registrar Usuarios'
         ordering = ['id']
 
-class editar_usuario(models.Model):
-    user_name = models.TextField(verbose_name='Nombre de usuario')
-    user_email = models.TextField(verbose_name='Correo electronico')
-    user_password = models.TextField(verbose_name='Contraseña')
-    user_password2 = models.TextField(verbose_name='Confirmar contraseña')
-    security_question = models.TextField(verbose_name='Pregunta de seguridad')
-    answer = models.TextField(verbose_name='Respuesta')
+
+# Modelo/tabla de modulo perfil, para modificar la información de cada cuenta
+class Profile(models.Model):
+    select_q = 'Sel-una-pre'
+    color = 'Col-fav'
+    food = 'Ali-fav'
+    pet = 'Mas-inf'
+    admired = 'Per-adm'
+    book = 'Lib-fav'
+    song = 'Can-fav'
+
+    SQ_CHOICES = [
+        ('select_q', 'Seleccione una pregunta'),
+        ('color', 'Color favorito'),
+        ('food', 'Alimento favorito'),
+        ('pet', 'Mascota de la infancia'),
+        ('admired', 'Persona admirada'),
+        ('book', 'Libro favorito'),
+        ('song', 'Canción favorita'),
+    ]
+
+    re_RegyProf = models.OneToOneField(RegUsu, on_delete=models.PROTECT)  # Rel registro usuario e información de cuenta
+    nom_usu = models.CharField(max_length=100, unique=True, verbose_name='Nombre')
+    e_mail = models.EmailField(unique=True, verbose_name='E-mail')
+    password = models.CharField(max_length=50, verbose_name='Contraseña')
+    conf_password = models.CharField(max_length=50, verbose_name='Confirmar Contraseña')
+    show_password = models.BooleanField(default=False)
+    security_question = models.CharField(max_length=30, choices=SQ_CHOICES, default=select_q)
+    security_answer = models.CharField(max_length=50, verbose_name="Respect")
+    accept_terms = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.names
+        return self.nom_usu
 
     class Meta:
-        verbose_name = 'editar usuario'
-        db_table = 'Editar Usuario'
+        verbose_name = 'Perfil'
+        verbose_name_plural = 'Perfiles'
         ordering = ['id']
 
-class reportar_error(models.Model):
-    user_name = models.TextField(verbose_name='Nombre de usuario')
-    user_email = models.TextField(verbose_name='Correo electronico')
-    type_error = models.TextField(verbose_name='Tipo de error')
-    details_error = models.TextField(verbose_name='Detalles del error')
+
+# ---No se crea Modelo/tabla para recuperar ocntraseña o iniciar sesión por obvias razones.---
+
+# Modelo/tabla de modulo contactar desarroladores
+class ContactUs(models.Model):
+    cont_nombre = models.CharField(max_length=100, verbose_name="Nombre")
+    correo_proveedor = models.EmailField(max_length=50, verbose_name="E-mail de contacto", unique=True)
+    cont_asunto = models.CharField(max_length=500, verbose_name="Asunto")
+    cont_mensaje = models.TextField(max_length=2000, verbose_name="Asunto")
 
     def __str__(self):
-        return self.names
+        return self.cont_nombre
 
     class Meta:
-        verbose_name = 'reportar error'
-        db_table = 'Reportar Error'
+        verbose_name = 'Usuario en contacto'
+        verbose_name_plural = 'Usuarios en contacto'
         ordering = ['id']
 
-class contactar_desarrolladores(models.Model):
-    user_name = models.TextField(verbose_name='Nombre de usuario')
-    user_email = models.TextField(verbose_name='Correo electronico')
-    affair = models.TextField(verbose_name='Asunto')
-    message = models.TextField(verbose_name='Mensaje')
+
+# ---TABLAS/MODELOS DEL MODULO CLIENTES---
+
+# Modelo/tabla de modulo clientes, para registrar información básica de cliente
+class InfoClient(models.Model):
+    DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key: borrar info al borrar perfil
+    # codecli = models.IntegerField(max_length=None, unique=True, verbose_name="codigo identificador cliente")
+    nomCli = models.CharField(max_length=50, unique=True, verbose_name='Nombre cliente')
+    apeCli = models.CharField(max_length=50, unique=True, verbose_name='Apellido cliente')
+    telCli = models.IntegerField(default=0, unique=True, verbose_name="Teléfono cliente")
+    celCli = models.IntegerField(default=0, unique=True, verbose_name="celular cliente")
+    e_mailCli = models.EmailField(unique=True, verbose_name='E-mail cliente')
+    dirCli = models.CharField(max_length=50, verbose_name="Dirección de cliente")
+    imgCli = models.ImageField(upload_to='Fotos-Clientes', null=True, blank=True)
 
     def __str__(self):
-        return self.names
+        return self.nomCli, self.apeCli
 
     class Meta:
-        verbose_name = 'contactar desarrolladores'
-        db_table = 'Contactar Desarrolladores'
+        verbose_name = 'Cliente'
+        verbose_name_plural = 'Clientes'
         ordering = ['id']
 
 
+# Modelo/tabla de modulo clientes, para registrar medidas y otra información de pedidos
+class InfoGeneClient(models.Model):
+
+    # opciones tipo cliente
+    cli_loc = 'cliente local'
+    cli_nal = 'cliente nacional'
+
+    cliente_opciones = (
+        (cli_loc, 'cliente local'),
+        (cli_nal, 'cliente nacional'))
+
+    # opciones estilo cliente
+    clasico = 'clasico'
+    deportivo = 'deportivo'
+    moderno = 'moderno'
+    oficio = 'oficio'
+    otro = 'otro'
+    ninguno = 'ninguno'
+
+    estilo_clientes = (
+        (clasico, 'clasico'),
+        (deportivo, 'deportivo'),
+        (moderno, 'moderno'),
+        (oficio, 'oficio'),
+        (otro, 'otro'),
+        (ninguno, 'ninguno'))
+
+    # opciones medio de pago cliente
+    efec = 'Efectivo'
+    tarj = 'Tarjeta'
+    trans = 'Transferencia'
+    giro = 'Giro'
+
+    medio_pago = (
+        (efec, 'Efectivo'),
+        (tarj, 'Tarjeta'),
+        (trans, 'Transferencia'),
+        (giro, 'Giro'))
+
+    DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key borrar info al borrar el perfil
+    DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT)  # foreing key borrar info al borrar cliente
+    # codecli2 = models.IntegerField(InfoClient.codecli, unique=True, default=InfoClient.codecli) llama atributo ajeno
+    infoTCli = models.TextField(max_length=3000, verbose_name="Info técnica cliente")
+    ver_ITC = models.CharField(max_length=200, null=True, blank=True, verbose_name='verificación realizada')
+    revP_ITC = models.CharField(max_length=200, null=True, blank=True, verbose_name='Revisar pronto')
+    revIM_ITC = models.CharField(max_length=200,  null=True, blank=True, verbose_name='Revisar de inmediato')
+    tipoCli = models.CharField(choices=cliente_opciones, default=cli_loc, max_length=100)
+    prenda = models.BooleanField(null=True, verbose_name='tipos de prenda')
+    estilCli = models.CharField(choices=estilo_clientes, default=ninguno, max_length=100)
+    medPag = models.CharField(choices=medio_pago, default=efec, max_length=100)
+
+    def __str__(self):
+        return self.prenda  # codecli2 (mostraría este atributo de la entidad InfoClient para identificar la prenda)
+
+    class Meta:
+        verbose_name = 'Detalle Cliente'
+        verbose_name_plural = 'Detalles Clientes'
+        ordering = ['id']
 
 
+# ---TABLAS/MODELOS DEL MODULO CRONOGRAMA---
+# Modelo/tabla de modulo cronograma, para registrar pedidos
+class CronoForm(models.Model):
+    DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key borrar info al borrar el perfil
+    DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT)  # foreing key borrar info al borrar cliente
+    nombCli = models.CharField(max_length=50, verbose_name='Nombre cliente')
+    fecharec = models.CharField(max_length=100, verbose_name='Fecha de recibo')
 
+    # opciones para seleccion de tipo de pedido
+    prenda = 'Prenda(s)'
+    colecc = 'Colección'
+    modifi = 'Modificación'
+    repara = 'Reparación'
+
+    tipo_pedido = (
+        (prenda, 'Prenda(s)'),
+        (colecc, 'Colección'),
+        (modifi, 'Modificación'),
+        (repara, 'Reparación')
+    )
+    tipoped = models.CharField(max_length=100, choices=tipo_pedido, unique=True, verbose_name='Tipo de pedido')
+    fechaLiEn = models.CharField(max_length=100, blank=True, verbose_name='Fecha de limite de entrega')
+    lugarEntr = models.CharField(max_length=200, verbose_name="Lugar de entrega")
+
+    # opciones para seleccion de medio de entrega
+    correo = 'Correo'
+    fab_loc = 'Fábrica o local'
+    pyhde = 'Acordar punto y hora'
+    medio_entre = (
+        (correo, 'Correo'),
+        (fab_loc, 'Fábrica o local'),
+        (pyhde, 'Acordar punto y hora')
+    )
+    medentr = models.CharField(max_length=100, choices=medio_entre, unique=True, verbose_name='Medio de entrega')
+
+    def __str__(self):
+        return self.nombCli
+
+    class Meta:
+        verbose_name = 'Cronograma'
+        verbose_name_plural = 'Cronograma'
+        ordering = ['id']
+
+
+# ---TABLAS/MODELOS DEL MODULO PEDIDOS---
+# Modelo/tabla de modulo cronograma, para registrar pedidos
+class Todopedido(models.Model):
+    DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key borrar info al borrar el perfil
+    DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT)  # foreing key borrar info al borrar cliente
+    numPedido = models.IntegerField(max_length=None, unique=True, verbose_name="Número de pedido")
+    pedido = models.CharField(max_length=20, verbose_name="Pedido")
+    descri = models.CharField(max_length=20, verbose_name="Descripción")
+    client = models.CharField(max_length=20, verbose_name="Cliente")
+    fechadEnt = models.CharField(max_length=100, blank=True, verbose_name='Fecha de entrega')
+
+    def __str__(self):
+        return self.numPedido
+
+    class Meta:
+        verbose_name = 'Pedido'
+        verbose_name_plural = 'Pedidos'
+        ordering = ['id']
+
+
+# ---TABLAS/MODELOS DEL MODULO INSUMOS---
+# Modelo/tabla de modulo insumos, para registrar INSUMOS de confección
+class InsRegForm(models.Model):
+    select_tip = 'Sel-tip-ins'
+    tela = 'telas'
+    hilo = 'hi-y-la'
+    adorno = 'ado-y-bis'
+    accesorio = 'acc-cin-com'
+    herramienta = 'he-in'
+    otros = 'otr'
+
+    SQ_CHOICES = [
+        ('select_tip', 'Seleccione un tipo de insumo'),
+        ('tela', 'Telas'),
+        ('hilo', 'Hilos y lanas'),
+        ('adorno', 'Adorno y bisutería'),
+        ('accesorio', 'Accesorios, cintas y complementos'),
+        ('herramienta', 'Herramientas e instrumentos'),
+        ('otros', 'Otros'),
+    ]
+    DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key borrar info al borrar perfil
+    DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT)  # foreing key borrar info al borrar cliente
+    # rel_InsuProv = models.ManyToManyField(InsRegProv)  # rel muchos insumos / muchos proveedores (agotamiento insumo)
+    tipo_insumo = models.CharField(max_length=30, choices=SQ_CHOICES, default=select_tip)
+    especificacion_insumo = models.TextField(max_length=1500, verbose_name="Tipo, marca y otros")
+    estado_insumo = models.CharField(max_length=30, verbose_name="Cantidad o estado")
+    costxunid_insumo_costo = models.PositiveIntegerField(default=0)
+    costxunid_insumo_unidad = models.CharField(max_length=20, verbose_name="cm, kilos, unidades, etc")
+
+    def __str__(self):
+        return self.tipo_insumo
+
+    class Meta:
+        verbose_name = 'Registro insumo'
+        verbose_name_plural = 'Registro insumos'
+        ordering = ['id']
+
+
+# Modelo/tabla de modulo insumos, para registrar PROVEEDORES de confección
+class InsRegProv(models.Model):
+    DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key borrar info al borrar el perfil
+    DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT)  # foreing key borrar info al borrar cliente
+    rel_ProvInsu = models.ManyToManyField(InsRegForm)  # rel muchos proveedores/muchos insumos (para agotamiento insumo)
+    nombre_proveedor = models.CharField(max_length=100, verbose_name="Establecimiento/persona")
+    Insumos_proveedor = models.TextField(max_length=2000, verbose_name="Insumos que vende")
+    telefono_proveedor = models.IntegerField(default=0, unique=True)
+    correo_proveedor = models.EmailField(max_length=50, verbose_name="E-mail proveedor", unique=True)
+    ubicacion_proveedor = models.CharField(max_length=50, verbose_name="Dirección de proveedor")
+
+    def __str__(self):
+        return self.nombre_proveedor
+
+    class Meta:
+        verbose_name = 'Registro proveedor'
+        verbose_name_plural = 'Registro proveedores'
+        ordering = ['id']

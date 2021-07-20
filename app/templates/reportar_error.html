@@ -1,0 +1,121 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title> NEEDLEBOX - Reportar Error</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  
+  <!--iconos-->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+  <!-- Font Awesome (más iconos) -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'lib/css/adminlte.min.css' %}">
+
+  <!--mis putos estilos-->
+  <link rel="stylesheet" href="{% static 'myCss/reportar_errorStyle.css' %}">
+
+  <!--Normalize-->
+  <link rel="stylesheet" href="{% static 'myCss\normalize.css' %}">
+
+  <!-- jQuery--> 
+  <script src="{% static 'lib\js\jquery.min.js' %}"></script>
+
+  <!--bootstrap-->
+  <script src="{% static 'lib/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- AdminLTE App  -->
+  <script src="{% static 'lib\js\adminlte.js' %}"></script>
+
+</head>
+
+
+<body>
+
+<div class="wrapper">
+
+
+   <!-- Preloader -->
+  {% include 'preloaderNeedlebox.html' %}
+  <!--fin preloader-->
+
+  <!-- header-->
+    {% include 'headerSimpleNeedlebox.html' %}
+  <!-- fin header-->
+
+  <!--Encabezado de sección-->
+  <div class="mod-act c-report"><div class="cover"><span class="mod-act-nom">Reportar Error</span></div></div>
+
+
+ 
+  <!--Aqui iria el contenido-->
+      <div style="background-color: #f5f5f5;">
+  
+          
+            <!-- INICIO Formulario de errores-->
+        
+            <div class="report" >
+              <!-- titulo-->
+              <div class="headertable">
+                <legend>Formulario de error</legend>
+              </div>
+              <!-- fin titulo-->
+
+              <!-- contenido-->
+              <label for="name">Nombre</label>
+              <input type="text" id="name"  class="campo-tab-err" placeholder="Ingresa tu Nombre"  required>
+              <label for="email">Correo</label>
+              <input type="email" id="email" class="campo-tab-err" placeholder="Email@hotmail.com" required>
+              
+              <!-- lista desplegable-->
+              <label for="formulario_error">Tipo de error</label>
+              <select name="formulario_error" id="formulario_error" class="tabla_error campo-tab-err">
+                <optgroup label="Tipo de error">
+                  <option value="">Seleccione un tipo de error</option>
+                  <option value="error">Error Leve</option>
+                  <option value="error">Error Moderado</option>
+                  <option value="error">Error Grave </option>
+                </optgroup>
+              </select>
+              <!-- fin lista desplegable-->
+              <label for="message">Detalles del error</label>
+              <div class="message">
+                <textarea  name="message" id="" cols="30" rows="5" class="campo-tab-err" required></textarea>
+              </div>
+              <button>Enviar</button>
+            </div>
+              <!-- FIN formulariod de errores -->
+        
+      </div>
+
+  
+
+
+  <!--fin del p*** copypaste de adminlte-->
+
+
+
+
+
+
+<!-- Main Footer -->
+
+ {% include 'footerNeedlebox.html' %}
+
+ <!-- end main footer -->
+
+
+</div>
+
+<!-- REQUIRED SCRIPTS -->
+
+</body>
+</html>

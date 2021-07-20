@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal" created-in="PY-211.7442.45">
+    <data-source name="db" uuid="a60977a8-2f5d-4760-82f2-36bba5e66fcd">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" exact-version="0" />
+      <secret-storage>forget</secret-storage>
+      <schema-mapping />
+    </data-source>
+  </component>
+</project>

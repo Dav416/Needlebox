@@ -1,0 +1,118 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+ 
+  <title> NEEDLEBOX - Contáctenos</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  
+  <!--iconos-->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+  <!-- Font Awesome (más iconos) -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'lib/css/adminlte.min.css' %}">
+
+  <!--mis putos estilos-->
+  <link rel="stylesheet" href="{% static 'myCss/contactoStyle.css' %}">
+
+  <!--Normalize-->
+  <link rel="stylesheet" href="{% static 'myCss/normalize.css' %}">
+
+  <!-- jQuery--> 
+  <script src="{% static 'lib\js\jquery.min.js' %}"></script>
+
+  <!--bootstrap-->
+  <script src="{% static 'lib/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- AdminLTE App  -->
+  <script src="{% static 'lib\js\adminlte.js' %}"></script>
+
+</head>
+
+
+<body>
+
+  <div class="wrapper">
+
+  <!-- Preloader -->
+    {% include 'preloaderNeedlebox.html' %}
+  <!--fin preloader-->
+
+  <!-- header-->
+    {% include 'headerSimpleNeedlebox.html' %}
+  <!-- fin header-->
+
+    <!--Encabezado de sección-->
+    <div class="mod-act c-cont"><div class="cover"><span class="mod-act-nom">Contactar a los desarrolladores</span></div></div>
+  
+    <!--Aqui iria el contenido-->
+    
+    <div class="card">
+
+      <div class="card-body row">
+
+        <div class="col-5 text-center d-flex align-items-center justify-content-center cont-infoylogo">
+        
+            <img src="{% static 'myImg/needlebox-logo - 2.png' %}" alt="Needlebox logo" class="need-logo">
+            
+            <p class="lead mb-5 cont-info">
+              Técnica en Programación de Software <br>SENA<br> Itagüí - Colombia<br>
+            </p>
+        
+        </div>
+
+
+        <div class="col-7 cont-form">
+          <div class="form-group">
+            <label for="inputName">Nombre</label>
+            <input type="text" id="inputName" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="inputEmail">Correo electrónico</label>
+            <input type="email" id="inputEmail" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="inputSubject">Asunto</label>
+            <input type="text" id="inputSubject" class="form-control">
+          </div>
+          <div class="form-group">
+            <label for="inputMessage">Mensaje</label>
+            <textarea id="inputMessage" class="form-control" rows="4"></textarea>
+          </div>
+          <div class="form-group">
+            <input type="submit" class="btn btn-primary " value="Envíar">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+     <!--fin del p*** copypaste de adminlte-->
+     
+  </div>
+ 
+
+
+
+
+
+
+<!-- Main Footer -->
+
+ {% include 'footerNeedlebox.html' %}
+
+<!-- end main footer -->
+
+<!-- REQUIRED SCRIPTS -->
+
+</body>
+</html>

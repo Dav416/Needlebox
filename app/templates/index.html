@@ -1,33 +1,119 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="{% static '/lib/bootstrap-5.0.2-dist/css/bootstrap.min.css' %}">
-  <script src="{% static 'lib/bootstrap-5.0.2-dist/js/jquery.min.js' %}"></script>
-  <script src="{% static 'lib/bootstrap-5.0.2-dist/js/popper.min.js' %}"></script>
-  <script src="{% static 'lib/bootstrap-5.0.2-dist/js/bootstrap.min.js' %}"></script>
+
+  <!--viewport para responsive-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title> NEEDLEBOX - Inicio</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'lib/css/adminlte.min.css' %}">
+
+  <!--Mis estilos-->
+  <link rel="stylesheet" href="{% static 'myCss/indexStyle.css' %}">
+
+  <!--Normalize-->
+  <link rel="stylesheet" href="{% static 'myCss/normalize.css' %}">
+
+  <!-- jQuery--> 
+  <script src="{% static 'lib/js/jquery.min.js' %}"></script>
+
+  <!-- AdminLTE App  -->
+  <script src="{% static 'lib/js/adminlte.js' %}"></script>
+
 
 </head>
+
+
 <body>
 
-<div class="container-fluid">
-  <h1>My First Bootstrap Page</h1>
-  <p>This part is inside a .container-fluid class.</p>
-  <p>The .container-fluid class provides a full width container, spanning the entire width of the viewport.</p>
-</div>
-<button type="button" class="btn">Basic</button>
-<button type="button" class="btn btn-primary">Primary</button>
-<button type="button" class="btn btn-secondary">Secondary</button>
-<button type="button" class="btn btn-success">Success</button>
-<button type="button" class="btn btn-info">Info</button>
-<button type="button" class="btn btn-warning">Warning</button>
-<button type="button" class="btn btn-danger">Danger</button>
-<button type="button" class="btn btn-dark">Dark</button>
-<button type="button" class="btn btn-light">Light</button>
-<button type="button" class="btn btn-link">Link</button>
-</body>
+<div class="wrapper">
 
+  <!-- Preloader -->
+  {% include 'preloaderNeedlebox.html' %}
+  <!--fin preloader-->
+
+
+  <!-- header-->
+  {% include 'headerSimpleNeedlebox.html' %}
+  <!-- fin header -->
+
+  <div class="Contenido">
+    
+    <!--CLIENTES-->
+    <div class="card card-primary card-outline c-client">
+      <a href="/clientes">
+        <div class="card-header c-ClientH" >
+            <h2 class="card-ti m-0">Clientes</h2>
+        </div>  
+        <div class="card-body c-ClientB">    
+            <p>Su agenda de clientes:</p>
+            <p class="card-tx">Añada contactos, revise sus datos, actualice la información o borrelos del registro.</p> 
+        </div>
+      </a>
+    </div>
+
+    <!--CRONOGRAMA-->
+    <div class="card card-primary card-outline c-crono" >
+      <a href="/cronograma">
+        <div class="card-header c-CronoH">
+            <h2 class="card-ti m-0">Cronograma</h2>
+        </div>  
+        <div class="card-body c-CronoB">    
+            <p>Establezca sus tiempos de trabajo y entrega:</p>
+            <p class="card-tx">Evite retrasos con sus pedido, programe su confección y fechas de entrega.</p> 
+        </div>
+      </a>  
+    </div>
+
+    <!--PEDIDOS-->
+    <div class="card card-primary card-outline c-ped">
+      <a href="/pedidos">
+        <div class="card-header c-PedH">
+            <h2 class="card-ti m-0">Pedidos</h2>
+        </div>  
+        <div class="card-body c-PedB">    
+            <p>Registre los pedidos de sus clientes:</p>
+            <p class="card-tx">Especifique detalles de los encargos como medidas, materiales necesarios y costo final.</p> 
+        </div>
+      </a>
+    </div>
+
+
+    <!--INSUMOS-->
+    <div class="card card-primary card-outline c-insu">
+      <a href="/insumos">
+        <div class="card-header c-InsuH">
+            <h2 class="card-ti m-0">Insumos</h2>
+        </div>  
+        <div class="card-body c-InsuB">    
+            <p>Adiministre sus insumos:</p>
+            <p class="card-tx">Añada y actualice sus insumos, así como sus existencias, estado y precio.</p> 
+        </div>
+      </a>
+    </div>
+
+
+  </div>
+
+
+
+ <!-- Main Footer -->
+
+ {% include 'footerNeedlebox.html' %}
+
+ <!-- end main footer -->
+
+
+</div><!-- ./wrapper -->
+
+
+
+</body>
 </html>

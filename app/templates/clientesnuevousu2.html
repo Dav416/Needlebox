@@ -1,0 +1,200 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <title> NEEDLEBOX - Clientes</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+  <!-- Font Awesome (más iconos) -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'lib/css/adminlte.min.css' %}">
+
+  <!--Mis estilos-->
+  <link rel="stylesheet" href="{% static 'myCss/clientesStyle.css' %}">
+
+  <!--Normalize-->
+  <link rel="stylesheet" href="{% static 'myCss/normalize.css' %}">
+
+   <!-- jQuery-->
+  <script src="{% static 'lib/js/jquery.min.js' %}"></script>
+
+  <!--bootstrap-->
+  <script src="{% static 'lib/js/bootstrap.bundle.min.js' %}"></script>
+
+  <!-- AdminLTE App  -->
+  <script src="{% static 'lib/js/adminlte.js' %}"></script>
+
+</head>
+
+
+<body>
+
+<div class="wrapper">
+
+
+  <!-- Preloader -->
+    {% include 'preloaderNeedlebox.html' %}
+  <!--fin preloader-->
+
+  <!-- header-->
+    {% include 'secondHeaderNeedlebox.html' %}
+  <!-- fin header-->
+
+  <!--Encabezado de sección-->
+  <div class="mod-act c-client"><div class="cover"><span class="mod-act-nom">Clientes</span></div></div>
+
+
+ 
+  <!--Aqui iria el contenido-->
+  <div class="contenido">
+
+    <div class="card card-warning col-sm-12" id="31415">
+      <div class="card-header card-t">
+        <h3 class="card-title">Añade las generalidades del cliente</h3>
+      </div>
+      <!-- /.card-header -->
+      <div class="card-body">
+        <form>
+          <div class="row">
+            <div class="col-sm-12">
+              <!-- textarea -->
+              <div class="form-group">
+                <label>Medidas e información técnica importante</label>
+                <textarea class="form-control" rows="3" placeholder="Medidas y demás..."></textarea>
+              </div>
+            </div>
+          </div>
+  
+          <!-- input states -->
+          <div class="form-group">
+            <label class="col-form-label" for="inputSuccess"><i class="fas fa-check"></i> Verificación realizada</label>
+            <input type="text" class="form-control is-valid" id="inputSuccess" placeholder="Ingrese observación ...">
+          </div>
+          <div class="form-group">
+            <label class="col-form-label" for="inputWarning"><i class="far fa-bell"></i> Revisar pronto</label>
+            <input type="text" class="form-control is-warning" id="inputWarning" placeholder="Ingrese observación ...">
+          </div>
+          <div class="form-group">
+            <label class="col-form-label" for="inputError"><i class="far fa-times-circle"></i> Revisar de inmediato</label>
+            <input type="text" class="form-control is-invalid" id="inputError" placeholder="Ingrese observación ...">
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <label for="group2">Prendas más solicitadas por el cliente:</label>
+              <!-- checkbox -->
+              <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox">
+                  <label class="form-check-label">Vestido</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox">
+                  <label class="form-check-label">Pantalón</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" checked="">
+                  <label class="form-check-label">Chaqueta</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox">
+                  <label class="form-check-label">Blusa/Camisa</label>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="col-sm-6">
+              <!-- radio -->
+              <label>Localización de cliente</label>
+
+              <div class="form-group">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="radio1">
+                  <label class="form-check-label">Cliente local</label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="radio1" checked="">
+                  <label class="form-check-label">Cliente nacional</label>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row">
+            <div class="col-sm-6">
+              <!-- Select multiple-->
+              <div class="form-group ">
+                <label>Estilo del cliente</label>
+                <select multiple="" class="form-control ">
+                  <option>Clásico/Señorial</option>
+                  <option>Deportivo</option>
+                  <option>Moderno</option>
+                  <option>Trajes de oficio</option>
+                  <option>Otro</option>
+                  <option>Ninguno</option>
+                </select>
+                
+              </div>
+             
+            </div>
+          </div>
+          
+          <div class="row">
+            <div class="col-sm-6">
+
+              <!-- select -->
+              <div class="form-group">
+                <label>Medio de pago habitual</label>
+                <select class="form-control">
+                  <option>Efectivo</option>
+                  <option>Tarjeta</option>
+                  <option>Transferencia</option>
+                  <option>Giro</option>
+                </select>
+              </div>
+            </div>
+          </div>
+  
+         
+        </form>
+        <a href="/editclient"><input type="submit" value="Guardar" class="btn btn-success float-right"></a>
+      </div>
+      <!-- /.card-body -->
+    </div>
+
+ 
+    
+<!--menu copypaste de adminte---------------------------------------------------------------------------------------------------->
+
+
+
+  </div>
+
+<!--fin del div para el contenido-->
+
+
+<!-- Main Footer -->
+    {% include 'footerNeedlebox.html' %}
+<!-- fin footer -->
+
+
+</div>
+
+<!-- REQUIRED SCRIPTS -->
+
+</body>
+</html>
