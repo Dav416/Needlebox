@@ -4,7 +4,10 @@
     <list default="true" id="4b6ee1bb-6754-4768-a05d-a50ca3dde496" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <change beforePath="$PROJECT_DIR$/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
@@ -78,7 +81,11 @@
       <workItem from="1627260664424" duration="228000" />
       <workItem from="1627261105633" duration="1111000" />
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       <workItem from="1627593747133" duration="1001000" />
+=======
+      <workItem from="1627593747133" duration="1362000" />
+>>>>>>> Stashed changes
 =======
       <workItem from="1627593747133" duration="1362000" />
 >>>>>>> Stashed changes
