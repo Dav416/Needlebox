@@ -1,0 +1,58 @@
+{% extends 'index.html' %}
+
+{% block content %}
+     
+    <!--CLIENTES-->
+    <div class="card card-primary card-outline c-client">
+        <a href="/clientes">
+          <div class="card-header c-ClientH" >
+              <h2 class="card-ti m-0">Clientes</h2>
+          </div>  
+          <div class="card-body c-ClientB">    
+              <p>Su agenda de clientes:</p>
+              <p class="card-tx">Añada contactos, revise sus datos, actualice la información o borrelos del registro.</p> 
+          </div>
+        </a>
+      </div>
+  
+      <!--CRONOGRAMA-->
+      <div class="card card-primary card-outline c-crono" >
+        <a href="/cronograma">
+          <div class="card-header c-CronoH">
+              <h2 class="card-ti m-0">Cronograma</h2>
+          </div>  
+          <div class="card-body c-CronoB">    
+              <p>Establezca sus tiempos de trabajo y entrega:</p>
+              <p class="card-tx">Evite retrasos con sus pedido, programe su confección y fechas de entrega.</p> 
+          </div>
+        </a>  
+      </div>
+  
+      <!--PEDIDOS-->
+      <div class="card card-primary card-outline c-ped">
+        <a href="/pedidos">
+          <div class="card-header c-PedH">
+              <h2 class="card-ti m-0">Pedidos</h2>
+          </div>  
+          <div class="card-body c-PedB">    
+              <p>Registre los pedidos de sus clientes:</p>
+              <p class="card-tx">Especifique detalles de los encargos como medidas, materiales necesarios y costo final.</p> 
+          </div>
+        </a>
+      </div>
+  
+  
+      <!--INSUMOS-->
+      <div class="card card-primary card-outline c-insu">
+        <a href="/insumos">
+          <div class="card-header c-InsuH">
+              <h2 class="card-ti m-0">Insumos</h2>
+          </div>  
+          <div class="card-body c-InsuB">    
+              <p>Adiministre sus insumos:</p>
+              <p class="card-tx">Añada y actualice sus insumos, así como sus existencias, estado y precio.</p> 
+          </div>
+        </a>
+      </div>
+  
+{% endblock %}
