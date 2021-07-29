@@ -2,68 +2,63 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
+    <head>
+      <meta charset="utf-8">
 
-  <!--viewport para responsive-->
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title> NEEDLEBOX - Inicio</title>
+      <!--viewport para responsive-->
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+      <title> NEEDLEBOX - Inicio</title>
 
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{% static 'lib/css/adminlte.min.css' %}">
+      <!-- Google Font: Source Sans Pro -->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
 
-  <!--Mis estilos-->
-  <link rel="stylesheet" href="{% static 'myCss/indexStyle.css' %}">
+      <!-- Theme style -->
+      <link rel="stylesheet" href="{% static 'lib/css/adminlte.min.css' %}">
 
-  <!--Normalize-->
-  <link rel="stylesheet" href="{% static 'myCss/normalize.css' %}">
+      <!--Mis estilos-->
+      <link rel="stylesheet" href="{% static 'myCss/indexStyle.css' %}">
 
-  <!-- jQuery--> 
-  <script src="{% static 'lib/js/jquery.min.js' %}"></script>
+      <!--Normalize-->
+      <link rel="stylesheet" href="{% static 'myCss/normalize.css' %}">
 
-  <!-- AdminLTE App  -->
-  <script src="{% static 'lib/js/adminlte.js' %}"></script>
+      <!-- jQuery-->
+      <script src="{% static 'lib/js/jquery.min.js' %}"></script>
 
+      <!-- AdminLTE App  -->
+      <script src="{% static 'lib/js/adminlte.js' %}"></script>
 
-</head>
-
-
-<body>
-
-<div class="wrapper">
-
-  <!-- Preloader -->
-  {% include 'preloaderNeedlebox.html' %}
-  <!--fin preloader-->
+    </head>
 
 
-  <!-- header-->
-  {% include 'headerSimpleNeedlebox.html' %}
-  <!-- fin header -->
+    <body>
 
-  <div class="Contenido">
-    
-    {% block content %}
+        <div class="wrapper">
 
-    {% endblock %}
+          <!-- Preloader -->
+          {% include 'preloaderNeedlebox.html' %}
+          <!--fin preloader-->
 
-  </div>
+
+          <!-- header-->
+          {% include 'headerSimpleNeedlebox.html' %}
+          <!-- fin header -->
+
+          <div class="Contenido">
+            {% block content %}
+
+            {% endblock %}
+          </div>
 
 
 
- <!-- Main Footer -->
+          <!-- Main Footer -->
+          {% include 'footerNeedlebox.html' %}
+          <!-- end main footer -->
 
- {% include 'footerNeedlebox.html' %}
-
- <!-- end main footer -->
-
-
-</div><!-- ./wrapper -->
+        </div>
+        <!-- ./wrapper -->
 
 
 
-</body>
+    </body>
 </html>
