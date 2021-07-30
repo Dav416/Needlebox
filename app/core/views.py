@@ -31,11 +31,11 @@ def needle_pedidos(request):
 
 
 def needle_insu(request):
-    return render(request, 'insumos.html')
+    return render(request, 'insumoscontent.html')
 
 
 def needle_perfil(request):
-    return render(request, 'perfil.html')
+    return render(request, 'perfilcontent.html')
 
 
 def needle_nosotros(request):
