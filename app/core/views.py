@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 # ------codigo proyecto-------------------
 def needle_index(request):
-    return render(request, 'indexcontent.html')
+    return render(request, 'index.html')
 
 
 def needle_cliente(request):
@@ -31,11 +31,11 @@ def needle_pedidos(request):
 
 
 def needle_insu(request):
-    return render(request, 'insumoscontent.html')
+    return render(request, 'insumos.html')
 
 
 def needle_perfil(request):
-    return render(request, 'perfilcontent.html')
+    return render(request, 'perfil.html')
 
 
 def needle_nosotros(request):
