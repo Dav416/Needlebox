@@ -1,51 +1,25 @@
+{% extends 'baselogin.html' %}
+
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
+<!--title del head-->
+{% block title %}
+    Ingresar a la cuenta
+{% endblock %}
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  <title> Ingresar a la cuenta </title>
-
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-
-  <!-- Font Awesome (más iconos) -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{% static 'lib/css/adminlte.min.css' %}">
-
-  <!--mis putos estilos-->
+<!--mis estilos-->
+{% block mycss %}
   <link rel="stylesheet" href="{% static 'myCss/loginprincipalStyle.css' %}">
-
-  <!--Normalize-->
-  <link rel="stylesheet" href="{% static 'myCss\normalize.css' %}">
-
-  <!-- jQuery--> 
-  <script src="{% static 'lib\js\jquery.min.js' %}"></script>
-
-  <!--bootstrap-->
-  <script src="{% static 'lib/js/bootstrap.bundle.min.js' %}"></script>
-
-  <!-- AdminLTE App  -->
-  <script src="{% static 'lib\js\adminlte.js' %}"></script>
-
-</head>
+{% endblock %}
 
 
-<body class="login-page" style="min-height: 496.58px;">
+<!--bloque de contenido-->
+{% block content%}
 
-  <!-- Preloader -->
-    {% include 'preloaderNeedlebox.html' %}
-  <!--fin preloader-->
+   <body class="login-page" style="min-height: 496.58px;">
 
   <!------contenido del login--------------------------------------------------------------------------------------------------------------------------->
-  
+
     <div class="login-box">
       <div class="login-logo">
         <img class="logo" src="{% static 'myImg/needlebox-logo1.2.png' %}" alt="NeedleboxLogo">
@@ -56,7 +30,7 @@
       <div class="card">
         <div class="card-body login-card-body">
           <p class="login-box-msg">Inicia sesión para continuar</p>
-    
+
           <form action="../../index3.html" method="post">
 
             <div class="input-group mb-3">
@@ -99,9 +73,9 @@
               <i class="fab fa-facebook mr-2"></i> Ingrese usando Facebook
             </a>
           </div>
-    
 
-    
+
+
           <p class="mb-1">
             <a href="/recuperar" class="link-estilo">Olvidé mi contraseña</a>
           </p>
@@ -112,13 +86,8 @@
         <!-- /.login-card-body -->
       </div>
     </div>
-    <!-- /.login-box -->
+
+{% endblock %}
+
+
     
-
-    
-
-  <!--fin del div para el contenido-->
-
-
-</body>
-</html>
