@@ -1,51 +1,26 @@
+{% extends 'baselogin.html' %}
+
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
+<!--title del head-->
+{% block title %}
+    Recuperar contraseña
+{% endblock %}
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  <title> Recuperar contraseña </title>
-
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-
-  <!-- Font Awesome (más iconos) -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
-  <!-- Theme style -->
-  <link rel="stylesheet" href="{% static 'lib/css/adminlte.min.css' %}">
-
-  <!--mis putos estilos-->
+<!--mis estilos-->
+{% block mycss %}
   <link rel="stylesheet" href="{% static 'myCss/loginrecpassStyle.css' %}">
-
-  <!--Normalize-->
-  <link rel="stylesheet" href="{% static 'myCss\normalize.css' %}">
-
-  <!-- jQuery--> 
-  <script src="{% static 'lib\js\jquery.min.js' %}"></script>
-
-  <!--bootstrap-->
-  <script src="{% static 'lib/js/bootstrap.bundle.min.js' %}"></script>
-
-  <!-- AdminLTE App  -->
-  <script src="{% static 'lib\js\adminlte.js' %}"></script>
-
-</head>
+{% endblock %}
 
 
-<body class="login-page" style="min-height: 332.58px;">
+{% block content%}
 
-  <!-- Preloader -->
-   {% include 'preloaderNeedlebox.html' %}
-  <!--fin preloader-->
+    <body class="login-page" style="min-height: 332.58px;">
+
 
   <!------contenido del login--------------------------------------------------------------------------------------------------------------------------->
-  
+    <br>
+    <br>
     <div class="login-box">
       <div class="login-logo">
         <img class="logo" src="{% static 'myImg/needlebox-logo1.2.png' %}" alt="NeedleboxLogo">
@@ -56,7 +31,7 @@
       <div class="card">
         <div class="card-body login-card-body">
           <p class="login-box-msg">Si olvidó su contraseña, ingrese su correo para recibir una nueva</p>
-    
+
           <form action="recover-password.html" method="post">
             <div class="input-group mb-3">
               <input type="email" class="form-control" placeholder="Correo">
@@ -73,7 +48,7 @@
               <!-- /.col -->
             </div>
           </form>
-    
+
           <p class="mt-3 mb-1">
             <a href="/login" class="link-estilo">Login</a>
           </p>
@@ -84,16 +59,6 @@
         <!-- /.login-card-body -->
       </div>
     </div>
-    <!-- /.login-box -->
-    
 
-    
-    
-    </body>
-    
+{% endblock %}
 
-  <!--fin del div para el contenido-->
-
-
-</body>
-</html>
