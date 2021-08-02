@@ -1,64 +1,23 @@
+{% extends 'basemodulos.html' %}
+
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
+{% block mycss %}
+    <link rel="stylesheet" href="{% static 'myCss/clientesStyle.css' %}">
+{% endblock %}
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  
-  <title> NEEDLEBOX - Clientes</title>
+{% block title %}
+    NEEDLEBOX - Clientes
+{% endblock %}
 
-  <!-- Google Font: Source Sans Pro -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+{% block content %}
 
-  <!-- Font Awesome (más iconos) -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
- <!-- Theme style -->
-  <link rel="stylesheet" href="{% static 'lib/css/adminlte.min.css' %}">
-
-  <!--Mis estilos-->
-  <link rel="stylesheet" href="{% static 'myCss/clientesStyle.css' %}">
-
-  <!--Normalize-->
-  <link rel="stylesheet" href="{% static 'myCss/normalize.css' %}">
-
-   <!-- jQuery-->
-  <script src="{% static 'lib/js/jquery.min.js' %}"></script>
-
-  <!--bootstrap-->
-  <script src="{% static 'lib/js/bootstrap.bundle.min.js' %}"></script>
-
-  <!-- AdminLTE App  -->
-  <script src="{% static 'lib/js/adminlte.js' %}"></script>
-
-</head>
-
-
-<body>
-
-<div class="wrapper">
-
-
- <!-- Preloader -->
-  {% include 'preloaderNeedlebox.html' %}
-  <!--fin preloader-->
-
-
-  <!-- header-->
-    {% include 'secondHeaderNeedlebox.html' %}
-  <!-- fin header-->
+    <div class="wrapper">
 
   <!--Encabezado de sección-->
   <div class="mod-act c-client"><div class="cover"><span class="mod-act-nom">Clientes</span></div></div>
 
 
-
-
- 
   <!--Aqui iria el contenido-->
 
 
@@ -68,16 +27,16 @@
         <div class="row ">
 
           <div class="col-sm-12 col-md-6">
-            <div class="dt-buttons btn-group flex-wrap"> 
+            <div class="dt-buttons btn-group flex-wrap">
               <button class="btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="example" type="button">
                 <span>Copiar</span>
-              </button> 
+              </button>
               <button class="btn btn-secondary buttons-excel buttons-html5" tabindex="0" aria-controls="example" type="button">
                 <span>Excel</span>
-              </button> 
+              </button>
               <button class="btn btn-secondary buttons-pdf buttons-html5" tabindex="0" aria-controls="example" type="button">
                 <span>PDF</span>
-              </button> 
+              </button>
             </div>
           </div>
 
@@ -111,7 +70,7 @@
                 </tr>
               </thead>
               <tbody>
-    
+
                 <tr class="odd text-center">
                   <td class="sorting_1">001</td>
                   <td>Sandra</td>
@@ -325,24 +284,17 @@
         </div>
       </div>
     </div>
-    
+
 <!--menu copypaste de adminte---------------------------------------------------------------------------------------------------->
 
 
-
-  
-
   <!--fin del div para el contenido-->
-
-
-<!-- Main Footer -->
-    {% include 'footerNeedlebox.html' %}
-<!-- fin footer -->
-
 
 </div><!-- ./wrapper -->
 
-<!-- REQUIRED SCRIPTS -->
 
-</body>
-</html>
+{% endblock %}
+
+
+
+
