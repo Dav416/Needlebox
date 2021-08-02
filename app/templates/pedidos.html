@@ -1,3 +1,4 @@
+{% extends 'basemodulos.html' %}
 {% load static %}
 
 <!DOCTYPE html>
@@ -6,8 +7,10 @@
   <meta charset="utf-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title> NEEDLEBOX - Mostrar Pedidos</title>
 
+    {% block title %}
+    NEEDLEBOX - Mostrar Pedidos
+    {% endblock %}
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -18,8 +21,10 @@
     <!-- Theme style -->
   <link rel="stylesheet" href="{% static 'lib/css/adminlte.min.css' %}">
 
-  <!--Mis estilos-->
-  <link rel="stylesheet" href="{% static 'myCss/pedidosMostrarStyle.css' %}">
+    {% block  mycss %}
+      <!--Mis estilos-->
+      <link rel="stylesheet" href="{% static 'myCss/pedidosMostrarStyle.css' %}">
+    {% endblock %}
 
   <!--Normalize-->
   <link rel="stylesheet" href="{% static 'myCss/normalize.css' %}">
@@ -35,7 +40,7 @@
 </head>
 
 <body>
-
+{% block content %}
 <div class="wrapper">
 
 
@@ -43,9 +48,7 @@
     {% include 'preloaderNeedlebox.html' %}
   <!--fin preloader-->
 
-  <!-- header / navbar-->
-    {% include 'secondHeaderNeedlebox.html' %}
-  <!-- fin header / navbar-->
+
 
   <!--Encabezado de sección-->
   <div class="mod-act c-ped"><div class="cover"><span class="mod-act-nom">Pedidos</span></div></div>
@@ -317,14 +320,11 @@
 
 
 
-<!-- Main Footer -->
-    {% include 'footerNeedlebox.html' %}
-<!-- fin footer -->
 
 
 </div><!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
-
+{% endblock %}
 </body>
 </html>

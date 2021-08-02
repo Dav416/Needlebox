@@ -1,4 +1,7 @@
+{% extends 'baseotros.html' %}
 {% load static %}
+<!--title del head-->
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,7 +9,9 @@
   <meta charset="utf-8">
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <title> NEEDLEBOX - Reportar Error</title>
+  {% block title %}
+    NEEDLEBOX - Reportar Error
+  {% endblock %}
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -20,8 +25,11 @@
   <!-- Theme style -->
   <link rel="stylesheet" href="{% static 'lib/css/adminlte.min.css' %}">
 
-  <!--mis putos estilos-->
-  <link rel="stylesheet" href="{% static 'myCss/reportar_errorStyle.css' %}">
+    <!--mis estilos-->
+    {% block mycss %}
+      <link rel="stylesheet" href="{% static 'myCss/reportar_errorStyle.css' %}">
+    {% endblock %}
+
 
   <!--Normalize-->
   <link rel="stylesheet" href="{% static 'myCss\normalize.css' %}">
@@ -38,7 +46,11 @@
 </head>
 
 
+
+
 <body>
+
+{% block content%}
 
 <div class="wrapper">
 
@@ -47,9 +59,7 @@
   {% include 'preloaderNeedlebox.html' %}
   <!--fin preloader-->
 
-  <!-- header-->
-    {% include 'headerSimpleNeedlebox.html' %}
-  <!-- fin header-->
+
 
   <!--Encabezado de sección-->
   <div class="mod-act c-report"><div class="cover"><span class="mod-act-nom">Reportar Error</span></div></div>
@@ -104,18 +114,12 @@
 
 
 
-
-
-<!-- Main Footer -->
-
- {% include 'footerNeedlebox.html' %}
-
- <!-- end main footer -->
-
-
 </div>
 
 <!-- REQUIRED SCRIPTS -->
 
 </body>
+
+{% endblock %}
+
 </html>
