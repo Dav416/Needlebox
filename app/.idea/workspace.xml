@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4b6ee1bb-6754-4768-a05d-a50ca3dde496" name="Default Changelist" comment="">
+    <list default="true" id="03a66e77-7602-432b-bf0b-c0da667e96ad" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      <change beforePath="$PROJECT_DIR$/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/baseotros.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/baseotros.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/clientes.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clientes.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/clientesedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clientesedit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/clientesnuevousu2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clientesnuevousu2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contacto.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contacto.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pedidos.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pedidos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/reportar_error.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reportar_error.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectId" id="1udv6Q7Eh7Cm2kVC00N7lIrMzMo" />
+  <component name="ProjectId" id="1wDjfobOeX5UPhLLElrFAaxuam8" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -32,24 +36,23 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/config/settings.py" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
   </component>
-  <component name="RunManager">
-    <configuration name="server" type="Python.DjangoServer" factoryName="Django server">
+  <component name="RunManager" selected="Django Server.server">
+    <configuration name="Unnamed" type="Python.DjangoServer" factoryName="Django server" nameIsGenerated="true">
       <module name="app" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
-        <env name="DJANGO_SETTINGS_MODULE" value="config.settings" />
       </envs>
-      <option name="SDK_HOME" value="C:\Users\alaun\Documents\GitHub\emv\Scripts\python.exe" />
+      <option name="SDK_HOME" value="C:\Users\alaun\AppData\Local\Microsoft\WindowsApps\python3.9.exe" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
@@ -65,30 +68,44 @@
       <option name="customRunCommand" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="server" type="Python.DjangoServer" factoryName="Django server">
+      <module name="app" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+        <env name="DJANGO_SETTINGS_MODULE" value="config.settings" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\alaun\AppData\Local\Microsoft\WindowsApps\python3.9.exe" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Django Server.server" />
+      <item itemvalue="Django Server.Unnamed" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4b6ee1bb-6754-4768-a05d-a50ca3dde496" name="Default Changelist" comment="" />
-      <created>1625008105958</created>
+      <changelist id="03a66e77-7602-432b-bf0b-c0da667e96ad" name="Default Changelist" comment="" />
+      <created>1628000175582</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1625008105958</updated>
-      <workItem from="1625008113875" duration="3879000" />
-      <workItem from="1625019512378" duration="3399000" />
-      <workItem from="1626798692413" duration="7725000" />
-      <workItem from="1627259549947" duration="93000" />
-      <workItem from="1627260664424" duration="228000" />
-      <workItem from="1627261105633" duration="1111000" />
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      <workItem from="1627593747133" duration="1001000" />
-=======
-      <workItem from="1627593747133" duration="1362000" />
->>>>>>> Stashed changes
-=======
-      <workItem from="1627593747133" duration="1362000" />
->>>>>>> Stashed changes
+      <updated>1628000175582</updated>
+      <workItem from="1628000179307" duration="7575000" />
     </task>
     <servers />
   </component>
@@ -105,6 +122,5 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
