@@ -46,17 +46,13 @@
 
  <body>
 
- <div class="wrapper">
+ <!-- Preloader -->
+ {% include 'preloaderNeedlebox.html' %}
+ <!--fin preloader-->
+ {% block content %}
 
-          <!-- Preloader -->
-          {% include 'preloaderNeedlebox.html' %}
-          <!--fin preloader-->
+ {% endblock %}
 
-            {% block content %}
-
-            {% endblock %}
-
- </div>
         <!-- ./wrapper -->
 
  </body>
