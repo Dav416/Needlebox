@@ -1,0 +1,75 @@
+{% load static %}
+
+<div class="row tabla-prov table-responsive">
+      <div class="col-12 ">
+          <div class="card">
+              <div class="card-h-prov">
+                <h3 class="table-t">Proveedores registrados</h3>
+
+
+
+
+                <div class="card-tools searcher">
+                  <div class="input-group input-group-sm" style="width: 150px;">
+                    <label for="Provsearchtool"></label>
+                     <input id="Provsearchtool" type="text" name="table_search" class="form-control float-right" placeholder="Buscar">
+                    <div class="input-group-append">
+                      <button type="submit" class="btn btn-default">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- /.card-header -->
+              <div class="card-body table-responsive p-0" style="height: 300px;">
+                <table class="table table-head-fixed text-nowrap ">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Nombre / establecimiento</th>
+                      <th>Tipo insumos</th>
+                      <th>Teléfono</th>
+                      <th>Correo electrónico</th>
+                      <th>Dirección</th>
+                      <th>Editar</th>
+                      <th>Borrar</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    {% for c in object_list2 %}
+                        <tr class="obj-tab-prov">
+                          <td>{{ c.id }}</td>
+                          <td>{{ c.nombre_proveedor }}</td>
+                          <td>{{ c.Insumos_proveedor }}</td>
+                          <td>{{ c.telefono_proveedor }}</td>
+                          <td>{{ c.correo_proveedor }}</td>
+                          <td>{{ c.ubicacion_proveedor }}</td>
+                          <th>
+                              <button type="button" class="btn-edit-prov">
+                                  <i class="fas fa-edit"></i>
+                              </button>
+                          </th>
+                          <th>
+                              <button type="button" class="btn-borr-prov">
+                                  <i class="fas fa-trash"></i>
+                              </button>
+                          </th>
+                        </tr>
+
+                    {% endfor %}
+
+
+
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+
+          </div>
+        <!-- /.card -->
+      </div>
+        <!--/.col-12-->
+    </div>

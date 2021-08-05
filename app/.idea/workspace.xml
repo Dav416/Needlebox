@@ -2,19 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03a66e77-7602-432b-bf0b-c0da667e96ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/app.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/insumos/migrations/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/baseotros.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/baseotros.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/clientes.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clientes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/clientesedit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clientesedit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/clientesnuevousu2.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/clientesnuevousu2.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contacto.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contacto.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pedidos.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pedidos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/reportar_error.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/reportar_error.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/migrations/0002_auto_20210720_1340.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/ayuda.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ayuda.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/headerSimpleNeedlebox.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/headerSimpleNeedlebox.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/index/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/insumos.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/insumos/templates/insumos.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/loginprincipal.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/loginprincipal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/loginrecpass.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/loginrecpass.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/loginregusu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/loginregusu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/nosotros.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/nosotros.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/perfil.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/perfil/templates/perfil.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/secondHeaderNeedlebox.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/secondHeaderNeedlebox.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +29,14 @@
   </component>
   <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -34,15 +48,27 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/core/index/templates" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\alaun\Documents\GitHub\Needlebox\app\core\index\templates" />
+      <recent name="C:\Users\alaun\Documents\GitHub\Needlebox\app\core" />
+      <recent name="C:\Users\alaun\Documents\GitHub\Needlebox\app\core\perfil\templates" />
+      <recent name="C:\Users\alaun\Documents\GitHub\Needlebox\app" />
+      <recent name="C:\Users\alaun\Documents\GitHub\Needlebox\app\core\insumos\viewInsumos" />
+    </key>
   </component>
   <component name="RunManager" selected="Django Server.server">
     <configuration name="Unnamed" type="Python.DjangoServer" factoryName="Django server" nameIsGenerated="true">
@@ -105,7 +131,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1628000175582</updated>
-      <workItem from="1628000179307" duration="7575000" />
+      <workItem from="1628000179307" duration="8300000" />
+      <workItem from="1628015639229" duration="35421000" />
+      <workItem from="1628059470984" duration="4766000" />
+      <workItem from="1628094198452" duration="9229000" />
+      <workItem from="1628115195424" duration="11690000" />
     </task>
     <servers />
   </component>
@@ -122,5 +152,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

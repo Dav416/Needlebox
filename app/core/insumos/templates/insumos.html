@@ -1,0 +1,159 @@
+{% extends 'basemodulos.html' %}
+
+{% load static %}
+
+{% block mycss %}
+    <link rel="stylesheet" href="{% static 'myCss/insumosStyle.css' %}">
+{% endblock %}
+
+{% block title %}
+    NEEDLEBOX - Insumos
+{% endblock %}
+
+
+{% block content %}
+
+      <!--Encabezado de sección-->
+  <div class="mod-act c-insu"><div class="cover"><span class="mod-act-nom">Insumos</span></div></div>
+
+    <!---------------------------------------------------Inicio form insumos ----------------------------------------------------------------->
+
+    <div class="card card-danger insu-form">
+        <div class="card-header form-insu-header">
+          <h3 class="card-title">Registrar información insumos</h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+              <i class="fas fa-minus"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-body">
+
+          <div class="form-group insu-selec">
+            <label for="forminsumos" class="insu-selec-nom">Insumo</label>
+            <select id="forminsumos" class="form-control custom-select insu-selec-opt">
+                <option selected="" disabled="">Seleccione un tipo de insumo</option>
+                <option value="Telas" >Telas</option> <!--Telas y tejidos de diverso tipo-->
+                <option value="Hilos y lanas">Hilos y lanas</option> <!--Hilos y cordones de toda la vida-->
+                <option value="Adornos y bisuteria">Adornos y bisuteria</option> <!--Lentejuelas, perlas, etc-->
+                <option value="Accesorios, cintas, complementos">Accesorios, cintas y complementos</option> <!--Como botones, cierres, cintas etc-->
+                <option value="Herramientas e instrumentos">Herramientas e instrumentos</option> <!--Tijeras, tizas, cinta, cortador...-->
+                <option value="Otro">Otros</option>
+            </select>
+          </div>
+
+
+          <div class="form-group">
+            <label class="insu-tipo-nom" for="insudescr">Tipo, marca y otras especificaciones</label>
+
+            <textarea id="insudescr" class="form-control insu-tipo-desc" rows="6" placeholder="Rojo, con flores, antirayones, pequeño, etc."></textarea>
+
+          </div>
+
+
+
+          <div class="form-group">
+            <label for="Insuinvent">Cantidad o estado en inventario</label>
+            <input type="text" id="Insuinvent" class="form-control" placeholder="Agotado, 4 metros, etc.">
+
+          </div>
+
+
+          <!-- Date dd/mm/yyyy -->
+          <div class="cos-uni form-group">
+            <label class="cos-uni-tit">Costo por unidad de medida</label>
+
+            <div class=" Costo-Unidad">
+
+              <div class="cost-f form-group">
+                <label for="insucost">Costo</label>
+                <input id="insucost" type="number" class="form-control" placeholder="$">
+              </div>
+
+              <div class="cost-u form-group">
+                <label for="insu-unid" >Unidad</label>
+                <input id="insu-unid" type="text" class="form-control" placeholder="cm, kg, undidades,tc.">
+              </div>
+
+            </div>
+          </div>
+          <!-- /.form group -->
+
+          <div class="button-submit-div">
+          <input type="submit" value="Añadir" class="btn btn-success button-submit">
+
+          </div>
+
+        </div>
+        <!-- /.card-body -->
+    </div>
+        <!--/.insu-form-->
+
+    <!---------------------------------------------------Final form insumos ----------------------------------------------------------------->
+
+
+    <!--INCLUDE TABLA PROVEEDORES-->
+    {% include 'ListInsumosInsu.html' %}
+
+
+    <!---------------------------------------------------Inicio form proveedores------------------------------------------->
+
+    <div class="card card-danger prov-form">
+        <div class="card-header form-prov-header">
+          <h3 class="card-title">Registrar información proveedores</h3>
+
+          <div class="card-tools">
+            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
+              <i class="fas fa-minus"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="card-body">
+
+          <div class="form-group">
+            <label for="ProvName">Nombre establecimiento / persona</label>
+            <input type="text" id="ProvName" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="ProvMerca">Insumos que vende</label>
+             <textarea id="ProvMerca" class="form-control insu-tipo-desc" rows="6" placeholder="Adornos, telas, hilos..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="ProvTel">Número de teléfono</label>
+            <input type="tel" id="ProvTel" class="form-control">
+          </div>
+
+          <div class="form-group">
+            <label for="ProvEmail">Correo eléctronico</label>
+            <input type="email" id="ProvEmail" class="form-control">
+          </div>
+
+          <div class="form-group">
+                <label for="ProvDir">Dirección</label>
+                <input type="text" id="ProvDir" class="form-control">
+          </div>
+
+          <div class="button-submit-div">
+          <input type="submit" value="Añadir" class="btn btn-success button-submit-2">
+          </div>
+
+        </div>
+        <!-- /.card-body -->
+    </div>
+
+
+    <!---------------------------------------------------Final form proveedores ----------------------------------------------------------------->
+
+      <!--INCLUDE TABLA INSUMOS_INSUMOS-->
+    {% include 'ListInsumosProv.html' %}
+
+
+<!--fin del copypaste de adminlte-->
+
+
+{% endblock %}

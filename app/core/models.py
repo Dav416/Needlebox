@@ -18,45 +18,6 @@ class RegUsu(models.Model):
         ordering = ['id']
 
 
-# Modelo/tabla de modulo perfil, para modificar la información de cada cuenta
-class Profile(models.Model):
-    select_q = 'Sel-una-pre'
-    color = 'Col-fav'
-    food = 'Ali-fav'
-    pet = 'Mas-inf'
-    admired = 'Per-adm'
-    book = 'Lib-fav'
-    song = 'Can-fav'
-
-    SQ_CHOICES = [
-        ('select_q', 'Seleccione una pregunta'),
-        ('color', 'Color favorito'),
-        ('food', 'Alimento favorito'),
-        ('pet', 'Mascota de la infancia'),
-        ('admired', 'Persona admirada'),
-        ('book', 'Libro favorito'),
-        ('song', 'Canción favorita'),
-    ]
-
-    re_RegyProf = models.OneToOneField(RegUsu, on_delete=models.PROTECT)  # Rel registro usuario e información de cuenta
-    nom_usu = models.CharField(max_length=100, unique=True, verbose_name='Nombre')
-    e_mail = models.EmailField(unique=True, verbose_name='E-mail')
-    password = models.CharField(max_length=50, verbose_name='Contraseña')
-    conf_password = models.CharField(max_length=50, verbose_name='Confirmar Contraseña')
-    show_password = models.BooleanField(default=False)
-    security_question = models.CharField(max_length=30, choices=SQ_CHOICES, default=select_q)
-    security_answer = models.CharField(max_length=50, verbose_name="Respect")
-    accept_terms = models.BooleanField(default=False)
-
-    def __str__(self):
-        return self.nom_usu
-
-    class Meta:
-        verbose_name = 'Perfil'
-        verbose_name_plural = 'Perfiles'
-        ordering = ['id']
-
-
 # ---No se crea Modelo/tabla para recuperar ocntraseña o iniciar sesión por obvias razones.---
 
 # Modelo/tabla de modulo contactar desarroladores
@@ -79,7 +40,7 @@ class ContactUs(models.Model):
 
 # Modelo/tabla de modulo clientes, para registrar información básica de cliente
 class InfoClient(models.Model):
-    DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key: borrar info al borrar perfil
+    # DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key: borrar info al borrar perfil
     # codecli = models.IntegerField(max_length=None, unique=True, verbose_name="codigo identificador cliente")
     nomCli = models.CharField(max_length=50, unique=True, verbose_name='Nombre cliente')
     apeCli = models.CharField(max_length=50, unique=True, verbose_name='Apellido cliente')
@@ -137,7 +98,7 @@ class InfoGeneClient(models.Model):
         (trans, 'Transferencia'),
         (giro, 'Giro'))
 
-    DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key borrar info al borrar el perfil
+    # DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key borrar info al borrar  perfil
     DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT)  # foreing key borrar info al borrar cliente
     # codecli2 = models.IntegerField(InfoClient.codecli, unique=True, default=InfoClient.codecli) llama atributo ajeno
     infoTCli = models.TextField(max_length=3000, verbose_name="Info técnica cliente")
@@ -161,7 +122,7 @@ class InfoGeneClient(models.Model):
 # ---TABLAS/MODELOS DEL MODULO CRONOGRAMA---
 # Modelo/tabla de modulo cronograma, para registrar pedidos
 class CronoForm(models.Model):
-    DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key borrar info al borrar el perfil
+    # DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key borrar info al borrar perfil
     DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT)  # foreing key borrar info al borrar cliente
     nombCli = models.CharField(max_length=50, verbose_name='Nombre cliente')
     fecharec = models.CharField(max_length=100, verbose_name='Fecha de recibo')
@@ -205,7 +166,7 @@ class CronoForm(models.Model):
 # ---TABLAS/MODELOS DEL MODULO PEDIDOS---
 # Modelo/tabla de modulo cronograma, para registrar pedidos
 class Todopedido(models.Model):
-    DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key borrar info al borrar el perfil
+    # DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key borrar info al borrar perfil
     DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT)  # foreing key borrar info al borrar cliente
     numPedido = models.IntegerField(max_length=None, unique=True, verbose_name="Número de pedido")
     pedido = models.CharField(max_length=20, verbose_name="Pedido")
@@ -219,62 +180,4 @@ class Todopedido(models.Model):
     class Meta:
         verbose_name = 'Pedido'
         verbose_name_plural = 'Pedidos'
-        ordering = ['id']
-
-
-# ---TABLAS/MODELOS DEL MODULO INSUMOS---
-# Modelo/tabla de modulo insumos, para registrar INSUMOS de confección
-class InsRegForm(models.Model):
-    select_tip = 'Sel-tip-ins'
-    tela = 'telas'
-    hilo = 'hi-y-la'
-    adorno = 'ado-y-bis'
-    accesorio = 'acc-cin-com'
-    herramienta = 'he-in'
-    otros = 'otr'
-
-    SQ_CHOICES = [
-        ('select_tip', 'Seleccione un tipo de insumo'),
-        ('tela', 'Telas'),
-        ('hilo', 'Hilos y lanas'),
-        ('adorno', 'Adorno y bisutería'),
-        ('accesorio', 'Accesorios, cintas y complementos'),
-        ('herramienta', 'Herramientas e instrumentos'),
-        ('otros', 'Otros'),
-    ]
-    DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key borrar info al borrar perfil
-    DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT)  # foreing key borrar info al borrar cliente
-    # rel_InsuProv = models.ManyToManyField(InsRegProv)  # rel muchos insumos / muchos proveedores (agotamiento insumo)
-    tipo_insumo = models.CharField(max_length=30, choices=SQ_CHOICES, default=select_tip)
-    especificacion_insumo = models.TextField(max_length=1500, verbose_name="Tipo, marca y otros")
-    estado_insumo = models.CharField(max_length=30, verbose_name="Cantidad o estado")
-    costxunid_insumo_costo = models.PositiveIntegerField(default=0)
-    costxunid_insumo_unidad = models.CharField(max_length=20, verbose_name="cm, kilos, unidades, etc")
-
-    def __str__(self):
-        return self.tipo_insumo
-
-    class Meta:
-        verbose_name = 'Registro insumo'
-        verbose_name_plural = 'Registro insumos'
-        ordering = ['id']
-
-
-# Modelo/tabla de modulo insumos, para registrar PROVEEDORES de confección
-class InsRegProv(models.Model):
-    DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key borrar info al borrar el perfil
-    DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT)  # foreing key borrar info al borrar cliente
-    rel_ProvInsu = models.ManyToManyField(InsRegForm)  # rel muchos proveedores/muchos insumos (para agotamiento insumo)
-    nombre_proveedor = models.CharField(max_length=100, verbose_name="Establecimiento/persona")
-    Insumos_proveedor = models.TextField(max_length=2000, verbose_name="Insumos que vende")
-    telefono_proveedor = models.IntegerField(default=0, unique=True)
-    correo_proveedor = models.EmailField(max_length=50, verbose_name="E-mail proveedor", unique=True)
-    ubicacion_proveedor = models.CharField(max_length=50, verbose_name="Dirección de proveedor")
-
-    def __str__(self):
-        return self.nombre_proveedor
-
-    class Meta:
-        verbose_name = 'Registro proveedor'
-        verbose_name_plural = 'Registro proveedores'
         ordering = ['id']

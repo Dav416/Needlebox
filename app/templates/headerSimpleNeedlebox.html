@@ -3,7 +3,7 @@
 <div class="cont-bar">
 
       <div class="logo-nom">
-        <a href="/index"><img src="{% static 'myImg/needlebox-logo.png' %}" alt="Neddlebox logo" class="logito"></a>
+        <a href="{% url 'index' %}"><img src="{% static 'myImg/needlebox-logo.png' %}" alt="Neddlebox logo" class="logito"></a>
         <span class="Needlebox">NEEDLEBOX</span>
       </div>
 
@@ -14,7 +14,7 @@
 
 
           <li class="navbar-item">
-            <a href="/perfil" class="nav-link">PERFIL</a>
+            <a href="{% url 'perfil' %}" class="nav-link">PERFIL</a>
           </li>
 
           <li class="navbar-item">

@@ -15,21 +15,27 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import needle_index, needle_insu, needle_cliente, needle_nuevocliente, needle_nuevocliente2, \
-    needle_editcliente, needle_crono, needle_pedidos, needle_perfil, needle_nosotros, needle_reperror, needle_ayuda, \
+from core.insumos.views import NeedleInsu
+from core.perfil.views import NeedlePerfil
+from core.index.views import NeedleIndex
+from core.views import needle_cliente, needle_nuevocliente, needle_nuevocliente2, \
+    needle_editcliente, needle_crono, needle_pedidos, needle_nosotros, needle_reperror, needle_ayuda, \
     needle_cont, needle_login, needle_regis, needle_recpass
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', needle_index),
+    path('index/', NeedleIndex.as_view(), name="index"),
     path('clientes/', needle_cliente),
     path('nclient/', needle_nuevocliente),
     path('nclient2/', needle_nuevocliente2),
     path('editclient/', needle_editcliente),
     path('cronograma/', needle_crono),
     path('pedidos/', needle_pedidos),
-    path('insumos/', needle_insu),
-    path('perfil/', needle_perfil),
+    path('insumos/', NeedleInsu.as_view(), name="insumos"),
+    # path('insu_insu/', ListInsuView.as_view(), name="lista_insumos"),
+    # path('insu_prov/', ListProvView.as_view(), name="lista_Proveedores"),
+    path('perfil/', NeedlePerfil.as_view(), name="perfil"),
     path('nosotros/', needle_nosotros),
     path('error/', needle_reperror),
     path('ayuda/', needle_ayuda),
