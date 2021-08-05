@@ -2,25 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="03a66e77-7602-432b-bf0b-c0da667e96ad" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/core/insumos/migrations/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/migrations/0002_auto_20210720_1340.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/ayuda.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/ayuda.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/headerSimpleNeedlebox.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/headerSimpleNeedlebox.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/index/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/insumos.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/insumos/templates/insumos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/loginprincipal.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/loginprincipal.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/loginrecpass.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/loginrecpass.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/loginregusu.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/loginregusu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/nosotros.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/nosotros.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/perfil.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/perfil/templates/perfil.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/secondHeaderNeedlebox.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/secondHeaderNeedlebox.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,6 +118,7 @@
       <workItem from="1628059470984" duration="4766000" />
       <workItem from="1628094198452" duration="9229000" />
       <workItem from="1628115195424" duration="11690000" />
+      <workItem from="1628127650949" duration="1770000" />
     </task>
     <servers />
   </component>
