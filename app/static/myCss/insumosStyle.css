@@ -2,7 +2,7 @@ body{
     width: 100%;
     margin: auto;
     background-color: #ffffff;
-    
+
 }
 
 .animation__shake{
@@ -53,7 +53,7 @@ body{
     color: #ffffff;
     font-weight: bold;
     margin-top: -25px;
-    padding-left: 2px;    
+    padding-left: 2px;
 }
 
 
@@ -63,7 +63,7 @@ body{
     display: flex;
     flex-direction: row;
     width: fit-content;
-    
+
 
 }
 
@@ -75,13 +75,13 @@ body{
     list-style: none;
     box-sizing: content-box;
     width: fit-content;
-    padding: 0%;    
+    padding: 0;
 }
 
 
 .navbar-item{
     text-align: center;
-    padding: 0%;
+    padding: 0;
     margin: auto;
     text-decoration: none;
 }
@@ -92,7 +92,7 @@ body{
     color: #ffffff;
     box-sizing: content-box;
     height: fit-content;
-    margin: auto; 
+    margin: auto;
 }
 
 
@@ -134,7 +134,7 @@ body{
 
 
 
-.mod-name{    
+.mod-name{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -146,7 +146,7 @@ body{
 
 
 .mod-op:hover{
-    box-shadow:  1px 0px 7px rgb(0, 0, 0);
+    box-shadow:  1px 0 7px rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
     color: #452B04 !important;
 }
@@ -191,7 +191,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: lawngreen;   
+    background-color: lawngreen;
     width: fit-content;
 }
 
@@ -205,7 +205,7 @@ body{
 }
 
 .cost-f {
-    margin: 0%;
+    margin: 0;
     width: 100%;
 }
 
@@ -224,12 +224,12 @@ body{
 
 .form-insu-header,.button-submit{
     background: #F0B27A !important;
-    color: #ffffff !important; 
+    color: #ffffff !important;
 }
 
 .form-prov-header, .button-submit-2{
     background: #F0B27A !important;
-    color: #ffffff !important; 
+    color: #ffffff !important;
 }
 
 h3 {
@@ -239,7 +239,7 @@ h3 {
 .tabla-prov, .tabla-insu{
     margin: 1.5% auto;
     width: 92%;
-} 
+}
 
 
 
@@ -284,11 +284,11 @@ h3 {
 }
 
 
-.btn-edit-insu, .btn-borr-insu, 
+.btn-edit-insu, .btn-borr-insu,
 .btn-edit-prov, .btn-borr-prov{
     margin: 3px;
     background-color: #ffffff;
-    color:#452B04; 
+    color:#452B04;
     border-radius: 5px;
     font-weight: 600;
 }
@@ -296,7 +296,7 @@ h3 {
 .btn-edit-insu:hover, .btn-borr-insu:hover,
 .btn-edit-prov:hover, .btn-borr-prov:hover{
     color: #ffffff;
-    background-color:#452B04; 
+    background-color:#452B04;
 }
 
 
@@ -309,9 +309,9 @@ h3 {
 
 .obj-tab-insu:active, .obj-tab-insu:focus,
 .obj-tab-prov:active, .obj-tab-prov:focus{
-    background-color: #f0b17a9c;    
+    background-color: #f0b17a9c;
 
-} 
+}
 
 
 /*---------------------------------------------------------------------------------------------------------------------------------------- */
@@ -341,10 +341,10 @@ footer{
 
 
 .nomproy, .año, .disclaimer{
-    
+
     width: fit-content;
-    padding: 0%;
-    margin: 0% auto ;    
+    padding: 0;
+    margin: 0 auto ;
     text-align: center;
 }
 
@@ -363,9 +363,9 @@ footer{
     /*Aquí van todos los estilos CSS*/
     .logo-nom{
         margin: auto 1.1% auto auto;
-    
-    }    
-        
+
+    }
+
     .navbar-ul{
         margin: auto auto auto -1%;
     }
@@ -376,13 +376,13 @@ footer{
 
 @media only screen and (max-width:640px) {
     /*Aquí van todos los estilos CSS*/
-      
+
     .mod-op{
         width: fit-content;
-        margin: 1.5% 3px; 
+        margin: 1.5% 3px;
         padding: 1% 4%;
-        border-radius: 5%;    
-    }  
+        border-radius: 5%;
+    }
 }
 
 @media only screen and (max-width:583px) {
@@ -395,12 +395,12 @@ footer{
 
 
 @media only screen and (max-width:330px){
-   
+
     .prov-form .card-header{
         display: flex;
         flex-direction: column;
         text-align: center;
-    }  
+    }
 
 }
 
@@ -414,7 +414,7 @@ footer{
 
 
     .btns-tabla, .btns-tabla-insu{
-        
+
         display: flex;
         flex-direction: column;
         margin: auto;
