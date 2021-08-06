@@ -3,6 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="03a66e77-7602-432b-bf0b-c0da667e96ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/insumos/templates/ListInsumosInsu.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/insumos/templates/ListInsumosInsu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/insumos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/insumos/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/myCss/insumosStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/myCss/insumosStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/basemodulos.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/basemodulos.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,8 +29,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="showPreview" value="true" />
+  </component>
   <component name="ProjectId" id="1wDjfobOeX5UPhLLElrFAaxuam8" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -119,6 +138,7 @@
       <workItem from="1628094198452" duration="9229000" />
       <workItem from="1628115195424" duration="11690000" />
       <workItem from="1628127650949" duration="1770000" />
+      <workItem from="1628187092134" duration="30888000" />
     </task>
     <servers />
   </component>

@@ -14,10 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
-from core.insumos.views import NeedleInsu
-from core.perfil.views import NeedlePerfil
-from core.index.views import NeedleIndex
+from django.urls import path, include
+
+
 from core.views import needle_cliente, needle_nuevocliente, needle_nuevocliente2, \
     needle_editcliente, needle_crono, needle_pedidos, needle_nosotros, needle_reperror, needle_ayuda, \
     needle_cont, needle_login, needle_regis, needle_recpass
@@ -25,17 +24,15 @@ from core.views import needle_cliente, needle_nuevocliente, needle_nuevocliente2
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/', NeedleIndex.as_view(), name="index"),
+    path('inicio/', include('core.index.urls')),
     path('clientes/', needle_cliente),
     path('nclient/', needle_nuevocliente),
     path('nclient2/', needle_nuevocliente2),
     path('editclient/', needle_editcliente),
     path('cronograma/', needle_crono),
     path('pedidos/', needle_pedidos),
-    path('insumos/', NeedleInsu.as_view(), name="insumos"),
-    # path('insu_insu/', ListInsuView.as_view(), name="lista_insumos"),
-    # path('insu_prov/', ListProvView.as_view(), name="lista_Proveedores"),
-    path('perfil/', NeedlePerfil.as_view(), name="perfil"),
+    path('insumos_proveedores/', include('core.insumos.urls')),
+    path('cuenta/', include('core.perfil.urls')),
     path('nosotros/', needle_nosotros),
     path('error/', needle_reperror),
     path('ayuda/', needle_ayuda),
@@ -43,4 +40,8 @@ urlpatterns = [
     path('login/', needle_login),
     path('registro/', needle_regis),
     path('recuperar/', needle_recpass),
+
+    # path('clientes2/', include('ruta.de.la.url.especificas.de.la.app')),
+    # path('insu_insu/', ListInsuView.as_view(), name="lista_insumos"),
+    # path('insu_prov/', ListProvView.as_view(), name="lista_Proveedores"),
 ]

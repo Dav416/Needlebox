@@ -5,57 +5,42 @@
           <div class="card">
               <div class="card-h-insu">
                 <h3 class="table-t">Insumos registrados</h3>
-
-
-
-
-                <div class="card-tools searcher">
-                  <div class="input-group input-group-sm" style="width: 150px;">
-                    <label for="Insusearchtool"></label>
-                    <input id="Insusearchtool" type="text" name="table_search" class="form-control float-right" placeholder="Buscar">
-
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default">
-                        <i class="fas fa-search"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
               </div>
 
+
               <!-- /.card-header -->
-              <div class="card-body table-responsive p-0" style="height: 300px;">
-                <table class="table table-head-fixed text-nowrap ">
+              <div class="card-body table-responsive p-0" style="height: auto; margin-top: 1%">
+
+                  <table class="table table-head-fixed text-nowrap" id="MyTableInsumos">
                   <thead>
                     <tr>
                       <th>#</th>
                       <th>Insumo</th>
                       <th>Cantidad en inventario</th>
                       <th>Costo por unidad</th>
-                      <th>Tipo, marca y otras especificaciones</th>
+                      <th >Tipo, marca y otras especificaciones</th>
                       <th>Editar</th>
                       <th>Borrar</th>
                     </tr>
                   </thead>
                   <tbody>
-
                     {% for c in object_list1 %}
                         <tr class="obj-tab-insu">
-                          <td>{{ c.id }}</td>
-                          <td>{{ c.tipo_insumo }}</td>
-                          <td>{{ c.estado_insumo }}</td>
-                          <td>{{ c.costxunid_insumo_costo}} <strong>x</strong> {{ c.costxunid_insumo_unidad }}</td>
-                          <td>{{ c.especificacion_insumo }}</td>
-                          <th>
+                          <td style="width: 1%">{{ c.id }}</td>
+                          <td style="width: 10%">{{ c.tipo_insumo }}</td>
+                          <td style="width: 15%">{{ c.estado_insumo }}</td>
+                          <td style="width: 15%">{{ c.costxunid_insumo_costo}} <strong>x</strong> {{ c.costxunid_insumo_unidad }}</td>
+                          <td style="width: 57%">{{ c.especificacion_insumo }}</td>
+                          <td style="width: 1%">
                               <button type="button" class="btn-edit-insu">
                                   <i class="fas fa-edit"></i>
                               </button>
-                          </th>
-                          <th>
+                          </td>
+                          <td style="width: 1%">
                               <button type="button" class="btn-borr-insu">
                                   <i class="fas fa-trash"></i>
                               </button>
-                          </th>
+                          </td>
                         </tr>
 
                     {% endfor %}
@@ -72,3 +57,13 @@
       </div>
         <!--/.col-12-->
     </div>
+
+<!--script para ejecución del data table -->
+<script type="application/javascript">
+    $('#MyTableInsumos').DataTable({
+                    responsive: true,
+                    autoWidth: true,
+                });
+
+</script>
+<!--/ script para ejecución del data table -->
