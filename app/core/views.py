@@ -2,10 +2,6 @@ from django.shortcuts import render
 
 
 # ------codigo proyecto-------------------
-def needle_index(request):
-    return render(request, 'index/templates/index.html')
-
-
 def needle_cliente(request):
     return render(request, 'clientes.html')
 
