@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'core.perfil',
     'core.index',
     'core.cliente',
+    'core.login',
 
 ]
 
