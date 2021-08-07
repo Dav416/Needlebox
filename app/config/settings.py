@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'core.insumos',
     'core.perfil',
     'core.index',
+    'core.cliente',
 
 ]
 
