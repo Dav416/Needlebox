@@ -6,4 +6,5 @@ from core.index.views import NeedleIndex
 
 urlpatterns = [
     path('index/', NeedleIndex.as_view(), name="index"),
+
 ]

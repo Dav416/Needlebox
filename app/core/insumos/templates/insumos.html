@@ -17,6 +17,10 @@
   <div class="mod-act c-insu"><div class="cover"><span class="mod-act-nom">Insumos</span></div></div>
 
     <!---------------------------------------------------Inicio form insumos ----------------------------------------------------------------->
+    <!--INCLUDE FORMULARIO INSUMOS-->
+    {% include 'formInsumos.html' %}
+
+    <br>
 
     <div class="card card-danger insu-form">
         <div class="card-header form-insu-header">
@@ -29,72 +33,75 @@
           </div>
         </div>
 
-        <div class="card-body">
+        <form method="post">
+            <div class="card-body">
 
-          <div class="form-group insu-selec">
-            <label for="forminsumos" class="insu-selec-nom">Insumo</label>
-            <select id="forminsumos" class="form-control custom-select insu-selec-opt">
-                <option selected="" disabled="">Seleccione un tipo de insumo</option>
-                <option value="Telas" >Telas</option> <!--Telas y tejidos de diverso tipo-->
-                <option value="Hilos y lanas">Hilos y lanas</option> <!--Hilos y cordones de toda la vida-->
-                <option value="Adornos y bisuteria">Adornos y bisuteria</option> <!--Lentejuelas, perlas, etc-->
-                <option value="Accesorios, cintas, complementos">Accesorios, cintas y complementos</option> <!--Como botones, cierres, cintas etc-->
-                <option value="Herramientas e instrumentos">Herramientas e instrumentos</option> <!--Tijeras, tizas, cinta, cortador...-->
-                <option value="Otro">Otros</option>
-            </select>
-          </div>
-
-
-          <div class="form-group">
-            <label class="insu-tipo-nom" for="insudescr">Tipo, marca y otras especificaciones</label>
-
-            <textarea id="insudescr" class="form-control insu-tipo-desc" rows="6" placeholder="Rojo, con flores, antirayones, pequeño, etc."></textarea>
-
-          </div>
-
-
-
-          <div class="form-group">
-            <label for="Insuinvent">Cantidad o estado en inventario</label>
-            <input type="text" id="Insuinvent" class="form-control" placeholder="Agotado, 4 metros, etc.">
-
-          </div>
-
-
-          <!-- Date dd/mm/yyyy -->
-          <div class="cos-uni form-group">
-            <label class="cos-uni-tit">Costo por unidad de medida</label>
-
-            <div class=" Costo-Unidad">
-
-              <div class="cost-f form-group">
-                <label for="insucost">Costo</label>
-                <input id="insucost" type="number" class="form-control" placeholder="$">
+              <div class="form-group insu-selec">
+                <label for="forminsumos" class="insu-selec-nom">Insumo</label>
+                <select id="forminsumos" class="form-control custom-select insu-selec-opt">
+                    <option selected="" disabled="">Seleccione un tipo de insumo</option>
+                    <option value="Telas" >Telas</option> <!--Telas y tejidos de diverso tipo-->
+                    <option value="Hilos y lanas">Hilos y lanas</option> <!--Hilos y cordones de toda la vida-->
+                    <option value="Adornos y bisuteria">Adornos y bisuteria</option> <!--Lentejuelas, perlas, etc-->
+                    <option value="Accesorios, cintas, complementos">Accesorios, cintas y complementos</option> <!--Como botones, cierres, cintas etc-->
+                    <option value="Herramientas e instrumentos">Herramientas e instrumentos</option> <!--Tijeras, tizas, cinta, cortador...-->
+                    <option value="Otro">Otros</option>
+                </select>
               </div>
 
-              <div class="cost-u form-group">
-                <label for="insu-unid" >Unidad</label>
-                <input id="insu-unid" type="text" class="form-control" placeholder="cm, kg, undidades,tc.">
+
+              <div class="form-group">
+                <label class="insu-tipo-nom" for="insudescr">Tipo, marca y otras especificaciones</label>
+
+                <textarea id="insudescr" class="form-control insu-tipo-desc" rows="6" placeholder="Rojo, con flores, antirayones, pequeño, etc."></textarea>
+
+              </div>
+
+
+
+              <div class="form-group">
+                <label for="Insuinvent">Cantidad o estado en inventario</label>
+                <input type="text" id="Insuinvent" class="form-control" placeholder="Agotado, 4 metros, etc.">
+
+              </div>
+
+
+
+              <div class="cos-uni form-group">
+                <label class="cos-uni-tit">Costo por unidad de medida</label>
+
+                <div class=" Costo-Unidad">
+
+                  <div class="cost-f form-group">
+                    <label for="insucost">Costo</label>
+                    <input id="insucost" type="number" class="form-control" placeholder="$">
+                  </div>
+
+                  <div class="cost-u form-group">
+                    <label for="insu-unid" >Unidad</label>
+                    <input id="insu-unid" type="text" class="form-control" placeholder="cm, kg, undidades,tc.">
+                  </div>
+
+                </div>
+              </div>
+
+
+              <div class="button-submit-div">
+              <input type="submit" value="Añadir" class="btn btn-success button-submit">
+
               </div>
 
             </div>
-          </div>
-          <!-- /.form group -->
-
-          <div class="button-submit-div">
-          <input type="submit" value="Añadir" class="btn btn-success button-submit">
-
-          </div>
-
-        </div>
-        <!-- /.card-body -->
+            <!-- /.card-body -->
+        </form>
+        <!--/form-->
     </div>
         <!--/.insu-form-->
 
     <!---------------------------------------------------Final form insumos ----------------------------------------------------------------->
 
 
-    <!--INCLUDE TABLA PROVEEDORES-->
+    <!--INCLUDE TABLA INSUMOS-->
     {% include 'ListInsumosInsu.html' %}
 
 
@@ -149,7 +156,7 @@
 
     <!---------------------------------------------------Final form proveedores ----------------------------------------------------------------->
 
-      <!--INCLUDE TABLA INSUMOS_INSUMOS-->
+      <!--INCLUDE TABLA INSUMOS_PROVEEDORES-->
     {% include 'ListInsumosProv.html' %}
 
 

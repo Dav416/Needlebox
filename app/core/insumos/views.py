@@ -1,7 +1,8 @@
-# from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.shortcuts import render
+from django.views.generic import TemplateView, CreateView
 from core.insumos.models import *
-# from django.urls import reverse_lazy
+from core.insumos.forms import RegInsumoForm
+from django.urls import reverse_lazy
 
 
 class NeedleInsu(TemplateView):
@@ -9,11 +10,25 @@ class NeedleInsu(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # context['LoadInsulist'] = reverse_lazy('lista_insumos')
         context['object_list1'] = InsRegInsu.objects.all()
-
         context['object_list2'] = InsRegProv.objects.all()
+        context['form'] = RegInsumoForm
+
+        # context['LoadInsulist'] = reverse_lazy('lista_insumos')
         return context
+
+
+class RegInsumoCreateView(CreateView):
+    model = InsRegInsu
+    form_class = RegInsumoForm
+    template_name = 'insumos.html'
+    success_url = reverse_lazy('insumos')
+
+    """
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
+    """
 
 
 """
@@ -25,6 +40,12 @@ class ListInsuView(ListView):
         context = super().get_context_data(**kwargs)
         context['object_list'] = InsRegInsu.objects.all()
         return context
+"""
+
+"""
+TemplateView = no base de datos
+Listview 
+
 """
 
 """
@@ -52,4 +73,5 @@ Lo otro que está comentarlo decidí dejarlo para recordar ese recurso en futura
 necesario para el funcionameinto de esta vista pero no fue así.
 
 Y recuerden: Uribe paraco hpta y me preguntan cualquier cosa 
+
 """

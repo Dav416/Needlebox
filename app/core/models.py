@@ -100,7 +100,7 @@ class InfoGeneClient(models.Model):
         (giro, 'Giro'))
 
     # DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key borrar info al borrar  perfil
-    DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT)  # foreing key borrar info al borrar cliente
+    # DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT)  # foreing key borrar info al borrarcliente
     # codecli2 = models.IntegerField(InfoClient.codecli, unique=True, default=InfoClient.codecli) llama atributo ajeno
     infoTCli = models.TextField(max_length=3000, verbose_name="Info técnica cliente")
     ver_ITC = models.CharField(max_length=200, null=True, blank=True, verbose_name='verificación realizada')
@@ -124,7 +124,7 @@ class InfoGeneClient(models.Model):
 # Modelo/tabla de modulo cronograma, para registrar pedidos
 class CronoForm(models.Model):
     # DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key borrar info al borrar perfil
-    DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT)  # foreing key borrar info al borrar cliente
+    # DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT)  # foreing key borrar info al borrarcliente
     nombCli = models.CharField(max_length=50, verbose_name='Nombre cliente')
     fecharec = models.CharField(max_length=100, verbose_name='Fecha de recibo')
 
@@ -168,7 +168,7 @@ class CronoForm(models.Model):
 # Modelo/tabla de modulo cronograma, para registrar pedidos
 class Todopedido(models.Model):
     # DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key borrar info al borrar perfil
-    DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT)  # foreing key borrar info al borrar cliente
+    # DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT)  # foreing key borrar info al borrarcliente
     numPedido = models.IntegerField(max_length=None, unique=True, verbose_name="Número de pedido")
     pedido = models.CharField(max_length=20, verbose_name="Pedido")
     descri = models.CharField(max_length=20, verbose_name="Descripción")
