@@ -18,7 +18,7 @@ from django.urls import path, include
 
 
 from core.views import needle_crono, needle_pedidos, needle_nosotros, needle_reperror, needle_ayuda, \
-    needle_cont, needle_login, needle_regis, needle_recpass
+    needle_cont
 
 
 urlpatterns = [
@@ -33,9 +33,7 @@ urlpatterns = [
     path('error/', needle_reperror),
     path('ayuda/', needle_ayuda),
     path('contactenos/', needle_cont),
-    path('login/', needle_login),
-    path('registro/', needle_regis),
-    path('recuperar/', needle_recpass),
+    path('login/', include('core.login.urls')),
 
     # path('clientes2/', include('ruta.de.la.url.especificas.de.la.app')),
     # path('insu_insu/', ListInsuView.as_view(), name="lista_insumos"),
