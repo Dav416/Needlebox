@@ -17,18 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 
 
-from core.views import needle_cliente, needle_nuevocliente, needle_nuevocliente2, \
-    needle_editcliente, needle_crono, needle_pedidos, needle_nosotros, needle_reperror, needle_ayuda, \
+from core.views import needle_crono, needle_pedidos, needle_nosotros, needle_reperror, needle_ayuda, \
     needle_cont, needle_login, needle_regis, needle_recpass
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('inicio/', include('core.index.urls')),
-    path('clientes/', needle_cliente),
-    path('nclient/', needle_nuevocliente),
-    path('nclient2/', needle_nuevocliente2),
-    path('editclient/', needle_editcliente),
+    path('clientes/', include('core.cliente.urls')),
     path('cronograma/', needle_crono),
     path('pedidos/', needle_pedidos),
     path('insumos_proveedores/', include('core.insumos.urls')),
