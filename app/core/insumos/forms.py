@@ -1,7 +1,9 @@
 from django.forms import *
-from core.insumos.models import InsRegInsu
+
+from core.insumos.models import InsRegInsu, InsRegProv
 
 
+# -------------------------------
 class RegInsumoForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -50,4 +52,55 @@ class RegInsumoForm(ModelForm):
                     'placeholder': 'Cm, kg, unidad, etc.'
                 }
             )
+        }
+# -----------------------------------------------------
+
+
+class RegProveedorForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for form in self.visible_fields():
+            form.field.widget.attrs['class'] = 'form-control'
+
+    class Meta:
+        model = InsRegProv
+        fields = '__all__'
+        widgets = {
+            'nombre_proveedor': TextInput(
+                attrs={
+                    'id': 'ProvName',
+                    'placeholder': 'Local o persona',
+                }
+            ),
+
+            'Insumos_proveedor': Textarea(
+                attrs={
+                    'id': 'ProvMerca',
+                    'class': 'insu-tipo-desc',
+                    'rows': '6',
+                    'placeholder': 'Adornos, telas, hilos u otros',
+                }
+            ),
+
+            'telefono_proveedor': TextInput(
+                attrs={
+                    'id': 'ProvTel',
+                    'placeholder': 'Número(s) telefónico(s) del proveedor',
+                }
+            ),
+
+            'correo_proveedor': EmailInput(
+                attrs={
+                    'id': 'ProvEmail',
+                    'placeholder': 'E-mail del proveedor',
+                }
+            ),
+
+            'ubicacion_proveedor': TextInput(
+                attrs={
+                    'id': 'ProvDir',
+                    'placeholder': 'Ubicación del proveedor',
+                }
+            ),
+
         }

@@ -16,10 +16,11 @@
 
         <!--.card-body Form Insumos -->
         <div class="card-body">
-            <form method="post" action="{% url 'registrar_insumo' %}">
+
+            <form method="post" action="{% url 'registrar_insumo' %}" aria-errormessage="sss">
 
                 {% csrf_token %}
-
+                   {{ form.errors }}
 
               <div class="form-group insu-selec">
                 <label for="forminsumos" class="insu-selec-nom">{{ form.tipo_insumo.label }}</label>
@@ -65,9 +66,11 @@
               <div class="button-submit-div">
               <input type="submit" value="Añadir" class="btn btn-success button-submit">
               </div>
+
+
             </form>
         </div>
         <!-- /.card-body Form Insumos -->
 
-        <!--/form-->
     </div>
+

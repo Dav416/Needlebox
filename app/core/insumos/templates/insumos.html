@@ -13,16 +13,34 @@
 
 {% block content %}
 
-      <!--Encabezado de sección-->
+  <!--Encabezado de sección-->
   <div class="mod-act c-insu"><div class="cover"><span class="mod-act-nom">Insumos</span></div></div>
 
+    <!--validador a mi modo-->
+    {% if form.errors %}
+        <div class="alert alert-danger alert-secondary">
+            <h3>Ha ocurrido un error en los siguientes campos del formulario diligenciado:</h3>
+            {{ form.errors }}
+            <p style="text-align: center">
+              <strong>
+                  <button style="border-radius: 5px">
+                      <a href="{% url 'insumos'%}" style="text-decoration: none; color: #0c0c0c">
+                  Clique aquí para volver al formulario e ingresar valores validos
+                      </a>
+                  </button>
+              </strong>
+            </p>
+
+            <hr>
+        </div>
+    {% endif %}
+    <!--/validador a mi modo-->
+
+
     <!---------------------------------------------------Inicio form insumos ----------------------------------------------------------------->
-    <!--INCLUDE FORMULARIO INSUMOS-->
-    {% include 'formInsumos.html' %}
+        <div class="card card-danger insu-form">
 
-    <br>
-
-    <div class="card card-danger insu-form">
+        <!--.card-header Form Insumos -->
         <div class="card-header form-insu-header">
           <h3 class="card-title">Registrar información insumos</h3>
 
@@ -32,54 +50,51 @@
             </button>
           </div>
         </div>
+        <!-- /.card-header Form Insumos -->
 
-        <form method="post">
-            <div class="card-body">
+        <!--.card-body Form Insumos -->
+        <div class="card-body">
 
-              <div class="form-group insu-selec">
-                <label for="forminsumos" class="insu-selec-nom">Insumo</label>
-                <select id="forminsumos" class="form-control custom-select insu-selec-opt">
-                    <option selected="" disabled="">Seleccione un tipo de insumo</option>
-                    <option value="Telas" >Telas</option> <!--Telas y tejidos de diverso tipo-->
-                    <option value="Hilos y lanas">Hilos y lanas</option> <!--Hilos y cordones de toda la vida-->
-                    <option value="Adornos y bisuteria">Adornos y bisuteria</option> <!--Lentejuelas, perlas, etc-->
-                    <option value="Accesorios, cintas, complementos">Accesorios, cintas y complementos</option> <!--Como botones, cierres, cintas etc-->
-                    <option value="Herramientas e instrumentos">Herramientas e instrumentos</option> <!--Tijeras, tizas, cinta, cortador...-->
-                    <option value="Otro">Otros</option>
-                </select>
+            <form method="post" action="{% url 'registrar_insumo' %}">
+
+                {% csrf_token %}
+
+
+            <div class="form-group insu-selec">
+                <label for="forminsumos" class="insu-selec-nom">{{ form.tipo_insumo.label }}</label>
+
+                  {{ form.tipo_insumo }}
               </div>
 
 
               <div class="form-group">
                 <label class="insu-tipo-nom" for="insudescr">Tipo, marca y otras especificaciones</label>
 
-                <textarea id="insudescr" class="form-control insu-tipo-desc" rows="6" placeholder="Rojo, con flores, antirayones, pequeño, etc."></textarea>
-
+                  {{ form.especificacion_insumo }}
               </div>
-
 
 
               <div class="form-group">
                 <label for="Insuinvent">Cantidad o estado en inventario</label>
-                <input type="text" id="Insuinvent" class="form-control" placeholder="Agotado, 4 metros, etc.">
 
+                  {{ form.estado_insumo }}
               </div>
-
 
 
               <div class="cos-uni form-group">
                 <label class="cos-uni-tit">Costo por unidad de medida</label>
-
                 <div class=" Costo-Unidad">
 
                   <div class="cost-f form-group">
                     <label for="insucost">Costo</label>
-                    <input id="insucost" type="number" class="form-control" placeholder="$">
+
+                     {{ form.costxunid_insumo_costo }}
                   </div>
 
                   <div class="cost-u form-group">
-                    <label for="insu-unid" >Unidad</label>
-                    <input id="insu-unid" type="text" class="form-control" placeholder="cm, kg, undidades,tc.">
+                    <label for="insu-unid">Unidad</label>
+
+                      {{ form.costxunid_insumo_unidad }}
                   </div>
 
                 </div>
@@ -88,15 +103,15 @@
 
               <div class="button-submit-div">
               <input type="submit" value="Añadir" class="btn btn-success button-submit">
-
               </div>
 
-            </div>
-            <!-- /.card-body -->
-        </form>
-        <!--/form-->
+
+            </form>
+        </div>
+        <!-- /.card-body Form Insumos -->
+
     </div>
-        <!--/.insu-form-->
+
 
     <!---------------------------------------------------Final form insumos ----------------------------------------------------------------->
 
@@ -119,36 +134,46 @@
         </div>
 
         <div class="card-body">
+            <form method="post" action="{% url 'registrar_proveedor' %}">
 
-          <div class="form-group">
-            <label for="ProvName">Nombre establecimiento / persona</label>
-            <input type="text" id="ProvName" class="form-control">
-          </div>
+                {% csrf_token %}
 
-          <div class="form-group">
-            <label for="ProvMerca">Insumos que vende</label>
-             <textarea id="ProvMerca" class="form-control insu-tipo-desc" rows="6" placeholder="Adornos, telas, hilos..."></textarea>
-          </div>
 
-          <div class="form-group">
-            <label for="ProvTel">Número de teléfono</label>
-            <input type="tel" id="ProvTel" class="form-control">
-          </div>
 
-          <div class="form-group">
-            <label for="ProvEmail">Correo eléctronico</label>
-            <input type="email" id="ProvEmail" class="form-control">
-          </div>
 
-          <div class="form-group">
-                <label for="ProvDir">Dirección</label>
-                <input type="text" id="ProvDir" class="form-control">
-          </div>
 
-          <div class="button-submit-div">
-          <input type="submit" value="Añadir" class="btn btn-success button-submit-2">
-          </div>
+              <div class="form-group">
+                <label for="ProvName">Nombre establecimiento / persona</label>
 
+                    {{ form2.nombre_proveedor }}
+              </div>
+
+              <div class="form-group">
+                <label for="ProvMerca">Insumos que vende</label>
+
+                {{ form2.Insumos_proveedor }}
+              </div>
+
+              <div class="form-group">
+                <label for="ProvTel">Número de teléfono</label>
+
+                  {{ form2.telefono_proveedor }}
+              </div>
+
+              <div class="form-group">
+                <label for="ProvEmail">Correo eléctronico</label>
+                 {{ form2.correo_proveedor }}
+              </div>
+
+              <div class="form-group">
+                <label for="ProvDir">Dirección del local</label>
+                 {{ form2.ubicacion_proveedor }}
+              </div>
+
+              <div class="button-submit-div">
+                <input type="submit" value="Añadir" class="btn btn-success button-submit-2">
+              </div>
+        </form>
         </div>
         <!-- /.card-body -->
     </div>

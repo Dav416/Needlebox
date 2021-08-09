@@ -3,15 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="03a66e77-7602-432b-bf0b-c0da667e96ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/index/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/index/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/insumos/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/insumos/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/insumos/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/insumos/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/insumos/templates/ListInsumosInsu.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/insumos/templates/ListInsumosInsu.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/insumos/templates/ListInsumosProv.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/insumos/templates/ListInsumosProv.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/insumos/templates/formInsumos.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/insumos/templates/formInsumos.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/insumos/templates/insumos.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/insumos/templates/insumos.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/insumos/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/insumos/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/insumos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/insumos/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/perfil/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/perfil/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/secondHeaderNeedlebox.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/secondHeaderNeedlebox.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,6 +145,8 @@
       <workItem from="1628187092134" duration="30888000" />
       <workItem from="1628290619620" duration="11902000" />
       <workItem from="1628361803695" duration="42217000" />
+      <workItem from="1628434492785" duration="57062000" />
+      <workItem from="1628496930962" duration="763000" />
     </task>
     <servers />
   </component>
