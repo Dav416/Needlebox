@@ -10,11 +10,11 @@ class InfoClient(models.Model):
     # codecli = models.IntegerField(max_length=None, unique=True, verbose_name="codigo identificador cliente")
     nomCli = models.CharField(max_length=50, unique=True, verbose_name='Nombre cliente')
     apeCli = models.CharField(max_length=50, unique=True, verbose_name='Apellido cliente')
-    telCli = models.IntegerField(default=0, unique=True, verbose_name="Teléfono cliente")
-    celCli = models.IntegerField(default=0, unique=True, verbose_name="celular cliente")
+    telCli = models.PositiveSmallIntegerField(default=0, unique=True, verbose_name="Teléfono cliente")
+    celCli = models.PositiveSmallIntegerField(default=0, unique=True, verbose_name="celular cliente")
     e_mailCli = models.EmailField(unique=True, verbose_name='E-mail cliente')
     dirCli = models.CharField(max_length=50, verbose_name="Dirección de cliente")
-    imgCli = models.ImageField(upload_to='Fotos-Clientes', null=True, blank=True)
+    imgCli = models.ImageField(upload_to='Fotos-Clientes', null=True, blank=True, verbose_name='Imagen del cliente')
 
     def __str__(self):
         return self.nomCli, self.apeCli
@@ -67,14 +67,14 @@ class InfoGeneClient(models.Model):
     # DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key borrar info al borrar  perfil
     #DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT)  # foreing key borrar info al borrar cliente
     # codecli2 = models.IntegerField(InfoClient.codecli, unique=True, default=InfoClient.codecli) llama atributo ajeno
-    infoTCli = models.TextField(max_length=3000, verbose_name="Info técnica cliente")
-    ver_ITC = models.CharField(max_length=200, null=True, blank=True, verbose_name='verificación realizada')
-    revP_ITC = models.CharField(max_length=200, null=True, blank=True, verbose_name='Revisar pronto')
-    revIM_ITC = models.CharField(max_length=200,  null=True, blank=True, verbose_name='Revisar de inmediato')
-    tipoCli = models.CharField(choices=cliente_opciones, default=cli_loc, max_length=100)
-    prenda = models.BooleanField(null=True, verbose_name='tipos de prenda')
-    estilCli = models.CharField(choices=estilo_clientes, default=ninguno, max_length=100)
-    medPag = models.CharField(choices=medio_pago, default=efec, max_length=100)
+    infoTCli = models.TextField(max_length=3000, verbose_name="Información técnica del cliente")
+    ver_ITC = models.CharField(max_length=200, null=True, blank=True, verbose_name='Nota de Verificación realizada')
+    revP_ITC = models.CharField(max_length=200, null=True, blank=True, verbose_name='Nota Revisar pronto')
+    revIM_ITC = models.CharField(max_length=200,  null=True, blank=True, verbose_name='Nota Revisar de inmediato')
+    tipoCli = models.CharField(choices=cliente_opciones, default=cli_loc, max_length=100, verbose_name='Tipo de cliente')
+    prenda = models.BooleanField(null=True, verbose_name='Tipos de prenda')
+    estilCli = models.CharField(choices=estilo_clientes, default=ninguno, max_length=100, verbose_name='Estilo del cliente')
+    medPag = models.CharField(choices=medio_pago, default=efec, max_length=100, verbose_name='Medio de pago habitual')
 
     def __str__(self):
         return self.prenda  # codecli2 (mostraría este atributo de la entidad InfoClient para identificar la prenda)

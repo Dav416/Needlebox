@@ -9,7 +9,7 @@ class RegUsu(models.Model):
     e_mailUsu = models.EmailField(unique=True, verbose_name='E-mail')
     passwordUsu = models.CharField(max_length=10, verbose_name='Contraseña')
     conf_passwordUsu = models.CharField(max_length=10, verbose_name='Confirmar Contraseña')
-    accept_terms = models.BooleanField(default=False)
+    accept_terms = models.BooleanField(default=False, verbose_name='Aceptar términos y condiciones')
 
     def __str__(self):
         return self.e_mailUsu
