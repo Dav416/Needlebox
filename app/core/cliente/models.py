@@ -36,6 +36,18 @@ class InfoGeneClient(models.Model):
         (cli_loc, 'cliente local'),
         (cli_nal, 'cliente nacional'))
 
+    # opciones tipo prenda
+    vestido = 'vestido'
+    pantalon = 'pantalón'
+    chaqueta = 'chaqueta'
+    blusa_camisa = 'Blusa/Camisa'
+
+    tipos_prendas = (
+        (vestido, 'vestido'),
+        (pantalon, 'pantalón'),
+        (chaqueta, 'chaquetao'),
+        (blusa_camisa, 'Blusa/Camisa'))
+
     # opciones estilo cliente
     clasico = 'clasico'
     deportivo = 'deportivo'
@@ -72,7 +84,7 @@ class InfoGeneClient(models.Model):
     revP_ITC = models.CharField(max_length=200, null=True, blank=True, verbose_name='Nota Revisar pronto')
     revIM_ITC = models.CharField(max_length=200,  null=True, blank=True, verbose_name='Nota Revisar de inmediato')
     tipoCli = models.CharField(choices=cliente_opciones, default=cli_loc, max_length=100, verbose_name='Tipo de cliente')
-    prenda = models.BooleanField(null=True, verbose_name='Tipos de prenda')
+    prenda = models.BooleanField(choices=tipos_prendas, null=True, verbose_name='Tipos de prenda')
     estilCli = models.CharField(choices=estilo_clientes, default=ninguno, max_length=100, verbose_name='Estilo del cliente')
     medPag = models.CharField(choices=medio_pago, default=efec, max_length=100, verbose_name='Medio de pago habitual')
 
