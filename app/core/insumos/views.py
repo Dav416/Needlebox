@@ -1,4 +1,5 @@
 # from django.shortcuts import render
+# from django.shortcuts import render
 from django.views.generic import TemplateView
 from core.insumos.models import *
 # from django.urls import reverse_lazy

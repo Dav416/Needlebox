@@ -1,0 +1,114 @@
+      <!-- INICIO TABLA -->
+
+          <div class="row tabla-pedido">
+
+            <div class="col-12">
+
+              <div class="card ">
+
+                <!--car-header-->
+                <div class="card-h-pedido card-t">
+                  <h3 class="table-t">Todos los pedidos</h3>
+
+                </div>
+                <!-- /.card-header -->
+
+
+
+
+                <!--card body-->
+                <div class="card-body p-0">
+                  <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
+
+                    <div class="row">
+                      <div class="col-sm-12 ">
+                        <div class="table-responsive">
+                          <table id="example2" class="table table-bordered table-hover dataTable dtr-inline m-0" role="grid" aria-describedby="example2_info">
+                              <thead>
+                                <tr role="row">
+                                  <th class="sorting sorting_asc nro-p" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Número de pedido</th>
+                                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Pedido</th>
+                                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Estado</th>
+                                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Descripción</th>
+                                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Cliente</th>
+                                  <th class="sorting f-ent" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Fecha de entrega</th>
+                                </tr>
+                              </thead>
+
+                              <tbody>
+
+                              <!-- INICIO CICLO FOR -->
+
+                              {% for c in object_list1 %}
+                                <tr class="odd">
+                                  <td style="width: 1%">{{ c.id }}</td>
+                                  <!--<td style="width: 10%">{{ c.numPedido }}</td>-->
+                                  <td style="width: 10%">{{ c.pedido }}</td>
+                                  <td style="width: 15%">{{ c.estado }}</td>
+                                  <td style="width: 15%">{{ c.descri}}</td>
+                                  <td style="width: 57%">{{ c.client }}</td>
+                                  <td style="width: 57%">{{ c.fechadEnt }}</td>
+                                  <td style="width: 1%">
+                                      <button type="button" class="btn-edit-insu">
+                                          <i class="fas fa-edit"></i>
+                                      </button>
+                                  </td>
+                                  <td style="width: 1%">
+                                      <button type="button" class="btn-borr-insu">
+                                          <i class="fas fa-trash"></i>
+                                      </button>
+                                  </td>
+                                </tr>
+
+                              {% endfor %}
+
+                              <!-- FIN CICLO FOR -->
+
+                              <!-- !!!EJEMPLO¡¡¡ -->
+                                <tr class="odd">
+                                  <td class="dtr-control sorting_1" tabindex="0">
+                                    <a href="#">OR0000</a>
+                                  </td>
+                                  <td>Camiseta</td>
+                                  <td>
+                                    <span class="badge badge-success">Terminado</span>
+                                  </td>
+                                  <td>Bordar, estampar y cocer</td>
+                                  <td>Miguel Ordoñez</td>
+                                  <td>17/07/2021</td>
+                                </tr>
+                              <!-- FIN DE EJEMPLO -->
+
+                            <!--  <tr class="even"> -->
+
+                              </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+
+              </div>
+              <!-- /.card -->
+
+            </div>
+            <!-- /.col -->
+
+          </div>
+          <!-- /.row -->
+
+        <!-- /.container-fluid -->
+
+        <!-- FIN TABLA -->
+
+<!--script para ejecución del data table -->
+<script type="application/javascript">
+    $('#example2').DataTable({
+                    responsive: true,
+                    autoWidth: false,
+                });
+</script>
+<!--/ script para ejecución del data table -->
+
