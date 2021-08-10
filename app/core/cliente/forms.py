@@ -16,53 +16,51 @@ class InfoClientForm(ModelForm):
         widgets = {
             'nomCli': TextInput(
                 attrs={
-                    'id': 'forminsumos',
-                    'class': 'custom-select insu-selec-opt'
+                    'id': 'NuevCl',
+                    'class': 'input-nuevclien'
                 }
             ),
 
             'apeCli': TextInput(
                 attrs={
-                    'id': 'insudescr',
-                    'class': ' insu-tipo-desc',
-                    'rows': '3',
-                    'placeholder': 'Rojo, con flores, antirrayones, pequeño, etc.'
+                    'id': 'ApeNuevCl',
+                    'class': 'input-nuevclien'
                 }
             ),
 
             'telCli': NumberInput(
                 attrs={
-                    'id': 'Insuinvent',
-                    'placeholder': 'Agotado, 4 metros, etc'
+                    'id': 'TelNuevCl',
+                    'class': 'input-nuevclien'
                 }
             ),
 
             'celCli': NumberInput(
                 attrs={
-                    'id': 'insucost',
-
-                    'placeholder': '$'
+                    'id': 'CelNuevCl',
+                    'class': 'input-nuevclien'
                 }
             ),
 
             'e_mailCli': EmailInput(
                 attrs={
-                    'id': 'insu-unid',
-                    'placeholder': 'Cm, kg, unidad, etc.'
+                    'id': 'EmNuevCl',
+                    'class': 'input-nuevclien'
                 }
             ),
 
             'dirCli': TextInput(
                 attrs={
-                    'id': 'insu-unid',
-                    'placeholder': 'Cm, kg, unidad, etc.'
+                    'id': 'DirNuevCli',
+                    'class': 'input-nuevclien'
                 }
             ),
 
             'imgCli': ImageInput(
                 attrs={
-                    'id': 'insu-unid',
-                    'placeholder': 'Cm, kg, unidad, etc.'
+                    'id': 'file2',
+                    'class': 'custom-file-input  input-addimg',
+                    'aria-describedby': 'addon2'
                 }
             )
         }
@@ -81,59 +79,61 @@ class InfoGeneClientForm(ModelForm):
         widgets = {
             'infoTCli': Textarea(
                 attrs={
-                    'id': 'ProvName',
-                    'placeholder': 'Local o persona',
+                    'id': 'info_tec',
+                    'rows': '3',
+                    'placeholder': 'Medidas y demás...'
                 }
             ),
 
             'ver_ITC': TextInput(
                 attrs={
-                    'id': 'ProvMerca',
-                    'class': 'insu-tipo-desc',
-                    'rows': '6',
-                    'placeholder': 'Adornos, telas, hilos u otros',
+                    'id': 'inputSuccess',
+                    'class': 'form-control is-valid',
+                    'placeholder': 'Ingrese observación ...'
                 }
             ),
 
             'revP_ITC': TextInput(
                 attrs={
-                    'id': 'ProvTel',
-                    'placeholder': 'Número(s) telefónico(s) del proveedor',
+                    'id': 'inputWarning',
+                    'class': 'form-control is-warning',
+                    'placeholder': 'Ingrese observación ...'
                 }
             ),
 
             'revIM_ITC': TextInput(
                 attrs={
-                    'id': 'ProvEmail',
-                    'placeholder': 'E-mail del proveedor',
+                    'id': 'inputError',
+                    'class': 'form-control is-invalid',
+                    'placeholder': 'Ingrese observación ...'
                 }
             ),
 
             'tipoCli': Select(
                 attrs={
-                    'id': 'ProvDir',
-                    'placeholder': 'Ubicación del proveedor',
+                    'id': 'LocCl',
+                    'class': 'form-check-input',
+                    'type': 'checkbox'
                 }
             ),
 
             'prenda': Select(
                 attrs={
-                    'id': 'ProvDir',
-                    'placeholder': 'Ubicación del proveedor',
+                    'id': 'PrendCl',
+                    'class': 'form-check-input',
+                    'type': 'checkbox'
                 }
             ),
 
             'estilCli': Select(
                 attrs={
-                    'id': 'ProvDir',
-                    'placeholder': 'Ubicación del proveedor',
+                    'id': 'estilo_cli',
                 }
             ),
 
             'medPag': Select(
                 attrs={
-                    'id': 'ProvDir',
-                    'placeholder': 'Ubicación del proveedor',
+                    'id': 'mediopagoh',
                 }
             )
 
