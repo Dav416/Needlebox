@@ -32,7 +32,7 @@ urlpatterns = [
     path('cronograma/', needle_crono),
     path('pedidos/', needle_pedidos),
     path('', include('core.insumos.urls')),
-    path('cuenta/', include('core.perfil.urls')),
+    path('', include('core.perfil.urls')),
     path('nosotros/', needle_nosotros),
     path('error/', needle_reperror),
     path('ayuda/', needle_ayuda),

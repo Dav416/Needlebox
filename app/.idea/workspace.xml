@@ -3,16 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="03a66e77-7602-432b-bf0b-c0da667e96ad" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/insumos/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/insumos/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/insumos/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/insumos/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/insumos/templates/ListInsumosInsu.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/insumos/templates/ListInsumosInsu.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/insumos/templates/ListInsumosProv.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/insumos/templates/ListInsumosProv.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/insumos/templates/formInsumos.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/insumos/templates/formInsumos.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/insumos/templates/insumos.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/insumos/templates/insumos.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/insumos/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/insumos/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/insumos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/insumos/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/perfil/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/perfil/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/perfil/templates/perfil.html" beforeDir="false" afterPath="$PROJECT_DIR$/core/perfil/templates/perfil.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/perfil/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/perfil/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/perfil/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/perfil/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/baseotros.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/baseotros.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -147,6 +147,9 @@
       <workItem from="1628361803695" duration="42217000" />
       <workItem from="1628434492785" duration="57062000" />
       <workItem from="1628496930962" duration="763000" />
+      <workItem from="1628525317465" duration="2792000" />
+      <workItem from="1628550328994" duration="29043000" />
+      <workItem from="1628581776238" duration="219000" />
     </task>
     <servers />
   </component>
@@ -164,15 +167,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/core/perfil/urls.py</url>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

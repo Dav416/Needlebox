@@ -16,7 +16,7 @@ class NeedleInsu(TemplateView):
         context['object_list1'] = InsRegInsu.objects.all()
         context['object_list2'] = InsRegProv.objects.all()
 
-        context['form'] = RegInsumoForm
+        context['form1'] = RegInsumoForm
         context['form2'] = RegProveedorForm
 
         # context['LoadInsulist'] = reverse_lazy('lista_insumos')
