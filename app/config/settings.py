@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     'core.insumos',
     'core.perfil',
     'core.index',
-
+    'core.pedidos',
+    'core.reportar',
+    'core.contacto',
 ]
 
 MIDDLEWARE = [

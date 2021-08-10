@@ -23,7 +23,7 @@ def needle_crono(request):
 
 
 def needle_pedidos(request):
-    return render(request, 'pedidos.html')
+    return render(request, 'pedidos/templates/pedidos.html')
 
 
 def needle_nosotros(request):
