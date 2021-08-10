@@ -1,21 +1,53 @@
+# from django.http import HttpResponseRedirect
 # from django.shortcuts import render
-# from django.shortcuts import render
-from django.views.generic import TemplateView
-from core.insumos.models import *
-# from django.urls import reverse_lazy
+from django.views.generic import TemplateView, CreateView
+from core.insumos.models import InsRegInsu, InsRegProv
+from core.insumos.forms import RegInsumoForm, RegProveedorForm
+from django.urls import reverse_lazy
 
 
+# tablas de insumos
 class NeedleInsu(TemplateView):
     template_name = '../templates/insumos.html'
+    # success_url = reverse_lazy('insumos')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        # context['LoadInsulist'] = reverse_lazy('lista_insumos')
         context['object_list1'] = InsRegInsu.objects.all()
-
         context['object_list2'] = InsRegProv.objects.all()
+
+        context['form1'] = RegInsumoForm
+        context['form2'] = RegProveedorForm
+
+        # context['LoadInsulist'] = reverse_lazy('lista_insumos')
         return context
 
+
+# Formulario para insumos de insumos
+class RegInsumoCreateView(CreateView):
+    model = InsRegInsu
+    form_class = RegInsumoForm
+    template_name = 'insumos.html'
+    success_url = reverse_lazy('insumos')
+
+
+# Formulario para proveedores de insumos
+class RegProveedorCreateView(CreateView):
+    model = InsRegProv
+    form_class = RegProveedorForm
+    template_name = 'insumos.html'
+    success_url = reverse_lazy('insumos')
+
+
+"""
+    def post(self, request, *args, **kwargs):
+        form = RegProveedorForm(request.POST)
+        if ValueError:
+
+            return HttpResponseRedirect(self.success_url)
+
+        return render(request, self.template_name, {'form': form})
+"""
 
 """
 class ListInsuView(ListView):
@@ -26,6 +58,13 @@ class ListInsuView(ListView):
         context = super().get_context_data(**kwargs)
         context['object_list'] = InsRegInsu.objects.all()
         return context
+"""
+
+"""
+TemplateView = no base de datos
+Listview = base de datos, es decir para tablas
+CreateView = para formularios
+
 """
 
 """
@@ -50,7 +89,6 @@ pueda retornar esa info al usuario, la cual como vemos se hace viisble para el m
 se pasan a la plantilla, a su ves pasadas como vistas. 
 
 Lo otro que está comentarlo decidí dejarlo para recordar ese recurso en futuras ocasiones, ya que creí que era
-necesario para el funcionameinto de esta vista pero no fue así.
+necesario para el funcionamiento de esta vista pero no fue así.
 
-Y recuerden: Uribe paraco hpta y me preguntan cualquier cosa 
 """
