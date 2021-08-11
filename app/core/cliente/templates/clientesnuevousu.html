@@ -27,13 +27,17 @@
         <h3 class="card-title">Añade la información personal del cliente</h3>
       </div>
       <div class="card-body">
+
+        <form method="post" action="{% url 'cliente1' %}">
+          {% csrf_token %}
+
         <!-- Date name -->
         <div class="form-group">
           <label>Nombres:</label>
 
           <div class="input-group">
 
-            <input type="text" class="input-nuevclien" id="NuevCl">
+            {{ form1.nomCli }}
           </div>
           <!-- /.input group -->
         </div>
@@ -44,7 +48,7 @@
           <label>Apellidos:</label>
           <div class="input-group">
 
-            <input  type="text" class="input-nuevclien" id="ApeNuevCl">
+            {{ form1.apeCli }}
           </div>
           <!-- /.input group -->
         </div>
@@ -56,7 +60,7 @@
 
           <div class="input-group">
 
-            <input type="text" class="input-nuevclien" id="TelNuevCl">
+            {{ form1.telCli }}
           </div>
           <!-- /.input group -->
         </div>
@@ -67,7 +71,7 @@
           <label>Celular:</label>
 
           <div class="input-group">
-            <input type="tel" class="input-nuevclien" id="CelNuevCl">
+            {{ form1.celCli }}
           </div>
           <!-- /.input group -->
         </div>
@@ -77,7 +81,7 @@
           <label>Correo electrónico:</label>
 
           <div class="input-group">
-            <input type="email" class="input-nuevclien" id="EmNuevCl">
+            {{ form1.e_mailCli }}
           </div>
           <!-- /.input group -->
         </div>
@@ -87,34 +91,27 @@
           <label>Dirección:</label>
 
           <div class="input-group">
-            <input type="text" class="input-nuevclien" id="DirNuevCli">
+            {{ form1.dirCli }}
           </div>
           <br>
+
           <a href="{% url 'cliente2' %}"><input type="submit" value="Continuar" class="btn btn-success float-right input-addimg"></a>
           <!-- /.input group -->
         </div>
         <!-- /.form group -->
+        </form>
 
       </div>
 
-
       <!-- /.card-body -->
     </div>
-
-
-
 <!--menu copypaste de adminte---------------------------------------------------------------------------------------------------->
-
-
 
   </div>
 
   <!--fin del div para el contenido-->
 
-
 </div>
-
-
 
 {% endblock %}
 
