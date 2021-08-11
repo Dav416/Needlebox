@@ -4,8 +4,10 @@ from django.db import models
 # Create your models here.
 # ---TABLAS/MODELOS DEL MODULO INSUMOS---
 # Modelo/tabla de modulo insumos, para registrar INSUMOS de confección
-class InsRegInsu(models.Model):
+from django.forms import model_to_dict
 
+
+class InsRegInsu(models.Model):
     SQ_CHOICES = [
         ('', 'Seleccione un tipo de insumo'),
         ('Tela', 'Telas'),
@@ -28,6 +30,10 @@ class InsRegInsu(models.Model):
     def __str__(self):
         return self.tipo_insumo
 
+    def insutojson(self):
+        iteminsu = model_to_dict(self)
+        return iteminsu
+
     class Meta:
         verbose_name = 'Registro insumo'
         verbose_name_plural = 'Registro insumos'
@@ -47,6 +53,10 @@ class InsRegProv(models.Model):
 
     def __str__(self):
         return self.nombre_proveedor
+
+    def provtojson(self):
+        itemprov = model_to_dict(self)
+        return itemprov
 
     class Meta:
         verbose_name = 'Registro proveedor'

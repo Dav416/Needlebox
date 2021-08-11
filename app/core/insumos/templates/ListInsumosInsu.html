@@ -58,10 +58,31 @@
 
 <!--script para ejecución del data table -->
 <script type="application/javascript">
-    $('#MyTableInsumos').DataTable({
+    $(function () {
+        $('#MyTableInsumos').DataTable({
                     responsive: true,
-                    autoWidth: false,
+                    autoWidth: false
+        });
+
+        $('.InsuvbtnAjax').on('click', function () {
+            $.ajax({
+                url: '{% url "registrar_insumo" %}',
+                type: 'POST',
+                data: {id: 1},
+                dataType: 'json',
+                }).done(function(data) {
+                    console.log(data);
+                }).fail(function(jqXHR,textStatus,errorThrown) {
+                    alert( textStatus+ ' : ' +errorThrown );
+                }).always(function(data) {
+
                 });
+
+            });
+
+
+
+    });
 
 </script>
 <!--/ script para ejecución del data table -->
