@@ -8,15 +8,22 @@ from django.db import models
 class InfoClient(models.Model):
     # DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key: borrar info al borrar perfil
     # codecli = models.IntegerField(max_length=None, unique=True, verbose_name="codigo identificador cliente")
+    id = models.AutoField(primary_key=True)
     nomCli = models.CharField(max_length=50, unique=True, verbose_name='Nombre cliente')
     apeCli = models.CharField(max_length=50, unique=True, verbose_name='Apellido cliente')
-    telCli = models.IntegerField(default=0, unique=True, verbose_name="Teléfono cliente")
-    celCli = models.IntegerField(default=0, unique=True, verbose_name="celular cliente")
+    telCli = models.PositiveIntegerField(default=0, unique=True, verbose_name="Teléfono cliente")
+    celCli = models.PositiveIntegerField(default=0, unique=True, verbose_name="celular cliente")
     e_mailCli = models.EmailField(unique=True, verbose_name='E-mail cliente')
     dirCli = models.CharField(max_length=50, verbose_name="Dirección de cliente")
 
+    def nombreCompleto(self):
+        txt = '{} {}'
+        return txt.format(self.nomCli, self.apeCli)
+
+
     def __str__(self):
-        return self.nomCli, self.apeCli
+        txt = 'Cliente {}, Número {}'
+        return txt.format(self.nombreCompleto(), self.id)
 
     class Meta:
         verbose_name = 'Cliente'
@@ -31,9 +38,10 @@ class InfoGeneClient(models.Model):
     cli_loc = 'cliente local'
     cli_nal = 'cliente nacional'
 
-    cliente_opciones = (
+    cliente_opciones = [
         (cli_loc, 'cliente local'),
-        (cli_nal, 'cliente nacional'))
+        (cli_nal, 'cliente nacional')
+    ]
 
     # opciones tipo prenda
     vestido = 'vestido'
@@ -41,11 +49,12 @@ class InfoGeneClient(models.Model):
     chaqueta = 'chaqueta'
     blusa_camisa = 'Blusa/Camisa'
 
-    tipos_prendas = (
+    tipos_prendas = [
         (vestido, 'vestido'),
         (pantalon, 'pantalón'),
         (chaqueta, 'chaquetao'),
-        (blusa_camisa, 'Blusa/Camisa'))
+        (blusa_camisa, 'Blusa/Camisa')
+    ]
 
     # opciones estilo cliente
     clasico = 'clasico'
@@ -55,13 +64,14 @@ class InfoGeneClient(models.Model):
     otro = 'otro'
     ninguno = 'ninguno'
 
-    estilo_clientes = (
+    estilo_clientes = [
         (clasico, 'clasico'),
         (deportivo, 'deportivo'),
         (moderno, 'moderno'),
         (oficio, 'oficio'),
         (otro, 'otro'),
-        (ninguno, 'ninguno'))
+        (ninguno, 'ninguno')
+    ]
 
     # opciones medio de pago cliente
     efec = 'Efectivo'
@@ -69,11 +79,12 @@ class InfoGeneClient(models.Model):
     trans = 'Transferencia'
     giro = 'Giro'
 
-    medio_pago = (
+    medio_pago = [
         (efec, 'Efectivo'),
         (tarj, 'Tarjeta'),
         (trans, 'Transferencia'),
-        (giro, 'Giro'))
+        (giro, 'Giro')
+    ]
 
     # DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key borrar info al borrar  perfil
     #DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT)  # foreing key borrar info al borrar cliente
@@ -88,7 +99,7 @@ class InfoGeneClient(models.Model):
     medPag = models.CharField(choices=medio_pago, default=efec, max_length=100, verbose_name='Medio de pago habitual')
 
     def __str__(self):
-        return self.prenda  # codecli2 (mostraría este atributo de la entidad InfoClient para identificar la prenda)
+        return self.prenda
 
     class Meta:
         verbose_name = 'Detalle Cliente'
