@@ -21,7 +21,8 @@
         <div class="alert alert-danger alert-secondary">
             <h3>Ha ocurrido un error en los siguientes campos del formulario diligenciado:</h3>
             {{ form.errors }}
-            <p style="text-align: center">
+            <!--
+            <po style="text-align: center">
               <strong>
                   <button style="border-radius: 5px">
                       <a href="{% url 'insumos'%}" style="text-decoration: none; color: #0c0c0c">
@@ -29,8 +30,8 @@
                       </a>
                   </button>
               </strong>
-            </p>
-
+            </po>
+                -->
             <hr>
         </div>
     {% endif %}
@@ -57,7 +58,7 @@
 
             <form method="post" action="{% url 'registrar_insumo' %}">
 
-                {% csrf_token %}
+             {% csrf_token %}
 
 
             <div class="form-group insu-selec">
@@ -102,7 +103,7 @@
 
 
               <div class="button-submit-div">
-              <input type="submit" value="Añadir" class="btn btn-success button-submit">
+              <input type="submit" value="Añadir" class="btn btn-success button-submit InsuvbtnAjax">
               </div>
 
 
@@ -139,9 +140,6 @@
                 {% csrf_token %}
 
 
-
-
-
               <div class="form-group">
                 <label for="ProvName">Nombre establecimiento / persona</label>
 
@@ -171,8 +169,9 @@
               </div>
 
               <div class="button-submit-div">
-                <input type="submit" value="Añadir" class="btn btn-success button-submit-2">
+                <input type="submit" value="Añadir" class="btn btn-success button-submit-2 ProvbtnAjax">
               </div>
+
         </form>
         </div>
         <!-- /.card-body -->

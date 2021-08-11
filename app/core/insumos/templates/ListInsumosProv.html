@@ -62,10 +62,37 @@
 
 <!--script para ejecución del data table -->
 <script type="application/javascript">
-    $('#tabla_proveedores').DataTable({
-                    responsive: false,
-                    autoWidth: true,
+     $(function () {
+
+        $('#tabla_proveedores').DataTable({
+                        responsive: true,
+                        autoWidth: true,
+        });
+
+        $('.ProvbtnAjax').on('click', function () {
+            $.ajax({
+                url: '{% url "registrar_proveedor" %}',
+                type: 'POST',
+                data: {id: 1},
+                dataType: 'json',
+                }).done(function(data) {
+                    console.log(data);
+                }).fail(function(jqXHR,textStatus,errorThrown) {
+                    alert( textStatus+ ' : ' +errorThrown );
+                }).always(function(data) {
+
                 });
+
+            });
+
+
+
+
+
+
+     });
+
+
 
 </script>
 <!--/ script para ejecución del data table -->

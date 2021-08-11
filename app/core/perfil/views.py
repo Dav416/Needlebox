@@ -1,3 +1,4 @@
+from django.shortcuts import redirect
 from django.views.generic import CreateView
 from core.perfil.models import Profile
 from core.perfil.forms import ModificPerfilForm
@@ -17,6 +18,14 @@ class ModPerfilCreateView(CreateView):
         context['formP'] = ModificPerfilForm
         return context
 
+
+"""
+MÉTODO DISPATCH 
+        def dispatch(self, request, *args, **kwargs):
+            if request.method == 'GET':
+                return redirect('perfil')
+            return super().dispatch(request, *args, **kwargs)
+"""
 
 """
 Aunque se han creado un entidad/modelo/tabla con sus respectivo atributos o campos (se peude verificar
