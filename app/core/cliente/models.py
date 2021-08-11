@@ -10,11 +10,10 @@ class InfoClient(models.Model):
     # codecli = models.IntegerField(max_length=None, unique=True, verbose_name="codigo identificador cliente")
     nomCli = models.CharField(max_length=50, unique=True, verbose_name='Nombre cliente')
     apeCli = models.CharField(max_length=50, unique=True, verbose_name='Apellido cliente')
-    telCli = models.PositiveSmallIntegerField(default=0, unique=True, verbose_name="Teléfono cliente")
-    celCli = models.PositiveSmallIntegerField(default=0, unique=True, verbose_name="celular cliente")
+    telCli = models.IntegerField(default=0, unique=True, verbose_name="Teléfono cliente")
+    celCli = models.IntegerField(default=0, unique=True, verbose_name="celular cliente")
     e_mailCli = models.EmailField(unique=True, verbose_name='E-mail cliente')
     dirCli = models.CharField(max_length=50, verbose_name="Dirección de cliente")
-    imgCli = models.ImageField(upload_to='Fotos-Clientes', null=True, blank=True, verbose_name='Imagen del cliente')
 
     def __str__(self):
         return self.nomCli, self.apeCli

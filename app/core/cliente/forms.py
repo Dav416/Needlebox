@@ -54,15 +54,8 @@ class InfoClientForm(ModelForm):
                     'id': 'DirNuevCli',
                     'class': 'input-nuevclien'
                 }
-            ),
-
-            'imgCli': ImageInput(
-                attrs={
-                    'id': 'file2',
-                    'class': 'custom-file-input  input-addimg',
-                    'aria-describedby': 'addon2'
-                }
             )
+
         }
 # -----------------------------------------------------
 
