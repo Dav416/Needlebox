@@ -17,6 +17,14 @@
 
   <!--Encabezado de sección-->
   <div class="mod-act c-client"><div class="cover"><span class="mod-act-nom">Clientes</span></div></div>
+    {% if form.errors %}
+    <div class="alert alert-danger alert-secondary">
+        <h2>Ha ocurrido un error en los siguientes campos del formulario diligenciado:</h2>
+        {{ form.errors }}
+        <strong>Por favor, diligencie de nuevo el formulario de forma corrrecta</strong>
+        <hr>
+    </div>
+    {% endif %}
 
 
   <!--Aqui iria el contenido-->
@@ -28,13 +36,16 @@
       </div>
       <!-- /.card-header -->
       <div class="card-body">
-        <form>
+
+        <form method="post" action="{% url 'cliente2' %}">
+           {% csrf_token %}
+
           <div class="row">
             <div class="col-sm-12">
               <!-- textarea -->
               <div class="form-group">
                 <label for="info_tec">Medidas e información técnica importante</label>
-                <textarea id="info_tec" class="form-control" rows="3" placeholder="Medidas y demás..."></textarea>
+                {{ form2.infoTCli }}
               </div>
             </div>
           </div>
@@ -42,37 +53,24 @@
           <!-- input states -->
           <div class="form-group">
             <label class="col-form-label" for="inputSuccess"><i class="fas fa-check"></i> Verificación realizada</label>
-            <input type="text" class="form-control is-valid" id="inputSuccess" placeholder="Ingrese observación ...">
+            {{ form2.ver_ITC }}
           </div>
           <div class="form-group">
             <label class="col-form-label" for="inputWarning"><i class="far fa-bell"></i> Revisar pronto</label>
-            <input type="text" class="form-control is-warning" id="inputWarning" placeholder="Ingrese observación ...">
+            {{ form2.revP_ITC }}
           </div>
           <div class="form-group">
             <label class="col-form-label" for="inputError"><i class="far fa-times-circle"></i> Revisar de inmediato</label>
-            <input type="text" class="form-control is-invalid" id="inputError" placeholder="Ingrese observación ...">
+            {{ form2.revIM_ITC }}
           </div>
 
           <div class="row">
             <div class="col-sm-6">
-              <label for="group2">Prendas más solicitadas por el cliente:</label>
+              <label for="group2">Tipo de prenda más solicitada por el cliente</label>
               <!-- checkbox -->
               <div class="form-group">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox">
-                  <label class="form-check-label">Vestido</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox">
-                  <label class="form-check-label">Pantalón</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" checked="">
-                  <label class="form-check-label">Chaqueta</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox">
-                  <label class="form-check-label">Blusa/Camisa</label>
+                  {{ form2.prenda }}
                 </div>
               </div>
             </div>
@@ -85,12 +83,7 @@
 
               <div class="form-group">
                 <div class="form-check">
-                  <input class="form-check-input" type="radio" name="radio1">
-                  <label class="form-check-label">Cliente local</label>
-                </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="radio1" checked="">
-                  <label class="form-check-label">Cliente nacional</label>
+                  {{ form2.tipoCli }}
                 </div>
               </div>
             </div>
@@ -102,15 +95,7 @@
               <!-- Select multiple-->
               <div class="form-group ">
                 <label for="estilo_cli">Estilo del cliente</label>
-                <select id="estilo_cli" multiple="" class="form-control ">
-                  <option>Clásico/Señorial</option>
-                  <option>Deportivo</option>
-                  <option>Moderno</option>
-                  <option>Trajes de oficio</option>
-                  <option>Otro</option>
-                  <option>Ninguno</option>
-                </select>
-
+                  {{ form2.estilCli }}
               </div>
 
             </div>
@@ -122,19 +107,14 @@
               <!-- select -->
               <div class="form-group">
                 <label for="mediopagoh">Medio de pago habitual</label>
-                <select id="mediopagoh" class="form-control">
-                  <option>Efectivo</option>
-                  <option>Tarjeta</option>
-                  <option>Transferencia</option>
-                  <option>Giro</option>
-                </select>
+                {{ form2.medPag }}
               </div>
             </div>
           </div>
 
 
         </form>
-        <a href="/editclient"><input type="submit" value="Guardar" class="btn btn-success float-right"></a>
+        <a href="{% url 'cliente3' %}"><input type="submit" value="Guardar" class="btn btn-success float-right"></a>
       </div>
       <!-- /.card-body -->
     </div>
