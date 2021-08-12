@@ -3,7 +3,7 @@ from django.forms import *
 from core.insumos.models import InsRegInsu, InsRegProv
 
 
-# -------------------------------
+# ----------------REGISTRO DE INSUMOS---------------
 class RegInsumoForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -53,7 +53,7 @@ class RegInsumoForm(ModelForm):
                 }
             )
         }
-# -----------------------------------------------------
+# -----------------REGISTRO PROVEEEDORES------------------------------------
 
 
 class RegProveedorForm(ModelForm):

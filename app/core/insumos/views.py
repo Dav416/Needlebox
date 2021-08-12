@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required  # nececario para el d
 from django.shortcuts import redirect
 from django.utils.decorators import method_decorator  # nececario para el decorador
 from django.views.decorators.csrf import csrf_exempt
-from django.views.generic import TemplateView, CreateView
+from django.views.generic import TemplateView, CreateView, UpdateView
 from core.insumos.models import InsRegInsu, InsRegProv
 from core.insumos.forms import RegInsumoForm, RegProveedorForm
 from django.urls import reverse_lazy
@@ -68,6 +68,43 @@ class RegInsumoCreateView(CreateView):
         context['object_list1'] = InsRegInsu.objects.all()
         context['form1'] = RegInsumoForm
         return context
+
+
+class EditInsumoUpdateView(UpdateView):
+    model = InsRegInsu
+    form_class = RegInsumoForm
+    template_name = 'insumos.html'
+    success_url = reverse_lazy('insumos')
+
+    def dispatch(self, request, *args, **kwargs):
+        self.object = self.get_object()
+        return super().dispatch(request, *args, **kwargs)
+
+    def post(self, request, *args, **kwargs):
+        data = {}
+        try:
+            action = request.POST['action']
+            if action == 'edit':
+                form = self.get_form()
+                data = form.save()
+            else:
+                data['error'] = 'No ha ingresado a ninguna opción'
+        except Exception as e:
+            data['error'] = str(e)
+        return JsonResponse(data)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['object_list1'] = InsRegInsu.objects.all()
+        context['form1'] = RegInsumoForm
+        return context
+
+
+
+
+
+
+
 
 
 # ---------------------------------------------------------------------------------
