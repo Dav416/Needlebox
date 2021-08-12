@@ -35,42 +35,42 @@ class InfoClient(models.Model):
 class InfoGeneClient(models.Model):
 
     # opciones tipo cliente
-    cli_loc = 'cliente local'
-    cli_nal = 'cliente nacional'
+    cli_loc = 'Cliente local'
+    cli_nal = 'Cliente nacional'
 
     cliente_opciones = [
-        (cli_loc, 'cliente local'),
-        (cli_nal, 'cliente nacional')
+        (cli_loc, 'Cliente local'),
+        (cli_nal, 'Cliente nacional')
     ]
 
     # opciones tipo prenda
-    vestido = 'vestido'
-    pantalon = 'pantalón'
-    chaqueta = 'chaqueta'
+    vestido = 'Vestido'
+    pantalon = 'Pantalón'
+    chaqueta = 'Chaqueta'
     blusa_camisa = 'Blusa/Camisa'
 
     tipos_prendas = [
-        (vestido, 'vestido'),
-        (pantalon, 'pantalón'),
-        (chaqueta, 'chaquetao'),
+        (vestido, 'Vestido'),
+        (pantalon, 'Pantalón'),
+        (chaqueta, 'Chaqueta'),
         (blusa_camisa, 'Blusa/Camisa')
     ]
 
     # opciones estilo cliente
-    clasico = 'clasico'
-    deportivo = 'deportivo'
-    moderno = 'moderno'
-    oficio = 'oficio'
-    otro = 'otro'
-    ninguno = 'ninguno'
+    clasico = 'Clasico'
+    deportivo = 'Deportivo'
+    moderno = 'Moderno'
+    oficio = 'Oficio'
+    otro = 'Otro'
+    ninguno = 'Ninguno'
 
     estilo_clientes = [
-        (clasico, 'clasico'),
-        (deportivo, 'deportivo'),
-        (moderno, 'moderno'),
-        (oficio, 'oficio'),
-        (otro, 'otro'),
-        (ninguno, 'ninguno')
+        (clasico, 'Clasico'),
+        (deportivo, 'Deportivo'),
+        (moderno, 'Moderno'),
+        (oficio, 'Oficio'),
+        (otro, 'Otro'),
+        (ninguno, 'Ninguno')
     ]
 
     # opciones medio de pago cliente
@@ -94,12 +94,13 @@ class InfoGeneClient(models.Model):
     revP_ITC = models.CharField(max_length=200, null=True, blank=True, verbose_name='Nota Revisar pronto')
     revIM_ITC = models.CharField(max_length=200,  null=True, blank=True, verbose_name='Nota Revisar de inmediato')
     tipoCli = models.CharField(choices=cliente_opciones, default=cli_loc, max_length=100, verbose_name='Tipo de cliente')
-    prenda = models.BooleanField(choices=tipos_prendas, null=True, verbose_name='Tipos de prenda')
+    prenda = models.CharField(choices=tipos_prendas, default= vestido, max_length=100, verbose_name='Tipos de prenda')
     estilCli = models.CharField(choices=estilo_clientes, default=ninguno, max_length=100, verbose_name='Estilo del cliente')
     medPag = models.CharField(choices=medio_pago, default=efec, max_length=100, verbose_name='Medio de pago habitual')
 
     def __str__(self):
-        return self.prenda
+        txt = 'Información adicional {}'
+        return txt.format(self.tipoCli)
 
     class Meta:
         verbose_name = 'Detalle Cliente'
