@@ -33,11 +33,14 @@
                           <td style="width: 15%">{{ c.estado_insumo }}</td>
                           <td style="width: 15%">{{ c.costxunid_insumo_costo}} <strong>x</strong> {{ c.costxunid_insumo_unidad }}</td>
                           <td style="width: 57%">{{ c.especificacion_insumo }}</td>
-                          <td style="width: 1%">
+
+
+                            <td style="width: 1%">
                               <button type="button" class="btn-edit-insu">
-                                  <i class="fas fa-edit"></i>
+                                  <a href=" {% url 'editar_insumo' c.id %}" style=><i class="fas fa-edit"></i></a>
                               </button>
                           </td>
+
                           <td style="width: 1%">
                               <button type="button" class="btn-borr-insu">
                                   <i class="fas fa-trash"></i>
@@ -79,8 +82,6 @@
                 });
 
             });
-
-
 
     });
 
