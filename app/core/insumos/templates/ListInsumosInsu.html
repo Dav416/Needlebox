@@ -1,6 +1,6 @@
 {% load static %}
 
-<div class="row tabla-insu table-responsive">
+<div class="row tabla-insu ">
       <div class="col-12 ">
           <div class="card">
               <div class="card-h-insu">
@@ -9,9 +9,9 @@
 
 
               <!-- /.card-header -->
-              <div class="card-body table-responsive p-0" style="height: auto; margin-top: 1%">
+              <div class="card-body  table-responsive p-0" style="height: auto; margin-top: 1%">
 
-                  <table class="table table-head-fixed text-nowrap" id="MyTableInsumos">
+                  <table class="table  table-head-fixed text-nowrap" id="MyTableInsumos">
                   <thead>
                     <tr>
                       <th>#</th>
@@ -23,7 +23,9 @@
                       <th>Borrar</th>
                     </tr>
                   </thead>
+
                   <tbody>
+
                     {% for c in object_list1 %}
                         <tr class="obj-tab-insu">
                           <td style="width: 1%">{{ c.id }}</td>
@@ -31,27 +33,26 @@
                           <td style="width: 15%">{{ c.estado_insumo }}</td>
                           <td style="width: 15%">{{ c.costxunid_insumo_costo}} <strong>x</strong> {{ c.costxunid_insumo_unidad }}</td>
                           <td style="width: 57%">{{ c.especificacion_insumo }}</td>
-                          <td style="width: 1%">
+
+
+                            <td style="width: 1%">
                               <button type="button" class="btn-edit-insu">
-                                  <i class="fas fa-edit"></i>
+                                  <a href=" {% url 'editar_insumo' c.id %}" style=><i class="fas fa-edit"></i></a>
                               </button>
                           </td>
+
                           <td style="width: 1%">
                               <button type="button" class="btn-borr-insu">
                                   <i class="fas fa-trash"></i>
                               </button>
                           </td>
                         </tr>
-
                     {% endfor %}
-
-
 
                   </tbody>
                 </table>
               </div>
               <!-- /.card-body -->
-
           </div>
         <!-- /.card -->
       </div>
@@ -60,10 +61,29 @@
 
 <!--script para ejecución del data table -->
 <script type="application/javascript">
-    $('#MyTableInsumos').DataTable({
+    $(function () {
+        $('#MyTableInsumos').DataTable({
                     responsive: true,
-                    autoWidth: false,
+                    autoWidth: false
+        });
+
+        $('.InsuvbtnAjax').on('click', function () {
+            $.ajax({
+                url: '{% url "registrar_insumo" %}',
+                type: 'POST',
+                data: {id: 1},
+                dataType: 'json',
+                }).done(function(data) {
+                    console.log(data);
+                }).fail(function(jqXHR,textStatus,errorThrown) {
+                    alert( textStatus+ ' : ' +errorThrown );
+                }).always(function(data) {
+
                 });
+
+            });
+
+    });
 
 </script>
 <!--/ script para ejecución del data table -->
