@@ -42,28 +42,33 @@
         
         </div>
 
+<!--!!!!!!!! etiqueta form/ atributos method='post' action="{porcent url ''  porcent}"¡¡¡¡¡¡¡¡¡-->
 
-        <div class="col-7 cont-form">
-          <div class="form-group">
-            <label for="inputName">Nombre</label>
-            <input type="text" id="inputName" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="inputEmail">Correo electrónico</label>
-            <input type="email" id="inputEmail" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="inputSubject">Asunto</label>
-            <input type="text" id="inputSubject" class="form-control">
-          </div>
-          <div class="form-group">
-            <label for="inputMessage">Mensaje</label>
-            <textarea id="inputMessage" class="form-control" rows="4"></textarea>
-          </div>
-          <div class="form-group">
-            <input type="submit" class="btn btn-primary " value="Envíar">
-          </div>
-        </div>
+        <!-- INICIO FORMULARIO -->
+          <form method="post" action="{% url 'contacto' %}">
+            <div class="col-7 cont-form">
+              <div class="form-group">
+                <label for="inputName">Nombre</label>
+                  {{ form.cont_nombre }}
+              </div>
+              <div class="form-group">
+                <label for="inputEmail">Correo electrónico</label>
+                  {{ form.correo_usu }}
+              </div>
+              <div class="form-group">
+                <label for="inputSubject">Asunto</label>
+                  {{ form.cont_asunto }}
+              </div>
+              <div class="form-group">
+                <label for="inputMessage">Mensaje</label>
+                  {{ form.cont_mensaje }}
+              </div>
+              <div class="form-group">
+                <input type="submit" class="btn btn-primary " value="Envíar">
+              </div>
+            </div>
+          </form>
+          <!-- FIN FORMULARIO -->
       </div>
 
     </div>
