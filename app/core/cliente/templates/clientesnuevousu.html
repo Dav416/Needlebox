@@ -1,0 +1,128 @@
+{% extends 'basemodulos.html' %}
+
+{% load static %}
+
+{% block mycss %}
+    <link rel="stylesheet" href="{% static 'myCss/clientesStyle.css' %}">
+{% endblock %}
+
+{% block title %}
+    NEEDLEBOX - Clientes
+{% endblock %}
+
+
+{% block content %}
+
+
+    <div class="wrapper">
+
+  <!--Encabezado de sección-->
+  <div class="mod-act c-client"><div class="cover"><span class="mod-act-nom">Clientes</span></div></div>
+
+    {% if form.errors %}
+    <div class="alert alert-danger alert-secondary">
+        <h2>Ha ocurrido un error en los siguientes campos del formulario diligenciado:</h2>
+        {{ form.errors }}
+        <strong>Por favor, diligencie de nuevo el formulario de forma corrrecta</strong>
+        <hr>
+    </div>
+    {% endif %}
+
+  <!--Aqui iria el contenido-->
+  <div class="contenido">
+
+    <div class="card card-danger col-md-12" id="3141592">
+      <div class="card-header card-t">
+        <h3 class="card-title">Añade la información personal del cliente</h3>
+      </div>
+      <div class="card-body">
+
+        <form method="post" action="{% url 'cliente1' %}">
+        {% csrf_token %}
+
+        <!-- Date name -->
+        <div class="form-group">
+          <label>Nombres:</label>
+
+          <div class="input-group">
+
+            {{ form1.nomCli }}
+          </div>
+          <!-- /.input group -->
+        </div>
+        <!-- /.form group -->
+
+        <!-- Date mm/dd/yyyy -->
+        <div class="form-group">
+          <label>Apellidos:</label>
+          <div class="input-group">
+
+            {{ form1.apeCli }}
+          </div>
+          <!-- /.input group -->
+        </div>
+        <!-- /.form group -->
+
+        <!-- phone mask -->
+        <div class="form-group">
+          <label>Teléfono fijo:</label>
+
+          <div class="input-group">
+
+            {{ form1.telCli }}
+          </div>
+          <!-- /.input group -->
+        </div>
+        <!-- /.form group -->
+
+        <!-- phone mask -->
+        <div class="form-group">
+          <label>Celular:</label>
+
+          <div class="input-group">
+            {{ form1.celCli }}
+          </div>
+          <!-- /.input group -->
+        </div>
+
+
+        <div class="form-group">
+          <label>Correo electrónico:</label>
+
+          <div class="input-group">
+            {{ form1.e_mailCli }}
+          </div>
+          <!-- /.input group -->
+        </div>
+
+        <!-- IP mask -->
+        <div class="form-group">
+          <label>Dirección:</label>
+
+          <div class="input-group">
+            {{ form1.dirCli }}
+          </div>
+          <br>
+
+          <a href="{% url 'cliente2' %}"><input type="submit" value="Continuar" class="btn btn-success float-right input-addimg"></a>
+          <!-- /.input group -->
+        </div>
+        <!-- /.form group -->
+        </form>
+
+      </div>
+
+      <!-- /.card-body -->
+    </div>
+<!--menu copypaste de adminte---------------------------------------------------------------------------------------------------->
+
+  </div>
+
+  <!--fin del div para el contenido-->
+
+</div>
+
+{% endblock %}
+
+
+

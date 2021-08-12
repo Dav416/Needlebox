@@ -1,0 +1,93 @@
+{% extends 'baselogin.html' %}
+
+{% load static %}
+
+<!--title del head-->
+{% block title %}
+    Ingresar a la cuenta
+{% endblock %}
+
+<!--mis estilos-->
+{% block mycss %}
+  <link rel="stylesheet" href="{% static 'myCss/loginprincipalStyle.css' %}">
+{% endblock %}
+
+
+<!--bloque de contenido-->
+{% block content%}
+
+   <body class="login-page" style="min-height: 496.58px;">
+
+  <!------contenido del login--------------------------------------------------------------------------------------------------------------------------->
+
+    <div class="login-box">
+      <div class="login-logo">
+        <img class="logo" src="{% static 'myImg/needlebox-logo1.2.png' %}" alt="NeedleboxLogo">
+        <br>
+        <a href="/core/index"><b>NEEDLEBOX</b></a>
+      </div>
+      <!-- /.login-logo -->
+      <div class="card">
+        <div class="card-body login-card-body">
+          <p class="login-box-msg">Inicia sesión para continuar</p>
+
+          <form action="../../index3.html" method="post">
+
+            <div class="input-group mb-3">
+              <input type="email" class="form-control" placeholder="Correo">
+              <div class="input-group-append">
+                <div class="input-group-text ">
+                  <span class="fas fa-envelope "></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="input-group mb-3 ">
+              <input type="password" class="form-control" placeholder="Contraseña">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <span class="fas fa-lock"></span>
+                </div>
+              </div>
+            </div>
+            <div class="row recybtn">
+              <div class="col-8">
+                <div class="icheck-primary">
+                  <input type="checkbox" id="remember">
+                  <label for="remember">
+                    Recuérdame
+                  </label>
+                </div>
+              </div>
+              <!-- /.col -->
+              <div class="col-4">
+                <button type="submit" class="btn btn-primary btn-block btn-estilo">Ingresar</button>
+              </div>
+              <!-- /.col -->
+            </div>
+          </form>
+
+          <div class="social-auth-links text-center mb-3">
+            <p>- O también -</p>
+            <a href="#" class="btn btn-block btn-primary btn-estilo">
+              <i class="fab fa-facebook mr-2"></i> Ingrese usando Facebook
+            </a>
+          </div>
+
+
+
+          <p class="mb-1">
+            <a href="{% url 'login2' %}" class="link-estilo">Olvidé mi contraseña</a>
+          </p>
+          <p class="mb-0">
+            <a href="{% url 'login3' %}" class="text-center link-estilo">Registrarse por primera vez</a>
+          </p>
+        </div>
+        <!-- /.login-card-body -->
+      </div>
+    </div>
+
+{% endblock %}
+
+
+    

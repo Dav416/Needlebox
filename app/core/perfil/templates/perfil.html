@@ -17,24 +17,39 @@
   <!--Encabezado de sección-->
   <div class="mod-act c-perf"><div class="cover"><span class="mod-act-nom">Perfil</span></div></div>
 
+
+     <!--validador a mi modo-->
+    {% if form.errors %}
+        <div class="alert alert-danger alert-secondary">
+            <h2>Ha ocurrido un error en los siguientes campos del formulario diligenciado:</h2>
+            {{ form.errors }}
+            <strong>Por favor, diligencie de nuevo el formulario de forma corrrecta</strong>
+            <hr>
+        </div>
+    {% endif %}
+    <!--/validador a mi modo-->
+
+
   <!--Aqui iria el contenido-->
   <!-- Inicio de perfil y editar perfil-->
   <div class="col-md-9 profile">
+
     <div class="card">
+
       <div class="card-header p-2 card-t">
         <ul class="nav nav-pills">
           <li class="nav-item"><a class="nav-link active" href="#p-info" data-toggle="tab"><i class="fas fa-id-card"></i> Información personal </a></li>
           <li class="nav-item"><a class="nav-link " href="#settings" data-toggle="tab"> <i class="fas fa-user-edit"></i> Editar información personal</a></li>
           <li class="nav-item"><a class="nav-link " href="{% url 'index' %}"> <i class="fas fa-home"></i> Volver a inicio</a></li>
-         <!--  <li class="nav-item"><a class="nav-link " href=""> <i class="fas fa-door-closed"></i> Cerrar sesión</a></li>-->
         </ul>
-      </div><!-- /.card-header -->
+      </div>
+        <!-- /.card-header -->
 
 
        <!--Selector-->
       <div class="card-body">
 
-        <div class="tab-content">
+         <div class="tab-content">
 
           <!--------------------------Inicio opción información personal registrada----------------------------------------->
           <div class="tab-pane active" id="p-info">
@@ -70,19 +85,23 @@
           <!--------------------------Inicio opción editar información personal----------------------------------------->
           <div class="tab-pane  tab-mod-prof " id="settings">
 
-             <!-------------------------- Inicio Editar información personal----------------------------------------->
-            <form class="form-horizontal">
-              <div class="form-group row">
+             <form class="form-horizontal" method="post" action="{% url 'perfil' %}">
+
+                 {% csrf_token %}
+                <div class="form-group row">
                 <label for="inputName" class="col-sm-2 col-form-label">Nombre de usuario</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inputName" placeholder="Nombre" value="">
+
+                    {{ formP.nom_usu }}
                 </div>
-              </div>
+               </div>
 
               <div class="form-group row">
                 <label for="inputEmail" class="col-sm-2 col-form-label">Correo electrónico</label>
-                <div class="col-sm-10">
-                  <input type="email" class="form-control" id="inputEmail" placeholder="E-mail" value="">
+
+                  <div class="col-sm-10">
+
+                    {{ formP.e_mail }}
                 </div>
               </div>
 
@@ -90,7 +109,8 @@
               <div class="form-group row">
                 <label for="inputpass" class="col-sm-2 col-form-label">Contraseña</label>
                 <div class="col-sm-10">
-                  <input type="password" class="form-control" id="inputpass" placeholder="Contraseña">
+
+                    {{ formP.password }}
                 </div>
               </div>
 
@@ -98,32 +118,28 @@
               <div class="form-group row">
                 <label for="inputpass2" class="col-sm-2 col-form-label">Confirmar Contraseña</label>
                 <div class="col-sm-10">
-                  <input type="password" class="form-control" id="inputpass2" placeholder="Repita su contraseña">
 
+                       {{ formP.conf_password }}
 
                   <div class="see-pass">
-                    <input type="checkbox" name="see-pass-input" id="ver-pass" value="si" class="ver-pass-check">
-                    <label for="ver-pass" class="see-pass-lab"> Ver contraseñas</label>
+                      {{ formP.show_password }}
+                      <label for="ver-pass" class="see-pass-lab"> Ver contraseñas</label>
                   </div>
+
                 </div>
               </div>
 
               <div class="form-group row">
                     <label for="Pregun-secur" class="col-sm-2 col-form-label">Pregunta de seguridad</label>
                 <div class=" col-sm-10 ">
-                    <select id="Pregun-secur" class="form-control custom-select selec-pre-opt">
-                      <option selected="" disabled="">Seleccione una pregunta</option>
-                      <option>Color favorito</option>
-                      <option>Alimento favorito</option>
-                      <option>Mascota de la infancia</option>
-                      <option>Persona admirada</option>
-                      <option>Libro favorito</option>
-                      <option>Canción favorita</option>
-                    </select>
+
+                    {{ formP.security_question }}
+
                 </div>
+
                   <label for="Pregun-secur-res" class="col-sm-2 col-form-label">Respuesta </label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control" id="Pregun-secur-res" placeholder="Respuesta a pregunta de seguridad" value="">
+                    {{ formP.security_answer }}
                   </div>
 
 
@@ -133,9 +149,13 @@
               <div class="form-group row">
                 <div class="offset-sm-2 col-sm-10 most-cont">
                   <div class="checkbox">
+
                     <label>
-                      <input type="checkbox"> Acepto los <a href="#">terminos y condiciones</a> de Needlebox
+                      {{ formP.accept_terms }} Acepto los <a href="#">terminos y condiciones</a> de Needlebox
+
+
                     </label>
+
                   </div>
                 </div>
               </div>
@@ -154,9 +174,11 @@
 
 
             </form>
+
+
           </div>
 
-            <!--inicio Modal confirmación de borrado de cuenta-->
+            <!-----------------------inicio Modal confirmación de borrado de cuenta------------------>
             <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -192,16 +214,19 @@
           <!--------------------------fin opción editar información personal----------------------------------------->
 
           <!-- /.tab-pane -->
-        </div>
+      </div>
         <!-- /.tab-content -->
-      </div><!-- /.card-body -->
-    </div>
+
+    </div><!-- /.card-body -->
+  </div>
     <!-- /.card -->
 
     <!--Fin de perfil y editar perfil-->
 
 
 
-  <!--fin del p*** copypaste de adminlte-->
+
+
+
 
 {% endblock %}

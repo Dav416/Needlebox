@@ -6,30 +6,18 @@
               <div class="card-h-prov">
                 <h3 class="table-t">Proveedores registrados</h3>
 
-
-
-
-                <div class="card-tools searcher">
-                  <div class="input-group input-group-sm" style="width: 150px;">
-                    <label for="Provsearchtool"></label>
-                     <input id="Provsearchtool" type="text" name="table_search" class="form-control float-right" placeholder="Buscar">
-                    <div class="input-group-append">
-                      <button type="submit" class="btn btn-default">
-                        <i class="fas fa-search"></i>
-                      </button>
-                    </div>
-                  </div>
-                </div>
               </div>
-
               <!-- /.card-header -->
-              <div class="card-body table-responsive p-0" style="height: 300px;">
-                <table class="table table-head-fixed text-nowrap ">
+
+                <!--body tabla-->
+              <div class="card-body table-responsive p-0" >
+                <br>
+                  <table class="table table-head-fixed text-nowrap" id="tabla_proveedores">
                   <thead>
                     <tr>
                       <th>#</th>
                       <th>Nombre / establecimiento</th>
-                      <th>Tipo insumos</th>
+                      <th>Insumos a la venta</th>
                       <th>Teléfono</th>
                       <th>Correo electrónico</th>
                       <th>Dirección</th>
@@ -61,8 +49,6 @@
 
                     {% endfor %}
 
-
-
                   </tbody>
                 </table>
               </div>
@@ -73,3 +59,40 @@
       </div>
         <!--/.col-12-->
     </div>
+
+<!--script para ejecución del data table -->
+<script type="application/javascript">
+     $(function () {
+
+        $('#tabla_proveedores').DataTable({
+                        responsive: true,
+                        autoWidth: true,
+        });
+
+        $('.ProvbtnAjax').on('click', function () {
+            $.ajax({
+                url: '{% url "registrar_proveedor" %}',
+                type: 'POST',
+                data: {id: 1},
+                dataType: 'json',
+                }).done(function(data) {
+                    console.log(data);
+                }).fail(function(jqXHR,textStatus,errorThrown) {
+                    alert( textStatus+ ' : ' +errorThrown );
+                }).always(function(data) {
+
+                });
+
+            });
+
+
+
+
+
+
+     });
+
+
+
+</script>
+<!--/ script para ejecución del data table -->
