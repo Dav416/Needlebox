@@ -9,12 +9,12 @@ class InfoClient(models.Model):
     # DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key: borrar info al borrar perfil
     # codecli = models.IntegerField(max_length=None, unique=True, verbose_name="codigo identificador cliente")
     id = models.AutoField(primary_key=True)
-    nomCli = models.CharField(max_length=50, unique=True, verbose_name='Nombre cliente')
-    apeCli = models.CharField(max_length=50, unique=True, verbose_name='Apellido cliente')
-    telCli = models.PositiveIntegerField(default=0, unique=True, verbose_name="Teléfono cliente")
-    celCli = models.PositiveIntegerField(default=0, unique=True, verbose_name="celular cliente")
+    nomCli = models.CharField(max_length=50, verbose_name='Nombre cliente')
+    apeCli = models.CharField(max_length=50, verbose_name='Apellido cliente')
+    telCli = models.PositiveIntegerField(default=0, unique=False, verbose_name="Teléfono cliente")
+    celCli = models.PositiveIntegerField(default=0, unique=False, verbose_name="celular cliente")
     e_mailCli = models.EmailField(unique=True, verbose_name='E-mail cliente')
-    dirCli = models.CharField(max_length=50, verbose_name="Dirección de cliente")
+    dirCli = models.CharField(max_length=50, unique=False, verbose_name="Dirección de cliente")
 
     def nombreCompleto(self):
         txt = '{} {}'

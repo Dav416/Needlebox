@@ -13,7 +13,7 @@ class NeedleNuevoCliente(CreateView):
     model = InfoClient
     form_class = InfoClientForm
     template_name = 'clientesnuevousu.html'
-    success_url = reverse_lazy('cliente3')
+    success_url = reverse_lazy('cliente2')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

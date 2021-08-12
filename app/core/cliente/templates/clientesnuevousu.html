@@ -19,6 +19,15 @@
   <!--Encabezado de sección-->
   <div class="mod-act c-client"><div class="cover"><span class="mod-act-nom">Clientes</span></div></div>
 
+    {% if form.errors %}
+    <div class="alert alert-danger alert-secondary">
+        <h2>Ha ocurrido un error en los siguientes campos del formulario diligenciado:</h2>
+        {{ form.errors }}
+        <strong>Por favor, diligencie de nuevo el formulario de forma corrrecta</strong>
+        <hr>
+    </div>
+    {% endif %}
+
   <!--Aqui iria el contenido-->
   <div class="contenido">
 
@@ -29,7 +38,10 @@
       <div class="card-body">
 
         <form method="post" action="{% url 'cliente1' %}">
-          {% csrf_token %}
+        {% csrf_token %}
+          <!--validador a mi modo-->
+
+    <!--/validador a mi modo-->
 
         <!-- Date name -->
         <div class="form-group">
