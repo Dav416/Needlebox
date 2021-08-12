@@ -90,7 +90,7 @@ class InfoGeneClient(models.Model):
     #DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT)  # foreing key borrar info al borrar cliente
     # codecli2 = models.IntegerField(InfoClient.codecli, unique=True, default=InfoClient.codecli) llama atributo ajeno
     infoTCli = models.TextField(max_length=3000, verbose_name="Información técnica del cliente")
-    ver_ITC = models.CharField(max_length=200, null=True, blank=True, verbose_name='Nota de Verificación realizada')
+    ver_ITC = models.CharField(max_length=200, null=False, blank=False, verbose_name='Nota de Verificación realizada')
     revP_ITC = models.CharField(max_length=200, null=True, blank=True, verbose_name='Nota Revisar pronto')
     revIM_ITC = models.CharField(max_length=200,  null=True, blank=True, verbose_name='Nota Revisar de inmediato')
     tipoCli = models.CharField(choices=cliente_opciones, default=cli_loc, max_length=100, verbose_name='Tipo de cliente')
