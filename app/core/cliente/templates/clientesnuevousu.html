@@ -19,6 +19,15 @@
   <!--Encabezado de sección-->
   <div class="mod-act c-client"><div class="cover"><span class="mod-act-nom">Clientes</span></div></div>
 
+    {% if form.errors %}
+    <div class="alert alert-danger alert-secondary">
+        <h2>Ha ocurrido un error en los siguientes campos del formulario diligenciado:</h2>
+        {{ form.errors }}
+        <strong>Por favor, diligencie de nuevo el formulario de forma corrrecta</strong>
+        <hr>
+    </div>
+    {% endif %}
+
   <!--Aqui iria el contenido-->
   <div class="contenido">
 
@@ -27,13 +36,17 @@
         <h3 class="card-title">Añade la información personal del cliente</h3>
       </div>
       <div class="card-body">
+
+        <form method="post" action="{% url 'cliente1' %}">
+        {% csrf_token %}
+
         <!-- Date name -->
         <div class="form-group">
           <label>Nombres:</label>
 
           <div class="input-group">
 
-            <input type="text" class="input-nuevclien">
+            {{ form1.nomCli }}
           </div>
           <!-- /.input group -->
         </div>
@@ -44,7 +57,7 @@
           <label>Apellidos:</label>
           <div class="input-group">
 
-            <input  type="text" class="input-nuevclien">
+            {{ form1.apeCli }}
           </div>
           <!-- /.input group -->
         </div>
@@ -56,7 +69,7 @@
 
           <div class="input-group">
 
-            <input type="text" class="input-nuevclien">
+            {{ form1.telCli }}
           </div>
           <!-- /.input group -->
         </div>
@@ -67,7 +80,7 @@
           <label>Celular:</label>
 
           <div class="input-group">
-            <input type="tel" class="input-nuevclien">
+            {{ form1.celCli }}
           </div>
           <!-- /.input group -->
         </div>
@@ -77,7 +90,7 @@
           <label>Correo electrónico:</label>
 
           <div class="input-group">
-            <input type="email" class="input-nuevclien">
+            {{ form1.e_mailCli }}
           </div>
           <!-- /.input group -->
         </div>
@@ -87,46 +100,27 @@
           <label>Dirección:</label>
 
           <div class="input-group">
-            <input type="text" class="input-nuevclien">
+            {{ form1.dirCli }}
           </div>
+          <br>
 
-          <div class="form-group input-addimg">
-            <label for="group2"></label>
-            <div class="input-group input-addimg" id="group2">
-              <div class="input-group-prepend input-addimg">
-                <span class="input-group-text input-addimg" id="addon2"><i class="far fa-file-image"></i></span>
-              </div>
-              <div class="custom-file ">
-                <input  type="file" class="custom-file-input  input-addimg" id="file2" aria-describedby="addon2">
-                <label class="custom-file-label  input-addimg" for="file2">Añada una foto</label>
-              </div>
-            </div>
-          </div>
-          <a href="/nclient2"><input type="submit" value="Continuar" class="btn btn-success float-right input-addimg"></a>
+          <a href="{% url 'cliente2' %}"><input type="submit" value="Continuar" class="btn btn-success float-right input-addimg"></a>
           <!-- /.input group -->
         </div>
         <!-- /.form group -->
+        </form>
 
       </div>
 
-
       <!-- /.card-body -->
     </div>
-
-
-
 <!--menu copypaste de adminte---------------------------------------------------------------------------------------------------->
-
-
 
   </div>
 
   <!--fin del div para el contenido-->
 
-
 </div>
-
-
 
 {% endblock %}
 

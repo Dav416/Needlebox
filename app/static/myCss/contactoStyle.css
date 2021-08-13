@@ -204,6 +204,8 @@ footer{
     color: white;
 }
 
+
+
 @media only screen and (min-width:1024px) {
     /*Aquí van todos los estilos CSS*/
     .logo-nom{
@@ -213,6 +215,7 @@ footer{
     .navbar-ul{
         margin: auto auto auto -1%;
     }
+
 
 }
 
@@ -285,6 +288,7 @@ footer{
         width: max-content;
         text-align: center;
     }
+
 
 
 }
