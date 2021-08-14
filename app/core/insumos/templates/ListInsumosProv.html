@@ -21,7 +21,9 @@
                 <h3 class="table-t">Proveedores registrados</h3>
 
                   <a href="{% url 'registrar_proveedor' %}">
+
                       <button class="btn-edit-prov btnajaxprov" style="padding: 12px">
+
                           Añadir proveedor
                       </button>
                   </a>
@@ -91,6 +93,7 @@
                         autoWidth: true,
         });
 
+
         $('.btnajaxprov').on('click', function () {
                 $.ajax({
                     url: '{% url 'lista_proveedores' %}',
@@ -105,10 +108,6 @@
 
                 });
             });
-
-
-
-
 
 
      });

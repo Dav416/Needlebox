@@ -10,7 +10,6 @@ from core.insumos.forms import RegInsumoForm, RegProveedorForm
 from django.urls import reverse_lazy
 
 
-
 # MENÚ INSUMOS
 class NeedleInsu(TemplateView):
     template_name = '../templates/insumos.html'
@@ -93,6 +92,7 @@ class RegInsumoCreateView(CreateView):
         context['action'] = 'add'
         context['list_url'] = reverse_lazy('lista_insumos')
         context['titulo'] = "Registrar insumo"
+
         return context
 
 

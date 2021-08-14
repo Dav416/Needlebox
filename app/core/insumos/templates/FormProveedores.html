@@ -13,8 +13,6 @@
 {% block content %}
     <div class="mod-act c-insu"><div class="cover"><span class="mod-act-nom">INSUMOS</span></div></div>
 
-
-
     <!--Inicio formulario proveedor-->
     <div class="card card-danger prov-form ">
         <div class="card-header form-prov-header card-h-insu">
@@ -41,13 +39,16 @@
                 {{ form.errors }}
 
 
+
                 <input type="hidden" name="action" value="{{ action }}">
 
 
               <div class="form-group">
                 <label for="ProvName">Nombre establecimiento / persona</label>
 
+
                     {{ form.visible_fields.0}}
+
               </div>
 
               <div class="form-group">
@@ -99,6 +100,7 @@ $('form').on('submit', function (e) {
                 message_error(data.error);
             }).fail(function (jqXHR, textStatus, errorThrown) {
                 alert(textStatus + 'error : Ajax' + errorThrown);
+
             }).always(function (data) {
 
             });

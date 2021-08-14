@@ -39,6 +39,7 @@
     <div class="card card-danger insu-form">
 
         <!--.card-header Formulario Insumos -->
+
         <div class="card-header form-insu-header card-h-insu">
           <h3 class="tablet">{{ titulo }}</h3>
 
@@ -47,7 +48,6 @@
                   Ver insumos
               </button>
           </a>
-
 
           <!--
           <div class="card-tools">
@@ -79,6 +79,7 @@
                 <label class="insu-tipo-nom" for="insudescr">{{ form.especificacion_insumo.label }}</label>
 
                    {{ form.visible_fields.1}}
+
                 </div>
 
 
@@ -95,12 +96,18 @@
 
                         <div class="cost-f form-group">
                             <label for="insucost">Costo</label>
+
                             {{ form.visible_fields.3}}
+
+                           
+
                         </div>
 
                         <div class="cost-u form-group">
                             <label for="insu-unid">Unidad</label>
+
                              {{ form.visible_fields.4}}
+
                         </div>
 
                     </div>
@@ -136,7 +143,7 @@ $('form').on('submit', function (e) {
                     return false;
                 }
                 message_error(data.error);
-            }).fail(function (jqXHR, textStatus, errorThrown) {
+
                 alert(textStatus + 'Error :  Ajax ' + errorThrown);
             }).always(function (data) {
 
