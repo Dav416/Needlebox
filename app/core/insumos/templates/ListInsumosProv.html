@@ -21,7 +21,7 @@
                 <h3 class="table-t">Proveedores registrados</h3>
 
                   <a href="{% url 'registrar_proveedor' %}">
-                      <button class="btn-edit-prov " style="padding: 12px">
+                      <button class="btn-edit-prov btnajaxprov" style="padding: 12px">
                           Añadir proveedor
                       </button>
                   </a>
@@ -91,7 +91,20 @@
                         autoWidth: true,
         });
 
+        $('.btnajaxprov').on('click', function () {
+                $.ajax({
+                    url: '{% url 'lista_proveedores' %}',
+                    type: 'POST',
+                    data: {id: 1},
+                    dataType: 'json'
+                }).done(function (data) {
+                    console.log(data);
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    alert(textStatus+': ERROR AJAX ONCLICK LISTA PROVEEDORES '+errorThrown);
+                }).always(function (data) {
 
+                });
+            });
 
 
 

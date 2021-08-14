@@ -10,6 +10,7 @@ from core.insumos.forms import RegInsumoForm, RegProveedorForm
 from django.urls import reverse_lazy
 
 
+
 # MENÚ INSUMOS
 class NeedleInsu(TemplateView):
     template_name = '../templates/insumos.html'
@@ -88,9 +89,10 @@ class RegInsumoCreateView(CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['form1'] = RegInsumoForm
+        #   context['form1'] = RegInsumoForm
         context['action'] = 'add'
         context['list_url'] = reverse_lazy('lista_insumos')
+        context['titulo'] = "Registrar insumo"
         return context
 
 
@@ -119,6 +121,7 @@ class RegProveedorCreateView(CreateView):
         context['form2'] = RegProveedorForm
         context['action'] = 'add'
         context['list_url'] = reverse_lazy('lista_proveedores')
+        context['titulo'] = "Registrar proveedor"
         return context
 
 
@@ -153,6 +156,7 @@ class EditInsumoUpdateView(UpdateView):
         context['form1'] = RegInsumoForm
         context['action'] = 'edit'
         context['list_url'] = reverse_lazy('lista_insumos')
+        context['titulo'] = "Editar insumo"
         return context
 
 
@@ -185,6 +189,7 @@ class EditProveedorUpdateView(UpdateView):
         context['form2'] = RegProveedorForm
         context['action'] = 'edit'
         context['list_url'] = reverse_lazy('lista_proveedores')
+        context['titulo'] = "Editar proveedor"
         return context
 
 

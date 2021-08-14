@@ -39,8 +39,15 @@
     <div class="card card-danger insu-form">
 
         <!--.card-header Formulario Insumos -->
-        <div class="card-header form-insu-header">
-          <h3 class="card-title">Registrar nuevo insumo</h3>
+        <div class="card-header form-insu-header card-h-insu">
+          <h3 class="tablet">{{ titulo }}</h3>
+
+          <a href="{% url 'lista_insumos' %}" style="margin-left: 15%;">
+              <button class="btn-edit-prov" style="padding: 7px;">
+                  Ver insumos
+              </button>
+          </a>
+
 
           <!--
           <div class="card-tools">
@@ -63,21 +70,22 @@
                 <div class="form-group insu-selec">
                     <label for="forminsumos" class="insu-selec-nom">Seleccione un tipo de insumo</label>
 
-                      {{ form1.tipo_insumo }}
+                      {{ form.visible_fields.0}}
                 </div>
+
 
 
                 <div class="form-group">
                 <label class="insu-tipo-nom" for="insudescr">{{ form.especificacion_insumo.label }}</label>
 
-                  {{ form1.especificacion_insumo }}
+                   {{ form.visible_fields.1}}
                 </div>
 
 
                 <div class="form-group">
                 <label for="Insuinvent">Cantidad o estado en inventario</label>
 
-                  {{ form1.estado_insumo }}
+                   {{ form.visible_fields.2}}
                 </div>
 
 
@@ -87,12 +95,12 @@
 
                         <div class="cost-f form-group">
                             <label for="insucost">Costo</label>
-                            {{ form1.costxunid_insumo_costo }}
+                            {{ form.visible_fields.3}}
                         </div>
 
                         <div class="cost-u form-group">
                             <label for="insu-unid">Unidad</label>
-                            {{ form1.costxunid_insumo_unidad }}
+                             {{ form.visible_fields.4}}
                         </div>
 
                     </div>
@@ -129,7 +137,7 @@ $('form').on('submit', function (e) {
                 }
                 message_error(data.error);
             }).fail(function (jqXHR, textStatus, errorThrown) {
-                alert(textStatus + ': ' + errorThrown);
+                alert(textStatus + 'Error :  Ajax ' + errorThrown);
             }).always(function (data) {
 
             });
