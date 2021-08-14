@@ -13,74 +13,64 @@
 {% block content %}
     <div class="mod-act c-insu"><div class="cover"><span class="mod-act-nom">INSUMOS</span></div></div>
 
-    <!--validador a mi modo-->
-    {% if form.errors %}
-        <div class="alert alert-danger alert-secondary">
-            <h3>Ha ocurrido un error en los siguientes campos del formulario diligenciado:</h3>
-            {{ form.errors }}
-            <!--
-            <po style="text-align: center">
-              <strong>
-                  <button style="border-radius: 5px">
-                      <a href="{% url 'insumos'%}" style="text-decoration: none; color: #0c0c0c">
-                  Clique aquí para volver al formulario e ingresar valores validos
-                      </a>
-                  </button>
-              </strong>
-            </po>
-                -->
-            <hr>
-        </div>
-    {% endif %}
-    <!--/validador a mi modo-->
-
     <!--Inicio formulario proveedor-->
-    <div class="card card-danger prov-form">
-        <div class="card-header form-prov-header">
-          <h3 class="card-title">Registrar nuevo proveedor</h3>
-            <!--
-          <div class="card-tools">
-            <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-              <i class="fas fa-minus"></i>
-            </button>
-          </div>
-            -->
+    <div class="card card-danger prov-form ">
+        <div class="card-header form-prov-header card-h-insu">
+          <h3 class="tablet">{{ titulo }}</h3>
+
+          <a href="{% url 'lista_proveedores' %}" style="margin-left: 1%;">
+              <button class="btn-edit-prov" style="padding: 7px;">
+                  Ver proveedores
+              </button>
+          </a>
+
         </div>
 
         <div class="card-body">
+
+
             <form method="post" action="{% url 'registrar_proveedor' %}">
 
+                <!--validador a mi modo-->
+
+                <!--/validador a mi modo-->
 
                 {% csrf_token %}
+                {{ form.errors }}
+
+
+
                 <input type="hidden" name="action" value="{{ action }}">
 
 
               <div class="form-group">
                 <label for="ProvName">Nombre establecimiento / persona</label>
 
-                    {{ form2.nombre_proveedor }}
+
+                    {{ form.visible_fields.0}}
+
               </div>
 
               <div class="form-group">
                 <label for="ProvMerca">Insumos que vende</label>
 
-                {{ form2.Insumos_proveedor }}
+                    {{ form.visible_fields.1}}
               </div>
 
               <div class="form-group">
                 <label for="ProvTel">Número de teléfono</label>
 
-                  {{ form2.telefono_proveedor }}
+                  {{ form.visible_fields.2}}
               </div>
 
               <div class="form-group">
                 <label for="ProvEmail">Correo eléctronico</label>
-                 {{ form2.correo_proveedor }}
+                 {{ form.visible_fields.3}}
               </div>
 
               <div class="form-group">
                 <label for="ProvDir">Dirección del local</label>
-                 {{ form2.ubicacion_proveedor }}
+                 {{ form.visible_fields.4}}
               </div>
 
               <div class="button-submit-div">
@@ -109,7 +99,8 @@ $('form').on('submit', function (e) {
                 }
                 message_error(data.error);
             }).fail(function (jqXHR, textStatus, errorThrown) {
-                alert(textStatus + ': ' + errorThrown);
+                alert(textStatus + 'error : Ajax' + errorThrown);
+
             }).always(function (data) {
 
             });

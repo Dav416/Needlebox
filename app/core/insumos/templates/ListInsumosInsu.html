@@ -21,7 +21,9 @@
                 <h3 class="table-t">Insumos registrados</h3>
 
                   <a href="{% url 'registrar_insumo' %}">
-                  <button class="btn-edit-prov" style="padding: 8px">
+
+                  <button class="btn-edit-prov btnajaxinsu'" style="padding: 8px">
+
                       Añadir insumo
                   </button>
                   </a>
@@ -89,9 +91,20 @@
                     autoWidth: false
         });
 
+        $('.btnajaxinsu').on('click', function () {
+                $.ajax({
+                    url: '{% url 'lista_insumos' %}',
+                    type: 'POST',
+                    data: {id: 1},
+                    dataType: 'json'
+                }).done(function (data) {
+                    console.log(data);
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    alert(textStatus+': ERROR AJAX ONCLICK LISTA INSUMOS '+errorThrown);
+                }).always(function (data) {
 
-
-
+                });
+            });
 
 
     });

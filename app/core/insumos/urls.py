@@ -2,7 +2,7 @@ from django.urls import path
 from core.insumos.views import NeedleInsu, RegInsumoCreateView, RegProveedorCreateView, EditInsumoUpdateView, \
     EditProveedorUpdateView, ListProveedoresView, ListInsumosView
 
-# Este es el url de index
+# Este es el url de insumos
 
 
 urlpatterns = [
