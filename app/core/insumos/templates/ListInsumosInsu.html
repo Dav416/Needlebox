@@ -58,17 +58,21 @@
 
 
                             <td style="width: 1%">
-                              <button type="button" class="btn-edit-insu">
-                                  <a href=" {% url 'editar_insumo' c.id %}" style="color: inherit">
+                              <a href=" {% url 'editar_insumo' c.id %}" style="color: inherit">
+                                <button type="button" class="btn-edit-insu">
                                       <i class="fas fa-edit"></i>
-                                  </a>
-                              </button>
+                                </button>
+                              </a>
+
                           </td>
 
                           <td style="width: 1%">
-                              <button type="button" class="btn-borr-insu">
-                                  <i class="fas fa-trash"></i>
-                              </button>
+
+                              <a href="{% url 'borrar_insumo' c.id %}" style="color: inherit">
+                                  <button type="button" class="btn-borr-insu">
+                                      <i class="fas fa-trash"></i>
+                                  </button>
+                              </a>
                           </td>
                         </tr>
                     {% endfor %}

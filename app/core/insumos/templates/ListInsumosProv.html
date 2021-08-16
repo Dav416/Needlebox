@@ -64,10 +64,13 @@
                                   </a>
                               </button>
                           </th>
+
                           <th>
-                              <button type="button" class="btn-borr-prov">
-                                  <i class="fas fa-trash"></i>
-                              </button>
+                              <a href="{% url 'borrar_proveedor' c.id %}" style="color: inherit">
+                                  <button type="button" class="btn-borr-insu">
+                                      <i class="fas fa-trash"></i>
+                                  </button>
+                              </a>
                           </th>
                         </tr>
 

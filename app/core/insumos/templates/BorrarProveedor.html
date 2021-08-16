@@ -1,0 +1,53 @@
+{% extends 'basemodulos.html' %}
+
+{% load static %}
+
+{% block mycss %}
+    <link rel="stylesheet" href="{% static 'myCss/insumosStyle.css' %}">
+{% endblock %}
+
+{% block title %}
+    NEEDLEBOX - Insumos - Borrar proveedor
+{% endblock %}
+
+{% block content %}
+    <div class="mod-act c-insu"><div class="cover"><span class="mod-act-nom">INSUMOS</span></div></div>
+
+    <!--Inicio formulario proveedor-->
+    <div class="card card-danger prov-form ">
+        <div class="card-header form-prov-header card-h-insu">
+          <h3 class="tablet">Confirmación de borrado</h3>
+        </div>
+
+        <div class="card-body">
+
+            <form method="post" action=".">
+
+               {% csrf_token %}
+
+                <div class="alert alert-danger alert-secondary" style="margin: auto;">
+                    <p><strong>Usted está por borrar el proveedor {{ object.nombre_proveedor }}</strong></p>
+                    <p><strong>¿Desea continuar?</strong></p>
+
+                    <div class="button-submit-div" style="margin: auto;">
+
+                        <button type="submit" class="btn btn-success button-submit-2">
+                            Si, borrar
+                        </button>
+
+                        <a href="{% url 'lista_proveedores' %}" style="margin-left: 5%; text-decoration: none;"  class="btn  button-submit-2">
+                            ¡No!, volver a lista
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!--/FIN formulario proveedor-->
+
+{% endblock %}
