@@ -25,10 +25,10 @@ from core.views import needle_cliente, needle_nuevocliente, needle_nuevocliente2
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('inicio/', include('core.index.urls')),
-    path('clientes/', needle_cliente),
-    path('nclient/', needle_nuevocliente),
-    path('nclient2/', needle_nuevocliente2),
-    path('editclient/', needle_editcliente),
+    path('clientes/', include('core.cliente.urls')),
+    path('nclient/', include('core.cliente.urls')),
+    path('nclient2/', include('core.cliente.urls')),
+    path('editclient/', include('core.cliente.urls')),
     path('cronograma/', needle_crono),
     path('pedidos/', include ('core.pedidos.urls')),
     path('insumos_proveedores/', include('core.insumos.urls')),
@@ -37,7 +37,7 @@ urlpatterns = [
     path('error/', include('core.reportar.urls')),
     path('ayuda/', needle_ayuda),
     path('contactenos/', include('core.contacto.urls')),
-    path('login/', needle_login),
+    path('login/', include('core.login.urls')),
     path('registro/', needle_regis),
     path('recuperar/', needle_recpass),
 
