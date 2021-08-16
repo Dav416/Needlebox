@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required  # nececario para el d
 from django.shortcuts import redirect
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
-from django.views.generic import TemplateView, ListView, CreateView, UpdateView
+from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DeleteView
 from core.insumos.models import InsRegInsu, InsRegProv
 from core.insumos.forms import RegInsumoForm, RegProveedorForm
 from django.urls import reverse_lazy
@@ -192,7 +192,31 @@ class EditProveedorUpdateView(UpdateView):
         context['titulo'] = "Editar proveedor"
         return context
 
+# -----------------------------------------------------------------------------------------
 
+
+# BORRAR para INSUMOS
+class BorrarInsumoDeleteView(DeleteView):
+    model = InsRegInsu
+    template_name = 'BorrarInsumo.html'
+    success_url = reverse_lazy('lista_insumos')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['list_url'] = reverse_lazy('lista_insumos')
+        return context
+
+
+# BORRAR para PROVEEDORES
+class BorrarProveedorDeleteView(DeleteView):
+    model = InsRegProv
+    template_name = 'BorrarProveedor.html'
+    success_url = reverse_lazy('lista_proveedores')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['list_url'] = reverse_lazy('lista_proveedores')
+        return context
 
     """
     def post(self, request, *args, **kwargs):
