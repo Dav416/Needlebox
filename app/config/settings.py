@@ -46,10 +46,8 @@ INSTALLED_APPS = [
     'core.reportar',
     'core.contacto',
     'core.login',
-<<<<<<< HEAD
-=======
     'core.cliente',
->>>>>>> 88e76a83face74c29dbde670a31cb822538d75bd
+
 ]
 
 MIDDLEWARE = [
