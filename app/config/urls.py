@@ -17,18 +17,14 @@ from django.contrib import admin
 from django.urls import path, include
 
 
-from core.views import needle_cliente, needle_nuevocliente, needle_nuevocliente2, \
-    needle_editcliente, needle_crono, needle_pedidos, needle_nosotros, needle_reperror, needle_ayuda, \
-    needle_cont, needle_login, needle_regis, needle_recpass
+from core.views import needle_crono, needle_pedidos, needle_nosotros, needle_reperror, needle_ayuda, \
+    needle_cont
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('inicio/', include('core.index.urls')),
-    path('clientes/', needle_cliente),
-    path('nclient/', needle_nuevocliente),
-    path('nclient2/', needle_nuevocliente2),
-    path('editclient/', needle_editcliente),
+    path('clientes/', include('core.cliente.urls')),
     path('cronograma/', needle_crono),
     path('pedidos/', include ('core.pedidos.urls')),
     path('insumos_proveedores/', include('core.insumos.urls')),
@@ -37,9 +33,8 @@ urlpatterns = [
     path('error/', include('core.reportar.urls')),
     path('ayuda/', needle_ayuda),
     path('contactenos/', include('core.contacto.urls')),
-    path('login/', needle_login),
-    path('registro/', needle_regis),
-    path('recuperar/', needle_recpass),
+    path('login/', include('core.login.urls')),
+    path('reportar/', include('core.reportar.urls')),
 
     # path('clientes2/', include('ruta.de.la.url.especificas.de.la.app')),
     # path('insu_insu/', ListInsuView.as_view(), name="lista_insumos"),

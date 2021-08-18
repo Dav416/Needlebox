@@ -1,10 +1,32 @@
+{% extends 'basemodulos.html' %}
+
 {% load static %}
+
+{% block mycss %}
+    <link rel="stylesheet" href="{% static 'myCss/insumosStyle.css' %}">
+{% endblock %}
+
+{% block title %}
+    NEEDLEBOX - Insumos - Mis proveedores
+{% endblock %}
+
+{% block content %}
+
+  <div class="mod-act c-insu"><div class="cover"><span class="mod-act-nom">INSUMOS</span></div></div>
 
 <div class="row tabla-prov table-responsive">
       <div class="col-12 ">
           <div class="card">
               <div class="card-h-prov">
                 <h3 class="table-t">Proveedores registrados</h3>
+
+                  <a href="{% url 'registrar_proveedor' %}">
+
+                      <button class="btn-edit-prov btnajaxprov" style="padding: 12px">
+
+                          Añadir proveedor
+                      </button>
+                  </a>
 
               </div>
               <!-- /.card-header -->
@@ -37,13 +59,18 @@
                           <td>{{ c.ubicacion_proveedor }}</td>
                           <th>
                               <button type="button" class="btn-edit-prov">
-                                  <i class="fas fa-edit"></i>
+                                   <a href=" {% url 'editar_proveedor' c.id %}" style="color: inherit">
+                                      <i class="fas fa-edit"></i>
+                                  </a>
                               </button>
                           </th>
+
                           <th>
-                              <button type="button" class="btn-borr-prov">
-                                  <i class="fas fa-trash"></i>
-                              </button>
+                              <a href="{% url 'borrar_proveedor' c.id %}" style="color: inherit">
+                                  <button type="button" class="btn-borr-insu">
+                                      <i class="fas fa-trash"></i>
+                                  </button>
+                              </a>
                           </th>
                         </tr>
 
@@ -69,25 +96,21 @@
                         autoWidth: true,
         });
 
-        $('.ProvbtnAjax').on('click', function () {
-            $.ajax({
-                url: '{% url "registrar_proveedor" %}',
-                type: 'POST',
-                data: {id: 1},
-                dataType: 'json',
-                }).done(function(data) {
+
+        $('.btnajaxprov').on('click', function () {
+                $.ajax({
+                    url: '{% url 'lista_proveedores' %}',
+                    type: 'POST',
+                    data: {id: 1},
+                    dataType: 'json'
+                }).done(function (data) {
                     console.log(data);
-                }).fail(function(jqXHR,textStatus,errorThrown) {
-                    alert( textStatus+ ' : ' +errorThrown );
-                }).always(function(data) {
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    alert(textStatus+': ERROR AJAX ONCLICK LISTA PROVEEDORES '+errorThrown);
+                }).always(function (data) {
 
                 });
-
             });
-
-
-
-
 
 
      });
@@ -96,3 +119,5 @@
 
 </script>
 <!--/ script para ejecución del data table -->
+
+{% endblock content %}
