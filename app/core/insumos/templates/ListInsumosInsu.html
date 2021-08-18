@@ -1,10 +1,32 @@
+{% extends 'basemodulos.html' %}
+
 {% load static %}
+
+{% block mycss %}
+    <link rel="stylesheet" href="{% static 'myCss/insumosStyle.css' %}">
+{% endblock %}
+
+{% block title %}
+    NEEDLEBOX - Insumos - Mis insumos
+{% endblock %}
+
+{% block content %}
+
+ <div class="mod-act c-insu"><div class="cover"><span class="mod-act-nom">INSUMOS</span></div></div>
 
 <div class="row tabla-insu ">
       <div class="col-12 ">
           <div class="card">
               <div class="card-h-insu">
                 <h3 class="table-t">Insumos registrados</h3>
+
+                  <a href="{% url 'registrar_insumo' %}">
+
+                  <button class="btn-edit-prov btnajaxinsu'" style="padding: 8px">
+
+                      Añadir insumo
+                  </button>
+                  </a>
               </div>
 
 
@@ -36,15 +58,21 @@
 
 
                             <td style="width: 1%">
-                              <button type="button" class="btn-edit-insu">
-                                  <a href=" {% url 'editar_insumo' c.id %}" style=><i class="fas fa-edit"></i></a>
-                              </button>
+                              <a href=" {% url 'editar_insumo' c.id %}" style="color: inherit">
+                                <button type="button" class="btn-edit-insu">
+                                      <i class="fas fa-edit"></i>
+                                </button>
+                              </a>
+
                           </td>
 
                           <td style="width: 1%">
-                              <button type="button" class="btn-borr-insu">
-                                  <i class="fas fa-trash"></i>
-                              </button>
+
+                              <a href="{% url 'borrar_insumo' c.id %}" style="color: inherit">
+                                  <button type="button" class="btn-borr-insu">
+                                      <i class="fas fa-trash"></i>
+                                  </button>
+                              </a>
                           </td>
                         </tr>
                     {% endfor %}
@@ -67,23 +95,24 @@
                     autoWidth: false
         });
 
-        $('.InsuvbtnAjax').on('click', function () {
-            $.ajax({
-                url: '{% url "registrar_insumo" %}',
-                type: 'POST',
-                data: {id: 1},
-                dataType: 'json',
-                }).done(function(data) {
+        $('.btnajaxinsu').on('click', function () {
+                $.ajax({
+                    url: '{% url 'lista_insumos' %}',
+                    type: 'POST',
+                    data: {id: 1},
+                    dataType: 'json'
+                }).done(function (data) {
                     console.log(data);
-                }).fail(function(jqXHR,textStatus,errorThrown) {
-                    alert( textStatus+ ' : ' +errorThrown );
-                }).always(function(data) {
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    alert(textStatus+': ERROR AJAX ONCLICK LISTA INSUMOS '+errorThrown);
+                }).always(function (data) {
 
                 });
-
             });
+
 
     });
 
 </script>
 <!--/ script para ejecución del data table -->
+{% endblock %}
