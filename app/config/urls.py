@@ -26,17 +26,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('inicio/', include('core.index.urls')),
     path('clientes/', include('core.cliente.urls')),
-<<<<<<< HEAD
     path('nclient/', include('core.cliente.urls')),
     path('nclient2/', include('core.cliente.urls')),
     path('editclient/', include('core.cliente.urls')),
-=======
-    # path('nclient/', needle_nuevocliente),
-    # path('nclient2/', needle_nuevocliente2),
-    # path('editclient/', needle_editcliente),
->>>>>>> 88e76a83face74c29dbde670a31cb822538d75bd
     path('cronograma/', needle_crono),
-    path('pedidos/', include('core.pedidos.urls')),
+    path('pedidos/', include ('core.pedidos.urls')),
     path('insumos_proveedores/', include('core.insumos.urls')),
     path('cuenta/', include('core.perfil.urls')),
     path('nosotros/', needle_nosotros),
@@ -44,15 +38,9 @@ urlpatterns = [
     path('ayuda/', needle_ayuda),
     path('contactenos/', include('core.contacto.urls')),
     path('login/', include('core.login.urls')),
-<<<<<<< HEAD
     path('registro/', needle_regis),
     path('recuperar/', needle_recpass),
 
-=======
-    path('reportar/', include('core.reportar.urls')),
-    # path('registro/', needle_regis),
-    # path('recuperar/', needle_recpass),
->>>>>>> 88e76a83face74c29dbde670a31cb822538d75bd
     # path('clientes2/', include('ruta.de.la.url.especificas.de.la.app')),
     # path('insu_insu/', ListInsuView.as_view(), name="lista_insumos"),
     # path('insu_prov/', ListProvView.as_view(), name="lista_Proveedores"),

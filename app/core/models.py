@@ -24,10 +24,7 @@ class RegUsu(models.Model):
 
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 88e76a83face74c29dbde670a31cb822538d75bd
 
 # ---TABLAS/MODELOS DEL MODULO CRONOGRAMA---
 # Modelo/tabla de modulo cronograma, para registrar pedidos

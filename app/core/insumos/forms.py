@@ -51,21 +51,8 @@ class RegInsumoForm(ModelForm):
                     'id': 'insu-unid',
                     'placeholder': 'Cm, kg, unidad, etc.'
                 }
-            ),
+            )
         }
-
-    def save(self, commit=True):
-        data = {}
-        form = super()
-        try:
-            if form.is_valid():
-                form.save()
-            else:
-                data['error'] = form.errors
-        except Exception as e:
-            data['error en forms'] = str(e)
-        return data
-
 # -----------------REGISTRO PROVEEEDORES------------------------------------
 
 
@@ -113,20 +100,7 @@ class RegProveedorForm(ModelForm):
                 attrs={
                     'id': 'ProvDir',
                     'placeholder': 'Ubicación del proveedor',
-                    'required': 'false',
                 }
             ),
 
         }
-
-    def save(self, commit=True):
-        data = {}
-        form = super()
-        try:
-            if form.is_valid():
-                form.save()
-            else:
-                data['error'] = form.errors
-        except Exception as e:
-            data['error en forms'] = str(e)
-        return data

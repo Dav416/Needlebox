@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 # Create your views here.
 class NeedleLogin(TemplateView):
-    template_name = 'loginprincipal.html'
+    template_name = '../templates/loginprincipal.html'
 
 class NeedleRegis(TemplateView):
     template_name = '../templates/loginregusu.html'
