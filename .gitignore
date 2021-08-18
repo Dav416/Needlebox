@@ -21,6 +21,7 @@ app/core/pedidos/migrations/
 app/core/perfil/__pycache__/
 app/core/perfil/migrations/
 app/core/reportar/__pycache__/
+<<<<<<< HEAD
 app/core/reportar/migrations/
 
 app/config/__pycache__/settings.cpython-39.pyc
@@ -31,3 +32,6 @@ app/db.sqlite3
 
 
 
+=======
+app/core/reportar/migrations/
+>>>>>>> cbec2f2bb112d5505c429d8944950ca48233aa44
