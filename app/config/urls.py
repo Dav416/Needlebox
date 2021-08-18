@@ -17,8 +17,9 @@ from django.contrib import admin
 from django.urls import path, include
 
 
-from core.views import needle_crono, needle_pedidos, needle_nosotros, needle_reperror, needle_ayuda, \
-    needle_cont
+from core.views import needle_cliente, needle_nuevocliente, needle_nuevocliente2, \
+    needle_editcliente, needle_crono, needle_pedidos, needle_nosotros, needle_reperror, needle_ayuda, \
+    needle_cont, needle_login, needle_regis, needle_recpass
 
 
 urlpatterns = [
@@ -26,7 +27,7 @@ urlpatterns = [
     path('inicio/', include('core.index.urls')),
     path('clientes/', include('core.cliente.urls')),
     path('cronograma/', needle_crono),
-    path('pedidos/', include ('core.pedidos.urls')),
+    path('pedidos/', include('core.pedidos.urls')),
     path('insumos_proveedores/', include('core.insumos.urls')),
     path('cuenta/', include('core.perfil.urls')),
     path('nosotros/', needle_nosotros),
@@ -35,8 +36,4 @@ urlpatterns = [
     path('contactenos/', include('core.contacto.urls')),
     path('login/', include('core.login.urls')),
     path('reportar/', include('core.reportar.urls')),
-
-    # path('clientes2/', include('ruta.de.la.url.especificas.de.la.app')),
-    # path('insu_insu/', ListInsuView.as_view(), name="lista_insumos"),
-    # path('insu_prov/', ListProvView.as_view(), name="lista_Proveedores"),
 ]

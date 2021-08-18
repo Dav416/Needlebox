@@ -4,6 +4,7 @@ from django.db import models
 
 # ---TABLAS/MODELOS DEL MODULO CLIENTES---
 
+
 # Modelo/tabla de modulo clientes, para registrar información básica de cliente
 class InfoClient(models.Model):
     # DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key: borrar info al borrar perfil
@@ -19,7 +20,6 @@ class InfoClient(models.Model):
     def nombreCompleto(self):
         txt = '{} {}'
         return txt.format(self.nomCli, self.apeCli)
-
 
     def __str__(self):
         txt = 'Cliente {}, Número {}'

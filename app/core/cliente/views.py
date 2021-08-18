@@ -38,7 +38,6 @@ class NeedleNuevoCliente2(CreateView):
         return context
 
 
-
 # Vista 4 / Tabla con los clientes
 class NeedleEditCliente(TemplateView):
     template_name = '../templates/clientesedit.html'

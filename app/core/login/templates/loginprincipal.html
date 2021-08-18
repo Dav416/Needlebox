@@ -24,7 +24,7 @@
       <div class="login-logo">
         <img class="logo" src="{% static 'myImg/needlebox-logo1.2.png' %}" alt="NeedleboxLogo">
         <br>
-        <a href="/core/index"><b>NEEDLEBOX</b></a>
+        <a href="{% url 'index' %}"><b>NEEDLEBOX</b></a>
       </div>
       <!-- /.login-logo -->
       <div class="card">
@@ -74,14 +74,14 @@
             </a>
           </div>
 
-
-
           <p class="mb-1">
-            <a href="{% url 'login2' %}" class="link-estilo">Olvidé mi contraseña</a>
+            <a href="{% url 'login3' %}" class="link-estilo">Olvidé mi contraseña</a>
           </p>
+
           <p class="mb-0">
-            <a href="{% url 'login3' %}" class="text-center link-estilo">Registrarse por primera vez</a>
+            <a href="{% url 'login2' %}" class="text-center link-estilo">Registrarse por primera vez</a>
           </p>
+
         </div>
         <!-- /.login-card-body -->
       </div>

@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'core.pedidos',
     'core.reportar',
     'core.contacto',
+    'core.cliente',
+    'core.login',
 ]
 
 MIDDLEWARE = [
