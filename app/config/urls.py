@@ -34,6 +34,7 @@ urlpatterns = [
     path('ayuda/', needle_ayuda),
     path('contactenos/', include('core.contacto.urls')),
     path('login/', include('core.login.urls')),
+    path('reportar/', include('core.reportar.urls')),
 
     # path('clientes2/', include('ruta.de.la.url.especificas.de.la.app')),
     # path('insu_insu/', ListInsuView.as_view(), name="lista_insumos"),
