@@ -26,6 +26,10 @@ class InfoClient(models.Model):
         txt = 'Cliente {}, Número {}'
         return txt.format(self.nombreCompleto(), self.id)
 
+    def clientetojson(self):
+        itemcl = model_to_dict(self)
+        return itemcl
+
     class Meta:
         verbose_name = 'Cliente'
         verbose_name_plural = 'Clientes'

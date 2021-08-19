@@ -65,5 +65,17 @@ class InfoClientForm(ModelForm):
             )
 
         }
+
+    def save(self, commit=True):
+        data = {}
+        form = super()
+        try:
+            if form.is_valid():
+                form.save()
+            else:
+                data['error'] = form.errors
+        except Exception as e:
+            data['error en forms'] = str(e)
+        return data
 # -----------------------------------------------------
 

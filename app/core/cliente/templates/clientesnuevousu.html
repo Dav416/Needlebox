@@ -40,6 +40,10 @@
         <form method="post" action="{% url 'cliente1' %}">
         {% csrf_token %}
 
+
+
+        <input type="hidden" name="action" value="{{ action }}">
+
         <!-- Date name -->
         <div class="form-group">
           <label>Nombres:</label>
@@ -115,6 +119,7 @@
           <a href="{% url 'cliente3' %}"><input type="submit" value="Continuar" class="btn btn-success float-right input-addimg"></a>
           <!-- /.input group -->
         </div>
+            </div>
         <!-- /.form group -->
         </form>
 
