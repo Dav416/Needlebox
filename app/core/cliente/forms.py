@@ -60,7 +60,7 @@ class InfoClientForm(ModelForm):
                 attrs={
                     'id': 'info_tec',
                     'rows': '3',
-                    'placeholder': 'Medidas, Información adicional del cliente...'
+                    'placeholder': 'Notas, medidas, generalidades...'
                 }
             )
 

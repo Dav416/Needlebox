@@ -13,7 +13,7 @@ class NeedleCliente(TemplateView):
     template_name = '../templates/clientes.html'
 
 
-# Vista 2 / Primer formulario de registro
+# Vista 2 / Formulario de registro
 class NeedleNuevoCliente(CreateView):
     model = InfoClient
     form_class = InfoClientForm
@@ -98,3 +98,14 @@ class EditClientesUpdate(UpdateView):
         context['list_url'] = reverse_lazy('cliente3')
         return context
 
+#Delete de Clientes
+
+class BorrarClienteDel(DeleteView):
+    model = InfoClient
+    template_name = 'borrarclienteview.html'
+    success_url = reverse_lazy('cliente3')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['list_url'] = reverse_lazy('cliente3')
+        return context

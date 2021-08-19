@@ -23,7 +23,7 @@
     <div class="alert alert-danger alert-secondary">
         <h2>Ha ocurrido un error en los siguientes campos del formulario diligenciado:</h2>
         {{ form.errors }}
-        <strong>Por favor, diligencie de nuevo el formulario de forma corrrecta</strong>
+        <strong>Por favor, diligencie de nuevo el formulario de forma correcta</strong>
         <hr>
     </div>
     {% endif %}
@@ -35,8 +35,11 @@
       <div class="card-header card-t">
         <h3 class="card-title">Añade la información personal del cliente</h3>
       </div>
-      <div class="card-body">
 
+
+      <div class="card-body">
+          <a href="{% url 'cliente3' %}"><input type="submit" value="Ver clientes" class="btn btn-success float-right"></a>
+            <br>
         <form method="post" action="{% url 'cliente1' %}">
         {% csrf_token %}
 
@@ -109,14 +112,15 @@
             <br>
 
         <div class="form-group">
-          <label>Información adicional el cliente:</label>
+          <label>Información adicional del cliente:</label>
 
           <div class="input-group">
             {{ form.visible_fields.6 }}
           </div>
           <br>
 
-          <a href="{% url 'cliente3' %}"><input type="submit" value="Continuar" class="btn btn-success float-right input-addimg"></a>
+          <a href="{% url 'cliente3' %}"><input type="submit" value="Guardar" class="btn btn-success float-right"></a>
+
           <!-- /.input group -->
         </div>
             </div>
