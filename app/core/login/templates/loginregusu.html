@@ -2,6 +2,8 @@
 
 {% load static %}
 
+{% load widget_tweaks %}
+
 <!--title del head-->
 {% block title %}
     Crear nueva cuenta
@@ -27,11 +29,27 @@
     
       <div class="card">
         <div class="card-body register-card-body">
-          <p class="login-box-msg">Regístrese por primera vez</p>
+          <p class="login-box-msg">{{ title }}</p>
     
           <form action="/core/index" method="post">
+              {% csrf_token %}
+
+                {% for hidden in form.hidden_fields %}
+                    {{ hidden }}
+                {% endfor %}
+
+                {% for field in form.visible_fields %}
+                    <div class="form-group">
+                        <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                        {{ field|add_class:'form-control' }}
+                        {% for error in field.errors %}
+                        <span class="help-block">{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+
             <div class="input-group mb-3">
-              <input type="text" class="form-control" placeholder="Nombre completo">
+              {{ form.nomComUsu|add_class:'form-control'|attr:'autocomplete:off'|attr:'placeholder:Ingrese su nombre' }}
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-user"></span>
@@ -39,7 +57,7 @@
               </div>
             </div>
             <div class="input-group mb-3">
-              <input type="email" class="form-control" placeholder="Correo">
+              {{ form.e_mailUsu|add_class:'form-control'|attr:'autocomplete:off' }}
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-envelope"></span>
@@ -47,7 +65,7 @@
               </div>
             </div>
             <div class="input-group mb-3">
-              <input type="password" class="form-control" placeholder="Contraseña">
+              {{ form.passwordUsu }}
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-lock"></span>
@@ -55,7 +73,7 @@
               </div>
             </div>
             <div class="input-group mb-3">
-              <input type="password" class="form-control" placeholder="Ingrese la contraseña de nuevo">
+              {{ form.conf_passwordUsu }}
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-lock"></span>
@@ -65,7 +83,7 @@
             <div class="row reg-usu-acybt">
               <div class="col-8 ">
                 <div class="icheck-primary">
-                  <input type="checkbox" id="agreeTerms" name="terms" value="agree">
+                  {{ form.accept_terms }}
                   <label for="agreeTerms" style="font-size: small;" class="acept">
                    Acepto los <a href="#" class="link-estilo">términos y condiciones</a>
                   </label>
@@ -79,13 +97,7 @@
             </div>
           </form>
 
-          <div class="social-auth-links text-center mb-3">
-            <p>- O también -</p>
-            <a href="#" class="btn btn-block btn-primary btn-estilo">
-              <i class="fab fa-facebook mr-2 "></i> Ingrese usando Facebook
-            </a>
-          </div>
-          
+
     
           
     

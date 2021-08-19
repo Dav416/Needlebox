@@ -5,7 +5,7 @@ from django.db import models
 # Modelo/tabla para llevar conteo de registro, podría permitir que un usuario recupere su cuenta
 # Tabla de resgistro de usuario
 class RegUsu(models.Model):
-    nomComUsu = models.CharField(max_length=100, unique=True, verbose_name='Nombre')
+    nomComUsu = models.CharField(max_length=100, unique=False, verbose_name='Nombre')
     e_mailUsu = models.EmailField(unique=True, verbose_name='E-mail')
     passwordUsu = models.CharField(max_length=10, verbose_name='Contraseña')
     conf_passwordUsu = models.CharField(max_length=10, verbose_name='Confirmar Contraseña')
