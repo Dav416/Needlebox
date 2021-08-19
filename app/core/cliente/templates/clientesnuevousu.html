@@ -23,7 +23,7 @@
     <div class="alert alert-danger alert-secondary">
         <h2>Ha ocurrido un error en los siguientes campos del formulario diligenciado:</h2>
         {{ form.errors }}
-        <strong>Por favor, diligencie de nuevo el formulario de forma corrrecta</strong>
+        <strong>Por favor, diligencie de nuevo el formulario de forma correcta</strong>
         <hr>
     </div>
     {% endif %}
@@ -35,10 +35,17 @@
       <div class="card-header card-t">
         <h3 class="card-title">Añade la información personal del cliente</h3>
       </div>
-      <div class="card-body">
 
+
+      <div class="card-body">
+          <a href="{% url 'cliente3' %}"><input type="submit" value="Ver clientes" class="btn btn-success float-right"></a>
+            <br>
         <form method="post" action="{% url 'cliente1' %}">
         {% csrf_token %}
+
+
+
+        <input type="hidden" name="action" value="{{ action }}">
 
         <!-- Date name -->
         <div class="form-group">
@@ -46,7 +53,7 @@
 
           <div class="input-group">
 
-            {{ form1.nomCli }}
+            {{ form.visible_fields.0 }}
           </div>
           <!-- /.input group -->
         </div>
@@ -57,7 +64,7 @@
           <label>Apellidos:</label>
           <div class="input-group">
 
-            {{ form1.apeCli }}
+            {{ form.visible_fields.1 }}
           </div>
           <!-- /.input group -->
         </div>
@@ -69,7 +76,7 @@
 
           <div class="input-group">
 
-            {{ form1.telCli }}
+            {{ form.visible_fields.2 }}
           </div>
           <!-- /.input group -->
         </div>
@@ -80,7 +87,7 @@
           <label>Celular:</label>
 
           <div class="input-group">
-            {{ form1.celCli }}
+            {{ form.visible_fields.3 }}
           </div>
           <!-- /.input group -->
         </div>
@@ -90,7 +97,7 @@
           <label>Correo electrónico:</label>
 
           <div class="input-group">
-            {{ form1.e_mailCli }}
+            {{ form.visible_fields.4 }}
           </div>
           <!-- /.input group -->
         </div>
@@ -100,13 +107,23 @@
           <label>Dirección:</label>
 
           <div class="input-group">
-            {{ form1.dirCli }}
+            {{ form.visible_fields.5 }}
+          </div>
+            <br>
+
+        <div class="form-group">
+          <label>Información adicional del cliente:</label>
+
+          <div class="input-group">
+            {{ form.visible_fields.6 }}
           </div>
           <br>
 
-          <a href="{% url 'cliente2' %}"><input type="submit" value="Continuar" class="btn btn-success float-right input-addimg"></a>
+          <a href="{% url 'cliente3' %}"><input type="submit" value="Guardar" class="btn btn-success float-right"></a>
+
           <!-- /.input group -->
         </div>
+            </div>
         <!-- /.form group -->
         </form>
 
@@ -121,6 +138,32 @@
   <!--fin del div para el contenido-->
 
 </div>
+
+    <script>
+$('form').on('submit', function (e) {
+            e.preventDefault();
+            var parameters = $(this).serializeArray();
+            $.ajax({
+                url: window.location.pathname,
+                type: 'POST',
+                data: parameters,
+                dataType: 'json'
+            }).done(function (data) {
+                console.log(data);
+                if (!data.hasOwnProperty('error')) {
+                    location.href = '{{ list_url }}';
+                    return false;
+                }
+                message_error(data.error);
+
+                alert(textStatus + 'Error :  Ajax ' + errorThrown);
+            }).always(function (data) {
+
+            });
+        });
+
+
+</script>
 
 {% endblock %}
 
