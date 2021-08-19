@@ -14,6 +14,7 @@ from django.urls import reverse_lazy
 class NeedleInsu(TemplateView):
     template_name = '../templates/insumos.html'
 
+
 # ---------------------------------------------------------------------------------
 
 
@@ -137,7 +138,7 @@ class EditInsumoUpdateView(UpdateView):
     def dispatch(self, request, *args, **kwargs):
         self.object = self.get_object()
         return super().dispatch(request, *args, **kwargs)
-    
+
     def post(self, request, *args, **kwargs):
         data = {}
         try:
@@ -191,6 +192,7 @@ class EditProveedorUpdateView(UpdateView):
         context['list_url'] = reverse_lazy('lista_proveedores')
         context['titulo'] = "Editar proveedor"
         return context
+
 
 # -----------------------------------------------------------------------------------------
 

@@ -10,10 +10,6 @@ def needle_nuevocliente(request):
     return render(request, 'clientesnuevousu.html')
 
 
-def needle_nuevocliente2(request):
-    return render(request, 'clientesnuevousu2.html')
-
-
 def needle_editcliente(request):
     return render(request, 'clientesedit.html')
 
