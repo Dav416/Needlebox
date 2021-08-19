@@ -17,9 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 
-from core.views import needle_cliente, needle_nuevocliente, needle_nuevocliente2, \
-    needle_editcliente, needle_crono, needle_pedidos, needle_nosotros, needle_reperror, needle_ayuda, \
-    needle_cont, needle_login, needle_regis, needle_recpass
+from core.views import needle_crono, needle_pedidos, needle_nosotros, needle_reperror, needle_ayuda, \
+    needle_cont
 
 
 urlpatterns = [
