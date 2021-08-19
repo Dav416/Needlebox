@@ -30,7 +30,7 @@
 
                   <a href="{% url 'cliente1' %}">
 
-                  <button class="btn-edit-prov btnajaxinsu'" style="padding: 8px; background-color: #F0B27A">
+                  <button class="btn-edit-prov btnajaxinsu'" style="padding: 8px; background-color: #F0B27A; margin-right: 1.5%">
                       Añadir cliente
                   </button>
                   </a>
@@ -58,6 +58,8 @@
                     aria-label="Age: activate to sort column ascending" style="width: 110px;">Email</th>
                     <th class="sorting text-center" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
                     aria-label="Age: activate to sort column ascending" style="width: 110px;">Dirección</th>
+                     <th class="sorting text-center" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
+                    aria-label="Age: activate to sort column ascending" style="width: 110px;">Notas</th>
                   <th class="text-center" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
                      style="width: 40px;">Ver/Editar</th>
                   <th class="text-center" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
@@ -74,9 +76,9 @@
                   <td>{{ c.telCli }} / {{ c.celCli }} </td>
                   <td>{{ c.e_mailCli }}</td>
                   <td>{{ c.dirCli }}</td>
+                  <td>{{ c.infoTCli }}</td>
                   <td class="py-0 align-middle">
                     <div class="btn-group btn-group-sm">
-                      <a href="#" class="btn btn-info"><i class="fas fa-eye"></i></a>
                       <a class="btn btn-primary btn-sm" href="#"><i class="fas fa-edit"></i></a>
                     </div>
                   </td>

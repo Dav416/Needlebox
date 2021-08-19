@@ -1,6 +1,6 @@
 from django.views.generic import TemplateView, CreateView
-from core.cliente.models import InfoClient, InfoGeneClient
-from core.cliente.forms import InfoClientForm, InfoGeneClientForm
+from core.cliente.models import InfoClient
+from core.cliente.forms import InfoClientForm
 from django.shortcuts import render
 from django.urls import reverse_lazy
 
@@ -15,27 +15,30 @@ class NeedleNuevoCliente(CreateView):
     model = InfoClient
     form_class = InfoClientForm
     template_name = 'clientesnuevousu.html'
-    success_url = reverse_lazy('cliente2')
+    success_url = reverse_lazy('cliente3')
+
+    def post(self, request, *args, **kwargs):
+        data = {}
+        try:
+            action = request.POST['action']
+            if action == 'add':
+                form = self.get_form()
+                data = form.save()
+            else:
+                data['error'] = 'No ha ingresado a ninguna opción'
+        except Exception as e:
+            data['ERROR EN POST REG INSUMOS'] = str(e)
+        return JsonResponse(data)
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['object_list1'] = InfoClient.objects.all()
-        context['form1'] = InfoClientForm
+        context['action'] = 'add'
+        
+        #context['form'] = InfoClientForm
+        context['list_url'] = reverse_lazy('cliente3')
         return context
 
-
-# Vista 3 / Segundo formulario de registro - Info adicional
-class NeedleNuevoCliente2(CreateView):
-    model = InfoGeneClient
-    form_class = InfoGeneClientForm
-    template_name = 'clientesnuevousu2.html'
-    success_url = reverse_lazy('cliente4')
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['object_list2'] = InfoGeneClient.objects.all()
-        context['form2'] = InfoGeneClientForm
-        return context
 
 
 # Vista 4 / Tabla con los clientes
@@ -48,16 +51,6 @@ class NeedleEditCliente(TemplateView):
         context['form1'] = InfoClientForm
         return context
 
-
-# Vista 5 / Lista con la información adicional de cada cliente según el formulario 2
-class NeedleVistaInfoAdicional(TemplateView):
-    template_name = '../templates/vistainfoadicional.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['object_list2'] = InfoGeneClient.objects.all()
-        context['form2'] = InfoGeneClientForm
-        return context
 
 
 
