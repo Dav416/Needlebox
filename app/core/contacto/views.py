@@ -28,19 +28,19 @@ class ContactView(CreateView):
 
 #Envio de emails
 def contacto(request):
-    if request.method=="POST":
+    if request.method == "POST":
 
-        name=request.POST['Nombre']
+        name = request.POST['Nombre']
 
-        message=request.POST['Mensaje'] + ' ' + request.POST['Email']
+        message = request.POST['Mensaje'] + ' ' + request.POST['Email']
 
-        email_from=settings.EMAIL_HOST_USER
+        email_from = settings.EMAIL_HOST_USER
 
-        recipient_list=['needlebox.proyect@gmail.com']
+        recipient_list = ['needlebox.proyect@gmail.com']
 
-        subject=request.POST['Asunto']
+        subject = request.POST['Asunto']
 
-        send_mail(name,message, email_from, recipient_list, subject, fail_silently=False)
+        send_mail(name, message, email_from, recipient_list, subject, fail_silently=False)
 
         print('El correo se ha enviado')
 
