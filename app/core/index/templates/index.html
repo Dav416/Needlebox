@@ -6,6 +6,9 @@
     NEEDLEBOX - Inicio
 {% endblock %}
 
+{% block indexdescription %}
+    <meta name="description" content="¡Bienvenido a Needlebox! Herramienta online para confeccionistas">
+{%  endblock %}
 
 {% block mycss %}
     <link rel="stylesheet" href="{% static 'myCss/indexStyle.css' %}">
@@ -29,7 +32,7 @@
   
       <!--CRONOGRAMA-->
       <div class="card card-primary card-outline c-crono" >
-        <a href="/cronograma">
+        <a href="/core/cronograma">
           <div class="card-header c-CronoH">
               <h2 class="card-ti m-0">Cronograma</h2>
           </div>  

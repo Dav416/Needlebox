@@ -47,7 +47,9 @@ INSTALLED_APPS = [
     'core.pedidos',
     'core.reportar',
     'core.contacto',
-    'widget_tweaks',
+    'core.ayuda',
+    'core.nosotros',
+    'core.cronograma',
 ]
 
 MIDDLEWARE = [
@@ -137,6 +139,19 @@ STATICFILES_DIRS = [
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
-LOGIN_REDIRECT_URL = '/core/index/templates/index.html'
-
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+#-------------ENVIO DE EMAILS-----------------------
+
+#Configurar en gmail recibir correos de terceros
+EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST="smtp.gmail.com"
+#Especificar el protocolo de seguridad que utiliza el servidor de correo,  puerto que corresponda segun la configuracion de gmail ya sea TLS o SSL
+EMAIL_USE_TLS=True
+#Puerto para envio de correos electronicos, dependiendo del protocolo el colocado es el de el TLS
+EMAIL_PORT=587
+#Usuario y contraseña del correo electronico
+EMAIL_HOST_USER="needlebox.proyect@gmail.com"
+EMAIL_HOST_PASSWORD="ProyectoSena01"
+
+

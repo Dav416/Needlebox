@@ -1,5 +1,5 @@
 #from django.shortcuts import render
-from django.views.generic import TemplateView, ListView
+from django.views.generic import TemplateView, ListView, UpdateView
 from core.pedidos.models import Todopedido
 # Create your views here.
 
@@ -17,3 +17,6 @@ class needle_pedidos(TemplateView):
 
 class pedidos_table(ListView):
     template_name = '../templates/tablapedidos.html'
+
+
+

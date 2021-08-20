@@ -45,7 +45,8 @@
 <!--!!!!!!!! etiqueta form/ atributos method='post' action="{porcent url ''  porcent}"¡¡¡¡¡¡¡¡¡-->
 
         <!-- INICIO FORMULARIO -->
-          <form method="post" action="{% url 'contacto' %}">
+          <form method="POST" action="{% url 'contacto' %}">
+               {% csrf_token %}
             <div class="col-7 cont-form">
               <div class="form-group">
                 <label for="inputName">Nombre</label>
