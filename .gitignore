@@ -32,4 +32,3 @@ app/config/__pycache__/settings.cpython-39.pyc
 app/config/__pycache__/urls.cpython-39.pyc
 app/core/__pycache__/models.cpython-39.pyc
 app/core/reportar/__pycache__/urls.cpython-39.pyc
-app/db.sqlite3
