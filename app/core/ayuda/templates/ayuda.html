@@ -1,0 +1,153 @@
+{% extends 'baseotros.html' %}
+
+{% load static %}
+
+<!--title del head-->
+{% block title %}
+    NEEDLEBOX - Ayuda
+{% endblock %}
+
+<!--mis estilos-->
+{% block mycss %}
+  <link rel="stylesheet" href="{% static 'myCss/ayudaStyle.css' %}">
+  <link rel="stylesheet" href="{% static 'myCss/perfilStyle.css' %}">
+
+
+{% endblock %}
+
+<!--bloque de contenido-->
+{% block content%}
+<div class="wrapper">
+
+    <!--Encabezado de sección-->
+    <div class="mod-act c-nos"><div class="cover"><span class="mod-act-nom">Ayuda</span></div></div>
+
+    <!--Aqui iria el contenido-->
+
+
+    <!-- Inicio de perfil y editar perfil-->
+    <div class="col-md-9 about-us">
+      <div class="card">
+        <div class="card-header p-2 card-t">
+          <ul class="nav nav-pills">
+            <li class="nav-item"><a class="nav-link active" href="#pagina1" data-toggle="tab"> Preguntas Frecuentes</a></li>
+            <li class="nav-item"><a class="nav-link " href="#pagina2" data-toggle="tab">Contactenos</a></li>
+            <li class="nav-item"><a class="nav-link " href="#pagina3" data-toggle="tab"> Redes Sociales</a></li>
+            <li class="nav-item"><a class="nav-link " href="{% url 'index' %}"> <i class="fas fa-home"></i> Volver a inicio</a></li>
+          </ul>
+        </div><!-- /.card-header -->
+
+
+        <!--Selector-->
+        <div class="card-body">
+
+          <div class="tab-content">
+
+            <!--------------------------Inicio Pagina 1----------------------------------------->
+            <div class="tab-pane active" id="pagina1">
+
+              <div class="card-body">
+
+                <div class="noso-body">
+                  <ul>
+
+                    <li>
+                      <h5>¿Cómo puedo ingresar mi información personal?</h5>
+                      <p> estés en nuestra pagina needlebox en la parte superior derecha puedes dar clic en PERFIL, Editar información personal y procedes a llenar los datos: Nombre, correo electrónico, asignas una contraseña, confirmas, seleccionas una pregunta de seguridad, asignas una respuesta, aceptas los términos y condiciones  y guardas los cambios.</p>
+                    </li>
+
+                    <li>
+                      <h5>¿Cómo puedo reportar un error?</h5>
+                      <p> Para hacer el reporte, haces clic en el menú reportar error, veras a continuación el formulario de reporte, ingresas nombre, correo electrónico, seleccionas el tipo de error, llenas el campo de descripción, dándonos detalles tu dificultad y clic en enviar.</p>
+                    </li>
+
+                    <li>
+                      <h5> ¿Cómo puedo crear mi usuario?</h5>
+                      <p> Para Crear tu usuario Puedes ir al menú login y en la parte inferior puedes encontrar la opción de registrarte con tu Facebook (Ingresa usando facebook) o con tu cuenta de Google (Gmail) o también en la parte inferior encontraras la opción registrarse por primera vez, ingresas los datos de Nombre, Correo electrónico, Asignas una contraseña, confirmas tu contraseña, aceptas términos y condiciones y le das enviar.</p>
+                    </li>
+
+                    <li>
+                      <h5>¿Como puedo recuperar mi contraseña?</h5>
+                      <p>Para recuperar tu contraseña, Ingresa al siguiente enlace <a href="../../login/templates/loginrecpass.html">Haga clic aquí</a>
+                      Ingresas un correo electrónico a donde te llegara un mensaje de recuperación.
+                      Esperamos que te hayan servido de mucha ayuda.</p>
+                    </li>
+
+                  </ul>
+                </div>
+
+              </div>
+
+            </div>
+            <!---------------------------fin Pagina 1----------------------------------->
+
+            <!---------------------------Inicio Pagina 2----------------------------------->
+            <div class="tab-pane" id="pagina2">
+
+              <div class="card-body" style="color: #764A09;">
+                <p class="noso-body">
+
+                <p>
+                  <i class="fab fa-whatsapp-square fa-2x"></i> Whatsapp:
+                  <a href="https://wa.me/+573197319986/">+57 3197319986</a>
+                </p>
+
+                <br>
+
+                <p>
+                  <i class="fas fa-phone fa-2x"></i>
+                  Teléfono fijo: <a> 4444082 </a>
+                </p>
+
+                <br>
+
+                <p>
+                    <i class="fas fa-envelope-square fa-2x"></i>
+                     Correo electronico:
+                    <a href="mailto:needleboxsas@needlebox.com.co">needlebox.proyect@gmail.com</a>
+                </p>
+              </div>
+
+            </div>
+
+
+            <!---------------------------fin Pagina 2----------------------------------->
+
+            <!---------------------------Inicio Pagina 3----------------------------------->
+            <div class="tab-pane" id="pagina3">
+              <div class="card-body">
+
+                <p class="noso-body">
+                    <p><strong> Visita nuestras redes sociales</strong></p>
+                    <p> <a style="color: #764A09;" href="https://www.facebook.com/Needlebox">
+                        <i class="fab fa-facebook-square fa-2x"></i> Facebook</a>
+                    </p>
+
+                    <br>
+
+                    <p> <a style="color: #764A09;" href="https://www.instagram.com/Needlebox">
+                        <i class="fab fa-instagram fa-2x"></i> Instagram</a>
+                    </p>
+
+                    <br>
+
+                    <p> <a style="color: #764A09;" href="https://twitter.com/Needlebox">
+                        <i class="fab fa-twitter-square fa-2x"></i> Twitter</a>
+                    </p>
+
+              </div>
+            </div><!-- /.tab-pane -->
+
+              <!--saltos de línea insertados (temporales) para evitar que se encoja el alto de la página-->
+
+
+              <!---------------------------fin Pagina 3----------------------------------->
+          </div><!-- /.tab-content -->
+        </div> <!-- /.card-body -->
+      </div> <!-- /.card -->
+        <br>
+    </div><!-- /.col-md-9 -->
+</div> <!--/wrapper-->
+
+
+{% endblock %}

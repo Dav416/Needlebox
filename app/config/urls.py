@@ -31,7 +31,7 @@ urlpatterns = [
     path('cuenta/', include('core.perfil.urls')),
     path('nosotros/', needle_nosotros),
     path('error/', include('core.reportar.urls')),
-    path('ayuda/', needle_ayuda),
+    path('ayuda/', include('core.ayuda.urls')),
     path('contactenos/', include('core.contacto.urls')),
     path('login/', include('core.login.urls')),
     path('reportar/', include('core.reportar.urls')),
