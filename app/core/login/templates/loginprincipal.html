@@ -31,7 +31,8 @@
         <div class="card-body login-card-body">
           <p class="login-box-msg">Inicia sesión para continuar</p>
 
-          <form action="../../index3.html" method="post">
+          <form action="" method="post">
+              {% csrf_token %}
 
             <div class="input-group mb-3">
               <input type="email" class="form-control" placeholder="Correo">
@@ -67,12 +68,6 @@
             </div>
           </form>
 
-          <div class="social-auth-links text-center mb-3">
-            <p>- O también -</p>
-            <a href="#" class="btn btn-block btn-primary btn-estilo">
-              <i class="fab fa-facebook mr-2"></i> Ingrese usando Facebook
-            </a>
-          </div>
 
           <p class="mb-1">
             <a href="{% url 'login3' %}" class="link-estilo">Olvidé mi contraseña</a>
