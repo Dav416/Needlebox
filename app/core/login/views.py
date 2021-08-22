@@ -9,7 +9,6 @@ from django.shortcuts import render, redirect
 class NeedleLoginView(LoginView):
     template_name = 'loginprincipal.html'
 
-
     def dispatch(self, request, *args, **kwargs):
         if request.user.is_authenticated:
             return redirect('index')

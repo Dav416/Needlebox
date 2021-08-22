@@ -157,3 +157,5 @@ EMAIL_HOST_PASSWORD="ProyectoSena01"
 
 
 LOGIN_REDIRECT_URL = '/inicio/index/'
+
+LOGIN_URL = '/login/'
