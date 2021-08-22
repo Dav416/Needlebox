@@ -32,7 +32,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'widget_tweaks',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -51,6 +50,7 @@ INSTALLED_APPS = [
     'core.ayuda',
     'core.nosotros',
     'core.cronograma',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -110,7 +110,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    }, 
+    },
 ]
 
 
@@ -137,9 +137,6 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
 
-
-LOGIN_REDIRECT_URL = '/'
-LOGOUT_REDIRECT_URL = '/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
@@ -158,4 +155,6 @@ EMAIL_PORT=587
 EMAIL_HOST_USER="needlebox.proyect@gmail.com"
 EMAIL_HOST_PASSWORD="ProyectoSena01"
 
+
+LOGIN_REDIRECT_URL = '/inicio/index/'
 

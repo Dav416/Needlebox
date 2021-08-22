@@ -1,24 +1,31 @@
-from django.views.generic import TemplateView
 from django.contrib.auth.views import LoginView
-from core.login.forms import RegistrarUsuarioForm
-from django.shortcuts import render
+from django.views.generic import TemplateView
+from django.shortcuts import render, redirect
 
 
 # Create your views here.
-class NeedleLogin(LoginView):
-    template_name = '../templates/loginprincipal.html'
+
+# Vista de Login
+class NeedleLoginView(LoginView):
+    template_name = 'loginprincipal.html'
+
+    def dispatch(self, request, *args, **kwargs):
+
+        if request.user.is_authenticated:
+            return redirect('index')
+        return super().dispatch(request, *args, **kwargs)
+
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['title'] = 'Inicie sesión'
-        context['form1'] = RegistrarUsuarioForm
         return context
 
 
+# Vista de Registro de usuario
 class NeedleRegis(TemplateView):
     template_name = '../templates/loginregusu.html'
 
 
-
+# Vista de Recuperar conraseña
 class NeedleRecpass(TemplateView):
     template_name = '../templates/loginrecpass.html'

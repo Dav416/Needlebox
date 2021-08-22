@@ -2,6 +2,8 @@
 
 {% load static %}
 
+{% load widget_tweaks %}
+
 <!--title del head-->
 {% block title %}
     Ingresar a la cuenta
@@ -31,11 +33,14 @@
         <div class="card-body login-card-body">
           <p class="login-box-msg">Inicia sesión para continuar</p>
 
-          <form action="" method="post">
+          <form action="." method="post">
+
               {% csrf_token %}
 
+              {{ form.errors }}
+
             <div class="input-group mb-3">
-              <input type="email" class="form-control" placeholder="Correo">
+                {{ form.username |add_class:'form-control' |attr:'placeholder: Ingrese su E-mail'}}
               <div class="input-group-append">
                 <div class="input-group-text ">
                   <span class="fas fa-envelope "></span>
@@ -44,7 +49,7 @@
             </div>
 
             <div class="input-group mb-3 ">
-              <input type="password" class="form-control" placeholder="Contraseña">
+              {{ form.password |add_class:'form-control' |attr:'placeholder: Ingrese su contraseña' }}
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-lock"></span>
@@ -68,13 +73,19 @@
             </div>
           </form>
 
+          <div class="social-auth-links text-center mb-3">
+            <p>- O también -</p>
+            <a href="#" class="btn btn-block btn-primary btn-estilo">
+              <i class="fab fa-facebook mr-2"></i> Ingrese usando Facebook
+            </a>
+          </div>
 
           <p class="mb-1">
-            <a href="{% url 'login3' %}" class="link-estilo">Olvidé mi contraseña</a>
+            <a href="#" class="link-estilo">Olvidé mi contraseña</a>
           </p>
 
           <p class="mb-0">
-            <a href="{% url 'login2' %}" class="text-center link-estilo">Registrarse por primera vez</a>
+            <a href="#" class="text-center link-estilo">Registrarse por primera vez</a>
           </p>
 
         </div>
@@ -83,6 +94,3 @@
     </div>
 
 {% endblock %}
-
-
-    
