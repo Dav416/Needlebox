@@ -36,8 +36,6 @@
                 <!--/validador a mi modo-->
 
                 {% csrf_token %}
-                {{ form.errors }}
-
 
 
                 <input type="hidden" name="action" value="{{ action }}">
@@ -104,7 +102,9 @@ $('form').on('submit', function (e) {
             }).always(function (data) {
 
             });
+
         });
+
 
 
 </script>
