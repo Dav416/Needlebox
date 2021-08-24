@@ -12,9 +12,11 @@ from django.urls import reverse_lazy
 
 # MENÚ INSUMOS
 class NeedleInsu(TemplateView):
-    template_name = '../templates/insumos.html'
+    template_name = 'insumos.html'
 
-
+    @method_decorator(login_required)
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
 # ---------------------------------------------------------------------------------
 
 
@@ -24,6 +26,7 @@ class ListInsumosView(ListView):
     template_name = 'ListInsumosInsu.html'
 
     @method_decorator(csrf_exempt)
+    @method_decorator(login_required)
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
@@ -48,6 +51,7 @@ class ListProveedoresView(ListView):
     template_name = 'ListInsumosProv.html'
 
     @method_decorator(csrf_exempt)
+    @method_decorator(login_required)
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
@@ -73,6 +77,10 @@ class RegInsumoCreateView(CreateView):
     form_class = RegInsumoForm
     template_name = 'FormInsumos.html'
     success_url = reverse_lazy('lista_insumos')
+
+    @method_decorator(login_required)
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
         data = {}
@@ -103,6 +111,10 @@ class RegProveedorCreateView(CreateView):
     form_class = RegProveedorForm
     template_name = 'FormProveedores.html'
     success_url = reverse_lazy('lista_proveedores')
+
+    @method_decorator(login_required)
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
         data = {}
@@ -135,6 +147,7 @@ class EditInsumoUpdateView(UpdateView):
     template_name = 'FormInsumos.html'
     success_url = reverse_lazy('lista_insumos')
 
+    @method_decorator(login_required)
     def dispatch(self, request, *args, **kwargs):
         self.object = self.get_object()
         return super().dispatch(request, *args, **kwargs)
@@ -168,6 +181,7 @@ class EditProveedorUpdateView(UpdateView):
     template_name = 'FormProveedores.html'
     success_url = reverse_lazy('lista_proveedores')
 
+    @method_decorator(login_required)
     def dispatch(self, request, *args, **kwargs):
         self.object = self.get_object()
         return super().dispatch(request, *args, **kwargs)
@@ -203,6 +217,10 @@ class BorrarInsumoDeleteView(DeleteView):
     template_name = 'BorrarInsumo.html'
     success_url = reverse_lazy('lista_insumos')
 
+    @method_decorator(login_required)
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['list_url'] = reverse_lazy('lista_insumos')
@@ -214,6 +232,10 @@ class BorrarProveedorDeleteView(DeleteView):
     model = InsRegProv
     template_name = 'BorrarProveedor.html'
     success_url = reverse_lazy('lista_proveedores')
+
+    @method_decorator(login_required)
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -303,5 +325,4 @@ se pasan a la plantilla, a su ves pasadas como vistas.
 
 Lo otro que está comentarlo decidí dejarlo para recordar ese recurso en futuras ocasiones, ya que creí que era
 necesario para el funcionamiento de esta vista pero no fue así.
-
 """

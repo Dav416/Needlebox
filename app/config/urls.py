@@ -20,6 +20,8 @@ from django.urls import path, include
 from core.views import needle_crono, needle_pedidos, needle_nosotros, needle_reperror, needle_ayuda, \
     needle_cont
 
+from core.login.views import NeedleLoginView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,8 +33,8 @@ urlpatterns = [
     path('cuenta/', include('core.perfil.urls')),
     path('nosotros/', needle_nosotros),
     path('error/', include('core.reportar.urls')),
-    path('ayuda/', needle_ayuda),
+    path('ayuda/', include('core.ayuda.urls')),
     path('contactenos/', include('core.contacto.urls')),
-    path('login/', include('core.login.urls')),
+    path('login/', NeedleLoginView.as_view(), name="login1"),
     path('reportar/', include('core.reportar.urls')),
 ]

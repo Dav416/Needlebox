@@ -47,6 +47,10 @@ INSTALLED_APPS = [
     'core.pedidos',
     'core.reportar',
     'core.contacto',
+    'core.ayuda',
+    'core.nosotros',
+    'core.cronograma',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -152,3 +156,6 @@ EMAIL_HOST_USER="needlebox.proyect@gmail.com"
 EMAIL_HOST_PASSWORD="ProyectoSena01"
 
 
+LOGIN_REDIRECT_URL = '/inicio/index/'
+
+LOGIN_URL = '/login/'
