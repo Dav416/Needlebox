@@ -131,7 +131,6 @@ class RegProveedorCreateView(CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['form2'] = RegProveedorForm
         context['action'] = 'add'
         context['list_url'] = reverse_lazy('lista_proveedores')
         context['titulo'] = "Registrar proveedor"
@@ -167,7 +166,6 @@ class EditInsumoUpdateView(UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['form1'] = RegInsumoForm
         context['action'] = 'edit'
         context['list_url'] = reverse_lazy('lista_insumos')
         context['titulo'] = "Editar insumo"
@@ -201,7 +199,6 @@ class EditProveedorUpdateView(UpdateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['form2'] = RegProveedorForm
         context['action'] = 'edit'
         context['list_url'] = reverse_lazy('lista_proveedores')
         context['titulo'] = "Editar proveedor"
