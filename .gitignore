@@ -2,6 +2,8 @@ desktop.ini
 .idea
 db.sqlite3
 *.pyc
+*migrations/
+migrations/
 app/__pycache__/
 app/config/__pycache__/
 app/core/__pycache__/
@@ -28,6 +30,8 @@ app/core/nosotros/__pycache__/
 app/core/nosotros/migrations/
 app/core/cronograma/__pycache__/
 app/core/cronograma/migrations/
+app/core/user/__pycache__/
+app/core/user/migrations/
 app/config/__pycache__/settings.cpython-39.pyc
 app/config/__pycache__/urls.cpython-39.pyc
 app/core/__pycache__/models.cpython-39.pyc

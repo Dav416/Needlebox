@@ -17,10 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 
-from core.views import needle_crono, needle_pedidos, needle_nosotros, needle_reperror, needle_ayuda, \
-    needle_cont
+from core.views import needle_crono, needle_nosotros
 
 from core.login.views import NeedleLoginView
+from core.user.views import UserCreateView
 
 
 urlpatterns = [
@@ -36,5 +36,6 @@ urlpatterns = [
     path('ayuda/', include('core.ayuda.urls')),
     path('contactenos/', include('core.contacto.urls')),
     path('login/', NeedleLoginView.as_view(), name="login1"),
+    path('regprv/', UserCreateView.as_view(), name="login2"),
     path('reportar/', include('core.reportar.urls')),
 ]

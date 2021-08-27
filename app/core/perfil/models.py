@@ -19,10 +19,10 @@ class Profile(models.Model):
     nom_usu = models.CharField(max_length=100, unique=True, verbose_name='Nombre de usuario')
     e_mail = models.EmailField(unique=True, verbose_name='E-mail')
     password = models.CharField(max_length=50, verbose_name='Contraseña')
-    conf_password = models.CharField(max_length=50, verbose_name='Confirmar Contraseña')
-    show_password = models.BooleanField(default=False)
-    security_question = models.CharField(max_length=30, choices=SQ_CHOICES, default='', null=False)
-    security_answer = models.CharField(max_length=50, verbose_name="Respect", null=False)
+    conf_password = models.CharField(max_length=50, verbose_name='Confirmar Contraseña', default=None)
+    # show_password = models.BooleanField(default=False)
+    security_question = models.CharField(max_length=30, choices=SQ_CHOICES, default='Seleccionar pregunta', null=False)
+    security_answer = models.CharField(max_length=50, verbose_name="Respect", null=False, default=None)
     accept_terms = models.BooleanField(default=False, null=False, blank=False)
 
     def __str__(self):
