@@ -3,7 +3,7 @@ desktop.ini
 db.sqlite3
 *.pyc
 *migrations/
-*migrations/
+migrations/
 app/__pycache__/
 app/config/__pycache__/
 app/core/__pycache__/
