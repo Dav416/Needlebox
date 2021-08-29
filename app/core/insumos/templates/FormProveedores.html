@@ -36,8 +36,6 @@
                 <!--/validador a mi modo-->
 
                 {% csrf_token %}
-                {{ form.errors }}
-
 
 
                 <input type="hidden" name="action" value="{{ action }}">
@@ -82,6 +80,7 @@
         <!-- /.card-body -->
     </div>
     <!--/FIN formulario proveedor-->
+
 <script>
 $('form').on('submit', function (e) {
             e.preventDefault();
@@ -104,9 +103,8 @@ $('form').on('submit', function (e) {
             }).always(function (data) {
 
             });
+
         });
-
-
 </script>
 
 {% endblock %}

@@ -9,6 +9,7 @@
         <!--mis estilos-->
  {% block mycss  %}
     <link rel="stylesheet" href="{% static 'myCss/contactoStyle.css' %}">
+
  {% endblock %}
 
 
@@ -65,11 +66,23 @@
                   {{ form.cont_mensaje }}
               </div>
               <div class="form-group">
-                <input type="submit" class="btn btn-primary " value="Envíar">
+                <input onclick="myFunction()" type="submit" class="btn btn-primary " value="Envíar">
               </div>
             </div>
           </form>
           <!-- FIN FORMULARIO -->
+
+          <!--Sweetalert2 -->
+          <script>
+              function myFunction(){
+                Swal.fire(
+                  'Buen trabajo!',
+                  'Su correo ha sido enviado!',
+                  'success'
+                )
+              }
+          </script>
+
       </div>
 
     </div>

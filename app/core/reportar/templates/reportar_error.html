@@ -28,6 +28,7 @@
 
             <!-- INICIO Formulario de errores-->
             <form method="post" action="{% url 'reportar' %}">
+                {% csrf_token %}
                 <div class="report" >
                   <!-- titulo-->
                   <fieldset class="headertable">
@@ -50,11 +51,23 @@
                   <div class="message">
                       {{ form.cont_mensaje }}
                   </div>
-                  <button value="Enviar" type="submit">Enviar</button>
+                  <button onclick="myFunction()" value="Enviar" type="submit">Enviar</button>
 
                 </div>
             </form>
               <!-- FIN formulario de errores -->
+
+          <!--Sweetalert2 -->
+          <script>
+              function myFunction(){
+                Swal.fire(
+                  'Buen trabajo!',
+                  'Su reporte ha sido enviado!',
+                  'success'
+                )
+              }
+          </script>
+
       </div>
 
 

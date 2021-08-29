@@ -37,10 +37,31 @@
 
               {% csrf_token %}
 
-              {{ form.errors }}
+               <!--validador a mi modo-->
+                {% if form.errors %}
+                    <div class="alert alert-danger alert-secondary">
+                         <h5>Ha ocurrido un error al tratar de ingresar:</h5>
+                        {% for field in form %}
+                            {% for error in field.errors %}
+                                <div>
+                                    <strong style="color: #e9ecef !important;">{{ error|escape }}</strong>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
+
+                        {% for error in form.non_field_errors %}
+                            <div>
+                                <strong>{{ error|escape }}</strong>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                <!--/validador a mi modo-->
 
             <div class="input-group mb-3">
-                {{ form.username |add_class:'form-control' |attr:'placeholder: Ingrese su E-mail'}}
+
+                {{ form.username |add_class:'form-control' |attr:'placeholder: Ingrese su nombre de usuario'}}
+
               <div class="input-group-append">
                 <div class="input-group-text ">
                   <span class="fas fa-envelope "></span>
@@ -49,7 +70,9 @@
             </div>
 
             <div class="input-group mb-3 ">
+
               {{ form.password |add_class:'form-control' |attr:'placeholder: Ingrese su contraseña' }}
+
               <div class="input-group-append">
                 <div class="input-group-text">
                   <span class="fas fa-lock"></span>
@@ -85,7 +108,7 @@
           </p>
 
           <p class="mb-0">
-            <a href="#" class="text-center link-estilo">Registrarse por primera vez</a>
+            <a href="{% url 'login2' %}" class="text-center link-estilo">Registrarse por primera vez</a>
           </p>
 
         </div>
@@ -94,3 +117,6 @@
     </div>
 
 {% endblock %}
+
+
+    

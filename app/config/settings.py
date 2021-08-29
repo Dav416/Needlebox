@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'core.ayuda',
     'core.nosotros',
     'core.cronograma',
+    'core.user',
     'widget_tweaks',
 ]
 
@@ -110,7 +111,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
     {
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    }, 
 ]
 
 
@@ -142,19 +143,23 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#-------------ENVIO DE EMAILS-----------------------
+# -------------ENVIO DE EMAILS-----------------------
 
-#Configurar en gmail recibir correos de terceros
+# Configurar en gmail recibir correos de terceros
 EMAIL_BACKEND="django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST="smtp.gmail.com"
-#Especificar el protocolo de seguridad que utiliza el servidor de correo,  puerto que corresponda segun la configuracion de gmail ya sea TLS o SSL
+# Especificar el protocolo de seguridad que utiliza el servidor de correo, puerto que corresponda \
+# segun la configuracion de gmail ya sea TLS o SSL
 EMAIL_USE_TLS=True
-#Puerto para envio de correos electronicos, dependiendo del protocolo el colocado es el de el TLS
+# Puerto para envio de correos electronicos, dependiendo del protocolo el colocado es el de el TLS
 EMAIL_PORT=587
-#Usuario y contraseña del correo electronico
+# Usuario y contraseña del correo electronico
 EMAIL_HOST_USER="needlebox.proyect@gmail.com"
 EMAIL_HOST_PASSWORD="ProyectoSena01"
 
 
-LOGIN_REDIRECT_URL = '/inicio/index/'
+LOGIN_REDIRECT_URL = '/index/'
 
+LOGIN_URL = '/login/'
+
+AUTH_USER_MODEL = 'user.User'
