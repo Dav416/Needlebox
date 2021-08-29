@@ -39,7 +39,16 @@
 
              {% csrf_token %}
              <input type="hidden" name="action" value="{{ action }}">
-             {{ form.errors }}
+
+              {% if form.errors %}
+                    {% for field in form %}
+
+                        {% for error in field.errors %}
+                            {{field.label}}: {{ error|escape }}
+                        {% endfor %}
+
+                    {% endfor %}
+                {% endif %}
 
 
             <div class="input-group mb-3">
@@ -96,6 +105,19 @@
               </div>
             </div>
 
+              <div class="row reg-usu-acybt">
+              <div class="col-8 ">
+                <div class="icheck-primary">
+                 <label for="box"></label>
+                 <input type="checkbox" id="box" onclick ="reveal()">
+
+                  <label for="showpassword" style="font-size: small;" class="acept">
+                   mostrar contraseñas
+                  </label>
+                </div>
+              </div>
+              </div>
+
               <div class="input-group mb-3">
                  <label for="pregun-secur"></label>
                 {{ form.visible_fields.5 }}
@@ -151,7 +173,7 @@
 
    <p style="color:#e9ecef">Holi, soy un easteregg</p>
 
-<script>
+<script type="text/javascript">
 $('form').on('submit', function (e) {
             e.preventDefault();
             var parameters = $(this).serializeArray();
@@ -173,8 +195,21 @@ $('form').on('submit', function (e) {
             }).always(function (data) {
 
             });
-
         });
+</script>
+
+<script type="text/javascript">
+function reveal()
+{
+if(document.getElementById('box').checked)
+   {document.getElementById("inputpass").type='text';}
+else
+document.getElementById("inputpass").type='password';
+if(document.getElementById('box').checked)
+   {document.getElementById("inputpass2").type='text';}
+else
+document.getElementById("inputpass2").type='password';
+}
 </script>
 
 {% endblock %}
