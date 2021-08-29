@@ -1,27 +1,14 @@
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from django.views.generic import TemplateView, CreateView
+from django.views.generic import TemplateView, CreateView, UpdateView
 from core.user.models import User
-from core.user.forms import UserRegForm
+from core.user.forms import UserRegForm, UserUpdateForm
 
 # Create your views here.
 
 
-# Vista de Registro de usuario
-"""
-class NeedleRegis(TemplateView):
-    template_name = 'loginregusu.html'
-
-    def dispatch(self, request, *args, **kwargs):
-        return super().dispatch(request, *args, **kwargs)
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        return context
-"""
-
-
+# -------------registrar usuario--------------
 class UserCreateView(CreateView):
     model = User
     form_class = UserRegForm

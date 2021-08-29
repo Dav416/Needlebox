@@ -21,11 +21,8 @@ class User(AbstractUser):
     def save(self, *args, **kwargs):
         if self.pk is None:
             self.set_password(self.password)
-            # self.set_password(self.conf_password)
+        else:
+            user = User.objects.get(pk=self.pk)
+            if user.password != self.password:
+                self.set_password(self.password)
         super().save(*args, **kwargs)
-
-
-"""
-conf_passwordUsu = models.CharField(max_length=10, verbose_name='Confirmar Contraseña')
-accept_terms = models.BooleanField(default=False, verbose_name='Aceptar términos y condiciones')
-"""

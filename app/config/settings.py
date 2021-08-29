@@ -158,7 +158,7 @@ EMAIL_HOST_USER="needlebox.proyect@gmail.com"
 EMAIL_HOST_PASSWORD="ProyectoSena01"
 
 
-LOGIN_REDIRECT_URL = '/inicio/index/'
+LOGIN_REDIRECT_URL = '/index/'
 
 LOGIN_URL = '/login/'
 

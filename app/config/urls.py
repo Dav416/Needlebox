@@ -25,7 +25,7 @@ from core.user.views import UserCreateView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('inicio/', include('core.index.urls')),
+    path('index/', include('core.index.urls')),
     path('clientes/', include('core.cliente.urls')),
     path('cronograma/', needle_crono),
     path('pedidos/', include('core.pedidos.urls')),
