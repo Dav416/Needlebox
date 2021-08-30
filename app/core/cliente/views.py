@@ -2,6 +2,7 @@ from django.http import HttpResponseRedirect, JsonResponse
 from django.views.generic import TemplateView, CreateView, ListView, UpdateView, DeleteView
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
+from django.contrib.auth.decorators import login_required
 from core.cliente.models import InfoClient
 from core.cliente.forms import InfoClientForm
 from django.shortcuts import render
@@ -19,6 +20,10 @@ class NeedleNuevoCliente(CreateView):
     form_class = InfoClientForm
     template_name = 'clientesnuevousu.html'
     success_url = reverse_lazy('cliente3')
+
+    #@method_decorator(login_required)
+    def dispatch(self, request, *args, **kwargs):
+        return super().dispatch(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
         data = {}
@@ -48,6 +53,7 @@ class NeedleEditCliente(ListView):
     template_name = '../templates/clientesedit.html'
 
     @method_decorator(csrf_exempt)
+    #@method_decorator(login_required)
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
@@ -74,6 +80,7 @@ class EditClientesUpdate(UpdateView):
     form_class = InfoClientForm
     template_name = 'clientesnuevousu.html'
     success_url = reverse_lazy('cliente3')
+
 
     def dispatch(self, request, *args, **kwargs):
         self.object = self.get_object()
