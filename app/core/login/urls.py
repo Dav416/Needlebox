@@ -8,4 +8,5 @@ urlpatterns = [
     # path('inilog/', NeedleLogin.as_view(), name="login1"),
     # path('regprv/', NeedleRegis.as_view(), name="login2"),
     path('reccontr/', NeedleRecpass.as_view(), name="login3"),
+    path('logout/', LogoutView.as_view(next_page='login1'), name="logout"),
 ]
