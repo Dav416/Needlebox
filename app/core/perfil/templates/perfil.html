@@ -102,6 +102,7 @@
                   <input type="hidden" name="action" value="{{ action }}">
 
                  {% csrf_token %}
+                 {{ form.errors }}
 
                    <div class="form-group row">
                 <label for="inputName" class="col-sm-2 col-form-label">Nombre real</label>
