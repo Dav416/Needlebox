@@ -4,7 +4,8 @@ from core.contacto.forms import ContactForm
 from core.contacto.models import ContactUs
 from django.urls import reverse_lazy
 #Emails
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.core.mail import send_mail
 from django.conf import settings
 from django.http import HttpResponse, HttpResponseRedirect
@@ -24,6 +25,28 @@ class ContactView(CreateView):
     template_name = 'contacto.html'
     success_url = reverse_lazy('contacto')
 
+    def post(self, request, *args, **kwargs):
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            self.object = form.save(commit=False)
+            email_from = settings.EMAIL_HOST_USER
+
+            try:
+                """
+                send_mail(
+                    # Por favor cambiar esto
+                    subject=form.cleaned_data.get('cont_nombre'),
+                    message="este es el mundo",
+                    from_email=email_from,
+                    recipient_list=["jforozco66@misena.edu.co"],
+                )
+                """
+                return redirect(self.success_url + "?ok")
+            except:
+            # Algo no ha ido bien, redireccionamos
+                return redirect(reverse('contact') + "?fail")
+
+'''
     def form_valid(self, form):
         self.object = form.save(commit=False)
         email_from = settings.EMAIL_HOST_USER
@@ -39,7 +62,7 @@ class ContactView(CreateView):
         )
 
         return HttpResponseRedirect(self.get_success_url())
-
+'''
 #Libreria para la ventada de alerta (para mostrar que se envio el correo electronico)
 #sweetalert2-9.10.0
 

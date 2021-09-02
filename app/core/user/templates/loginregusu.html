@@ -13,6 +13,7 @@
 <!--mis estilos-->
 {% block mycss %}
   <link rel="stylesheet" href="{% static 'myCss/loginregusuStyle.css' %}">
+
 {% endblock %}
 
 {% block content%}
@@ -39,16 +40,7 @@
 
              {% csrf_token %}
              <input type="hidden" name="action" value="{{ action }}">
-
-              {% if form.errors %}
-                    {% for field in form %}
-
-                        {% for error in field.errors %}
-                            {{field.label}}: {{ error|escape }}
-                        {% endfor %}
-
-                    {% endfor %}
-                {% endif %}
+             {{ form.errors }}
 
 
             <div class="input-group mb-3">
@@ -173,7 +165,7 @@
 
    <p style="color:#e9ecef">Holi, soy un easteregg</p>
 
-<script type="text/javascript">
+<script>
 $('form').on('submit', function (e) {
             e.preventDefault();
             var parameters = $(this).serializeArray();
