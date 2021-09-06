@@ -17,10 +17,10 @@ from django.contrib import admin
 from django.urls import path, include
 
 
-from core.views import needle_crono, needle_nosotros
-
-from core.login.views import NeedleLoginView
-from core.user.views import UserCreateView
+from core.views import needle_crono
+from core.nosotros.views import NosotrosTemplateView
+from core.ayuda.views import AyudaTemplateView
+from core.user.views import UserCreateView, UserChangePasswordView
 
 
 urlpatterns = [
@@ -31,11 +31,12 @@ urlpatterns = [
     path('pedidos/', include('core.pedidos.urls')),
     path('insumos_proveedores/', include('core.insumos.urls')),
     path('cuenta/', include('core.perfil.urls')),
-    path('nosotros/', needle_nosotros),
+    path('nosotros/', NosotrosTemplateView.as_view(), name="nosotros"),
     path('error/', include('core.reportar.urls')),
-    path('ayuda/', include('core.ayuda.urls')),
+    path('ayuda/', AyudaTemplateView.as_view(), name="ayuda"),
     path('contactenos/', include('core.contacto.urls')),
-    path('login/', NeedleLoginView.as_view(), name="login1"),
+    path('login/', include('core.login.urls')),
     path('regprv/', UserCreateView.as_view(), name="login2"),
+    # path('changepassword/', UserChangePasswordView.as_view(), name="cambiar_contraseña"),
     path('reportar/', include('core.reportar.urls')),
 ]

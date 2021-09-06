@@ -1,0 +1,90 @@
+{% extends 'baseotros.html' %}
+
+{% load static %}
+
+{% block mycss %}
+      <link rel="stylesheet" href="{% static 'myCss/insumosStyle.css' %}">
+{% endblock %}
+
+{% block title %}
+    NEEDLEBOX - Perfil -Borrar perfil
+{% endblock %}
+
+{% block content %}
+      <div class="mod-act c-perf"><div class="cover"><span class="mod-act-nom">Perfil</span></div></div>
+    <br>
+     <br>
+    <!--Inicio formulario proveedor-->
+    <div class="card card-danger prov-form ">
+        <div class="card-header form-prov-header card-h-insu">
+          <h3 class="tablet">Eliminación de cuenta</h3>
+        </div>
+
+
+
+        <div class="card-body">
+
+
+            <form method="post" action=".">
+
+               {% csrf_token %}
+
+
+
+
+                <div class="alert">
+                    <p><strong>Usted está por borrar su cuenta</strong></p>
+
+                    <p><strong>¿Desea continuar?</strong></p>
+
+                    <div class="button-submit-div" style="margin: auto">
+                        <button type="submit" class="btn btn-danger" >
+                            Si, borrar
+                        </button>
+
+
+                        <a href="{% url 'perfil' %}" style="margin-left: 5%; text-decoration: none; background-color: #0c84ff !important;" class="btn  button-submit-2">
+                                    ¡No!, volver a mi perfil
+                        </a>
+                    </div>
+
+
+                </div>
+
+
+
+            </form>
+
+        </div>
+        <!-- /.card-body -->
+
+    </div>
+    <br>
+    <br>
+    <!--/FIN formulario proveedor-->
+<script>
+$('form').on('submit', function (e) {
+            e.preventDefault();
+            var parameters = $(this).serializeArray();
+            $.ajax({
+                url: window.location.pathname,
+                type: 'POST',
+                data: parameters,
+                dataType: 'json'
+            }).done(function (data) {
+                console.log(data);
+                if (!data.hasOwnProperty('error')) {
+                    location.href = '{{ list_url }}';
+                    return false;
+                }
+                message_error(data.error);
+            }).fail(function (jqXHR, textStatus, errorThrown) {
+                alert(textStatus + 'error : Ajax' + errorThrown);
+
+            }).always(function (data) {
+
+            });
+
+        });
+</script>
+{% endblock %}

@@ -2,9 +2,9 @@
 
 <header class="cont-bar">
 
-      <div name="logo_y_nombre" class="logo-nom">
+      <div class="logo-nom">
         <a href=" {% url 'index' %} "><img src="{% static 'myImg/needlebox-logo.png' %}" alt="Neddlebox logo" class="logito"></a>
-        <span class="Needlebox">NEEDLEBOX</span>
+        <span class="Needlebox" >NEEDLEBOX</span>
       </div>
 
 
@@ -18,7 +18,7 @@
           </li>
 
           <li class="navbar-item">
-            <a href="/core/nosotros" class="nav-link">NOSOTROS</a>
+            <a href="{% url 'nosotros' %}" class="nav-link">NOSOTROS</a>
           </li>
 
           <li class="navbar-item">
@@ -34,7 +34,7 @@
           </li>
 
           <li class="navbar-item">
-            <a href="{% url 'login1' %}" class="nav-link">CERRAR SESIÓN</a>
+            <a href="{% url 'logout' %}" class="nav-link">CERRAR SESIÓN</a>
           </li>
 
         </ul>

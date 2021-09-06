@@ -14,7 +14,7 @@ class User(AbstractUser):
     ]
     security_question = models.CharField(max_length=30, choices=SQ_CHOICES, default=None, null=False)
     security_answer = models.CharField(max_length=50, verbose_name="Respect", null=False, default=None)
-    conf_password = models.CharField(max_length=50, verbose_name='Confirmar Contraseña', default=None)
+    conf_password = models.CharField(max_length=50, verbose_name='Confirmar Contraseña', default=None, blank=True)
     accept_terms = models.BooleanField(default=False, null=False, blank=False)
     AbstractUser._meta.get_field('email')._unique = True
 
