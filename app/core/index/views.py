@@ -8,7 +8,7 @@ from django.shortcuts import render
 class NeedleIndex(TemplateView):
     template_name = 'index.html'
 
-#    @method_decorator(login_required)
+    @method_decorator(login_required)
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 

@@ -71,7 +71,7 @@
 
             <div class="input-group mb-3 ">
 
-              {{ form.password |add_class:'form-control' |attr:'placeholder: Ingrese su contraseña' }}
+              {{ form.password |add_class:'form-control' |attr:'placeholder: Ingrese su contraseña' |attr:'id:password'}}
 
               <div class="input-group-append">
                 <div class="input-group-text">
@@ -80,6 +80,7 @@
               </div>
             </div>
             <div class="row recybtn">
+
               <div class="col-8">
                 <div class="icheck-primary">
                   <input type="checkbox" id="remember">
@@ -87,7 +88,13 @@
                     Recuérdame
                   </label>
                 </div>
+
+                <div class="see-pass">
+                  <input type="checkbox" id="box" onclick ="reveal()">
+                  <label for="box" class="see-pass-lab"> Ver contraseña</label>
+                </div>
               </div>
+
               <!-- /.col -->
               <div class="col-4">
                 <button type="submit" class="btn btn-primary btn-block btn-estilo">Ingresar</button>
@@ -115,6 +122,16 @@
         <!-- /.login-card-body -->
       </div>
     </div>
+<script type="text/javascript">
+    function reveal()
+    {
+    if(document.getElementById('box').checked)
+       {document.getElementById("password").type='text';}
+    else
+    document.getElementById("password").type='password'
+    }
+</script>
+
 
 {% endblock %}
 

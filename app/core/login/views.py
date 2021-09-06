@@ -1,4 +1,6 @@
 from django.contrib.auth.views import LoginView, LogoutView
+from django.utils.decorators import method_decorator
+from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import TemplateView
 from django.shortcuts import render, redirect
 
@@ -19,13 +21,8 @@ class NeedleLoginView(LoginView):
         return context
 
 
-
-
-
-
-
 # Vista de Registro de usuario
-class NeedleRegis(TemplateView):
+class NeedleLogoutView(TemplateView):
     template_name = '../templates/loginregusu.html'
 
 
