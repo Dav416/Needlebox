@@ -18,6 +18,8 @@ class User(AbstractUser):
     accept_terms = models.BooleanField(default=False, null=False, blank=False)
     AbstractUser._meta.get_field('email')._unique = True
 
+    token = models.UUIDField(primary_key=False, editable=False, null=True, blank=True)
+
     def save(self, *args, **kwargs):
         if self.pk is None:
             self.set_password(self.password)
