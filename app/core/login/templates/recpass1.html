@@ -15,7 +15,7 @@
 
 {% block content%}
 
-    <body class="login-page" style="min-height: 332.58px;">
+
 
 
   <!------contenido del login--------------------------------------------------------------------------------------------------------------------------->
@@ -29,33 +29,30 @@
       <!-- /.login-logo -->
       <div class="card">
         <div class="card-body login-card-body">
-          <p class="login-box-msg">Si olvidó su contraseña, ingrese su correo para recibir una nueva</p>
+          <p class="login-box-msg">Si olvidó su contraseña, ingrese su nombre de usuario para recibir un correo y crear una nueva</p>
 
-          <form action="." method="post">
+          <form action="{% url 'correo_rec_contraseña' %}" method="post">
+              {% csrf_token %}
+              {{ form.errors }}
+            <div class="mb-3">
 
-             <div class="input-group mb-3">
-                 {{ form.password }}
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-envelope"></span>
+                <div class="form-group " >
+                <label>{{ form.username.label }}</label>
+                  {{ form.username }}
                 </div>
-              </div>
+
             </div>
 
-            <div class="input-group mb-3">
-                 {{ form.confirmPassword }}
-              <div class="input-group-append">
-                <div class="input-group-text">
-                  <span class="fas fa-envelope"></span>
-                </div>
-              </div>
-            </div>
+
 
 
 
             <div class="row">
               <div class="col-12">
-                <button type="submit" class="btn btn-primary btn-block btn-estilo">Solicitar nueva contraseña</button>
+                <button type="submit" class="btn btn-primary btn-block btn-estilo">Solicitar nueva contraseña
+                    <i class="fas fa-envelope"> </i>
+
+                </button>
               </div>
               <!-- /.col -->
             </div>
@@ -70,7 +67,7 @@
         </div>
         <!-- /.login-card-body -->
       </div>
-    </div>
+
 
 
 <script>
@@ -99,6 +96,10 @@ $('form').on('submit', function (e) {
         });
 </script>
 
+
+
+
+    </div>
 
 {% endblock %}
 
