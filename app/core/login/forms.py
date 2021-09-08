@@ -26,17 +26,22 @@ class ResetPasswordForm(forms.Form):
 
 # ----Formulario para resetear contraseña ------
 class ChangePasswordForm(forms.Form):
+    model = User
+
     password = forms.CharField(widget=forms.PasswordInput(attrs={
         'placeholder': 'Ingrese un password',
         'class': 'form-control',
-        'autocomplete': 'off'
+        'autocomplete': 'off',
+        'id': 'pass1',
     }))
 
     confirmPassword = forms.CharField(widget=forms.PasswordInput(attrs={
         'placeholder': 'Repita el password',
         'class': 'form-control',
-        'autocomplete': 'off'
+        'autocomplete': 'off',
+        'id': 'pass2',
     }))
+
 
     def clean(self):
         cleaned = super().clean()

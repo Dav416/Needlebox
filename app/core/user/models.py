@@ -20,6 +20,7 @@ class User(AbstractUser):
 
     token = models.UUIDField(primary_key=False, editable=False, null=True, blank=True)
 
+    """
     def save(self, *args, **kwargs):
         if self.pk is None:
             self.set_password(self.password)
@@ -28,3 +29,4 @@ class User(AbstractUser):
             if user.password != self.password:
                 self.set_password(self.password)
         super().save(*args, **kwargs)
+    """

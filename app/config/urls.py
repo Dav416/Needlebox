@@ -36,7 +36,7 @@ urlpatterns = [
     path('ayuda/', AyudaTemplateView.as_view(), name="ayuda"),
     path('contactenos/', include('core.contacto.urls')),
     path('login/', include('core.login.urls')),
-    path('regprv/', UserCreateView.as_view(), name="login2"),
-    # path('changepassword/', UserChangePasswordView.as_view(), name="cambiar_contraseña"),
+    path('reguser/', UserCreateView.as_view(), name="login2"),
+    path('changepassword/', UserChangePasswordView.as_view(), name="cambiar_contraseña"),
     path('reportar/', include('core.reportar.urls')),
 ]
