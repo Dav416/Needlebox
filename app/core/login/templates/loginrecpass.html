@@ -4,7 +4,7 @@
 
 <!--title del head-->
 {% block title %}
-    Recuperar contraseña
+    Restablecer contraseña
 {% endblock %}
 
 <!--mis estilos-->
@@ -37,7 +37,7 @@
                  {{ form.password }}
               <div class="input-group-append">
                 <div class="input-group-text">
-                  <span class="fas fa-envelope"></span>
+                  <span class="fas fa-lock"></span>
                 </div>
               </div>
             </div>
@@ -46,10 +46,15 @@
                  {{ form.confirmPassword }}
               <div class="input-group-append">
                 <div class="input-group-text">
-                  <span class="fas fa-envelope"></span>
+                  <span class="fas fa-lock"></span>
                 </div>
               </div>
             </div>
+
+              <div class="see-pass">
+                  <input type="checkbox" id="box" onclick ="reveal()">
+                  <label for="box" class="see-pass-lab"> Ver contraseña</label>
+              </div>
 
 
 
@@ -99,6 +104,19 @@ $('form').on('submit', function (e) {
         });
 </script>
 
+<script type="text/javascript">
+    function reveal()
+    {
+    if(document.getElementById('box').checked)
+       {document.getElementById("pass1").type='text';}
+    else
+    document.getElementById("pass1").type='password';
+    if(document.getElementById('box').checked)
+       {document.getElementById("pass2").type='text';}
+    else
+    document.getElementById("pass2").type='password';
+    }
+</script>
 
 {% endblock %}
 

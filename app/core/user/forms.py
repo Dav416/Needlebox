@@ -6,8 +6,6 @@ from django import forms
 
 from core.user.models import User
 
-
-
 # ----------------REGISTRO DE USUARIOS---------------
 class UserRegForm(ModelForm):
     def __init__(self, *args, **kwargs):
@@ -113,7 +111,15 @@ class UserRegForm(ModelForm):
         form = super()
         try:
             if form.is_valid():
-                form.save()
+                pwd = self.cleaned_data['password']
+                u = form.save(commit=False)
+                if u.pk is None:
+                    u.set_password(pwd)
+                else:
+                    user = User.objects.get(pk=u.pk)
+                    if user.password != pwd:
+                        u.set_password(pwd)
+                u.save()
             else:
                 data['error'] = form.errors
         except Exception as e:
@@ -193,63 +199,3 @@ class UserUpdateForm(ModelForm):
             data['error en forms'] = str(e)
         return data
 
-
-# ------Editar clave-------
-class UserUpdatePasswordForm(ModelForm):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-    class Meta:
-        model = User
-        fields = '__all__'
-        exclude = ['groups', 'user_permissions', 'last_login', 'date_joined', 'is_superuser', 'is_active',
-                   'is_staff', 'first_name', 'last_name', 'username', 'email', 'security_question', 'security_answer',
-                   'accept_terms']
-        widgets = {
-            'password': PasswordInput(
-                render_value=False,
-                attrs={
-                    'id': 'password',
-                    'minlength': '8',
-                    'placeholder': 'Contraseña de mínimo 8 caracteres',
-                    'class': 'form-control',
-                    'autocomplete': 'off',
-                    'step': '0',
-                    'required': True,
-
-                }
-            ),
-
-            'conf_password': PasswordInput(
-                attrs={
-                    'id': 'conf_password',
-                    'minlength': '8',
-                    'placeholder': 'Repita su contraseña',
-                    'class': 'form-control',
-                    'autocomplete': 'off',
-                    'step': '0',
-                    'required': True,
-                }
-            ),
-        }
-
-    def save(self, commit=True):
-        data = {}
-        form = super()
-
-        try:
-            if form.is_valid():
-                form.save()
-            else:
-                data['error'] = form.errors
-        except Exception as e:
-            data['error en forms'] = str(e)
-        return data
-
-    # validador de confirmación de contraseña
-
-
-    def clean_password(self):
-        if self.data['password'] != self.data['conf_password']:
-            raise forms.ValidationError('Las contraseñas son distintas')
-        return self.data['password']

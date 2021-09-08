@@ -2,6 +2,8 @@ import smtplib
 import uuid
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
+
+from django.contrib.auth.forms import SetPasswordForm
 from django.template.loader import render_to_string
 import config.settings as setting
 from config import settings
@@ -34,8 +36,9 @@ class NeedleLoginView(LoginView):
         return context
 
 
-# Vista de Recuperar conraseña
+# -------- VISTAS PARA RESTABLECER CONTRASEÑA ------------
 
+# Envio de correo para recuperar contraseña
 class NeedleRecpass(FormView):
     form_class = ResetPasswordForm
     template_name = 'recpass1.html'
@@ -65,7 +68,7 @@ class NeedleRecpass(FormView):
             content = render_to_string('send_email.html', {
                 'user': user,
                 'link_resetpwd': 'http://{}/login/changepassword/{}/'.format(url, str(user.token)),
-                'link_home': 'http://{}/{}/'.format(url, 'index')  # distitno al video para que funcionara
+                'link_home': 'http://{}/{}/'.format(url, 'index')  # Distinto al video para que funcionara
             })
             mensaje.attach(MIMEText(content, 'html'))
 
@@ -95,7 +98,9 @@ class NeedleRecpass(FormView):
         return context
 
 
+# Formulario despues del correo para cambio de contraseña
 class ChangePasswordView(FormView):
+    model = User
     form_class = ChangePasswordForm
     template_name = 'loginrecpass.html'
     success_url = reverse_lazy(setting.LOGIN_REDIRECT_URL)
@@ -108,7 +113,7 @@ class ChangePasswordView(FormView):
         token = self.kwargs['token']
         if User.objects.filter(token=token).exists():
             return super().get(request, *args, **kwargs)
-        return HttpResponseRedirect('/')  # se usó aquí la ruta opcional sugerida en el vídeo
+        return HttpResponseRedirect('/')  # se usó aquí la ruta sugerida en el video
 
     def post(self, request, *args, **kwargs):
         data = {}
@@ -119,6 +124,7 @@ class ChangePasswordView(FormView):
                 user.set_password(request.POST['password'])
                 user.token = uuid.uuid4()
                 user.save()
+                print(request.POST['password'])
             else:
                 data['error'] = form.errors
         except Exception as e:
