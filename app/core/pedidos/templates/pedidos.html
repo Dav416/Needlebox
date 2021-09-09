@@ -1,33 +1,57 @@
 {% extends 'basemodulos.html' %}
+
 {% load static %}
 
+{% block mycss %}
+    <link rel="stylesheet" href="{% static 'myCss/insumosStyle.css' %}">
+{% endblock %}
 
-
-    {% block title %}
-    NEEDLEBOX - Mostrar Pedidos
-    {% endblock %}
-
-
-    {% block  mycss %}
-      <!--Mis estilos-->
-      <link rel="stylesheet" href="{% static 'myCss/pedidosMostrarStyle.css' %}">
-    {% endblock %}
-
+{% block title %}
+    NEEDLEBOX - Pedidos - Opciones
+{% endblock %}
 
 
 {% block content %}
+    <div class="mod-act c-insu"><div class="cover"><span class="mod-act-nom">PEDIDOS</span></div></div>
 
-  <!--Encabezado de sección-->
-  <div class="mod-act c-ped"><div class="cover"><span class="mod-act-nom">Pedidos</span></div></div>
+    <input type="hidden" name="next" value="{{ next }}">
+<br>
+    <!--Lista opciones pedidos-->
+    <div class="card card-danger prov-form">
 
- 
-  <!--Aqui iria el contenido-->
+        <div class="card-header form-prov-header" style="justify-content: center !important; " >
+          <h3 class="card-title table-t" style="text-align: center !important; ">
+              <i class="fas fa-tshirt"></i>
+              Opciones de pedidos
+              <i class="fas fa-cut"></i>
+          </h3>
 
-    <!-- INCLUDE TABLA PEDIDOS -->
-    {% include 'tablapedidos.html' %}
+        </div>
 
-        
-  <!--fin del copypaste de adminlte-->
+        <div class="card-body">
+
+            <a href="{% url 'registrar_pedido' %}">
+                <button class="mod-op  mod-name" style="border-radius: 5px; padding: 8px;">
+                      Añadir pedido
+                </button>
+            </a>
+
+            <hr>
+
+            <a href="{% url 'lista_pedidos' %}">
+                <button class="mod-op  mod-name" style="border-radius: 5px; padding: 8px;">
+                      Mi lista de pedidos
+                </button>
+            </a>
+
+            <hr>
 
 
+        </div>
+
+        <!-- /.card-body -->
+    </div>
+    <!--/FIN lista opciones insumos-->
+<br>
+<br>
 {% endblock %}

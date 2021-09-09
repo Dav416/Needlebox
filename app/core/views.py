@@ -15,7 +15,7 @@ def needle_editcliente(request):
 
 
 def needle_crono(request):
-    return render(request, 'cronograma.html')
+    return render(request, 'listpedidos.html')
 
 
 def needle_pedidos(request):

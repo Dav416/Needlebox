@@ -1,21 +1,35 @@
 from django.db import models
 
-# Create your models here.
-
-# ---TABLAS/MODELOS DEL MODULO PEDIDOS---
+# ---TABLAS/MODELOS DEL MODULO CRONOGRAMA---
 # Modelo/tabla de modulo cronograma, para registrar pedidos
-class Todopedido(models.Model):
+from django.forms import model_to_dict
+
+
+class RegisPedido(models.Model):
     # DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key borrar info al borrar perfil
-    # DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT)  # foreing key borrar info al borrar cliente
-    #numPedido = models.IntegerField(max_length=None, unique=True, verbose_name="Número de pedido")
-    pedido = models.CharField(max_length=20, verbose_name="Pedido")
-    estado = models.CharField(max_length=20, verbose_name="Estado")
-    descri = models.CharField(max_length=20, verbose_name="Descripción")
-    client = models.CharField(max_length=20, verbose_name="Cliente")
-    fechadEnt = models.CharField(max_length=100, blank=True, verbose_name='Fecha de entrega')
+    # DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT)  # foreing key borrar info al borrar client
+    nombCli = models.CharField(max_length=50, verbose_name='Nombre cliente')
+    descriped = models.TextField(max_length=2000, verbose_name="Detalles del pedido")
+    costoped = models.PositiveIntegerField(default=0, verbose_name="Costo del pedido")
+    fecharec = models.DateField(max_length=100, verbose_name='Fecha de recibo')
+    fechaLiEn = models.DateField(max_length=100, blank=True, verbose_name='Fecha de limite de entrega')
+    med_entr = [
+        ('', 'Seleccione un medio de entrega'),
+        ('Correo', 'Servicio de correo o mensajería'),
+        ('Fábrica / local', 'Directamente en fábrica / local'),
+        ('Otro', 'Otro punto o medio'),
+    ]
+    medentr = models.CharField(max_length=50, choices=med_entr, null=False, default='', verbose_name="Medio de entrega")
+    DetailEntr = models.TextField(max_length=1000, verbose_name="Lugar de entrega")
+    estped = models.CharField(max_length=50, null=False, verbose_name="Estado del pedido")
+
 
     def __str__(self):
-        return self.numPedido
+        return self.nombCli
+
+    def pedidotojson(self):
+        itemped = model_to_dict(self)
+        return itemped
 
     class Meta:
         verbose_name = 'Pedido'

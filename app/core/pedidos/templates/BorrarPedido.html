@@ -1,0 +1,62 @@
+{% extends 'basemodulos.html' %}
+
+{% load static %}
+
+{% block mycss %}
+    <link rel="stylesheet" href="{% static 'myCss/cronogramaStyle.css' %}">
+{% endblock %}
+
+{% block title %}
+    NEEDLEBOX - Pedidos - Borrar pedido
+{% endblock %}
+
+{% block content %}
+    <div class="mod-act c-insu"><div class="cover"><span class="mod-act-nom">PEDIDOS</span></div></div>
+        <br>
+    <!--Inicio formulario proveedor-->
+    <div class="card card-danger prov-form ">
+        <div class="card-header card-t">
+          <h3 class="tablet">Confirmación de borrado</h3>
+        </div>
+
+
+
+        <div class="card-body">
+
+
+            <form method="post" action=".">
+
+               {% csrf_token %}
+
+
+
+
+            <div class="alert alert-danger alert-secondary">
+                <p><strong>Usted está por borrar el pedido: </strong></p>
+                <p>"{{ object.descriped }}"</p>
+                <p><strong>Del cliente:</strong> "{{ object.nombCli }}"</p>
+                 <p><strong>Programado para:</strong> " {{ object.fechaLiEn }} "</p>
+            </div>
+
+                 <p><strong>¿Desea continuar?</strong></p>
+
+                <div class="button-submit-div" style="margin: auto">
+                    <button type="submit" class="btn btn-success ">
+                        Si, borrar
+                    </button>
+
+
+                    <a href="{% url 'lista_pedidos' %}" style="margin-left: 5%; text-decoration: none;"  class="btn btn-success">
+                                ¡No!, volver a lista
+                    </a>
+                </div>
+
+
+
+            </form>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!--/FIN formulario proveedor-->
+
+{% endblock %}

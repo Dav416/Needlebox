@@ -1,0 +1,135 @@
+{% extends 'basemodulos.html' %}
+{% load widget_tweaks %}
+
+
+{% load static %}
+
+{% block mycss %}
+
+    <link rel="stylesheet" href="{% static 'myCss/cronogramaStyle.css' %}">
+{% endblock %}
+
+{% block title %}
+    NEEDLEBOX - Registrar pedido
+{% endblock %}
+
+{% block content %}
+ <div class="mod-act c-insu"><div class="cover"><span class="mod-act-nom">PEDIDOS</span></div></div>
+
+
+        <br>
+ <!---------------------------------------------------Inicio form insumos ----------------------------------------------------------------->
+    <div class="card card-danger insu-form">
+
+        <!--.card-header Formulario Insumos -->
+
+        <div class="card-header card-t">
+          <h3 class="tablet">{{ titulo }}</h3>
+
+          <a href="{% url 'lista_pedidos' %}" style="margin-left: 15%;">
+              <button class="btn btn-success float-right" style="padding: 7px;">
+                  Ver pedidos
+              </button>
+          </a>
+
+        </div>
+        <!-- /.card-header Formulario Insumos -->
+
+        <!--Inicio formulario Insumos-->
+        <div class="card-body">
+
+
+            <form id="pedidosForm" method="post" action=".">
+
+
+               {% csrf_token %}
+               <input type="hidden" name="action" value="{{ action }}">
+
+
+              <div class="card-body" style="display: block;">
+
+                <div class="form-group">
+                  <label for="InputCliente">Cliente</label>
+                    {{ form.visible_fields.0}}
+
+                </div>
+
+                <div class="form-group">
+                  <label for="DetallePedido">Especificaciones del pedido</label>
+                    {{ form.visible_fields.1 }}
+                </div>
+
+                <div class="form-group">
+                  <label for="PedCosto">Costo del pedido</label>
+                    {{ form.visible_fields.2 }}
+                </div>
+
+                <div class="form-group">
+                  <label for="InputFechaLimEntrega">Fecha de recepción</label>
+                  {{ form.visible_fields.3 }}
+
+                </div>
+
+                <div class="form-group">
+                  <label for="inputFechaLimEntrega">Fecha de entrega</label>
+                  {{ form.visible_fields.4 }}
+                </div>
+
+                <div class="form-group">
+                  <label for="inputMedioEntrega">Medio de entrega</label>
+                  {{ form.visible_fields.5 }}
+                </div>
+
+                <div class="form-group">
+                  <label for="inputLugarEntrega">Lugar o detalles de entrega</label>
+                  {{ form.visible_fields.6 }}
+                </div>
+
+                <div class="form-group">
+                  <label for="Estado_pedido">Estado de cumplimiento del pedido</label>
+                  {{ form.visible_fields.7 }}
+                </div>
+
+                <div class ="form-group">
+                  <!-- <a href="#" class="btn btn-secondary">Cancel</a> -->
+                 <input type="submit" value="Registrar" class="btn btn-success float-right InsuvbtnAjax">
+
+                </div>
+
+              </div>
+            <!-- /.card-body -->
+            </form>
+
+        </div>
+        <!--/I formulario Insumos-->
+
+ </div>
+    <!---------------------------------------------------Final form insumos ----------------------------------------------------------------->
+
+ <script>
+$('form').on('submit', function (e) {
+            e.preventDefault();
+            var parameters = $(this).serializeArray();
+            $.ajax({
+                url: window.location.pathname,
+                type: 'POST',
+                data: parameters,
+                dataType: 'json'
+            }).done(function (data) {
+                console.log(data);
+                if (!data.hasOwnProperty('error')) {
+                    location.href = '{{ list_url }}';
+                    return false;
+                }
+                message_error(data.error);
+
+                alert(textStatus + 'Error :  Ajax ' + errorThrown);
+            }).always(function (data) {
+
+            });
+        });
+
+
+</script>
+
+{% endblock %}

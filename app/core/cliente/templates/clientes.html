@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block mycss %}
-    <link rel="stylesheet" href="{% static 'myCss/clientesStyle.css' %}">
+    <link rel="stylesheet" href="{% static 'myCss/insumosStyle.css' %}">
 {% endblock %}
 
 {% block title %}
@@ -23,18 +23,23 @@
 
 
   <!--Aqui iria el contenido-->
-  <div class="card-body" data-select2-id="30">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="form-group" data-select2-id="29">
-            <div class="card-body">
-                <h2> Elija la acción que desea: </h2>
+   <div class="card card-danger prov-form">
 
-            </div>
+        <div class="card-header form-prov-header" style="justify-content: center !important; " >
+          <h3 class="card-title table-t" style="text-align: center !important; ">
+              <i class="fas fa-user-plus"></i>
+              Elija la opción deseada
+              <i class="fas fa-users"></i>
+          </h3>
+        </div>
+
+
+        <div class="card-body">
+
 
             <a href="{% url 'cliente1' %}">
                 <button class="mod-op  mod-name" style="border-radius: 5px; padding: 8px;">
-                      Registrar nuevo cliente
+                      Registrar cliente
                 </button>
             </a>
 
@@ -42,19 +47,18 @@
 
             <a href="{% url 'cliente3' %}">
                 <button class="mod-op  mod-name" style="border-radius: 5px; padding: 8px;">
-                      Consultar o modificar cliente
+                      Consultar clientes
                 </button>
             </a>
 
+            <hr>
 
 
         </div>
 
-      </div>
-
+        <!-- /.card-body -->
     </div>
 
-  </div>
 
 <br>
 <br>
