@@ -1,114 +1,128 @@
-      <!-- INICIO TABLA -->
+{% extends 'basemodulos.html' %}
 
-          <div class="row tabla-pedido">
+{% load static %}
 
-            <div class="col-12">
+{% block mycss %}
+    <link rel="stylesheet" href="{% static 'myCss/insumosStyle.css' %}">
+{% endblock %}
 
-              <div class="card ">
+{% block title %}
+    NEEDLEBOX - Mis pedidos
+{% endblock %}
 
-                <!--car-header-->
-                <div class="card-h-pedido card-t">
-                  <h3 class="table-t">Todos los pedidos</h3>
+{% block content %}
 
-                </div>
-                <!-- /.card-header -->
+ <div class="mod-act c-insu"><div class="cover"><span class="mod-act-nom">PEDIDOS</span></div></div>
 
+<div class="row tabla-insu ">
+      <div class="col-12 ">
+          <div class="card">
+              <div class="card-h-insu">
+                <h3 class="table-t">Pedidos registrados</h3>
 
+                  <a href="{% url 'registrar_pedido' %}">
 
-
-                <!--card body-->
-                <div class="card-body p-0">
-                  <div id="example2_wrapper" class="dataTables_wrapper dt-bootstrap4">
-
-                    <div class="row">
-                      <div class="col-sm-12 ">
-                        <div class="table-responsive">
-                          <table id="example2" class="table table-bordered table-hover dataTable dtr-inline m-0" role="grid" aria-describedby="example2_info">
-                              <thead>
-                                <tr role="row">
-                                  <th class="sorting sorting_asc nro-p" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column descending">Número de pedido</th>
-                                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending">Pedido</th>
-                                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Estado</th>
-                                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending">Descripción</th>
-                                  <th class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending">Cliente</th>
-                                  <th class="sorting f-ent" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending">Fecha de entrega</th>
-                                </tr>
-                              </thead>
-
-                              <tbody>
-
-                              <!-- INICIO CICLO FOR -->
-
-                              {% for c in object_list1 %}
-                                <tr class="odd">
-                                  <td style="width: 1%">{{ c.id }}</td>
-                                  <!--<td style="width: 10%">{{ c.numPedido }}</td>-->
-                                  <td style="width: 10%">{{ c.pedido }}</td>
-                                  <td style="width: 15%">{{ c.estado }}</td>
-                                  <td style="width: 15%">{{ c.descri}}</td>
-                                  <td style="width: 57%">{{ c.client }}</td>
-                                  <td style="width: 57%">{{ c.fechadEnt }}</td>
-                                  <td style="width: 1%">
-                                      <button type="button" class="btn-edit-insu">
-                                          <i class="fas fa-edit"></i>
-                                      </button>
-                                  </td>
-                                  <td style="width: 1%">
-                                      <button type="button" class="btn-borr-insu">
-                                          <i class="fas fa-trash"></i>
-                                      </button>
-                                  </td>
-                                </tr>
-
-                              {% endfor %}
-
-                              <!-- FIN CICLO FOR -->
-
-                              <!-- !!!EJEMPLO¡¡¡ -->
-                                <tr class="odd">
-                                  <td class="dtr-control sorting_1" tabindex="0">
-                                    <a href="#">OR0000</a>
-                                  </td>
-                                  <td>Camiseta</td>
-                                  <td>
-                                    <span class="badge badge-success">Terminado</span>
-                                  </td>
-                                  <td>Bordar, estampar y cocer</td>
-                                  <td>Miguel Ordoñez</td>
-                                  <td>17/07/2021</td>
-                                </tr>
-                              <!-- FIN DE EJEMPLO -->
-
-                            <!--  <tr class="even"> -->
-
-                              </tbody>
-                          </table>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- /.card-body -->
-
+                  <button class="btn-edit-prov btnajaxinsu'" style="padding: 8px">
+                      Añadir pedido
+                  </button>
+                  </a>
               </div>
-              <!-- /.card -->
 
-            </div>
-            <!-- /.col -->
 
+              <!-- /.card-header -->
+              <div class="card-body  table-responsive p-0" style="height: auto; margin-top: 1%">
+
+                  <table class="table  table-head-fixed text-nowrap" id="MyTableInsumos">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Cliente</th>
+                      <th>Detalles</th>
+                      <th>Costo</th>
+                      <th>Recepción</th>
+                      <th>Entrega</th>
+                      <th>Medio de entrega</th>
+                      <th>Detalle entrega</th>
+                      <th>Avance</th>
+                      <th>Editar</th>
+                      <th>Borrar</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+
+                    {% for c in object_list %}
+                        <tr class="obj-tab-insu">
+                          <td style="">{{ c.id }}</td>
+                          <td style="">{{ c.nombCli }}</td>
+                          <td style="">{{ c.descriped }}</td>
+                          <td style="">{{ c.costoped }}</td>
+                          <td style="">{{ c.fecharec}} </td>
+                          <td style="">{{ c.fechaLiEn }}</td>
+                          <td style="">{{ c.medentr }}</td>
+                          <td style="">{{ c.DetailEntr }}</td>
+                          <td style="">{{ c.estped }}</td>
+
+
+                            <td style="width: 1%">
+                              <a href=" {% url 'editar_pedido' c.id %}" style="color: inherit">
+                                <button type="button" class="btn-edit-insu">
+                                      <i class="fas fa-edit"></i>
+                                </button>
+                              </a>
+
+                          </td>
+
+                          <td style="width: 1%">
+
+                              <a href="{% url 'borrar_pedido' c.id %}" style="color: inherit">
+                                  <button type="button" class="btn-borr-insu">
+                                      <i class="fas fa-trash"></i>
+                                  </button>
+                              </a>
+                          </td>
+                        </tr>
+                    {% endfor %}
+
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
           </div>
-          <!-- /.row -->
-
-        <!-- /.container-fluid -->
-
-        <!-- FIN TABLA -->
+        <!-- /.card -->
+      </div>
+        <!--/.col-12-->
+    </div>
 
 <!--script para ejecución del data table -->
 <script type="application/javascript">
-    $('#example2').DataTable({
+    $(function () {
+        $('#MyTableInsumos').DataTable({
                     responsive: true,
-                    autoWidth: false,
+                    autoWidth: false
+        });
+
+        $('.btnajaxinsu').on('click', function () {
+                $.ajax({
+                    url: '{% url 'lista_insumos' %}',
+                    type: 'POST',
+                    data: {id: 1},
+                    dataType: 'json'
+                }).done(function (data) {
+                    console.log(data);
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    alert(textStatus+': ERROR AJAX ONCLICK LISTA INSUMOS '+errorThrown);
+                }).always(function (data) {
+
                 });
+            });
+
+
+    });
+
 </script>
 <!--/ script para ejecución del data table -->
+{% endblock %}
+
+
 

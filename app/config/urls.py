@@ -27,7 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', include('core.index.urls')),
     path('clientes/', include('core.cliente.urls')),
-    path('cronograma/', needle_crono),
+    # path('cronograma/', needle_crono),
     path('pedidos/', include('core.pedidos.urls')),
     path('insumos_proveedores/', include('core.insumos.urls')),
     path('cuenta/', include('core.perfil.urls')),
