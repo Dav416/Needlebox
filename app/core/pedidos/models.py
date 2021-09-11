@@ -1,11 +1,14 @@
+from crum import get_current_user
 from django.db import models
 
 # ---TABLAS/MODELOS DEL MODULO CRONOGRAMA---
 # Modelo/tabla de modulo cronograma, para registrar pedidos
 from django.forms import model_to_dict
 
+from core.models import BaseModel
 
-class RegisPedido(models.Model):
+
+class RegisPedido(BaseModel):
     # DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key borrar info al borrar perfil
     # DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT)  # foreing key borrar info al borrar client
     nombCli = models.CharField(max_length=50, verbose_name='Nombre cliente')
@@ -26,6 +29,16 @@ class RegisPedido(models.Model):
 
     def __str__(self):
         return self.nombCli
+
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+        user = get_current_user()
+        if user is not None:
+            if not self.pk:
+                self.user_creation = user
+            else:
+                self.user_updated = user
+        super(RegisPedido, self).save()
+
 
     def pedidotojson(self):
         itemped = model_to_dict(self)

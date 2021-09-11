@@ -13,6 +13,7 @@ class RegInsumoForm(ModelForm):
     class Meta:
         model = InsRegInsu
         fields = '__all__'
+        exclude = ['user_updated', 'user_creation']
         widgets = {
             'tipo_insumo': Select(
                 attrs={
@@ -78,6 +79,7 @@ class RegProveedorForm(ModelForm):
     class Meta:
         model = InsRegProv
         fields = '__all__'
+        exclude = ['user_updated', 'user_creation']
         widgets = {
             'nombre_proveedor': TextInput(
                 attrs={

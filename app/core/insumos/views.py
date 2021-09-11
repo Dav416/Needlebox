@@ -5,9 +5,14 @@ from django.shortcuts import redirect
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import TemplateView, ListView, CreateView, UpdateView, DeleteView
+
+import core.user.models
+from core import user
+from core.user.models import User
 from core.insumos.models import InsRegInsu, InsRegProv
 from core.insumos.forms import RegInsumoForm, RegProveedorForm
 from django.urls import reverse_lazy
+
 
 
 # MENÚ INSUMOS
@@ -25,6 +30,12 @@ class ListInsumosView(ListView):
     model = InsRegInsu
     template_name = 'ListInsumosInsu.html'
 
+    """
+    def get_queryset(self):
+        user = self.request.user
+        queryset = InsRegInsu.objects.filter(user_creation_id=user)
+        return queryset
+    """
     @method_decorator(csrf_exempt)
     @method_decorator(login_required)
     def dispatch(self, request, *args, **kwargs):
