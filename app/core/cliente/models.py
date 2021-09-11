@@ -1,3 +1,4 @@
+from crum import get_current_user
 from django.db import models
 
 # Create your models here.
@@ -6,7 +7,12 @@ from django.db import models
 
 
 # Modelo/tabla de modulo clientes, para registrar información básica de cliente
-class InfoClient(models.Model):
+from django.forms import model_to_dict
+
+from core.models import BaseModel
+
+
+class InfoClient(BaseModel):
     # DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key: borrar info al borrar perfil
     # codecli = models.IntegerField(max_length=None, unique=True, verbose_name="codigo identificador cliente")
     id = models.AutoField(primary_key=True)
@@ -25,6 +31,16 @@ class InfoClient(models.Model):
     def __str__(self):
         txt = 'Cliente {}, Número {}'
         return txt.format(self.nombreCompleto(), self.id)
+
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+        user = get_current_user()
+        if user is not None:
+            if not self.pk:
+                self.user_creation = user
+            else:
+                self.user_updated = user
+        super(InfoClient, self).save()
+
 
     def clientetojson(self):
         itemcl = model_to_dict(self)

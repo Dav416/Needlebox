@@ -1,3 +1,4 @@
+from crum import get_current_user
 from django.db import models
 
 
@@ -6,8 +7,10 @@ from django.db import models
 # Modelo/tabla de modulo insumos, para registrar INSUMOS de confección
 from django.forms import model_to_dict
 
+from core.models import BaseModel
 
-class InsRegInsu(models.Model):
+
+class InsRegInsu(BaseModel):
     SQ_CHOICES = [
         ('', 'Seleccione un tipo de insumo'),
         ('Tela', 'Telas'),
@@ -30,6 +33,16 @@ class InsRegInsu(models.Model):
     def __str__(self):
         return self.tipo_insumo
 
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+        user = get_current_user()
+        if user is not None:
+            if not self.pk:
+                self.user_creation = user
+            else:
+                self.user_updated = user
+        super(InsRegInsu, self).save()
+
+
     def insutojson(self):
         iteminsu = model_to_dict(self)
         return iteminsu
@@ -41,7 +54,7 @@ class InsRegInsu(models.Model):
 
 
 # Modelo/tabla de modulo insumos, para registrar PROVEEDORES de confección
-class InsRegProv(models.Model):
+class InsRegProv(BaseModel):
     # DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT) # foreing key borrar info al borrar el perfil
     # DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT) # foreing key borrar info al borrar cliente
     # rel_ProvInsu = models.ManyToManyField(InsRegInsu)  # rel muchos proveedores/muchos insumos ( agotamiento insumo)
@@ -53,6 +66,16 @@ class InsRegProv(models.Model):
 
     def __str__(self):
         return self.nombre_proveedor
+
+    def save(self, force_insert=False, force_update=False, using=None, update_fields=None):
+        user = get_current_user()
+        if user is not None:
+            if not self.pk:
+                self.user_creation = user
+            else:
+                self.user_updated = user
+        super(InsRegProv, self).save()
+
 
     def provtojson(self):
         itemprov = model_to_dict(self)

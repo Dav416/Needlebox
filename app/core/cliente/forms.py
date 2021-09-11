@@ -13,6 +13,7 @@ class InfoClientForm(ModelForm):
     class Meta:
         model = InfoClient
         fields = '__all__'
+        exclude = ['user_updated', 'user_creation']
         widgets = {
             'nomCli': TextInput(
                 attrs={
