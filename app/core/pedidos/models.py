@@ -4,13 +4,12 @@ from django.db import models
 # ---TABLAS/MODELOS DEL MODULO CRONOGRAMA---
 # Modelo/tabla de modulo cronograma, para registrar pedidos
 from django.forms import model_to_dict
-
+from core.user.models import User
 from core.models import BaseModel
 
 
 class RegisPedido(BaseModel):
-    # DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key borrar info al borrar perfil
-    # DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT)  # foreing key borrar info al borrar client
+    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)  # foreing key: borrar info al borrar perfil
     nombCli = models.CharField(max_length=50, verbose_name='Nombre cliente')
     descriped = models.TextField(max_length=2000, verbose_name="Detalles del pedido")
     costoped = models.PositiveIntegerField(default=0, verbose_name="Costo del pedido")
@@ -26,7 +25,6 @@ class RegisPedido(BaseModel):
     DetailEntr = models.TextField(max_length=1000, verbose_name="Lugar de entrega")
     estped = models.CharField(max_length=50, null=False, verbose_name="Estado del pedido")
 
-
     def __str__(self):
         return self.nombCli
 
@@ -38,7 +36,6 @@ class RegisPedido(BaseModel):
             else:
                 self.user_updated = user
         super(RegisPedido, self).save()
-
 
     def pedidotojson(self):
         itemped = model_to_dict(self)

@@ -30,12 +30,7 @@ class ListInsumosView(ListView):
     model = InsRegInsu
     template_name = 'ListInsumosInsu.html'
 
-    """
-    def get_queryset(self):
-        user = self.request.user
-        queryset = InsRegInsu.objects.filter(user_creation_id=user)
-        return queryset
-    """
+
     @method_decorator(csrf_exempt)
     @method_decorator(login_required)
     def dispatch(self, request, *args, **kwargs):
@@ -49,9 +44,11 @@ class ListInsumosView(ListView):
             data['error en post lista insu'] = str(e)
         return JsonResponse(data)
 
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['object_list1'] = InsRegInsu.objects.all()
+        userid = self.request.user.id
+        context['object_list1'] = InsRegInsu.objects.all().filter(user_creation_id=userid)
         context['list_url'] = reverse_lazy('lista_insumos')
         return context
 
@@ -76,7 +73,8 @@ class ListProveedoresView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['object_list2'] = InsRegProv.objects.all()
+        userid = self.request.user.id
+        context['object_list2'] = InsRegProv.objects.all().filter(user_creation_id=userid)
         context['list_url'] = reverse_lazy('lista_proveedores')
         return context
 

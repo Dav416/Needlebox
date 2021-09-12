@@ -18,7 +18,7 @@ class RegPedidoForm(ModelForm):
     class Meta:
         model = RegisPedido
         fields = '__all__'
-        exclude = ['user_updated', 'user_creation']
+        exclude = ['user_updated', 'user_creation', 'user']
         widgets = {
             'nombCli': TextInput(
                 attrs={

@@ -8,12 +8,12 @@ from django.db import models
 
 # Modelo/tabla de modulo clientes, para registrar información básica de cliente
 from django.forms import model_to_dict
-
+from core.user.models import User
 from core.models import BaseModel
 
 
 class InfoClient(BaseModel):
-    # DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key: borrar info al borrar perfil
+    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)   # foreing key: borrar info al borrar perfil
     # codecli = models.IntegerField(max_length=None, unique=True, verbose_name="codigo identificador cliente")
     id = models.AutoField(primary_key=True)
     nomCli = models.CharField(max_length=50, verbose_name='Nombre cliente')

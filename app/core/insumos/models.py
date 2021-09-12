@@ -6,11 +6,12 @@ from django.db import models
 # ---TABLAS/MODELOS DEL MODULO INSUMOS---
 # Modelo/tabla de modulo insumos, para registrar INSUMOS de confección
 from django.forms import model_to_dict
-
+from core.user.models import User
 from core.models import BaseModel
 
 
 class InsRegInsu(BaseModel):
+    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)  # foreing key: borrar info al borrar perfil
     SQ_CHOICES = [
         ('', 'Seleccione un tipo de insumo'),
         ('Tela', 'Telas'),
@@ -20,9 +21,6 @@ class InsRegInsu(BaseModel):
         ('Herramienta/instrumento', 'Herramientas e instrumentos'),
         ('Otros', 'Otros'),
     ]
-    # DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT)  # foreing key borrar info al borrar perfil
-    # DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT) # foreing key borrar info al borrar cliente
-    # rel_InsuProv = models.ManyToManyField(InsRegProv)  # rel muchos insumos / muchos proveedores (agotamiento insumo)
     tipo_insumo = models.CharField(max_length=30, choices=SQ_CHOICES, null=False, default='', verbose_name="Sel\
     eccione un tipo de insumo")
     especificacion_insumo = models.TextField(max_length=100, verbose_name="Tipo, marca y otros")
@@ -55,9 +53,7 @@ class InsRegInsu(BaseModel):
 
 # Modelo/tabla de modulo insumos, para registrar PROVEEDORES de confección
 class InsRegProv(BaseModel):
-    # DeleteAccount = models.ForeignKey(Profile, on_delete=models.PROTECT) # foreing key borrar info al borrar el perfil
-    # DeleteClient = models.ForeignKey(InfoClient, on_delete=models.PROTECT) # foreing key borrar info al borrar cliente
-    # rel_ProvInsu = models.ManyToManyField(InsRegInsu)  # rel muchos proveedores/muchos insumos ( agotamiento insumo)
+    user = models.ForeignKey(User, null=True, on_delete=models.CASCADE)  # foreing key: borrar info al borrar perfil
     nombre_proveedor = models.CharField(max_length=60, verbose_name="Establecimiento/persona")
     Insumos_proveedor = models.TextField(max_length=222, verbose_name="Insumos que vende")
     telefono_proveedor = models.IntegerField(unique=True, verbose_name="Teléfono proveedor")

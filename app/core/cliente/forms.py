@@ -13,7 +13,7 @@ class InfoClientForm(ModelForm):
     class Meta:
         model = InfoClient
         fields = '__all__'
-        exclude = ['user_updated', 'user_creation']
+        exclude = ['user_updated', 'user_creation', 'user']
         widgets = {
             'nomCli': TextInput(
                 attrs={
@@ -78,5 +78,3 @@ class InfoClientForm(ModelForm):
         except Exception as e:
             data['error en forms'] = str(e)
         return data
-# -----------------------------------------------------
-
