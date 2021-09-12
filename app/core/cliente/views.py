@@ -68,7 +68,8 @@ class NeedleEditCliente(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['object_list1'] = InfoClient.objects.all()
+        userid = self.request.user.id
+        context['object_list1'] = InfoClient.objects.all().filter(user_creation_id=userid)
         context['list_url'] = reverse_lazy('cliente3')
         return context
 

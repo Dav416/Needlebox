@@ -48,9 +48,11 @@
 
                   <tbody>
 
-                    {% for c in object_list1 %}
+                    {% for  c in object_list1 %}
                         <tr class="obj-tab-insu">
-                          <td style="width: 1%">{{ c.id }}</td>
+
+                         <td style="width: 1%">{{ c.id }}</td>
+
                           <td style="width: 10%">{{ c.tipo_insumo }}</td>
                           <td style="width: 15%">{{ c.estado_insumo }}</td>
                           <td style="width: 15%">{{ c.costxunid_insumo_costo}} <strong>x</strong> {{ c.costxunid_insumo_unidad }}</td>

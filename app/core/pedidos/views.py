@@ -42,7 +42,8 @@ class ListPedidosView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['object_list'] = RegisPedido.objects.all()
+        userid = self.request.user.id
+        context['object_list'] = RegisPedido.objects.all().filter(user_creation_id=userid)
         context['list_url'] = reverse_lazy('lista_pedidos')
         return context
 
