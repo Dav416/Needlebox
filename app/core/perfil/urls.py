@@ -1,8 +1,7 @@
 from django.urls import path
 from core.perfil.views import UserUpdateView, UserDeleteView
 
-# este es el url de perfil
-
+# Este es el url de perfil
 
 urlpatterns = [
       path('editperfil/', UserUpdateView.as_view(), name="perfil"),

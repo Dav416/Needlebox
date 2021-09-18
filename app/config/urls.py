@@ -16,8 +16,6 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-
-from core.views import needle_crono
 from core.nosotros.views import NosotrosTemplateView
 from core.ayuda.views import AyudaTemplateView
 from core.user.views import UserCreateView, UserChangePasswordView
@@ -27,7 +25,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('index/', include('core.index.urls')),
     path('clientes/', include('core.cliente.urls')),
-    # path('cronograma/', needle_crono),
     path('pedidos/', include('core.pedidos.urls')),
     path('insumos_proveedores/', include('core.insumos.urls')),
     path('cuenta/', include('core.perfil.urls')),

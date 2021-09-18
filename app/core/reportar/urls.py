@@ -1,7 +1,7 @@
 from django.urls import path
-from core.reportar.views import needle_reperror, ReportView
+from core.reportar.views import ReportView
 
-# Esta es la url de PEDIDOS
+# Esta es la url de reportar
 
 urlpatterns = [
     path('', ReportView.as_view(), name="reportar"),
