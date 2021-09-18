@@ -25,7 +25,9 @@ class ReportView(CreateView):
     def form_valid(self, form):
         self.object = form.save(commit=False)
         email_from = settings.EMAIL_HOST_USER
-        mensaje = 'Nombre de usuario: ' + form.cleaned_data.get('error_nombre') + '\n' + 'Correo del usuario: ' + form.cleaned_data.get('correo_usu') + '\n' + '\n' + form.cleaned_data.get('cont_mensaje')
+        mensaje = 'Nombre de usuario: ' + form.cleaned_data.get('error_nombre') + '\n' + 'Correo del usuario: ' \
+                  + form.cleaned_data.get('correo_usu') + '\n' + '\n' + 'Error: ' + form.cleaned_data.get('tip_error') \
+                  + '\n' + '\n' + form.cleaned_data.get('cont_mensaje')
         send_mail(
             subject='Reporte de error',
             message= mensaje,
