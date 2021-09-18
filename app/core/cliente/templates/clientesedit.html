@@ -42,10 +42,7 @@
               aria-describedby="example_info">
               <thead>
                 <tr role="row">
-                  <th class="sorting sorting_asc text-center" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
-                    aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 180px;">Número
-                    del
-                    cliente</th>
+
                   <th class="sorting text-center" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
                     aria-label="Position: activate to sort column ascending" style="width: 150px;">Nombres</th>
                   <th class="sorting text-center" tabindex="0" aria-controls="example" rowspan="1" colspan="1"
@@ -68,7 +65,7 @@
                 {% for c in object_list1 %}
 
                 <tr class="odd text-center">
-                  <td class="sorting_1">{{ c.id }}</td>
+
                   <td>{{ c.nomCli }}</td>
                   <td>{{ c.apeCli }}</td>
                   <td>{{ c.telCli }} / {{ c.celCli }} </td>

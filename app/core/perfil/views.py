@@ -5,7 +5,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import JsonResponse
 from django.utils.decorators import method_decorator
 from django.views.decorators.csrf import csrf_exempt
-from django.views.generic import UpdateView, DeleteView, FormView
+from django.views.generic import UpdateView, DeleteView
 from django.urls import reverse_lazy
 from core.user.models import User
 from core.user.forms import *
@@ -76,12 +76,3 @@ class UserDeleteView(DeleteView):
         context = super().get_context_data(**kwargs)
         context['list_url'] = self.success_url
         return context
-
-
-"""
-Aunque se han creado un entidad/modelo/tabla con sus respectivo atributos o campos (se peude verificar
-en los views de esta app, los mismos no han sido pasados aquí debido a qué no hay una tabla en sentido estricto
-donde mostrar ese contenido. El formulario disponible en perfil está es destinado a edirar la información
-de registro, de modo que cada usuario solo su vería una parte su 'unica e irrepetible' información, en la 
-pestaña 'información personal' por ello aquí no se hace más que pasar la plantilla a la url como una vista.
-"""
