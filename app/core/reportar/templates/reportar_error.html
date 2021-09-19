@@ -29,12 +29,21 @@
             <!-- INICIO Formulario de errores-->
             <form method="post" action="{% url 'reportar' %}">
                 {% csrf_token %}
+
+                  {% if 'ok' in request.GET %}
+                    <p style="text-align: center">
+                        <b>Su mensaje se ha enviado correctamente, gracias por ayudarnos a mejorar.</b>
+                    </p>
+                  {% endif %}
+
                 <div class="report" >
                   <!-- titulo-->
                   <fieldset class="headertable">
                     <legend>Formulario de error</legend>
                   </fieldset>
                   <!-- fin titulo-->
+
+
 
                   <!-- contenido-->
                   <label for="name">Nombre</label>

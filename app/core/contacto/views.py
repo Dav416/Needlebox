@@ -23,16 +23,17 @@ class ContactView(CreateView):
     def form_valid(self, form):
         self.object = form.save(commit=False)
         email_from = settings.EMAIL_HOST_USER
-        mensaje = 'Nombre de usuario: ' + form.cleaned_data.get(
+        mensaje = 'ASUNTO: ' + form.cleaned_data.get(
+            'cont_asunto') + '\n' + '\n' + 'Nombre de usuario: ' + form.cleaned_data.get(
             'cont_nombre') + '\n' + 'Correo del usuario: ' + form.cleaned_data.get(
-            'correo_usu') + '\n' + '\n' + form.cleaned_data.get('cont_mensaje')
+            'correo_usu') + '\n' + '\n' + 'MENSAJE: ' + form.cleaned_data.get('cont_mensaje')
         send_mail(
-            subject='Contacto',
+            subject='Contacto: ' + form.cleaned_data.get('cont_asunto'),
             message=mensaje,
             from_email=email_from,
             recipient_list=["needlebox.proyect@gmail.com"],
         )
-        return HttpResponseRedirect(self.get_success_url())
+        return redirect(self.success_url + "?ok")
 
 
 
