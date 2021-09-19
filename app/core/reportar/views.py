@@ -29,11 +29,11 @@ class ReportView(CreateView):
                   + form.cleaned_data.get('correo_usu') + '\n' + '\n' + 'Error: ' + form.cleaned_data.get('tip_error') \
                   + '\n' + '\n' + form.cleaned_data.get('cont_mensaje')
         send_mail(
-            subject='Reporte de error',
+            subject='Reporte de error:',
             message= mensaje,
             from_email=email_from,
             recipient_list=["needlebox.proyect@gmail.com"],
         )
-        return HttpResponseRedirect(self.get_success_url())
+        return HttpResponseRedirect(self.get_success_url() + "?ok")
 #Falta enviar la opcion seleccionada del desplegable por correo electronico
 #Falta anexar alerta de envio exitoso
