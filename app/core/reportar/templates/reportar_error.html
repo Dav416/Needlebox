@@ -43,8 +43,6 @@
                   </fieldset>
                   <!-- fin titulo-->
 
-
-
                   <!-- contenido-->
                   <label for="name">Nombre</label>
                     {{ form.error_nombre }}
@@ -60,22 +58,12 @@
                   <div class="message">
                       {{ form.cont_mensaje }}
                   </div>
-                  <button onclick="myFunction()" value="Enviar" type="submit">Enviar</button>
+                  <button value="Enviar" type="submit">Enviar</button>
 
                 </div>
             </form>
               <!-- FIN formulario de errores -->
 
-          <!--Sweetalert2 -->
-          <script>
-              function myFunction(){
-                Swal.fire(
-                  'Buen trabajo!',
-                  'Su reporte ha sido enviado!',
-                  'success'
-                )
-              }
-          </script>
 
       </div>
 
