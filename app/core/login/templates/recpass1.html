@@ -31,6 +31,15 @@
         <div class="card-body login-card-body">
           <p class="login-box-msg">Si olvidó su contraseña, ingrese su nombre de usuario para recibir un correo y crear una nueva</p>
 
+          <p><b>Tenga en cuenta:</b></p>
+          <ul style="text-align: left">
+            <li>Si su cuenta está activa, será redireccionado al login tras el envío</li>
+            <li>Si no ve el correo en su bandeja principal, considere revisar la carpeta de spam.</li>
+          </ul>
+
+
+
+
           <form action="{% url 'correo_rec_contraseña' %}" method="post">
               {% csrf_token %}
               {{ form.errors }}
@@ -90,7 +99,6 @@ $('form').on('submit', function (e) {
                 alert(textStatus + 'error : Ajax' + errorThrown);
 
             }).always(function (data) {
-
             });
 
         });
