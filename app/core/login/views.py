@@ -95,6 +95,7 @@ class NeedleRecpass(FormView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['title'] = 'Reseteo de Contraseña'
+        context['list_url'] = settings.LOGIN_URL
         return context
 
 
