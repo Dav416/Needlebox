@@ -39,7 +39,7 @@ class UserUpdateView(UpdateView):
             else:
                 data['error'] = 'No ha ingresado a ninguna opción'
         except Exception as e:
-            data['ERROR EN POST REG PROVEEDORES'] = str(e)
+            data['ERROR EN POST: editar perfil usuario'] = str(e)
         return JsonResponse(data)
 
     def get_context_data(self, **kwargs):
