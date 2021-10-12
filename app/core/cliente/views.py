@@ -21,7 +21,7 @@ class NeedleNuevoCliente(CreateView):
     template_name = 'clientesnuevousu.html'
     success_url = reverse_lazy('cliente3')
 
-    
+
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
