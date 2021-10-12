@@ -21,7 +21,7 @@ class NeedleNuevoCliente(CreateView):
     template_name = 'clientesnuevousu.html'
     success_url = reverse_lazy('cliente3')
 
-    #@method_decorator(login_required)
+    
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
@@ -53,7 +53,6 @@ class NeedleEditCliente(ListView):
     template_name = '../templates/clientesedit.html'
 
     @method_decorator(csrf_exempt)
-    #@method_decorator(login_required)
     def dispatch(self, request, *args, **kwargs):
         return super().dispatch(request, *args, **kwargs)
 
